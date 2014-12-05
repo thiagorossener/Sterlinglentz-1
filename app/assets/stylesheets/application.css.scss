@@ -39,9 +39,10 @@ body {
             display: block;
             padding: 5px 10px;
             text-decoration: none;
+            background: #ffffff;
         }
         &.selected a, a:hover {
-             background: #CCC;
+             background: #ffffff;
         }
     }
 }

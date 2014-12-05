@@ -70,6 +70,14 @@ body {
     color: #333;
 }
 
+.no_side_body #body_content_title {
+    display: none;
+}
+
+.separator-menu {
+    border-color: #fff200;
+}
+
 .navbar-wrapper {
   font-size: 100%;
 }
@@ -85,7 +93,7 @@ body {
   position: fixed;
   top: 0;
   height: 120%;
-  color: #cdcdcd;
+  color: #ffffff;
   z-index: 11;
   overflow-x: hidden;
   width: 5rem;
@@ -95,7 +103,7 @@ body {
 }
 
 .nav-gutter {
-  background: #2c2c2c;
+  background: #212121;
   width: 5rem;
   min-width: 30px;
   height: 100%;
@@ -140,7 +148,7 @@ body {
   z-index: 0;
   position: absolute;
   top: 0;
-  background: #213190;
+  background: #2c2c2c;
   width: 18.2rem;
   left: -13.2rem;
   height: 100%;

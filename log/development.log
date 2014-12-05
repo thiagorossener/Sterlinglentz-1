@@ -12888,3 +12888,32 @@ Processing by Refinery::PagesController#home as HTML
   Rendered refinery/_footer.html.erb (0.8ms)
   Rendered refinery/_javascripts.html.erb (210.8ms)
 Completed 200 OK in 485ms (Views: 476.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/refinery/pages" for 127.0.0.1 at 2014-12-06 01:55:39 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Refinery::Admin::PagesController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRefinery::Role Load (1.3ms)[0m  SELECT  "refinery_roles".* FROM "refinery_roles"  WHERE "refinery_roles"."title" = 'Refinery'  ORDER BY "refinery_roles"."id" ASC LIMIT 1
+  [1m[36mRefinery::User Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "refinery_users" INNER JOIN "refinery_roles_users" ON "refinery_users"."id" = "refinery_roles_users"."user_id" WHERE "refinery_roles_users"."role_id" = $1 LIMIT 1[0m  [["role_id", 1]]
+  [1m[35mRefinery::User Load (0.7ms)[0m  SELECT  "refinery_users".* FROM "refinery_users"  WHERE "refinery_users"."id" = 1  ORDER BY "refinery_users"."id" ASC LIMIT 1
+  [1m[36mRefinery::UserPlugin Load (0.6ms)[0m  [1mSELECT "refinery_user_plugins".* FROM "refinery_user_plugins"  WHERE "refinery_user_plugins"."user_id" = $1  ORDER BY position ASC[0m  [["user_id", 1]]
+  [1m[35mRefinery::Role Load (0.6ms)[0m  SELECT "refinery_roles".* FROM "refinery_roles" INNER JOIN "refinery_roles_users" ON "refinery_roles"."id" = "refinery_roles_users"."role_id" WHERE "refinery_roles_users"."user_id" = $1  [["user_id", 1]]
+  Rendered /Users/longfeng/.rvm/gems/ruby-2.1.2@FeralCMS/gems/refinerycms-acts-as-indexed-2.0.0/app/views/refinery/acts_as_indexed/admin/_search_header.html.erb (0.9ms)
+  Rendered /Users/longfeng/.rvm/gems/ruby-2.1.2@FeralCMS/bundler/gems/refinerycms-b2bdc56b659a/core/app/views/refinery/admin/_search_header.html.erb (19.7ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "refinery_pages"[0m
+  Rendered /Users/longfeng/.rvm/gems/ruby-2.1.2@FeralCMS/bundler/gems/refinerycms-b2bdc56b659a/pages/app/views/refinery/admin/pages/_records.html.erb (51.7ms)
+  Rendered /Users/longfeng/.rvm/gems/ruby-2.1.2@FeralCMS/gems/refinerycms-acts-as-indexed-2.0.0/app/views/refinery/acts_as_indexed/admin/_search.html.erb (9.8ms)
+  Rendered /Users/longfeng/.rvm/gems/ruby-2.1.2@FeralCMS/bundler/gems/refinerycms-b2bdc56b659a/core/app/views/refinery/admin/_search.html.erb (12.8ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT COUNT(*) FROM "refinery_pages"
+  Rendered /Users/longfeng/.rvm/gems/ruby-2.1.2@FeralCMS/bundler/gems/refinerycms-b2bdc56b659a/pages/app/views/refinery/admin/pages/_actions.html.erb (24.2ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "refinery_pages"[0m
+  Rendered /Users/longfeng/.rvm/gems/ruby-2.1.2@FeralCMS/bundler/gems/refinerycms-b2bdc56b659a/pages/app/views/refinery/admin/pages/index.html.erb within layouts/refinery/admin (90.1ms)
+  Rendered refinery/_html_tag.html.erb (1.5ms)
+  Rendered /Users/longfeng/.rvm/gems/ruby-2.1.2@FeralCMS/bundler/gems/refinerycms-b2bdc56b659a/core/app/views/refinery/admin/_javascripts.html.erb (1645.6ms)
+  Rendered /Users/longfeng/.rvm/gems/ruby-2.1.2@FeralCMS/bundler/gems/refinerycms-b2bdc56b659a/core/app/views/refinery/admin/_head.html.erb (2086.0ms)
+  Rendered refinery/_site_bar.html.erb (12.1ms)
+  Rendered /Users/longfeng/.rvm/gems/ruby-2.1.2@FeralCMS/bundler/gems/refinerycms-b2bdc56b659a/core/app/views/refinery/admin/_menu.html.erb (44.6ms)
+  Rendered refinery/_no_script.html.erb (2.2ms)
+  Rendered refinery/_message.html.erb (1.0ms)
+Completed 200 OK in 2604ms (Views: 2375.1ms | ActiveRecord: 14.8ms)

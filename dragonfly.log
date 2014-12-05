@@ -1,0 +1,55 @@
+# Logfile created on 2014-12-04 21:20:34 +0800 by logger.rb/44203
+D, [2014-12-04T21:20:34.896739 #55331] DEBUG -- : DRAGONFLY: shell command: 'identify' '-ping' '-format' '%m %w %h' '/var/folders/_q/wg5hcxsn585fjv14240m60p40000gn/T/RackMultipart20141204-55331-1sxzvqt'
+D, [2014-12-04T21:20:39.261470 #55331] DEBUG -- : DRAGONFLY: shell command: 'convert' '/Volumes/WORK/RubyProject/CMS/FeralCMS/public/system/refinery/images/2014/12/04/98iiwe3nct_Index1.png' '-resize' '106x106^^' '-gravity' 'Center' '-crop' '106x106+0+0' '+repage' '/var/folders/_q/wg5hcxsn585fjv14240m60p40000gn/T/dragonfly20141204-55331-1gpiydh.png'
+I, [2014-12-04T21:20:39.465554 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl0sWyJwIiwidGh1bWIiLCIxMDZ4MTA2I2MiXV0/Index1.png?sha=6771030c9b4aebc0 200
+I, [2014-12-04T21:20:47.731283 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 200
+D, [2014-12-04T23:25:52.071406 #55331] DEBUG -- : DRAGONFLY: shell command: 'convert' '/Volumes/WORK/RubyProject/CMS/FeralCMS/public/system/refinery/images/2014/12/04/98iiwe3nct_Index1.png' '-resize' '135x135^^' '-gravity' 'Center' '-crop' '135x135+0+0' '+repage' '/var/folders/_q/wg5hcxsn585fjv14240m60p40000gn/T/dragonfly20141204-55331-1u399hq.png'
+I, [2014-12-04T23:25:53.357521 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl0sWyJwIiwidGh1bWIiLCIxMzV4MTM1I2MiXV0/Index1.png?sha=e5e81b4ace53c17a 200
+I, [2014-12-04T23:51:54.279166 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T00:59:56.546010 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T02:09:09.917794 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T02:10:13.353956 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T02:10:38.248171 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T02:10:49.512496 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T02:11:07.963944 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T02:18:21.670866 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T02:19:08.110115 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T02:19:42.295533 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T02:21:45.258972 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T02:28:37.246610 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T02:57:44.048600 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T09:13:23.062191 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T09:16:45.644056 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T09:24:51.554088 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T09:27:41.886839 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T09:38:56.745940 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T10:38:50.115477 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T10:55:28.737761 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T10:56:36.848500 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T11:02:49.613211 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T11:03:25.474832 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T11:03:44.524065 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T11:05:57.731112 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T11:11:23.566210 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T11:12:17.878193 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T11:17:01.345216 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T11:20:04.076047 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T11:21:39.124611 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T11:23:37.108042 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T11:24:27.222114 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T11:25:47.975360 #55331]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T14:06:20.919963 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T17:43:50.749773 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T17:44:42.177582 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T17:45:14.906127 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T17:47:50.829513 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+D, [2014-12-05T21:13:39.741032 #963] DEBUG -- : DRAGONFLY: shell command: 'convert' '/Volumes/WORK/RubyProject/CMS/FeralCMS/public/system/refinery/images/2014/12/04/98iiwe3nct_Index1.png' '-resize' '225x255>' '/var/folders/_q/wg5hcxsn585fjv14240m60p40000gn/T/dragonfly20141205-963-1o17ez4.png'
+I, [2014-12-05T21:13:41.553029 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl0sWyJwIiwidGh1bWIiLCIyMjV4MjU1XHUwMDNlIl1d/Index1.png?sha=d9193088b98ef323 200
+I, [2014-12-05T21:19:47.906242 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T21:20:48.247441 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T21:23:06.632066 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T21:24:04.688161 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T21:25:05.866573 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T21:25:10.596880 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T21:26:15.342081 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304
+I, [2014-12-05T21:27:37.028063 #963]  INFO -- : DRAGONFLY: GET /system/images/W1siZiIsIjIwMTQvMTIvMDQvOThpaXdlM25jdF9JbmRleDEucG5nIl1d/Index1.png?sha=f88fbb76300f8a32 304

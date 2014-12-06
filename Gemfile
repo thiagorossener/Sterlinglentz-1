@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
@@ -57,3 +58,4 @@ gem 'seo_meta', git: 'https://github.com/parndt/seo_meta', branch: 'master'
 
 gem 'paper_trail', git: 'https://github.com/airblade/paper_trail', branch: 'master'
 gem 'pg'
+gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'

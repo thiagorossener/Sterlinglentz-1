@@ -160,6 +160,7 @@
         setupSeamlessNav();
         setTimeout(setupPage, 100);
 
+        //horizontal
         $('.nav-expand-button').click(function () {
             $('body').toggleClass('navbar-expanded');
         }).mouseenter(function () {
@@ -173,6 +174,22 @@
         $('.nav-links a').click(function (e) {
 
         })
+
+//        //vertical
+//        $('.nav-expand-button').click(function () {
+//            $('body').toggleClass('navbar-expanded');
+//        }).mouseenter(function () {
+//            $('body').addClass('navbar-expanded');
+//        });
+//
+//        $('#navbar').mouseleave(function () {
+//            $('body').removeClass('navbar-expanded');
+//        })
+//
+//        $('.nav-links a').click(function (e) {
+//
+//        })
+
 
     });
 

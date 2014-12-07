@@ -175,22 +175,6 @@
 
         })
 
-//        //vertical
-//        $('.nav-expand-button').click(function () {
-//            $('body').toggleClass('navbar-expanded');
-//        }).mouseenter(function () {
-//            $('body').addClass('navbar-expanded');
-//        });
-//
-//        $('#navbar').mouseleave(function () {
-//            $('body').removeClass('navbar-expanded');
-//        })
-//
-//        $('.nav-links a').click(function (e) {
-//
-//        })
-
-
     });
 
 })(jQuery);

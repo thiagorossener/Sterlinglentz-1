@@ -8,34 +8,32 @@
     <div class="nav-gutter">
       <div class="nav-expand-button"><%= image_tag 'icon-menu.png' %>
       </div>
-        <div class="nav-expand-button"><%= image_tag 'mark-menu.png' %>
-        </div>
-
-        <div class="nav-availability nav-container">
-            <div class="nav-expand-button"><%= image_tag 'mark-menu.png' %>
-        </div>
+      <div class="nav-mark">
+        <%= image_tag 'mark-menu.png', :class => "style_image"%>
       </div>
     </div>
     <div class="nav-main">
       <ul class="nav-links">
-        <li>
+        <li class="li-alignment">
           <%= link_to 'Index', "/"%>
         </li>
-        <li>
+        <li class="li-alignment">
           <%= link_to 'Work', "/work"%>
         </li>
-        <li>
+        <li class="li-alignment">
           <%= link_to 'Blog', "/blog"%>
         </li>
-        <li>
+        <li class="li-alignment">
           <%= link_to 'Process', "/process"%>
         </li>
-        <li>
+        <li class="li-alignment">
           <%= link_to 'Studio', "/studio"%>
         </li>
 
-        <li><hr></li>
-        <li><a href="http://sterlinglentz.lv11.co/#">Shop</a></li>
+        <li class="li-alignment"><hr></li>
+        <li class="li-alignment">
+          <%= link_to 'Shop', "/shop"%>
+        </li>
       </ul>
 
     </div>

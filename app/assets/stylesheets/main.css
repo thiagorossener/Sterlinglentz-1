@@ -68,10 +68,16 @@ body {
     width:100%;
 }
 
+.style_mark_image
+{
+    width:100%;
+}
+
 .logo {
     font-family: 'ColorsOfAutumn';
     font-size: 36px;
     color: #333;
+    margin: 5rem 0;
 }
 
 .li-alignment
@@ -210,7 +216,6 @@ body {
 
 .window-wrapper {
 
-  position: absolute;
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
@@ -544,6 +549,10 @@ body {
     .li-alignment
     {
         display: inline-block;
+    }
+
+    .style_mark_image {
+        width:auto;
     }
 }
 @media screen and (max-width: 768px) {

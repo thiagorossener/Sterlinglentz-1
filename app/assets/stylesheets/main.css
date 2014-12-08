@@ -64,6 +64,17 @@ body {
   overflow-x: hidden;
 }
 
+.first-subbody{
+    width:33%;
+    float:left;
+    margin-top:30px;
+}
+.second-subbody{
+    width:67%;
+    float:left;
+    margin-top:30px;
+}
+
 .style_image {
     width:100%;
 }
@@ -77,7 +88,7 @@ body {
     font-family: 'ColorsOfAutumn';
     font-size: 36px;
     color: #333;
-    margin: 5rem 0;
+    padding-top:20px;
 }
 
 .li-alignment
@@ -553,6 +564,18 @@ body {
 
     .style_mark_image {
         width:auto;
+    }
+
+    .first-subbody{
+        width:100%;
+        float:left;
+        margin-top:30px;
+    }
+
+    .second-subbody{
+        width:100%;
+        float:left;
+        margin-top:30px;
     }
 }
 @media screen and (max-width: 768px) {

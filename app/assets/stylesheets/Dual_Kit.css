@@ -45,3 +45,15 @@
     src: url('webfonts/ColorsOfAutumn.eot');
     src: url('webfonts/ColorsOfAutumn.eot?#iefix') format('embedded-opentype'),url('webfonts/ColorsOfAutumn.woff') format('woff'),url('webfonts/ColorsOfAutumn.ttf') format('truetype');
 }
+
+@font-face {font-family: 'NeutralStd-Regular';
+    font-weight: normal;
+    src: url('webfonts/NeutralStd-Regular.eot');
+    src: url('webfonts/NeutralStd-Regular.eot?#iefix') format('embedded-opentype'),url('webfonts/NeutralStd-Regular.woff') format('woff'),url('webfonts/NeutralStd-Regular.ttf') format('truetype');
+}
+
+@font-face {font-family: 'NeutralStd-Medium';
+    font-weight: normal;
+    src: url('webfonts/NeutralStd-Medium.eot');
+    src: url('webfonts/NeutralStd-Medium.eot?#iefix') format('embedded-opentype'),url('webfonts/NeutralStd-Medium.woff') format('woff'),url('webfonts/NeutralStd-Medium.ttf') format('truetype');
+}

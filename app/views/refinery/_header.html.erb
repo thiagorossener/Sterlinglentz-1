@@ -8,34 +8,37 @@
     <div class="nav-gutter">
       <div class="nav-expand-button"><%= image_tag 'icon-menu.png' %>
       </div>
-      <div class="nav-mark" style ="width : 80%; text-align: center;">
-        <%= image_tag 'mark-menu.png', :class => "style_mark_image"%>
-      </div>
+      <div class="nav-mark-left">Feral</div>
     </div>
     <div class="nav-main">
       <ul class="nav-links">
         <li class="li-alignment">
-          <%= link_to 'Index', "/"%>
+          <%= link_to 'Index', "/", class: "x-silo"%>
         </li>
         <li class="li-alignment">
-          <%= link_to 'Work', "/work"%>
+          <%= link_to 'Work', "/work", class: "x-silo"%>
         </li>
         <li class="li-alignment">
-          <%= link_to 'Blog', "/blog"%>
+          <%= link_to 'Blog', "/blog", class: "x-silo"%>
         </li>
         <li class="li-alignment">
-          <%= link_to 'Process', "/process"%>
+          <%= link_to 'Process', "/process", class: "x-silo"%>
         </li>
         <li class="li-alignment">
-          <%= link_to 'Studio', "/studio"%>
+          <%= link_to 'Studio', "/studio", class: "x-silo"%>
         </li>
 
         <li class="li-alignment"><hr></li>
         <li class="li-alignment">
-          <%= link_to 'Shop', "/shop"%>
+          <%= link_to 'Shop', "/shop", class: "x-silo"%>
         </li>
       </ul>
 
+      <div class="nav-mark-top">Feral</div>
+
+      <div class="nav-behance">
+        <%= image_tag 'Be.png' %>
+      </div>
     </div>
   </div>
 </div>

@@ -91,9 +91,34 @@ body {
     margin:150px 30px;
 }
 
+.blog-spyglass
+{
+  width:21px;
+  position:absolute;
+}
+
+.blog-submit-search
+{
+  background: url('/assets/spyglass.png') no-repeat scroll 0 0; width:21px; height:21px; border-width: 0; outline:none;
+}
+
+.blog-div-searchtext
+{
+  padding-left:35px;
+}
+
+.blog-searchtext
+{
+  border-width: 0px;
+  background: transparent;
+  outline: none;
+  font-size: 17px;
+  width: 100%;
+}
+
 .first-subbody{
     width:33%;
-    float:right;
+    float:left;
 }
 .second-subbody{
     width:67%;
@@ -797,12 +822,11 @@ span.avatar-descriptor
     margin-left: 0;
     display: block;
   }
-
-  .blog-spyglass
+  .blog-search
   {
-    width:9%;
-    margin-left: 0;
-    display: block;
+    display:block;
+    width:100%;
+    position:relative;
   }
 
   .work-info-1
@@ -937,11 +961,11 @@ span.avatar-descriptor
     display: block;
   }
 
-  .blog-spyglass
+  .blog-search
   {
-    width:9%;
-    margin-left: 0;
-    display: block;
+    display:block;
+    width:100%;
+    position:relative;
   }
 
   .work-info-1
@@ -1091,11 +1115,11 @@ span.avatar-descriptor
     display: none;
   }
 
-  .blog-spyglass
+  .blog-search
   {
-    width:9%;
-    margin-left: 0;
-    display: none;
+    display:none;
+    width:100%;
+    position:relative;
   }
 
   .work-info-1
@@ -1287,11 +1311,11 @@ span.avatar-descriptor
     display: none;
   }
 
-  .blog-spyglass
+  .blog-search
   {
-    width:9%;
-    margin-left: 0;
-    display: none;
+    display:none;
+    width:100%;
+    position:relative;
   }
 
   .work-info-1

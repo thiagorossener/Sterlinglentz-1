@@ -17,6 +17,15 @@ module Refinery
             Post.newest_first.live.includes(:comments, :categories)
           end
         end
+
+        unless params[:title].blank?
+          @posts = Refinery::Blog::Post.where("title like ?", "%" + params[:title] + "%")
+        else
+          @posts = Refinery::Blog::Post.all
+        end
+
+        @title = params[:title]
+        @post = Refinery::Blog::Post.last
         respond_with (@posts) do |format|
           format.html
           format.rss { render :layout => false }
@@ -24,6 +33,14 @@ module Refinery
       end
 
       def show
+        unless params[:title].blank?
+          @posts = Refinery::Blog::Post.where("title like ?", "%" + params[:title] + "%")
+        else
+          @posts = Refinery::Blog::Post.all
+        end
+
+        @title = params[:title]
+
         @comment = Comment.new
 
         @canonical = refinery.url_for(:locale => Refinery::I18n.current_frontend_locale) if canonical?

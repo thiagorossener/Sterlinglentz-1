@@ -57,3 +57,9 @@
     src: url('webfonts/NeutralStd-Medium.eot');
     src: url('webfonts/NeutralStd-Medium.eot?#iefix') format('embedded-opentype'),url('webfonts/NeutralStd-Medium.woff') format('woff'),url('webfonts/NeutralStd-Medium.ttf') format('truetype');
 }
+
+@font-face {font-family: 'NeutralStd-RegularItalic';
+    font-weight: normal;
+    src: url('webfonts/NeutralStd-RegularItalic.eot');
+    src: url('webfonts/NeutralStd-RegularItalic.eot?#iefix') format('embedded-opentype'),url('webfonts/NeutralStd-RegularItalic.woff') format('woff'),url('webfonts/NeutralStd-RegularItalic.ttf') format('truetype');
+}

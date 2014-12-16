@@ -14,11 +14,11 @@
 
         <% @posts.each do |post| %>
             <div>
-              <div class="neutralstd-medium-20 padding-line-50">
+              <div class="neutralstd-medium-16 padding-line-50 line-height-24">
                 <%= link_to post.title, refinery.blog_post_path(post), class: 'x-silo'%>
               </div>
 
-              <div class="neutralstd-regular-15 padding-line-20">
+              <div class="neutralstd-regular-12 padding-line-20 line-height-24">
                 <%= post.created_at.strftime("%d.%m.%Y") %>
               </div>
             </div>
@@ -35,8 +35,9 @@
               </div>
           <% end %>
         </div>
-        <hr class="hrline-7d7d7d" >
+        <hr class="hrline-7d7d7d-searchbox">
       </div>
+      <hr class="hrline-7d7d7d-bloglist">
     </div>
 
   </div>

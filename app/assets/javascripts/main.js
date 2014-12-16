@@ -18,9 +18,14 @@
                 $container.html($got.find('.page-wrapper').html()).removeClass('x-silo-change')
                 $silo.attr('class', $got.find('.window-wrapper').attr('class'));
                 console.log(title);
-                if (title !== '') {
-                    $('.nav-silo-name').text(title);
+                if (title !== 'Index' && title !== 'JDSLabs') {
+                    $('.nav-silo-name').text(title.toUpperCase());
                 }
+                else
+                {
+                    $('.nav-silo-name').text("");
+                }
+                window.scrollTo(0,0);
                 setTimeout(after, 10);
             });
         }

@@ -99,7 +99,11 @@ body {
 
 .blog-submit-search
 {
-  background: url('/assets/spyglass.png') no-repeat scroll 0 0; width:21px; height:21px; border-width: 0; outline:none;
+    background: url('/assets/spyglass.png') no-repeat scroll 0 0;
+    width:18px;
+    height:18px;
+    border-width: 0;
+    outline:none;
 }
 
 .blog-div-searchtext
@@ -119,6 +123,7 @@ body {
 .first-subbody{
     width:33%;
     float:left;
+    position:fixed;
 }
 .second-subbody{
     width:67%;
@@ -236,7 +241,7 @@ body {
 
 .hrline-7d7d7d
 {
-  width: 100%;
+  width: 113%;
   border-color: #7d7d7d;
 }
 
@@ -358,6 +363,10 @@ span.avatar-descriptor
   line-height: 60px;
 }
 
+.line-height-24
+{
+    line-height: 24px;
+}
 .home-text1
 {
     padding: 60px 0;
@@ -1002,6 +1011,7 @@ span.avatar-descriptor
   }
   .work-bg-feral-1, .work-bg-feral-2 {
     display: block;
+    position: fixed;
   }
   .subbody-left-80
   {
@@ -1056,6 +1066,7 @@ span.avatar-descriptor
     .first-subbody{
       width:100%;
       float:right;
+      position:static;
     }
 
     .second-subbody{
@@ -1247,6 +1258,7 @@ span.avatar-descriptor
     .first-subbody{
         width:100%;
         float:right;
+        position:static;
     }
 
     .second-subbody{

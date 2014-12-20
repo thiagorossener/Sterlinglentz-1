@@ -7,12 +7,13 @@
   <div id="navbar" class="">
     <div class="nav-gutter">
       <div class="nav-expand-button">
-        <%= image_tag 'icon-menu.png' %>
       </div>
-      <div class="nav-silo-name">
-        <% if @page.title != "Index" && @page.title != "JDSLabs"%>
-            <%= @page.title.upcase  %>
-        <% end %>
+      <div class="nav-silo-name-wrapper">
+          <div class="nav-silo-name">
+            <% if @page.title != "Index" && @page.title != "JDSLabs"%>
+                <%= @page.title.upcase  %>
+            <% end %>
+          </div>
       </div>
       <div class="nav-mark-left">Feral</div>
     </div>

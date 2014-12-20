@@ -170,6 +170,10 @@
             $('body').toggleClass('navbar-expanded');
         })
 
+        $('.blog-page-mark').click(function () {
+            $('body').toggleClass('blog-bar-expanded');
+        })
+
         $('.nav-links a').click(function (e) {
 
         })

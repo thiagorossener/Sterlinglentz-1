@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c4f1729-1e66-4efe-a8c1-b87dbc9a9370" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/Blog1.png" afterPath="$PROJECT_DIR$/app/assets/images/Blog1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/Studio1.png" afterPath="$PROJECT_DIR$/app/assets/images/Studio1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/refinery/_header.html.erb" afterPath="$PROJECT_DIR$/app/views/refinery/_header.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/refinery/blog/shared/_shared_blog_contents.html.erb" afterPath="$PROJECT_DIR$/app/views/refinery/blog/shared/_shared_blog_contents.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/main.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/main.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/main.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="feral.iws" />
@@ -80,21 +73,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css.scss" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.css.scss" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.84" vertical-offset="17658" max-vertical-offset="25140">
-              <caret line="1190" column="17" selection-start-line="1190" selection-start-column="3" selection-end-line="1190" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.33194155" vertical-offset="1926" max-vertical-offset="25140">
+              <caret line="139" column="19" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Blog1.scss" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Blog1.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/Blog1.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9004975" vertical-offset="2202" max-vertical-offset="3195">
-              <caret line="183" column="31" selection-start-line="183" selection-start-column="31" selection-end-line="183" selection-end-column="31" />
+            <state vertical-scroll-proportion="-3.875" vertical-offset="2202" max-vertical-offset="3195">
+              <caret line="153" column="26" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -183,8 +176,8 @@
         <option value="$PROJECT_DIR$/app/views/refinery/_header.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/main.js" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/main.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/Blog1.scss" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/main.css.scss" />
       </list>
     </option>
   </component>
@@ -822,12 +815,12 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32807216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37767756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3768279" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2775061" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23734534" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23734534" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32807216" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1259,18 +1252,18 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css.scss">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/Blog1.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.84" vertical-offset="17658" max-vertical-offset="25140">
-          <caret line="1190" column="17" selection-start-line="1190" selection-start-column="3" selection-end-line="1190" selection-end-column="17" />
+        <state vertical-scroll-proportion="-3.875" vertical-offset="2202" max-vertical-offset="3195">
+          <caret line="153" column="26" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/Blog1.scss">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9004975" vertical-offset="2202" max-vertical-offset="3195">
-          <caret line="183" column="31" selection-start-line="183" selection-start-column="31" selection-end-line="183" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.33194155" vertical-offset="1926" max-vertical-offset="25140">
+          <caret line="139" column="19" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="19" />
           <folding />
         </state>
       </provider>

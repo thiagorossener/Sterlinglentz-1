@@ -121,7 +121,35 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
       <RunnerSettings RunnerId="RubyDebugRunner" />
+      <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="db:seed: feral" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+      <module name="feral" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:seed" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
   </component>
@@ -140,6 +168,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v4.1.8, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v4.1.8, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.1.8, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="acts-as-taggable-on (v3.4.2, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="acts_as_indexed (v0.8.3, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.3.6, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v5.0.1.20140414130214, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
@@ -161,6 +190,7 @@
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="excon (v0.42.0, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.2.2, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="filters_spam (v0.4, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fission (v0.5.0, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog (v1.25.0, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-brightbox (v0.7.0, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
@@ -202,6 +232,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.2, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v4.1.8, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-i18n (v4.0.3, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails_autolink (v1.1.6, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v4.1.8, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.4.2, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rbvmomi (v1.8.2, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
@@ -209,11 +240,13 @@
     <orderEntry type="library" scope="PROVIDED" name="refinerycms (v3.0.0@b2bdc5, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="refinerycms-acts-as-indexed (v2.0.0, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="refinerycms-authentication (v3.0.0@b2bdc5, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="refinerycms-blog (v3.0.0@50c4b2, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="refinerycms-core (v3.0.0@b2bdc5, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="refinerycms-i18n (v3.0.0.dev@14bafe, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="refinerycms-images (v3.0.0@b2bdc5, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="refinerycms-pages (v3.0.0@b2bdc5, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="refinerycms-resources (v3.0.0@b2bdc5, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="refinerycms-settings (v3.0.0, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="refinerycms-wymeditor (v1.0.3, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v1.1.2, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="routing-filter (v0.4.0.pre, RVM: ruby-2.1.2 [FeralCMS]) [gem]" level="application" />

@@ -6,38 +6,48 @@
 
   <div id="navbar" class="">
     <div class="nav-gutter">
-      <div class="nav-expand-button"><%= image_tag 'icon-menu.png' %>
+      <div class="nav-expand-button">
       </div>
-        <div class="nav-expand-button"><%= image_tag 'mark-menu.png' %>
-        </div>
-
-        <div class="nav-availability nav-container">
-            <div class="nav-expand-button"><%= image_tag 'mark-menu.png' %>
-        </div>
+      <div class="nav-silo-name-wrapper">
+          <div class="nav-silo-name">
+            <% if @page.title != "Index" && @page.title != "JDSLabs"%>
+                <%= @page.title.upcase  %>
+            <% end %>
+          </div>
       </div>
+      <div class="nav-mark-left">Feral</div>
     </div>
     <div class="nav-main">
-      <ul class="nav-links">
-        <li>
-          <%= link_to 'Index', "/"%>
+      <ul class="nav-links neutralstd-regular-15 white-forecolor">
+        <li class="li-alignment ">
+          <%= link_to 'Index', "/", class: 'x-silo'%>
         </li>
-        <li>
-          <%= link_to 'Work', "/work"%>
+        <li class="li-alignment">
+          <%= link_to 'Work', "/work", class: 'x-silo'%>
         </li>
-        <li>
-          <%= link_to 'Blog', "/blog"%>
+        <li class="li-alignment">
+          <%= link_to 'Blog', "/blog", class: 'x-silo'%>
         </li>
-        <li>
-          <%= link_to 'Process', "/process"%>
+        <li class="li-alignment">
+          <%= link_to 'Process', "/process", class: 'x-silo'%>
         </li>
-        <li>
-          <%= link_to 'Studio', "/studio"%>
+        <li class="li-alignment">
+          <%= link_to 'Studio', "/studio", class: 'x-silo'%>
         </li>
 
-        <li><hr></li>
-        <li><a href="http://sterlinglentz.lv11.co/#">Shop</a></li>
+        <li class="li-alignment">
+          <hr class="hrline-d89300">
+        </li>
+        <li class="li-alignment">
+          <%= link_to 'Shop', "/shop", class: 'x-silo'%>
+        </li>
       </ul>
 
+      <div class="nav-mark-top">Feral</div>
+
+      <div class="nav-behance">
+        <%= image_tag 'Be.png' %>
+      </div>
     </div>
   </div>
 </div>

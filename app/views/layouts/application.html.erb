@@ -12,11 +12,10 @@
 <%= render "/refinery/header" -%>
 </header>
 <section id="page">
-<%= yield %>
+  <div class="window-wrapper silo home">
+    <%= yield %>
+  </div>
 </section>
-<footer>
-<%= render "/refinery/footer" -%>
-</footer>
 </div>
 <%= render "/refinery/javascripts" %>
 </body>

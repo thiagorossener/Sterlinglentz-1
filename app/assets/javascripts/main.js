@@ -18,9 +18,14 @@
                 $container.html($got.find('.page-wrapper').html()).removeClass('x-silo-change')
                 $silo.attr('class', $got.find('.window-wrapper').attr('class'));
                 console.log(title);
-                if (title !== '') {
-                    $('.nav-silo-name').text(title);
+                if (title !== 'Index' && title !== 'JDSLabs') {
+                    $('.nav-silo-name').text(title.toUpperCase());
                 }
+                else
+                {
+                    $('.nav-silo-name').text("");
+                }
+                window.scrollTo(0,0);
                 setTimeout(after, 10);
             });
         }
@@ -160,14 +165,13 @@
         setupSeamlessNav();
         setTimeout(setupPage, 100);
 
+        //horizontal
         $('.nav-expand-button').click(function () {
             $('body').toggleClass('navbar-expanded');
-        }).mouseenter(function () {
-            $('body').addClass('navbar-expanded');
-        });
+        })
 
-        $('#navbar').mouseleave(function () {
-            $('body').removeClass('navbar-expanded');
+        $('.blog-page-mark').click(function () {
+            $('body').toggleClass('blog-bar-expanded');
         })
 
         $('.nav-links a').click(function (e) {

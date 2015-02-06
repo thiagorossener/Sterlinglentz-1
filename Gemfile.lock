@@ -63,6 +63,23 @@ GIT
       refinerycms-core (= 3.0.0)
 
 GIT
+  remote: https://github.com/refinery/refinerycms-blog
+  revision: 50c4b236da7120674589c254b05f8e78f7d7e8b4
+  branch: master
+  specs:
+    refinerycms-blog (3.0.0)
+      acts-as-taggable-on
+      filters_spam (~> 0.2)
+      friendly_id (~> 5.0.0)
+      globalize (~> 4.0.0)
+      jquery-ui-rails (~> 5.0.0)
+      rails_autolink (~> 1.1.3)
+      refinerycms-core (~> 3.0.0)
+      refinerycms-settings (~> 3.0.0)
+      refinerycms-wymeditor (~> 1.0.1)
+      seo_meta (~> 2.0.0.rc.1)
+
+GIT
   remote: https://github.com/refinery/refinerycms-i18n
   revision: 14bafed762f043d3091258f651bf097e2981a766
   branch: master
@@ -101,6 +118,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (3.4.2)
+      activerecord (>= 3.2, < 5)
     acts_as_indexed (0.8.3)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
@@ -142,6 +161,7 @@ GEM
     erubis (2.7.0)
     excon (0.42.0)
     execjs (2.2.2)
+    filters_spam (0.4)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.25.0)
@@ -253,6 +273,8 @@ GEM
     rails-i18n (4.0.3)
       i18n (~> 0.6)
       railties (~> 4.0)
+    rails_autolink (1.1.6)
+      rails (> 3.1)
     railties (4.1.8)
       actionpack (= 4.1.8)
       activesupport (= 4.1.8)
@@ -269,6 +291,9 @@ GEM
       acts_as_indexed (~> 0.8.0)
       decorators (~> 1.0.0)
       refinerycms-core (~> 3.0.0)
+    refinerycms-settings (3.0.0)
+      friendly_id (~> 5.0, >= 5.0.1)
+      refinerycms-core (~> 3.0, >= 3.0.0)
     refinerycms-wymeditor (1.0.3)
       refinerycms-core (~> 3.0, >= 3.0.0)
     responders (1.1.2)
@@ -325,6 +350,7 @@ DEPENDENCIES
   rails (= 4.1.8)
   refinerycms!
   refinerycms-acts-as-indexed (~> 2.0, >= 2.0.0)
+  refinerycms-blog!
   refinerycms-i18n!
   refinerycms-wymeditor (~> 1.0, >= 1.0.0)
   sass-rails (~> 4.0.3)

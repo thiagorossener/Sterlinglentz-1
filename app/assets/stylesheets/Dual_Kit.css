@@ -26,22 +26,40 @@
 /* @import must be at top of file, otherwise CSS will not work */
 @import url("//hello.myfonts.net/count/2b7644");
 
-  
+
 @font-face {font-family: 'Dual';
-			font-weight: normal;
-			src: url('webfonts/2B7644_0_0.eot');
-			src: url('webfonts/2B7644_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2B7644_0_0.woff') format('woff'),url('webfonts/2B7644_0_0.ttf') format('truetype');
-			}
+    font-weight: normal;
+    src: url('webfonts/2B7644_0_0.eot');
+    src: url('webfonts/2B7644_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2B7644_0_0.woff') format('woff'),url('webfonts/2B7644_0_0.ttf') format('truetype');
+}
 
 
 @font-face {font-family: 'Dual';
-			font-weight: bold;
-			src: url('webfonts/2B7644_1_0.eot');
-			src: url('webfonts/2B7644_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2B7644_1_0.woff') format('woff'),url('webfonts/2B7644_1_0.ttf') format('truetype');
-			}
+    font-weight: bold;
+    src: url('webfonts/2B7644_1_0.eot');
+    src: url('webfonts/2B7644_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2B7644_1_0.woff') format('woff'),url('webfonts/2B7644_1_0.ttf') format('truetype');
+}
 
 @font-face {font-family: 'ColorsOfAutumn';
     font-weight: normal;
     src: url('webfonts/ColorsOfAutumn.eot');
     src: url('webfonts/ColorsOfAutumn.eot?#iefix') format('embedded-opentype'),url('webfonts/ColorsOfAutumn.woff') format('woff'),url('webfonts/ColorsOfAutumn.ttf') format('truetype');
+}
+
+@font-face {font-family: 'NeutralStd-Regular';
+    font-weight: normal;
+    src: url('webfonts/NeutralStd-Regular.eot');
+    src: url('webfonts/NeutralStd-Regular.eot?#iefix') format('embedded-opentype'),url('webfonts/NeutralStd-Regular.woff') format('woff'),url('webfonts/NeutralStd-Regular.ttf') format('truetype');
+}
+
+@font-face {font-family: 'NeutralStd-Medium';
+    font-weight: normal;
+    src: url('webfonts/NeutralStd-Medium.eot');
+    src: url('webfonts/NeutralStd-Medium.eot?#iefix') format('embedded-opentype'),url('webfonts/NeutralStd-Medium.woff') format('woff'),url('webfonts/NeutralStd-Medium.ttf') format('truetype');
+}
+
+@font-face {font-family: 'NeutralStd-RegularItalic';
+    font-weight: normal;
+    src: url('webfonts/NeutralStd-RegularItalic.eot');
+    src: url('webfonts/NeutralStd-RegularItalic.eot?#iefix') format('embedded-opentype'),url('webfonts/NeutralStd-RegularItalic.woff') format('woff'),url('webfonts/NeutralStd-RegularItalic.ttf') format('truetype');
 }

@@ -44,9 +44,13 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.staticfiles',
 
-    #'filer',
+    # Other
+    'filer',
     'easy_thumbnails',
     'compressor',
+    'debug_toolbar',
+    'zinnia',
+    'tagging',
 
     # CMS plugins
     'djangocms_text_ckeditor',
@@ -56,6 +60,7 @@ INSTALLED_APPS = (
     #'cmsplugin_filer_image',
     #'cmsplugin_filer_teaser',
     #'cmsplugin_filer_video',
+    'cmsplugin_zinnia',
 
     # CMS core
     'cms',
@@ -64,9 +69,7 @@ INSTALLED_APPS = (
     'sekizai',
     'reversion',
 
-    # Other
-    'debug_toolbar',
-
+    # Custom
     'core',
     'project',
 )
@@ -180,3 +183,6 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
+
+# Zinnia
+ZINNIA_ENTRY_BASE_MODEL = 'cmsplugin_zinnia.placeholder.EntryPlaceholder'

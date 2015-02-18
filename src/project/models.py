@@ -60,7 +60,6 @@ class Project(models.Model):
 
     """ A single project belonging to a client. """
 
-    objects = models.Manager()
     published = PublishedManager()
 
     client = models.ForeignKey(Client)

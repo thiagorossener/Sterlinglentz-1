@@ -1,0 +1,47 @@
+{% load cms_tags %}
+{% load cache %}
+{% load menu_tags %}
+{% load staticfiles %}
+{% load sekizai_tags %}
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block meta_title %}{% page_attribute "page_title" %}{% endblock %}</title>
+        <meta name="description" content="{% block meta_description %}{% endblock %}">
+        <meta name="viewport" content="width=device-width">
+
+        {% addtoblock "css" %}
+            <link rel="stylesheet" href="{% static 'styles/screen.css' %}" type="text/css" charset="utf-8">
+        {% endaddtoblock %}
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+        <header class="header">
+            <div class="menu">
+                <div class="menu__gutter">
+                    <div class="menu__gutter__trigger">&nbsp;</div>
+                    <div class="menu__gutter__breadcrumb">
+                        test
+                    </div>
+                </div>
+                <div class="menu__drawer">
+                    <nav class="menu__nav">
+                        <ul>
+                            {% show_menu 0 100 100 100 %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header><!-- /header -->
+        <div class="content">
+            {% block body %}{% endblock body %}
+        </div>
+    </body>
+    {% addtoblock "js" %}
+        <script src="{% static "scripts/app.js" %}" ></script>
+    {% endaddtoblock %}
+    {% render_block "js" %}
+</html>

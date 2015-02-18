@@ -1,0 +1,116 @@
+html {
+    font-size: $ms-base;
+
+    @media screen and (min-width: $break-medium) and (max-width: $break-large) {
+        font-size: 1.1rem;
+    }
+
+    @media screen and (max-width: $break-small) {
+        font-size: 1.15rem;
+    }
+}
+
+body {
+    color: $gray-medium;
+    font-family: $regular-font-family;
+    -webkit-font-smoothing: antialiased;
+    font-weight: $font-weight-regular;
+    text-decoration: normal;
+}
+
+@mixin type-size($size, $line-height-factor: 1.2, $margin-factor: .75) {
+    font-size: $size;
+    line-height: $size * $line-height-factor;
+    margin-bottom: $size * $margin-factor;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: inherit;
+    font-weight: $font-weight-bold;
+    margin-top: 0;
+}
+
+h1 {
+    @include type-size(ms(6));
+}
+
+h2 {
+    @include type-size(ms(4));
+}
+
+h3 {
+    @include type-size(ms(3));
+}
+
+h4 {
+    @include type-size(ms(2));
+}
+
+h5 {
+    @include type-size(ms(1.5));
+}
+
+h6 {
+    @include type-size(ms(1));
+}
+
+p {
+    @include type-size(ms(1));
+    margin-top: 0;
+}
+
+small,
+.small {
+    @include type-size(ms(-1));
+}
+
+@mixin a($color, $darken:15%) {
+    @include transition(color .3s linear);
+    color: $color;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        $_color: darken($color, $darken);
+        color: $_color;
+        text-decoration: underline;
+    }
+
+    &:active, &:focus {
+
+    }
+}
+
+a {
+    @include a($highlight);
+}
+
+    a.silent {
+        color: inherit;
+
+        &:hover {
+            color: inherit;
+            border-color: inherit;
+        }
+    }
+
+hr {
+
+}
+
+img, picture {
+
+}
+
+blockquote {
+
+}
+
+cite {
+
+}

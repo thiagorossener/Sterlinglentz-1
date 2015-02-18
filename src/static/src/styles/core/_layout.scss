@@ -1,0 +1,29 @@
+.header {
+
+}
+
+.content {
+    margin-left: 17.25rem;
+}
+
+// Alpha Layout
+.alpha {
+    background-color: $off-white;
+    height: 100%;
+}
+
+    .alpha__header {
+        @include span(12 of 12 last);
+    }
+
+    .alpha__body {
+        @include container;
+    }
+
+        .alpha__sidebar {
+            @include span(4 of 12);
+        }
+
+        .alpha__content {
+            @include span(8 of 12 last);
+        }

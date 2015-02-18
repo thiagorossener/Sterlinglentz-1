@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% load cms_tags %}
+
+{% block body %}
+    <ul>
+        {% for project in projects %}
+        <li><a href="{% url 'project-detail' slug=project.slug %}" title="">{{ project }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock body %}

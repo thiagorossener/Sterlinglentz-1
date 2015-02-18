@@ -18,10 +18,13 @@
 
     .alpha__body {
         @include container;
+        padding-top: 4rem;
     }
 
         .alpha__sidebar {
-            @include span(4 of 12);
+            @include span(2 of 12);
+            @include prefix(1 of 12);
+            @include suffix(1 of 12);
         }
 
         .alpha__content {

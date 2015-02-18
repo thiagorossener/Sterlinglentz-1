@@ -3,5 +3,29 @@
 {% load cms_tags %}
 
 {% block body %}
+    <aside>
+        <ul>
+            <li>CLIENT
+                <ul>
+                    <li>{{ project.client.name|title }}</li>
+                </ul>
+            </li>
+            <li>FOCUS
+                <ul>
+                    <li>{{ project.client.focus|title }}</li>
+                </ul>
+            </li>
+            <li>PROJECTS
+                <ul>
+                    {% for category in project.categories.all %}
+                        <li>{{ category.name }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    </aside>
     <h1>{{ project.name }}</h1>
+    <div>
+        {% render_placeholder project.content %}
+    </div>
 {% endblock body %}

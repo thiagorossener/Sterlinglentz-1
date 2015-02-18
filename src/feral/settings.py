@@ -64,6 +64,9 @@ INSTALLED_APPS = (
     'sekizai',
     'reversion',
 
+    # Other
+    'debug_toolbar',
+
     'core',
     'project',
 )

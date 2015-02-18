@@ -26,3 +26,8 @@ class ProjectDetailView(DetailView):
     template_name = "cms/apps/project/detail.html"
     model = Project
     context_object_name = "project"
+
+    def get_queryset(self):
+        """ More efficiently fetch the project object. """
+        return super(ProjectDetailView, self).get_queryset() \
+            .prefetch_related("categories").select_related("client")

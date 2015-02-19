@@ -11,3 +11,11 @@ class IndexView(BlockMixin, TemplateView):
 
     template_name = "index.html"
     block_identifier = "pages.index"
+
+
+class StudioView(BlockMixin, TemplateView):
+
+    """ The studio view. """
+
+    template_name = "studio.html"
+    block_identifier = "pages.studio"

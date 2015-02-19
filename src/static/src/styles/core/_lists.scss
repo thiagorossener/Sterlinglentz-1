@@ -13,29 +13,3 @@
         }
     }
 }
-
-// Speclists are used on some pages in the sidebar to display multiple
-// lists of details of specifications
-.speclist {
-
-}
-
-    .speclist__item {
-        margin-bottom: 3rem;
-    }
-
-        .speclist__title {
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: ms(-2);
-            margin-bottom: .5rem;
-        }
-
-        .speclist__list {
-            @extend .list--naked;
-
-            li {
-                margin: 0.75rem 0;
-                font-size: ms(-1);
-            }
-        }

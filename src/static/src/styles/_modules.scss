@@ -1,5 +1,4 @@
-
-// An announcment strip
+// As seen on the index page - latest blog post
 .strip {
     width: 100%;
 }
@@ -36,7 +35,7 @@
 
         }
 
-// Project List
+// As seen on the index page - x3 projects
 .project-box {
     @include clearfix;
     width: 100%;
@@ -57,4 +56,74 @@
         img {
             width: 100%;
         }
+    }
+
+// As seen on the studio page - top image and caption
+.header-image {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    min-height: 400px;
+    margin-bottom: 4rem;
+}
+
+    .header-image__caption {
+        position: absolute;
+        bottom: .5rem;
+        right: 2rem;
+        color: white;
+        font-size: 0.80rem;
+    }
+
+
+// As seen on the studio page - down the left sidebar
+.sidebar-spec {
+
+}
+
+    .sidebar-spec__item {
+        margin-bottom: 3rem;
+    }
+
+        .sidebar-spec__title {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: ms(-2);
+            margin-bottom: .5rem;
+        }
+
+        .sidebar-spec__list {
+            @extend .list--naked;
+
+            li {
+                margin: 0.75rem 0;
+                font-size: ms(-1.5);
+                line-height: 1.5rem;
+            }
+        }
+
+
+.text {
+    margin-bottom: 3rem ;
+
+    &--short {
+        width: 70%;
+    }
+}
+
+.image {
+    margin-bottom: 3rem;
+}
+
+    .image__img {
+        width: 100%;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .image__caption {
+        font-size: 0.75rem;
+        font-style: italic;
     }

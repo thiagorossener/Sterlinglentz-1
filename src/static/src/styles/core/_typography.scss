@@ -34,40 +34,38 @@ h6 {
     color: inherit;
     font-weight: $font-weight-bold;
     margin-top: 0;
+
+    &.regular {
+        font-weight: $font-weight-regular;
+    }
 }
 
-&.header--alt {
-    @include type-size(ms(2.5));
-    font-weight: $font-weight-regular;
-    font-style: italic;
-}
-
-h1 {
+h1, .h1 {
     @include type-size(ms(6));
 }
 
-h2 {
+h2, .h2 {
     @include type-size(ms(4));
 }
 
-h3 {
+h3, .h3 {
     @include type-size(ms(3));
 }
 
-h4 {
+h4, .h4 {
     @include type-size(ms(2));
 }
 
-h5 {
+h5, .h5 {
     @include type-size(ms(1.5));
 }
 
-h6 {
+h6, .h6 {
     @include type-size(ms(1));
 }
 
 p {
-    @include type-size(ms(1));
+    @include type-size(ms(1), 1.5);
     margin-top: 0;
 }
 
@@ -94,7 +92,7 @@ small,
 }
 
 a {
-    @include a($highlight);
+    @include a($gold);
 }
 
     a.silent {
@@ -106,8 +104,21 @@ a {
         }
     }
 
-hr {
+hr, .divider {
 
+    height: 1px;
+    background-color: $gray-dark;
+    border: 0;
+
+    &--orange {
+        background-color: $orange;
+    }
+
+    &--short {
+        width: 20%;
+        margin-left:0;
+        text-align:left;
+    }
 }
 
 img, picture {

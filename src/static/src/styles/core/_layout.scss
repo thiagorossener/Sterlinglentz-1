@@ -4,29 +4,5 @@
 
 .content {
     margin-left: 17.25rem;
+    position: relative;
 }
-
-// Alpha Layout
-.alpha {
-    background-color: $off-white;
-    height: 100%;
-}
-
-    .alpha__header {
-        @include span(12 of 12 last);
-    }
-
-    .alpha__body {
-        @include container;
-        padding-top: 4rem;
-    }
-
-        .alpha__sidebar {
-            @include span(2 of 12);
-            @include prefix(1 of 12);
-            @include suffix(1 of 12);
-        }
-
-        .alpha__content {
-            @include span(8 of 12 last);
-        }

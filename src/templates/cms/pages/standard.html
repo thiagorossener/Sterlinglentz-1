@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
 {% load cms_tags %}
+{% load static %}
 
 {% block body %}
-    <div class="alpha">
-        <header class="alpha__header">
+    <div class="template--standard">
+        <header class="template--standard__header">
             {% placeholder "image" %}
+            <img src="{% static 'images/temp/standard-heading.jpg' %}" alt="">
         </header>
-        <article class="alpha__body">
-            <aside class="alpha__sidebar">
+        <article class="template--standard__body">
+            <aside class="template--standard__sidebar">
                 <div class="sidebar sidebar--small">
                     {% placeholder "sidebar" %}
                     <div class="speclist">
@@ -33,7 +35,7 @@
                     </div>
                 </div>
             </aside>
-            <section class="alpha__content">
+            <section class="template--standard__content">
                 {% placeholder "content" %}
                 <h1 class="header--alt">Snuggled up against a freeway overpass in a
                     large industrial storage unit, the studio is two parts living room,

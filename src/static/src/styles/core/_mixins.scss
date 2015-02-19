@@ -1,0 +1,7 @@
+@mixin vertical-align($p) {
+    position: relative;
+    top: $p;
+    -webkit-transform: translateY(-$p);
+    -ms-transform: translateY(-$p);
+    transform: translateY(-$p);
+}

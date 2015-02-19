@@ -1,11 +1,27 @@
 {% extends 'base.html' %}
 
 {% load cms_tags %}
+{% load static %}
 
 {% block body %}
-    <div class="">
+    <div class="template--index">
+        <div class="template--index__atf"> {# Above the fold #}
+            <div class="template--index__logo">
+                <a href="" title="">
+                    <img src="{% static 'images/feral-logo--gold.svg' %}"
+                         alt="{% page_attribute 'page_title' %}"
+                         width="850">
+                </a>
+            </div>
 
+            <div class="template--index__hero">
+                {% placeholder "content" %}
+            </div>
+        </div>
+        <!--<div class="template--index__btf"> {# Below the fold #}
+            <div class="template--index__footer">
+                {% placeholder "footer" %}
+            </div>
+        </div>-->
     </div>
-    {% placeholder "content" %}
-    {% placeholder "footer" %}
 {% endblock body %}

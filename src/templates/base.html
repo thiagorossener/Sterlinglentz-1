@@ -23,7 +23,12 @@
                 <div class="menu__drawer">
                     <nav class="menu__nav">
                         <ul>
-                            <li></li>
+                            {% for item in menu %}
+                                <li>
+                                    <a href="{{ item.link }}" title="{{ item.title }}">
+                                        {{ item.text }}</a>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </nav>
                     <div class="menu__logo">

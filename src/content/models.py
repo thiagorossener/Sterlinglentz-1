@@ -28,7 +28,7 @@ class Block(models.Model):
         use only""")
     identifier = models.CharField(max_length=128)
 
-    json = JSONField()
+    json = JSONField(default="{}")
 
     is_published = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)

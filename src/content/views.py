@@ -20,15 +20,8 @@ class BlockMixin(ContextMixin):
         block = None
         block, created = Block.objects.get_or_create(
             identifier=self.get_block_identifier())
-        if created:
-            block.json = self.get_default_content()
-            block.save()
         return block
 
     def get_block_identifier(self):
         """ Return the identifier as defined by the implementing view. """
         return self.block_identifier
-
-    def get_default_content(self):
-        """ Get default content for Block that is being created. """
-        return {}

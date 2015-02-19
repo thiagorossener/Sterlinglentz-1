@@ -12,7 +12,7 @@ class BlockAdmin(admin.ModelAdmin):
             'fields': ('identifier', 'description', 'is_published')
         }),
         (None, {
-            'fields': ('json', )
+            'fields': ('content', )
         }),
     )
 

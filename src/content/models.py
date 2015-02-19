@@ -10,7 +10,7 @@ class Template(models.Model):
     """ This is a template that can be used to populate a particular block. """
 
     title = models.CharField(max_length=50)
-    json = JSONField()
+    content = JSONField()
 
     def __unicode__(self):
         return self.title
@@ -28,7 +28,7 @@ class Block(models.Model):
         use only""")
     identifier = models.CharField(max_length=128)
 
-    json = JSONField(default="{}")
+    content = JSONField(default={})
 
     is_published = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)

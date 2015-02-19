@@ -12,7 +12,12 @@ class BlockMixin(ContextMixin):
     def get_context_data(self, **kwargs):
         """ Add the extra JSON data to the context. """
         context = super(BlockMixin, self).get_context_data(**kwargs)
-        context.update(self.get_block().json)
+        content = self.get_block().content
+        if not content:
+            content = {
+                "error": "There was an error fetching the content"
+            }
+        context.update(content)
         return context
 
     def get_block(self):

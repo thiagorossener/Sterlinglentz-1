@@ -44,6 +44,7 @@ INSTALLED_APPS = (
 
     # Other
     'debug_toolbar',
+    'django_ace',
 
     # Custom
     'core',

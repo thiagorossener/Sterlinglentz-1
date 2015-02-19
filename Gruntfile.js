@@ -29,13 +29,13 @@ module.exports = function (grunt) {
 
         // Watches files for changes and runs tasks based on the changed files
         watch: {
-            //bower: {
-            //    files: ['bower.json'],
-            //    tasks: ['']
-            //},
+            bower: {
+                files: ['bower.json'],
+                tasks: ['copy:deps']
+            },
             js: {
                 files: ['<%= siteConfig.srcDir %>/scripts/{,*/}*.js'],
-                tasks: ['newer:jshint:all'],
+                tasks: ['newer:jshint:all', 'concat:js'],
                 options: {
                     livereload: '<%= connect.options.livereload %>'
                 }

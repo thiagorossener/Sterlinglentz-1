@@ -1,8 +1,148 @@
+// This file contains the basic layout for the site (mainly the nav and content)
+//
+// Navigation:
+// The nav menu has two orientations; desktop (vertical along the lefthand side)
+// and mobile (horizontal along the top).
+//
+// Content
+
+$menuGutterWidth: 2.5rem;
+$menuDrawerWidth: 12rem;
+$animationDuration: 300ms;
+
 .header {
 
+    .menu {
+        @include transition(width $animationDuration);
+
+        position: fixed;
+        height: 100%;
+        width: $menuGutterWidth;
+        left: 0;
+        top: 0;
+        z-index: 0;
+
+        font-size: 0.9rem;
+
+    }
+        // The slim menu menu that contains a trigger for the navigation as well
+        // as the current breadcrumb for the current page.
+        .menu__gutter {
+            background-color: $gray-dark;
+
+            position: absolute;
+            height: 100%;
+            left: 0;
+            top: 0;
+            width: $menuGutterWidth * 0.5;
+            z-index: 100;
+
+            padding: $menuGutterWidth * 0.25;
+        }
+
+            // The small x3 vertical lines that triggers the drawer to slide out
+            // from the lefthand side of the page in normal desktop view.
+            .menu__gutter__trigger {
+                @include transition(background-image 2s ease);
+                background-image: url(../images/menu-expand.svg);
+                background-repeat: no-repeat;
+                background-position: center center;
+
+                cursor: pointer;
+
+                &:hover {
+                    background-image: url(../images/menu-expand--hover.svg);
+                }
+
+                &:active {
+                }
+            }
+
+            .menu__gutter__breadcrumb {
+                color: #9b9b9b;
+                -moz-transform-origin: 50% 50% 50%;
+                -ms-transform-origin: 50% 50% 50%;
+                -webkit-transform-origin: 50% 50% 50%;
+                transform-origin: 50% 50% 50%;
+
+                -moz-transform: translate(-7.4rem, 7.4rem) rotate(-90deg);
+                -ms-transform: translate(-7.4rem, 7.4rem) rotate(-90deg);
+                -webkit-transform: translate(-7.4rem, 7.4rem) rotate(-90deg);
+                transform: translate(-7.4rem, 7.4rem) rotate(-90deg);
+
+                width: 20.0rem;
+                text-transform: uppercase;
+                text-align: right;
+                letter-spacing: 0.2rem;
+                display: block;
+            }
+
+        // The secondary drawer that slides out from the left when the gutter is
+        // clicked in normal desktop view. In the mobile view the nav loads on the
+        // top of the page.
+        .menu__drawer {
+            @include transition(left $animationDuration);
+
+            position: absolute;
+            height: 100%;
+            width: $menuDrawerWidth;
+            left: -($menuGutterWidth + $menuDrawerWidth);
+            top: 0;
+            z-index: 50;
+            overflow-x: visible;
+
+            background-color: lighten($gray-dark, 5%);
+            color: white;
+        }
+
+        .menu__nav {
+            ul {
+                padding: 0;
+                margin: 0;
+
+                li {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+
+                    a {
+                        display: block;
+                        padding: .75rem 15% .75rem 15%;
+                        width: 70%;
+
+                        color: $white;
+                        text-decoration: none;
+                    }
+
+                    &:hover {
+                        background-color: lighten($gray-dark, 15%);
+
+                        a {
+                            color: lighten($gray-dark, 50%);
+                        }
+                    }
+                }
+            }
+        }
 }
 
 .content {
-    margin-left: 17.25rem;
+    @include transition(margin-left $animationDuration);
+    margin-left: $menuGutterWidth;
     position: relative;
+}
+
+// When the menu trigger is clicked, we expand the nav out
+body.menu--expanded {
+    .menu {
+        width: ($menuGutterWidth + $menuDrawerWidth);
+    }
+
+    .menu__drawer {
+        left: $menuGutterWidth;
+    }
+
+    .content {
+        margin-left: ($menuGutterWidth + $menuDrawerWidth);
+    }
 }

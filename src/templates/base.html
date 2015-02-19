@@ -23,14 +23,14 @@
             <div class="menu">
                 <div class="menu__gutter">
                     <div class="menu__gutter__trigger">&nbsp;</div>
-                    <div class="menu__gutter__breadcrumb">
+                    <!--<div class="menu__gutter__breadcrumb">
                         test
-                    </div>
+                    </div>-->
                 </div>
                 <div class="menu__drawer">
                     <nav class="menu__nav">
                         <ul>
-                            {% show_menu 0 100 100 100 %}
+                            {% show_menu 0 0 100 100 %}
                         </ul>
                     </nav>
                 </div>
@@ -40,6 +40,8 @@
             {% block body %}{% endblock body %}
         </div>
     </body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
     {% addtoblock "js" %}
         <script src="{% static "scripts/app.js" %}" ></script>
     {% endaddtoblock %}

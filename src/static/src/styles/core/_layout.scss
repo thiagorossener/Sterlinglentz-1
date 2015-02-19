@@ -7,7 +7,11 @@
 // Content
 
 $menuGutterWidth: 2.5rem;
+$menuGutterBackground: $gray-dark;
+
 $menuDrawerWidth: 12rem;
+$menuDrawerBackground: lighten($gray-dark, 5%);
+
 $animationDuration: 300ms;
 
 .header {
@@ -23,12 +27,12 @@ $animationDuration: 300ms;
         z-index: 0;
 
         font-size: 0.9rem;
-
+        background-color: $menuDrawerBackground;
     }
         // The slim menu menu that contains a trigger for the navigation as well
         // as the current breadcrumb for the current page.
         .menu__gutter {
-            background-color: $gray-dark;
+            background-color: $menuGutterBackground;
 
             position: absolute;
             height: 100%;
@@ -91,39 +95,57 @@ $animationDuration: 300ms;
             z-index: 50;
             overflow-x: visible;
 
-            background-color: lighten($gray-dark, 5%);
+            background-color: $menuDrawerBackground;
             color: white;
         }
 
-        .menu__nav {
-            ul {
-                padding: 0;
-                margin: 0;
-
-                li {
-                    list-style: none;
+            .menu__nav {
+                ul {
                     padding: 0;
                     margin: 0;
 
-                    a {
-                        display: block;
-                        padding: .75rem 15% .75rem 15%;
-                        width: 70%;
-
-                        color: $white;
-                        text-decoration: none;
-                    }
-
-                    &:hover {
-                        background-color: lighten($gray-dark, 15%);
+                    li {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
 
                         a {
-                            color: lighten($gray-dark, 50%);
+                            display: block;
+                            padding: .75rem 15%;
+                            width: 70%;
+
+                            color: $white;
+                            text-decoration: none;
+                        }
+
+                        &:hover {
+                            background-color: lighten($gray-dark, 15%);
+
+                            a {
+                                color: lighten($gray-dark, 50%);
+                            }
                         }
                     }
                 }
             }
-        }
+
+            .menu__logo {
+                padding: 0 10%;
+                position: absolute;
+                top: 50%;
+                left: 0;
+
+                a {
+                    display: block;
+                }
+            }
+
+            .menu__footer {
+                padding: .75rem 15%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
 }
 
 .content {

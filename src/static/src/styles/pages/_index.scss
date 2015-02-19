@@ -1,4 +1,4 @@
-.template--index {
+.index {
     background-color: $off-white;
     @include container();
 
@@ -7,7 +7,7 @@
     background-size: 1250px;
 }
 
-    .template--index__atf {
+    .index__atf {
         position: relative;
         padding-top: 5vh;
         padding-bottom: 5vh;
@@ -15,7 +15,7 @@
         height: 90vh;
     }
 
-        .template--index__hero {
+        .index__hero {
             @include span(6 of 12 last);
             @include prefix(1 of 12);
             @include suffix(5 of 12);
@@ -40,7 +40,7 @@
             }
         }
 
-        .template--index__strip {
+        .index__strip {
             position: absolute;
             bottom: 0;
 
@@ -49,10 +49,10 @@
             }
         }
 
-    .template--index__btf {
+    .index__btf {
 
     }
 
-        .template--index__footer {
+        .index__footer {
             @include span(12 of 12 last);
         }

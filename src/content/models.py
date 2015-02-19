@@ -5,15 +5,26 @@ from django.db import models
 from jsonfield import JSONField
 
 
-class ContentBlock(models.Model):
+class Template(models.Model):
+
+    """ This is a template that can be used to populate a particular block. """
+
+    title = models.CharField(max_length=50)
+    json = JSONField()
+
+    def __unicode__(self):
+        return self.title
+
+
+class Block(models.Model):
 
     """ A basic piece of content used throughout the site. """
 
     identifier = models.CharField(max_length=128, unique=True, help_text="""A
         unique, dotted identified for this content block.
         e.g 'global.config'""")
-    title = models.CharField(max_length=50)
-    description = models.TextField(blank=True, help_text="""For your own internal
+    description = models.CharField(
+        blank=True, max_length=128, help_text="""For your own internal
         use only""")
     identifier = models.CharField(max_length=128)
 

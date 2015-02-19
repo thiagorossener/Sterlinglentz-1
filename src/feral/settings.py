@@ -111,6 +111,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(ENV_PATH, 'static/')
 STATICFILES_DIRS = (
     os.path.join(PYTHON_PATH, 'static/dist/'),
+    os.path.join(PYTHON_PATH, 'static/bower_components/'),
 )
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',

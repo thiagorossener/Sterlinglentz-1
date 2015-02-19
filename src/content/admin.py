@@ -1,8 +1,22 @@
 from django.contrib import admin
 
-from .models import ContentBlock
+from .models import Block, Template
+from .forms import BlockAdminForm
 
 
-@admin.register(ContentBlock)
-class ContentBlockAdmin(admin.ModelAdmin):
+@admin.register(Block)
+class BlockAdmin(admin.ModelAdmin):
+    form = BlockAdminForm
+    fieldsets = (
+        (None, {
+            'fields': ('identifier', 'description', 'is_published')
+        }),
+        (None, {
+            'fields': ('json', )
+        }),
+    )
+
+
+@admin.register(Template)
+class TemplateAdmin(admin.ModelAdmin):
     pass

@@ -1,5 +1,5 @@
 node_modules/
-src/static/src/bower_components/
+src/static/bower_components/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

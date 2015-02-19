@@ -16,6 +16,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-weight: $font-weight-regular;
     text-decoration: normal;
+    letter-spacing: 0.075rem;
 }
 
 @mixin type-size($size, $line-height-factor: 1.2, $margin-factor: .75) {

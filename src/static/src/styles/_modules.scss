@@ -36,11 +36,25 @@
 
         }
 
-// Buttons
-.button {
+// Project List
+.project-box {
+    @include clearfix;
+    width: 100%;
 
+    padding: 0;
+    margin: 0;
 }
 
-    .button--hollow {
+    .project-box__item {
+        float: left;
+        width: 33.33%;
+        position: relative;
 
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        img {
+            width: 100%;
+        }
     }

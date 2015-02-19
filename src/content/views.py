@@ -1,3 +1,34 @@
-from django.shortcuts import render
+from django.views.generic.base import ContextMixin
 
-# Create your views here.
+from .models import Block
+
+
+class BlockMixin(ContextMixin):
+
+    """ """
+
+    block_identifier = None
+
+    def get_context_data(self, **kwargs):
+        """ Add the extra JSON data to the context. """
+        context = super(BlockMixin, self).get_context_data(**kwargs)
+        context.update(self.get_block().json)
+        return context
+
+    def get_block(self):
+        """ Get or create the Block instance. """
+        block = None
+        block, created = Block.objects.get_or_create(
+            identifier=self.get_block_identifier())
+        if created:
+            block.json = self.get_default_content()
+            block.save()
+        return block
+
+    def get_block_identifier(self):
+        """ Return the identifier as defined by the implementing view. """
+        return self.block_identifier
+
+    def get_default_content(self):
+        """ Get default content for Block that is being created. """
+        return {}

@@ -1,31 +1,50 @@
 {% extends 'base.html' %}
 
-{% load cms_tags %}
+{% load static %}
 
 {% block body %}
-    <aside>
-        <ul>
-            <li>CLIENT
-                <ul>
-                    <li>{{ project.client.name|title }}</li>
-                </ul>
-            </li>
-            <li>FOCUS
-                <ul>
-                    <li>{{ project.client.focus|title }}</li>
-                </ul>
-            </li>
-            <li>PROJECTS
-                <ul>
-                    {% for category in project.categories.all %}
-                        <li>{{ category.name }}</li>
-                    {% endfor %}
-                </ul>
-            </li>
-        </ul>
-    </aside>
-    <h1>{{ project.name }}</h1>
-    <div>
-        {% render_placeholder project.content %}
+    <div class="page">
+        <header class="page__header">
+            <div class="header-image" style="background-image:url({{ header_image.src }});">
+                <p class="header-image__caption">{{ header_image.caption }}</p>
+            </div>
+        </header>
+        <article class="page__body">
+            <aside class="page__sidebar">
+                <div class="sidebar sidebar--small">
+                    <div class="sidebar-spec">
+                        <div class="sidebar-spec__item">
+                            <h6 class="sidebar-spec__title">CLIENT</h6>
+                            <ul class="sidebar-spec__list">
+                                <li>{{ project.client.name|title }}</li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-spec__item">
+                            <h6 class="sidebar-spec__title">FOCUS</h6>
+                            <ul class="sidebar-spec__list">
+                                <li>{{ project.client.focus|title }}</li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-spec__item">
+                            <h6 class="sidebar-spec__title">PROJECTS</h6>
+                            <ul class="sidebar-spec__list">
+                                 {% for category in project.categories.all %}
+                                    <li>{{ category.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <section class="page__main">
+                <div class="page__heading heading">
+                    <h1 class="heading__title heading__title--short">{{ project.description }}</h1>
+                    <hr class="heading__divider divider--orange divider--short" />
+                </div>
+                <div class="page__content">
+                    Content
+                </div>
+            </section>
+        </article>
     </div>
 {% endblock body %}

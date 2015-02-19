@@ -10,7 +10,7 @@ class ProjectListView(ListView):
 
     """ A custom list view for django cms project app hook. """
 
-    template_name = "cms/apps/project/list.html"
+    template_name = "project/list.html"
     model = Project
     context_object_name = "projects"
 
@@ -23,7 +23,7 @@ class ProjectDetailView(DetailView):
 
     """ A custom detail view for django cms project app hook. """
 
-    template_name = "cms/apps/project/detail.html"
+    template_name = "project/detail.html"
     model = Project
     context_object_name = "project"
 

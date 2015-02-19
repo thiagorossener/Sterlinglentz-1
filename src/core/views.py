@@ -1,3 +1,10 @@
-from django.shortcuts import render
+""" Basic views. """
 
-# Create your views here.
+from django.views.generic import TemplateView
+
+
+class IndexView(TemplateView):
+
+    """ The homepage view. """
+
+    template_name = "index.html"

@@ -34,8 +34,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'djangocms_admin_style',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,33 +43,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Other
-    'filer',
-    'easy_thumbnails',
-    'compressor',
     'debug_toolbar',
-    'zinnia',
-    'tagging',
-
-    # CMS plugins
-    'djangocms_text_ckeditor',
-    #'cmsplugin_filer_file',
-    #'cmsplugin_filer_folder',
-    #'cmsplugin_filer_link',
-    #'cmsplugin_filer_image',
-    #'cmsplugin_filer_teaser',
-    #'cmsplugin_filer_video',
-    'cmsplugin_zinnia',
-
-    # CMS core
-    'cms',
-    'mptt',
-    'menus',
-    'sekizai',
-    'reversion',
 
     # Custom
     'core',
     'project',
+    'content',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,11 +59,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    'cms.middleware.user.CurrentUserMiddleware',
-    'cms.middleware.page.CurrentPageMiddleware',
-    'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -96,20 +68,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.core.context_processors.media',
     'django.core.context_processors.static',
-    'sekizai.context_processors.sekizai',
-    'cms.context_processors.cms_settings',
 )
 
 MIGRATION_MODULES = {
-    'cms': 'cms.migrations_django',
-    'menus': 'menus.migrations_django',
-    'djangocms_text_ckeditor': 'djangocms_text_ckeditor.migrations_django',
     'filer': 'filer.migrations_django',
-    'cmsplugin_filer_file': 'cmsplugin_filer_file.migrations_django',
-    'cmsplugin_filer_folder': 'cmsplugin_filer_folder.migrations_django',
-    'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
-    'cmsplugin_filer_teaser': 'cmsplugin_filer_teaser.migrations_django',
-    'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
 }
 
 ROOT_URLCONF = 'feral.urls'
@@ -152,8 +114,7 @@ STATICFILES_DIRS = (
 )
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder'
 )
 
 MEDIA_ROOT = os.path.join(ENV_PATH, "media")
@@ -163,18 +124,6 @@ TEMPLATE_DIRS = (
     os.path.join(PYTHON_PATH, 'templates/'),
 )
 
-
-# Django CMS
-CMS_TEMPLATES = (
-    ('cms/pages/index.html', 'Homepage Template'),
-    ('cms/pages/standard.html', 'Standard Template'),
-
-    ('cms/styleguide.html', 'Styleguide Template'),
-)
-
-# CKE editor
-TEXT_SAVE_IMAGE_FUNCTION = 'cmsplugin_filer_image.integrations.ckeditor.create_image_plugin'
-
 # Easy thumbnails
 THUMBNAIL_HIGH_RESOLUTION = True
 THUMBNAIL_PROCESSORS = (
@@ -183,6 +132,3 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
-
-# Zinnia
-ZINNIA_ENTRY_BASE_MODEL = 'cmsplugin_zinnia.placeholder.EntryPlaceholder'

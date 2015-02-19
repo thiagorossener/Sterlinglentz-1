@@ -2,8 +2,6 @@
 
 from django.db import models
 
-from cms.models.fields import PlaceholderField
-
 
 class Client(models.Model):
 
@@ -67,8 +65,6 @@ class Project(models.Model):
     description = models.TextField(blank=True)
     homepage = models.URLField(blank=True)
     categories = models.ManyToManyField(Category)
-
-    content = PlaceholderField("content")
 
     ordering = models.PositiveIntegerField(default=0)
     slug = models.SlugField(unique=True)

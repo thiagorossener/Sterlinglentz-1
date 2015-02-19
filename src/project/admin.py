@@ -1,7 +1,5 @@
 from django.contrib import admin
 
-from cms.admin.placeholderadmin import PlaceholderAdminMixin
-
 from .models import Client, Category, Project
 
 
@@ -15,11 +13,9 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 
-#@admin.register(Project)
-class ProjectAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
     filter_horizontal = ["categories"]
     list_filter = ["client", "is_published"]
     list_display = ["name", "is_published"]
-
-admin.site.register(Project, ProjectAdmin)

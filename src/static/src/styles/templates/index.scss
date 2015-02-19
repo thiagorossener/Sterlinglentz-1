@@ -1,36 +1,26 @@
 .template--index {
     background-color: $off-white;
-    @include container(90%);
-    @include prefix(5%);
-    @include suffix(5%);
+    @include container();
+
+    background-repeat: no-repeat;
+    background-position: -30% -5%;
+    background-size: 1250px;
 }
 
     .template--index__atf {
+        position: relative;
         padding-top: 5vh;
         padding-bottom: 5vh;
 
         height: 90vh;
     }
 
-        .template--index__logo {
-            @include span(12 of 12 last);
-
-            a {
-                display: block;
-                margin-left: -40px;
-
-                img {
-                }
-            }
-
-        }
-
         .template--index__hero {
             @include span(6 of 12 last);
             @include prefix(1 of 12);
             @include suffix(5 of 12);
 
-            @include vertical-align(40%);
+            @include vertical-align(75%);
 
             p, small {
                 @include type-size(ms(-1));
@@ -47,6 +37,15 @@
             // When we scale down, open up the hero text
             @media screen and (max-width: $break-medium) {
                 @include span(12 of 12 last);
+            }
+        }
+
+        .template--index__strip {
+            position: absolute;
+            bottom: 0;
+
+            .strip__title {
+                margin-left: span(1 of 12);
             }
         }
 

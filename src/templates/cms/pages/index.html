@@ -4,24 +4,33 @@
 {% load static %}
 
 {% block body %}
-    <div class="template--index">
-        <div class="template--index__atf"> {# Above the fold #}
-            <div class="template--index__logo">
-                <a href="" title="">
-                    <img src="{% static 'images/feral-logo--gold.svg' %}"
-                         alt="{% page_attribute 'page_title' %}"
-                         width="850">
-                </a>
-            </div>
+    <div class="template--index"
+         style="background-image: url({% static 'images/feral-logo--gold.svg' %})">
 
+        <div class="template--index__atf"> {# Above the fold #}
             <div class="template--index__hero">
                 {% placeholder "content" %}
             </div>
-        </div>
-        <!--<div class="template--index__btf"> {# Below the fold #}
-            <div class="template--index__footer">
-                {% placeholder "footer" %}
+            <div class="template--index__strip strip">
+                <div class="strip__content">
+                    <div class="strip__title">
+                        From the Blog:
+                    </div>
+                    <div class="strip__text">
+                        Talent being assumed, execution far outweights design creativity
+                    </div>
+                    <div class="strip__button">
+                        <a href="" title="" class="button button--hollow button--gold">
+                            Read
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>-->
+        </div>
+        <div class="template--index__btf"> {# Below the fold #}
+            <div class="template--index__footer">
+                below
+            </div>
+        </div>
     </div>
 {% endblock body %}

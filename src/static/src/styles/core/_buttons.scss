@@ -57,4 +57,9 @@
         top: 1px;
         left: 1px;
     }
+
+    &--huge {
+        @include button-size(2rem, 2rem, 2rem, 1.25rem);
+        border: 3px solid;
+    }
 }

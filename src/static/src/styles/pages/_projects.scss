@@ -1,5 +1,6 @@
 .projects__list {
     @include clearfix;
+    padding-bottom: 0;
 }
 
     .projects__row {
@@ -14,6 +15,6 @@
         }
 
         &--odd {
-            margin-top: 15rem;
+            margin-top: 20rem;
         }
     }

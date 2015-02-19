@@ -105,6 +105,24 @@
         }
 
 
+.heading {
+
+}
+    .heading__title {
+        margin-bottom: 3rem;
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+        font-weight: $font-weight-regular;
+
+        &--short {
+            width: 80%;
+        }
+    }
+
+    .heading__divider {
+        margin-bottom: 3rem;
+    }
+
 .text {
     margin-bottom: 3rem ;
 

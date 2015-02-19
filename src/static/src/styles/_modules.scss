@@ -37,26 +37,32 @@
 
 // As seen on the index page - x3 projects
 .project-box {
-    @include clearfix;
-    width: 100%;
+    position: relative;
 
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 
-    .project-box__item {
-        float: left;
-        width: 33.33%;
-        position: relative;
+    .project-box__image {
+        a {
 
-        padding: 0;
-        margin: 0;
-        list-style: none;
-
-        img {
-            width: 100%;
+            display: block;
+            img {
+                width: 100%;
+            }
         }
     }
+
+        .project-box__overlay {
+
+        }
+
+    .project-box__details {
+
+    }
+
+
 
 // As seen on the studio page - top image and caption
 .header-image {

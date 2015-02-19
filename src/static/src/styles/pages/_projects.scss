@@ -1,0 +1,19 @@
+.projects__list {
+    @include clearfix;
+}
+
+    .projects__row {
+        @include container();
+    }
+
+    .projects__column {
+        @include span(33.33% no-gutters);
+
+        &--last {
+            @include last;
+        }
+
+        &--odd {
+            margin-top: 15rem;
+        }
+    }

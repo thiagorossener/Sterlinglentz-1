@@ -54,5 +54,12 @@
     }
 
         .index__footer {
-            @include span(12 of 12 last);
+            @include container();
         }
+
+            .index__project{
+                @include span(4 of 12);
+
+                padding: 0;
+                margin: 0;
+            }

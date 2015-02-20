@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body %}
+    <div class="blog">
+        <aside class="blog__sidebar">
+            Sidebar
+        </aside>
+        <div class="blog__content">
+            <div class="post">
+                <header class="post__header">
+                    <div class="header-image" style="background-image:url({{ header_image.src }});">
+                        <p class="header-image__caption">{{ header_image.caption }}</p>
+                    </div>
+                </header>
+                <article class="post__content">
+                    Content
+                </article>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

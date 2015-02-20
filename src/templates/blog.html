@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="blog">
-        <aside class="blog__sidebar">
+        <div class="blog__sidebar">
             <ul class="post-list">
                 {% for post in all_posts %}
                     <li class="post-list__item">
@@ -22,13 +22,16 @@
             <div class="post-search">
                 <input class="post-search__input" type="search" name="" value="">
             </div>
-        </aside>
+        </div>
         <div class="blog__content">
             <div class="post">
-                <header class="post__header">
-                    <div class="header-image" style="background-image:url({{ header_image.src }});">
-                        <p class="header-image__caption">{{ header_image.caption }}</p>
-                    </div>
+                <header class="post__header" {% if display_post.image %}style="background-image:url({{ display_post.image.url }})"{% endif %}>
+                    <p class="post__header__date" title="{{ display_post.created_on }}">
+                            {{ display_post.created_on|date:"n.j.Y" }}</p>
+                    <h1 class="post__header__title">{{ display_post.title }}</h1>
+                    {% if display_post.subtitle %}
+                        <h2 class="post__header__subtitle">{{ display_post.subtitle }}</h2>
+                    {% endif %}
                 </header>
                 <article class="post__content">
                     {{ display_post.title }}

@@ -140,6 +140,10 @@
     &--short {
         width: 70%;
     }
+
+    a {
+        text-decoration: underline;
+    }
 }
 
 .image {
@@ -156,3 +160,49 @@
         font-size: 0.75rem;
         font-style: italic;
     }
+
+.pullquote {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+    .pullquote__content {
+        color: #272727;
+        font-size: 2rem;
+        line-height: 2.25rem;
+        font-weight: $font-weight-bold;
+        margin-bottom: 2rem;
+    }
+
+    .pullquote__divider {
+        width: 20%;
+        background-color: #ff0000;
+        margin-bottom: 2rem;
+    }
+
+    .pullquote__source {
+        font-size: 0.85rem;
+        font-style: italic;
+        color: #353535;
+
+        a {
+        }
+    }
+
+.list {
+    margin-bottom: 3rem;
+
+    &--naked {
+        padding: 0;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+
+
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}

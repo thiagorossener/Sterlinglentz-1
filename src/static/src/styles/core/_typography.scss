@@ -74,6 +74,14 @@ small,
     @include type-size(ms(-1));
 }
 
+ul, ol {
+    @include type-size(ms(1), 1.5);
+
+    li {
+        margin-bottom: .75rem;
+    }
+}
+
 @mixin a($color, $darken:15%) {
     @include transition(color .3s linear);
     color: $color;

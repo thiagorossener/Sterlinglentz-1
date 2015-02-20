@@ -3,14 +3,14 @@
 }
 
     .blog__sidebar {
-        @include span(4 of 12 no-gutters);
+        @include span(33.33% no-gutters);
         background-color: #fbfbfb;
         height: 100vh;
 
     }
 
     .blog__content {
-        @include span(8 of 12 last);
+        @include span(66.66% last);
     }
 
 

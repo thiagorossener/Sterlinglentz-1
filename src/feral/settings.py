@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     # Custom
     'core',
     'project',
+    'blog',
     'content',
 )
 

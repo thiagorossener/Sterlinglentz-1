@@ -1,5 +1,5 @@
 .blog {
-    @include container;
+    @include container(12 of 12);
 }
 
     .blog__sidebar {
@@ -49,6 +49,7 @@
     .post__content {
         padding: 4rem;
     }
+
 
 .post-list {
     padding: 0;

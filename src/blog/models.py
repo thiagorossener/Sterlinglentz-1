@@ -15,7 +15,6 @@ class Post(models.Model):
     """ A blog post. """
 
     published = PostManager()
-    objects = models.Manager()
 
     title = models.CharField(max_length=512)
     subtitle = models.CharField(max_length=512, blank=True, null=True)
@@ -34,6 +33,7 @@ class Post(models.Model):
 
     class Meta:
         ordering = ["edited_on"]
+        get_latest_by = "created_on"
 
     def __unicode__(self):
-        return "{} by {}".format(self.title)
+        return "{}".format(self.title)

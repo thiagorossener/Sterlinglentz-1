@@ -8,5 +8,6 @@ urlpatterns = patterns(
     url(r'^admin-dashboard/', include(admin.site.urls)),
 
     url(r'^projects/', include("project.urls", namespace="projects")),
+    url(r'^blog/', include("blog.urls", namespace="blog")),
     url(r'^', include("core.urls")),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

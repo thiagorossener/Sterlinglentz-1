@@ -5,7 +5,23 @@
 {% block body %}
     <div class="blog">
         <aside class="blog__sidebar">
-            Sidebar
+            <ul class="post-list">
+                {% for post in all_posts %}
+                    <li class="post-list__item">
+                        <h5 class="post-list__title">
+                            <a class="silent" href="{{ post.get_absolute_url }}"
+                                title="Read this post">{{ post.title }}</a>
+                        </h5>
+                        <p class="post-list__date" title="{{ post.created_on }}">
+                            {{ post.created_on|date:"n.j.Y" }}</p>
+                    </li>
+                {% empty %}
+                    <li>There are no posts.</li>
+                {% endfor %}
+            </ul>
+            <div class="post-search">
+                <input class="post-search__input" type="search" name="" value="">
+            </div>
         </aside>
         <div class="blog__content">
             <div class="post">
@@ -15,7 +31,7 @@
                     </div>
                 </header>
                 <article class="post__content">
-                    Content
+                    {{ display_post.title }}
                 </article>
             </div>
         </div>

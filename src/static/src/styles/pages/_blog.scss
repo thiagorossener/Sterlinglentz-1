@@ -1,14 +1,16 @@
 .blog {
-    @include container;
+    @include container();
 }
 
-.blog__sidebar {
-    @include span(4 or 12);
-}
+    .blog__sidebar {
+        @include span(4 of 12);
+        background-color: #fbfbfb;
+        height: 100%;
+    }
 
-.blog__content {
-    @include span(8 of 12);
-}
+    .blog__content {
+        @include span(8 of 12 last);
+    }
 
 
 .post {
@@ -21,4 +23,46 @@
 
     .post__content {
 
+    }
+
+.post-list {
+    padding: 0;
+    margin: 3rem;
+}
+
+    .post-list__item {
+        padding: 0;
+        margin: 0 0 5rem 0;
+        list-style: none;
+    }
+
+        .post-list__title {
+            color: #7e7e7e;
+            font-size: 1rem;
+            font-weight: $font-weight-bold;
+            line-height: 1.25rem;
+            margin-bottom: 0;
+        }
+
+        .post-list__date {
+            font-size: 0.75rem;
+            margin-bottom: 0;
+            color: #999999;
+        }
+
+.post-search {
+    margin: 0 3rem 3rem 3rem;
+}
+
+    .post-search__input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #7d7d7d;
+        width: 95%;
+        padding: 2.5% 2.5% 2.5% 30px;
+        color: #7e7e7e;
+
+        background-image: url(../images/icons/search-spyglass.png);
+        background-repeat: no-repeat;
+        background-position: center left;
     }

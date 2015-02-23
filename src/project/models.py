@@ -2,6 +2,8 @@
 
 from django.db import models
 
+from ckeditor.fields import RichTextField
+
 
 class Client(models.Model):
 
@@ -65,6 +67,8 @@ class Project(models.Model):
     description = models.TextField(blank=True)
     homepage = models.URLField(blank=True)
     categories = models.ManyToManyField(Category)
+
+    content = RichTextField()
 
     ordering = models.PositiveIntegerField(default=0)
     slug = models.SlugField(unique=True)

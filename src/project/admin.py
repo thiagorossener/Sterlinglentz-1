@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from suit.admin import SortableModelAdmin
+
 from .models import Client, Category, Project
 
 
@@ -14,8 +16,11 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(Project)
-class ProjectAdmin(admin.ModelAdmin):
+class ProjectAdmin(SortableModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
     filter_horizontal = ["categories"]
     list_filter = ["client", "is_published"]
     list_display = ["name", "is_published"]
+
+    # Django suit
+    sortable = 'ordering'

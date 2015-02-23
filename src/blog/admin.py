@@ -13,6 +13,9 @@ class ProjectAdmin(admin.ModelAdmin):
         (None, {
             'fields': ('title', 'subtitle', 'image', 'is_published')
         }),
+        ("Content", {
+            'fields': ('content', )
+        }),
         ("Advanced", {
             'fields': ('slug', )
         }),

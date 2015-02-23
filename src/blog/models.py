@@ -1,5 +1,7 @@
 from django.db import models
 
+from ckeditor.fields import RichTextField
+
 
 class PostManager(models.Manager):
 
@@ -19,6 +21,8 @@ class Post(models.Model):
     title = models.CharField(max_length=512)
     subtitle = models.CharField(max_length=512, blank=True, null=True)
     image = models.ImageField(blank=True, null=True, upload_to='blog/')
+
+    content = RichTextField()
 
     slug = models.SlugField(unique=True)
 

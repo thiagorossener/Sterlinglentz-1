@@ -1,7 +1,5 @@
 from django import forms
 
-from django_ace import AceWidget
-
 from .models import Block
 
 DOT_SEPARATED_STRING_REGEX = r"^[\w.]+[\w]+$"

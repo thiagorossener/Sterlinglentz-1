@@ -10,7 +10,8 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(PYTHON_PATH, ...)
 import os
-PYTHON_PATH = os.path.dirname(os.path.dirname(__file__))
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+PYTHON_PATH = (os.path.split(SETTINGS_PATH))[0]
 PROJECT_PATH = (os.path.split(PYTHON_PATH))[0]
 ENV_PATH = (os.path.split(PROJECT_PATH))[0]
 
@@ -24,9 +25,9 @@ SECRET_KEY = ')(wmvr(nsr4$o71l7&wk+6e2o%k$l*2nog5srewdxsf%5x!%v&'
 SITE_ID = 1
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -43,8 +44,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Other
-    'debug_toolbar',
-    'django_ace',
 
     # Custom
     'core',
@@ -81,17 +80,6 @@ MIGRATION_MODULES = {
 ROOT_URLCONF = 'feral.urls'
 
 WSGI_APPLICATION = 'feral.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(PYTHON_PATH, 'db.sqlite3'),
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

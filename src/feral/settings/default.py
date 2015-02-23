@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Other
+    'ckeditor',
 
     # Custom
     'core',
@@ -117,11 +118,6 @@ TEMPLATE_DIRS = (
     os.path.join(PYTHON_PATH, 'templates/'),
 )
 
-# Easy thumbnails
-THUMBNAIL_HIGH_RESOLUTION = True
-THUMBNAIL_PROCESSORS = (
-    'easy_thumbnails.processors.colorspace',
-    'easy_thumbnails.processors.autocrop',
-    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
-    'easy_thumbnails.processors.filters',
-)
+# CKEditor
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'

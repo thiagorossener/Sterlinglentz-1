@@ -1,5 +1,9 @@
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+from .default import *
+from .private import *
+
+DEBUG = True
+TEMPLATE_DEBUG = True
+
 
 DATABASES = {
     'default': {
@@ -7,3 +11,5 @@ DATABASES = {
         'NAME': os.path.join(PYTHON_PATH, 'db.sqlite3'),
     }
 }
+
+INSTALLED_APPS += ('debug_toolbar',)

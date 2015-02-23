@@ -1,6 +1,7 @@
 node_modules/
 src/static/bower_components/
 src/feral/settings/private.py
+src/db.sqlite3
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

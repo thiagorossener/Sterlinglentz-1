@@ -1,10 +1,4 @@
 // This file contains the basic layout for the site (mainly the nav and content)
-//
-// Navigation:
-// The nav menu has two orientations; desktop (vertical along the lefthand side)
-// and mobile (horizontal along the top).
-//
-// Content
 
 $menuGutterWidth: 2.5rem;
 $menuGutterBackground: $gray-dark;
@@ -15,7 +9,7 @@ $menuDrawerBackground: lighten($gray-dark, 5%);
 $animationDuration: 300ms;
 
 .header {
-
+}
     .menu {
         @include transition(width $animationDuration);
 
@@ -24,7 +18,7 @@ $animationDuration: 300ms;
         width: $menuGutterWidth;
         left: 0;
         top: 0;
-        z-index: 0;
+        z-index: 10;
 
         font-size: 0.9rem;
         background-color: $menuDrawerBackground;
@@ -51,6 +45,7 @@ $animationDuration: 300ms;
                 background-image: url(../images/menu-expand.svg);
                 background-repeat: no-repeat;
                 background-position: center center;
+                width: 24px;
 
                 cursor: pointer;
 
@@ -60,6 +55,10 @@ $animationDuration: 300ms;
 
                 &:active {
                 }
+            }
+
+            .menu__gutter__logo {
+                display: none;
             }
 
             .menu__gutter__breadcrumb {
@@ -114,7 +113,8 @@ $animationDuration: 300ms;
                             padding: .75rem 15%;
                             width: 70%;
 
-                            font-size: 1rem;
+                            font-size: .80rem;
+                            line-height: 1rem;
                             color: $white;
                             text-decoration: none;
                         }
@@ -147,7 +147,6 @@ $animationDuration: 300ms;
                 bottom: 0;
                 left: 0;
             }
-}
 
 .content {
     @include transition(margin-left $animationDuration);
@@ -155,17 +154,91 @@ $animationDuration: 300ms;
     position: relative;
 }
 
-// When the menu trigger is clicked, we expand the nav out
-body.menu--expanded {
-    .menu {
-        width: ($menuGutterWidth + $menuDrawerWidth);
+// Desktop layout
+@media screen and (min-width: $break-small) {
+    // When the menu trigger is clicked, we expand the nav ACROSS
+    body.menu--expanded {
+        .menu {
+            width: ($menuGutterWidth + $menuDrawerWidth);
+        }
+
+        .menu__drawer {
+            left: $menuGutterWidth;
+        }
+
+        .content {
+            margin-left: ($menuGutterWidth + $menuDrawerWidth);
+        }
+    }
+}
+
+// Mobile layout
+@media screen and (max-width: $break-small) {
+    .menu,
+    .menu__gutter,
+    .menu__nav,
+    .menu__drawer,
+    .menu__footer {
+        width: 100%;
+        height: auto;
     }
 
-    .menu__drawer {
-        left: $menuGutterWidth;
+    .menu {
+        @include transition(height $animationDuration);
+        height: $menuGutterWidth;
     }
+
+        .menu__gutter {
+            height: $menuGutterWidth * 0.5;
+        }
+
+            .menu__gutter__trigger {
+                position: static;
+                float: left;
+            }
+
+            .menu__gutter__logo {
+                display: block;
+                position: absolute;
+                left: 50%;
+                margin-left: -35px;
+                margin-top: -2px;
+            }
+
+        .menu__drawer {
+            @include transition(top $animationDuration);
+            top: -500rem;
+            left: 0;
+            height: 100%;
+            margin-top: $menuGutterWidth * 0.5;
+        }
+
+            .menu__nav ul li a,
+            .menu__footer {
+                width: 90%;
+                padding: .75rem 5%;
+            }
+
+            .menu__logo {
+                display: none;
+            }
 
     .content {
-        margin-left: ($menuGutterWidth + $menuDrawerWidth);
+        margin: 0;
+    }
+
+    // When the menu trigger is clicked, we expand the nav DOWN
+    body.menu--expanded {
+        .menu {
+            height: 80%;
+        }
+
+        .menu__drawer {
+            top: $menuGutterWidth;
+        }
+
+        .content {
+
+        }
     }
 }

@@ -16,6 +16,12 @@
             <div class="menu">
                 <div class="menu__gutter">
                     <div class="menu__gutter__trigger">&nbsp;</div>
+                    <div class="menu__gutter__logo">
+                        <a href="" title="">
+                            <img src="{% static 'images/feral-logo--gold--straight.svg' %}" alt=""
+                                width="65">
+                        </a>
+                    </div>
                     <!--<div class="menu__gutter__breadcrumb">
                         test
                     </div>-->
@@ -27,12 +33,6 @@
                             <li><a href="/projects">Work</a></li>
                             <li><a href="/studio">Studio</a></li>
                             <li><a href="/blog">Blog</a></li>
-                            {% for item in menu %}
-                                <li>
-                                    <a href="{{ item.link }}" title="{{ item.title }}">
-                                        {{ item.text }}</a>
-                                </li>
-                            {% endfor %}
                         </ul>
                     </nav>
                     <div class="menu__logo">

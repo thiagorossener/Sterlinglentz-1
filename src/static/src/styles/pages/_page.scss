@@ -13,8 +13,8 @@
     }
 
         .page__sidebar {
-            @include span(2 of 12 no-gutters);
-            @include prefix(1 of 12);
+            @include span(2.5 of 12 no-gutters);
+            @include prefix(.5 of 12);
         }
 
         .page__main {
@@ -33,3 +33,22 @@
                     }
                 }
             }
+
+@media screen and (max-width: $break-small) {
+    .page__sidebar {
+        margin-bottom: 5rem;
+    }
+
+    .page__sidebar,
+    .page__main {
+        @include span(10 of 12 no-gutters);
+        @include prefix(1 of 12);
+        @include suffix(1 of 12);
+    }
+
+    .page__content--shrink {
+        p {
+            width: 100%;
+        }
+    }
+}

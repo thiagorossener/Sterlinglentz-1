@@ -73,31 +73,48 @@
 
 
 // As seen on the studio page - down the left sidebar
-.sidebar-spec {
-
-}
-
-    .sidebar-spec__item {
-        margin-bottom: 3rem;
-    }
-
-        .sidebar-spec__title {
+.sidebar-list {
+    p {
+        margin-bottom: .5rem;
+        small {
             text-transform: uppercase;
             font-weight: bold;
             font-size: ms(-2);
-            margin-bottom: .5rem;
+        }
+    }
+
+    ul, ol {
+        padding: 0;
+        margin: 0 0 2rem 0;
+
+        li {
+            margin: 0 0 .5rem 0;
+            list-style: none;
+            line-height: 2remrem;
+            font-size: ms(-1);
         }
 
-        .sidebar-spec__list {
-            @extend .list--naked;
+        li:last-child {
+            margin-bottom: 0;
+        }
+    }
 
+    @media screen and (max-width: $break-small) {
+        p {
+            margin-bottom: 2rem;
+        }
+        p small,
+        ul li,
+        ol li {
+            font-size: ms(1);
+        }
+        ul, ol {
             li {
-                margin: 0.75rem 0;
-                font-size: ms(-1.5);
-                line-height: 1.5rem;
+                margin-bottom: 1rem;
             }
         }
-
+    }
+}
 
 .heading {
 

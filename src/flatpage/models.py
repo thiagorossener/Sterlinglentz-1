@@ -19,7 +19,7 @@ class FlatPage(models.Model):
     description = models.TextField(blank=True)
 
     image = FilerImageField(null=True, blank=True,
-        related_name="flatpage_landscape_image")
+        related_name="flatpage_landscape_image", help_text="Should be 1200x400")
     image_caption = models.CharField(max_length=200, null=True, blank=True)
 
     content = RichTextField()

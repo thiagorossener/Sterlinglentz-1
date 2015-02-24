@@ -224,7 +224,7 @@ $animationDuration: 300ms;
             }
 
     .content {
-        margin: 0;
+        margin: $menuGutterWidth 0 0 0;
     }
 
     // When the menu trigger is clicked, we expand the nav DOWN

@@ -1,7 +1,8 @@
-.index {
-    background-color: $off-white;
-    @include container();
+$indexPadding: 5%;
 
+.index {
+    @include clearfix;
+    background-color: $off-white;
     background-repeat: no-repeat;
     background-position: -30% -5%;
     background-size: 1250px;
@@ -9,16 +10,13 @@
 
     .index__atf {
         position: relative;
-        padding-top: 5vh;
-        padding-bottom: 5vh;
-
-        height: 90vh;
+        height: 100vh;
     }
 
         .index__hero {
-            @include span(6 of 12 last);
-            @include prefix(1 of 12);
-            @include suffix(5 of 12);
+            $width: 50%;
+            width: $width;
+            padding: 0 (100% - $width - $indexPadding) 0 $indexPadding;
 
             @include vertical-align(75%);
 
@@ -33,21 +31,44 @@
                 font-weight: $font-weight-regular;
                 margin: 0;
             }
-
-            // When we scale down, open up the hero text
-            @media screen and (max-width: $break-medium) {
-                @include span(12 of 12 last);
-            }
         }
 
         .index__strip {
             position: absolute;
             bottom: 0;
-
-            .strip__title {
-                margin-left: span(1 of 12);
-            }
+            width: 100%;
         }
+            .strip__content {
+                @include clearfix;
+                width: 100% - (2 * $indexPadding);
+                padding: 1.5rem $indexPadding;
+                background-color: #d2d2d2;
+            }
+
+                .strip__title,
+                .strip__text,
+                .strip__button {
+                    float: left;
+                    line-height: 1.5rem;
+                }
+
+                .strip__title {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    font-size: 0.65rem;
+                    color: #686868;
+                    margin-right: 2rem;
+                }
+
+                .strip__text {
+                    color: #686868;
+                    font-size: 0.85rem;
+                    margin-right: 2rem;
+                }
+
+                .strip__button {
+
+                }
 
     .index__btf {
 
@@ -63,3 +84,46 @@
                 padding: 0;
                 margin: 0;
             }
+
+
+
+@media screen and (max-width: $break-small) {
+    .index {
+        background-image: none !important;
+
+        // There is a default margin at the top of the page to accomodate
+        // the mobile nav. We need to undo that to get proper full-width
+        // viewport height
+        margin-top: -$menuGutterWidth;
+    }
+
+    // Reformat the blog strip
+    .strip__title,
+    .strip__text,
+    .strip__button {
+        float: none;
+        margin: 0;
+        width: 100%;
+    }
+    .strip__title {
+        margin-bottom: 0rem;
+    }
+    .strip__text {
+        margin-bottom: .5rem;
+    }
+
+    // Make projects fullwidth
+    .index__project {
+        @include span(100%);
+    }
+}
+
+@media screen and (max-width: $break-medium) {
+    // Stretch the hero text to fullwidth as we get lower in resolution
+    .index__hero {
+        width: 100% - (2 * $indexPadding);
+        padding: 0 $indexPadding;
+
+        @include vertical-align(40%);
+    }
+}

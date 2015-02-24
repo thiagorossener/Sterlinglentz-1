@@ -9,22 +9,6 @@
     line-height: $line-height;
 }
 
-// Hollow buttons
-@mixin button-hollow-variant($primary, $secondary) {
-    background-color: transparent;
-    color: $primary;
-    border-color: $primary;
-
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-        background: $primary;
-        border-color: $primary;
-        color: $secondary;
-    }
-}
-
 .button {
     border: 2px solid;
     display: inline-block;
@@ -45,11 +29,17 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 
-    // By default we inherit the colors of the surrounding block
-    @include button-size(.25rem, .75rem, .85rem, 1.25rem);
-    @include button-hollow-variant($gold, $gold);
+    background: transparent;
+    background: rgba($white, .30);
+    color: darken($gold, 10%);
+    border-color: $gold;
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background: rgba($gold, .15);
+        text-decoration: none;
     }
 
     &:active {
@@ -58,8 +48,11 @@
         left: 1px;
     }
 
+    // By default we inherit the colors of the surrounding block
+    @include button-size(.25rem, .75rem, .85rem, 1.25rem);
+
     &--huge {
-        @include button-size(2rem, 2rem, 2rem, 1.25rem);
+        @include button-size(1.5rem, 1.5rem, 1.25rem, 1.25rem);
         border: 3px solid;
     }
 }

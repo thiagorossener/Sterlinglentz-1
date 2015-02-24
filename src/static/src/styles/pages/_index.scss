@@ -97,6 +97,11 @@ $indexPadding: 5%;
         margin-top: -$menuGutterWidth;
     }
 
+    // Move the hero down the page
+    .index__hero {
+        @include vertical-align(45%);
+    }
+
     // Reformat the blog strip
     .strip__title,
     .strip__text,
@@ -119,11 +124,17 @@ $indexPadding: 5%;
 }
 
 @media screen and (max-width: $break-medium) {
+    // Shrink the background logo
+    .index {
+        background-size: 750px;
+        background-position: top center;
+    }
+
     // Stretch the hero text to fullwidth as we get lower in resolution
     .index__hero {
         width: 100% - (2 * $indexPadding);
         padding: 0 $indexPadding;
 
-        @include vertical-align(40%);
+        @include vertical-align(70%);
     }
 }

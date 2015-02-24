@@ -2,6 +2,7 @@ from django.db import models
 from django.core.urlresolvers import reverse
 
 from ckeditor.fields import RichTextField
+from filer.fields.image import FilerImageField
 
 
 class PostManager(models.Manager):
@@ -21,7 +22,8 @@ class Post(models.Model):
 
     title = models.CharField(max_length=512)
     subtitle = models.CharField(max_length=512, blank=True, null=True)
-    image = models.ImageField(blank=True, null=True, upload_to='blog/')
+
+    image = FilerImageField(null=True, blank=True, related_name="post_image")
 
     content = RichTextField()
 

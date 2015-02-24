@@ -1,48 +1,50 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load thumbnail %}
+
+{% block meta_title %}{{ projet.meta_title }}{% endblock %}
+{% block meta_description %}{{ project.meta_description }}{% endblock %}
 
 {% block body %}
     <div class="page">
-        <header class="page__header">
-            <div class="header-image" style="background-image:url({{ header_image.src }});">
-                <p class="header-image__caption">{{ header_image.caption }}</p>
-            </div>
-        </header>
+        {% if project.landscape_image %}
+            <header class="page__header">
+                <div class="header-image" style="background-image:url({% thumbnail project.landscape_image 1600x500 crop %});">
+                    &nbsp;
+                </div>
+            </header>
+        {% endif %}
         <article class="page__body">
             <aside class="page__sidebar">
-                <div class="sidebar sidebar--small">
-                    <div class="sidebar-spec">
-                        <div class="sidebar-spec__item">
-                            <h6 class="sidebar-spec__title">CLIENT</h6>
-                            <ul class="sidebar-spec__list">
-                                <li>{{ project.client.name|title }}</li>
-                            </ul>
-                        </div>
-                        <div class="sidebar-spec__item">
-                            <h6 class="sidebar-spec__title">FOCUS</h6>
-                            <ul class="sidebar-spec__list">
-                                <li>{{ project.client.focus|title }}</li>
-                            </ul>
-                        </div>
-                        <div class="sidebar-spec__item">
-                            <h6 class="sidebar-spec__title">PROJECTS</h6>
-                            <ul class="sidebar-spec__list">
-                                 {% for category in project.categories.all %}
-                                    <li>{{ category.name }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
+                <div class="sidebar-list">
+                    <p><small>CLIENT</small></p>
+                    <ul>
+                        <li>{{ project.client.name|title }}</li>
+                    </ul>
+                    <p><small>FOCUS</small></p>
+                    <ul>
+                        <li>{{ project.client.focus|title }}</li>
+                    </ul>
+                    {% if project.categories. %}
+                        <p><small>PROJECTS</small></p>
+                        <ul>
+                            {% for category in project.categories.all %}
+                                <li>{{ category.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </div>
             </aside>
             <section class="page__main">
-                <div class="page__heading heading">
-                    <h1 class="heading__title heading__title--short">{{ project.description }}</h1>
-                    <hr class="heading__divider divider--short" />
-                </div>
-                <div class="page__content">
-                    Content
+                {% if project.description %}
+                    <div class="page__heading heading">
+                        <h1 class="heading__title">{{ project.description }}</h1>
+                        <hr class="heading__divider divider--short" />
+                    </div>
+                {% endif %}
+                <div class="page__content page__content--shrink">
+                    {{ project.content|safe }}
                 </div>
             </section>
         </article>

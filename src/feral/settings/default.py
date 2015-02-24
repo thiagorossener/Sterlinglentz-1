@@ -146,7 +146,8 @@ CKEDITOR_CONFIGS = {
                 ['Link', 'Unlink', 'Anchor'],
                 ['Source', 'Maximize', 'ShowBlocks'],
             ),
-        'startupOutlineBlocks': True
+        'startupOutlineBlocks': True,
+        'width': '600px'
     },
 }
 

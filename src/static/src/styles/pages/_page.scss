@@ -5,7 +5,7 @@
 }
 
     .page__header {
-    @include container;
+        @include container;
     }
 
     .page__body {
@@ -15,11 +15,13 @@
         .page__sidebar {
             @include span(2.5 of 12 no-gutters);
             @include prefix(.5 of 12);
+            padding-top: 4rem;
         }
 
         .page__main {
             @include span(8.5 of 12 no-gutters last);
             @include suffix(.5 of 12);
+            padding-top: 4rem;
         }
 
             .page__heading {

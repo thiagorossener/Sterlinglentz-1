@@ -11,16 +11,17 @@ class ProjectAdmin(admin.ModelAdmin):
     }
     fieldsets = (
         (None, {
-            'fields': ('title', 'subtitle', 'image', 'is_published')
+            'fields': ('title', 'subtitle', 'is_published')
+        }),
+        (None, {
+            'fields': ('image', )
         }),
         ("Content", {
             'fields': ('content', )
         }),
-        ("Advanced", {
-            'fields': ('slug', )
-        }),
         ("Meta", {
-            'fields': ('meta_title', 'meta_description')
+            'classes': ('collapse',),
+            'fields': ('slug', 'meta_title', 'meta_description')
         }),
     )
     list_filter = ["is_published", ]

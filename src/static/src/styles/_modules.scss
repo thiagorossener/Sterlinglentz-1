@@ -64,7 +64,8 @@
 
     .header-image__caption {
         position: absolute;
-        bottom: .5rem;
+        bottom: 1rem;
+        margin-bottom: 0;
         right: 2rem;
         color: white;
         font-size: 0.80rem;
@@ -115,18 +116,6 @@
     .heading__divider {
         margin-bottom: 3rem;
     }
-
-.text {
-    margin-bottom: 3rem ;
-
-    &--short {
-        width: 70%;
-    }
-
-    a {
-        text-decoration: underline;
-    }
-}
 
 .image {
     margin-bottom: 3rem;

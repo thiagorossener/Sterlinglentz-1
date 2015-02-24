@@ -5,7 +5,7 @@
 }
 
     .page__header {
-        @include container;
+    @include container;
     }
 
     .page__body {
@@ -27,5 +27,9 @@
             }
 
             .page__content {
-
+                &--shrink {
+                    p {
+                        width: 85%;
+                    }
+                }
             }

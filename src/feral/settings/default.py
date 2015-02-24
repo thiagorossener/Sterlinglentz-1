@@ -56,7 +56,8 @@ INSTALLED_APPS = (
     'project',
     'blog',
     'content',
-    'snippet'
+    'snippet',
+    'flatpage'
 )
 
 MIDDLEWARE_CLASSES = (

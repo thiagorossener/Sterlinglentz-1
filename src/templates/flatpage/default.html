@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load thumbnail %}
+
+{% block meta_title %}{{ flatpage.meta_title }}{% endblock %}
+{% block meta_description %}{{ flatpage.meta_description }}{% endblock %}
+
+{% block body %}
+    <div class="page">
+        {% if flatpage.image %}
+            <header class="page__header">
+                <div class="header-image" style="background-image:url({% thumbnail flatpage.image 1200x800 crop %});">
+                    {% if flatpage.image_caption %}
+                        <p class="header-image__caption">{{ flatpage.image_caption }}</p>
+                    {% endif %}
+                </div>
+            </header>
+        {% endif %}
+        <article class="page__body">
+            <aside class="page__sidebar">
+                {{ flatpage.sidebar }}
+
+
+                <div class="sidebar sidebar--small">
+                    <div class="sidebar-spec">
+                        {% for key, d in sidebar.items %}
+                            <div class="sidebar-spec__item">
+                                <h6 class="sidebar-spec__title">{{ key }}</h6>
+                                <ul class="sidebar-spec__list">
+                                    {% for v in d.values %}
+                                        <li>{{ v|safe }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </aside>
+            <section class="page__main">
+                {% if flatpage.description %}
+                    <div class="page__heading heading">
+                        <h1 class="heading__title">{{ flatpage.description }}</h1>
+                        <hr class="heading__divider divider--orange divider--short" />
+                    </div>
+                {% endif %}
+                <div class="page__content page__content--shrink">
+                    {{ flatpage.content }}
+
+                    <div class="image">
+                        <img class="image__img" src="{% static 'images/temp/portrait-1.jpg' %}" alt="">
+                        <p class="image__caption">Capable young creative or self-obsessed douchebag.
+                            You be the judge!</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+{% endblock body %}

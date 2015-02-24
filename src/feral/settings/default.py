@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
+    'django.contrib.redirects',
 
     # Other
     'ckeditor',
@@ -70,6 +71,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.redirects.middleware.RedirectFallbackMiddleware'
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

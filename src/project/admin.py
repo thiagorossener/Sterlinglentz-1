@@ -19,16 +19,18 @@ class CategoryAdmin(admin.ModelAdmin):
 class ProjectAdmin(SortableModelAdmin):
     prepopulated_fields = {
         "slug": ("name",),
+        "meta_title": ("name",),
+        "meta_description": ("description",),
     }
     filter_horizontal = ["categories", ]
     list_filter = ["client", "is_published"]
     list_display = ["name", "is_published"]
     fieldsets = (
         (None, {
-            'fields': ('name', 'description', 'client', 'is_published')
+            'fields': ('name', 'description', 'client', 'categories', 'is_published')
         }),
         (None, {
-            'fields': ('categories', 'homepage', )
+            'fields': ('landscape_image', 'portrait_image', )
         }),
         (None, {
             'fields': ('content', )

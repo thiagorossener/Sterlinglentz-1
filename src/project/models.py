@@ -3,6 +3,7 @@
 from django.db import models
 
 from ckeditor.fields import RichTextField
+from filer.fields.image import FilerImageField
 
 
 class Client(models.Model):
@@ -61,12 +62,17 @@ class Project(models.Model):
     """ A single project belonging to a client. """
 
     published = PublishedManager()
+    objects = models.Manager()
 
     client = models.ForeignKey(Client)
     name = models.CharField(max_length=128)
     description = models.TextField(blank=True)
-    homepage = models.URLField(blank=True)
     categories = models.ManyToManyField(Category)
+
+    landscape_image = FilerImageField(null=True, blank=True,
+        related_name="project_landscape_image")
+    portrait_image = FilerImageField(null=True, blank=True,
+        related_name="project_listing_image")
 
     content = RichTextField()
 

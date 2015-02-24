@@ -35,10 +35,3 @@ class IndexView(BlockMixin, TemplateView):
         })
         return context
 
-
-class StudioView(BlockMixin, TemplateView):
-
-    """ The studio view. """
-
-    template_name = "studio.html"
-    block_identifier = "pages.studio"

@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 from ckeditor.fields import RichTextField
 
@@ -41,3 +42,8 @@ class Post(models.Model):
 
     def __unicode__(self):
         return "{}".format(self.title)
+
+    def get_absolute_url(self):
+        return reverse('blog:detail', kwargs={
+            'slug': self.slug
+        })

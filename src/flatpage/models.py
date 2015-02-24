@@ -1,7 +1,4 @@
-from __future__ import unicode_literals
-
 from django.db import models
-from django.contrib.sites.models import Site
 from django.core.urlresolvers import get_script_prefix
 from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import iri_to_uri
@@ -10,9 +7,21 @@ from filer.fields.image import FilerImageField
 from ckeditor.fields import RichTextField
 
 
+class FlatPageManager(models.Manager):
+
+    """ A manager to return only published flatpage. """
+
+    def get_queryset(self):
+        return super(FlatPageManager, self).get_queryset() \
+            .filter(is_published=True)
+
+
 class FlatPage(models.Model):
 
-    """ A custom flatpage model based on django.contrib.flatpages """
+    """ A custom flatpage model based on django.contrib.flatpages. """
+
+    published = FlatPageManager()
+    objects = models.Manager()
 
     url = models.CharField('URL', max_length=100, db_index=True)
     title = models.CharField(max_length=200)

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load thumbnail %}
 
 {% block body %}
     <div class="index"
@@ -30,36 +31,23 @@
         <div class="index__btf"> {# Below the fold #}
             <div class="index__footer">
                 <div class="index__projects">
-                    <div class="index__project">
-                        <div class="project-box">
-                            <div class="project-box__image">
-                                <a href="" title="">
-                                    <img src="{% static 'images/temp/project-1.png' %}" alt="">
-                                </a>
-                            </div>
-                            <div class="project-box__overlay">
-                                <a href="" class="button button--huge">JDS Labs</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="index__project">
-                        <div class="project-box">
-                            <div class="project-box__image">
-                                <a href="" title="">
-                                    <img src="{% static 'images/temp/project-2.png' %}" alt="">
-                                </a>
+                    {% for project in projects %}
+                        <div class="index__project">
+                            <div class="project-box">
+                                <div class="project-box__image">
+                                    <a href="{{ project.get_absolute_url }}"
+                                       title="{{ project.description }}">
+
+                                       <img src="{% thumbnail project.portrait_image 500x500 crop %}"
+                                            alt="{{ project.name }}">
+                                    </a>
+                                </div>
+                                <div class="project-box__overlay">
+                                    <a href="{{ project.get_absolute_url }}" class="button button--huge">{{ project.name }}</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="index__project">
-                        <div class="project-box">
-                            <div class="project-box__image">
-                                <a href="" title="">
-                                    <img src="{% static 'images/temp/project-3.png' %}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

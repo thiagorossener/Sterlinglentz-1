@@ -1,6 +1,7 @@
 """ Feral Projects """
 
 from django.db import models
+from django.core.urlresolvers import reverse
 
 from ckeditor.fields import RichTextField
 from filer.fields.image import FilerImageField
@@ -93,3 +94,8 @@ class Project(models.Model):
 
     def __unicode__(self):
         return "{} by {}".format(self.name, self.client.name)
+
+    def get_absolute_url(self):
+        return reverse('projects:detail', kwargs={
+            'slug': self.slug
+        })

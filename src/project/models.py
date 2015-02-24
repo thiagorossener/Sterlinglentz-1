@@ -71,9 +71,9 @@ class Project(models.Model):
     categories = models.ManyToManyField(Category)
 
     landscape_image = FilerImageField(null=True, blank=True,
-        related_name="project_landscape_image")
+        related_name="project_landscape_image", help_text="Should be around 1600x500 pixels  (or similar aspect)")
     portrait_image = FilerImageField(null=True, blank=True,
-        related_name="project_listing_image")
+        related_name="project_listing_image", help_text="Should be around 600x800 pixels (or similar aspect)")
 
     content = RichTextField()
 

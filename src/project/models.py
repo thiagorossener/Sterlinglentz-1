@@ -73,6 +73,11 @@ class Project(models.Model):
     ordering = models.PositiveIntegerField(default=0)
     slug = models.SlugField(unique=True)
 
+    meta_title = models.CharField(blank=True, null=True, max_length=80,
+        help_text=""" Meta title should be between 50-60 chars (80 max)""")
+    meta_description = models.TextField(blank=True, null=True, max_length=115,
+        help_text=""" Meta title should be around 115 chars (130 max)""")
+
     is_published = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)

@@ -154,6 +154,13 @@ $animationDuration: 300ms;
     position: relative;
 }
 
+
+body.menu--expanded {
+    .menu__gutter__trigger {
+        background-image: url(../images/menu-expand--hover.svg);
+    }
+}
+
 // Desktop layout
 @media screen and (min-width: $break-small) {
     // When the menu trigger is clicked, we expand the nav ACROSS

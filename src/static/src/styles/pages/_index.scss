@@ -127,14 +127,18 @@ $indexPadding: 5%;
     // Shrink the background logo
     .index {
         background-size: 750px;
-        background-position: top center;
+        background-position: center 10%;
     }
 
     // Stretch the hero text to fullwidth as we get lower in resolution
     .index__hero {
         width: 100% - (2 * $indexPadding);
         padding: 0 $indexPadding;
+    }
+}
 
+@media screen and (min-width: $break-small) and (max-width: $break-medium) {
+    .index__hero {
         @include vertical-align(70%);
     }
 }

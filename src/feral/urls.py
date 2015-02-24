@@ -4,6 +4,8 @@ from django.contrib import admin
 
 urlpatterns = patterns(
     '',
+    url(r'^robots\.txt$', include('robots.urls')),
+
     url(r'^admin-dashboard/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
 

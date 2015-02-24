@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'mptt',
     'filer',
+    'robots',
 
     # Custom
     'core',

@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load thumbnail %}
+{% load snippets %}
+
+{% block meta_title %}{% snippet "index.meta.title" %}{% endblock %}
+{% block meta_description %}{% snippet "index.meta.description" %}{% endblock %}
 
 {% block body %}
     <div class="index"
@@ -8,60 +13,51 @@
 
         <div class="index__atf"> {# Above the fold #}
             <div class="index__hero">
-                <p>THE INTERNATIONAL HEADQUARTERS OF STERLING LENTZ</p>
-                <h1>An aspiring professional golfer travelling around the world working as a freelance designer and creative director for small brands.</h1>
+                <p>{% snippet "index.hero.title" %}</p>
+                <h1>{% snippet "index.hero.content" %}</h1>
             </div>
-            <div class="index__strip strip">
-                <div class="strip__content">
-                    <div class="strip__title">
-                        From the Blog:
-                    </div>
-                    <div class="strip__text">
-                        Talent being assumed, execution far outweights design creativity
-                    </div>
-                    <div class="strip__button">
-                        <a href="" title="" class="button button--hollow button--gold">
-                            Read
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="index__btf"> {# Below the fold #}
-            <div class="index__footer">
-                <div class="index__projects">
-                    <div class="index__project">
-                        <div class="project-box">
-                            <div class="project-box__image">
-                                <a href="" title="">
-                                    <img src="{% static 'images/temp/project-1.png' %}" alt="">
-                                </a>
-                            </div>
-                            <div class="project-box__overlay">
-                                <a href="" class="button button--huge">JDS Labs</a>
-                            </div>
+            {% if post %}
+                <div class="index__strip strip">
+                    <div class="strip__content">
+                        <div class="strip__title">
+                            {% snippet "index.blog.tagline" %}
                         </div>
-                    </div>
-                    <div class="index__project">
-                        <div class="project-box">
-                            <div class="project-box__image">
-                                <a href="" title="">
-                                    <img src="{% static 'images/temp/project-2.png' %}" alt="">
-                                </a>
-                            </div>
+                        <div class="strip__text">
+                            {{ post.title }}
                         </div>
-                    </div>
-                    <div class="index__project">
-                        <div class="project-box">
-                            <div class="project-box__image">
-                                <a href="" title="">
-                                    <img src="{% static 'images/temp/project-3.png' %}" alt="">
-                                </a>
-                            </div>
+                        <div class="strip__button">
+                            <a href="{{ post.get_absolute_url }}" title="{{ post.title }}"
+                               class="button button--hollow button--gold">Read</a>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endif %}
         </div>
+        {% if projects %}
+            <div class="index__btf"> {# Below the fold #}
+                <div class="index__footer">
+                    <div class="index__projects">
+                        {% for project in projects %}
+                            <div class="index__project">
+                                <div class="project-box">
+                                    <div class="project-box__image">
+                                        <a href="{{ project.get_absolute_url }}"
+                                           title="{{ project.description }}">
+
+                                           <img src="{% thumbnail project.portrait_image 500x500 crop %}"
+                                                alt="{{ project.name }}">
+                                        </a>
+                                    </div>
+                                    <div class="project-box__overlay">
+                                        <a href="{{ project.get_absolute_url }}"
+                                            class="project-box__button button button--huge">{{ project.name }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock body %}

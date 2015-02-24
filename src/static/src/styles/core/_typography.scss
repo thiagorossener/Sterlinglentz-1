@@ -67,6 +67,11 @@ h6, .h6 {
 p {
     @include type-size(ms(1), 1.5);
     margin-top: 0;
+    margin-bottom: 3rem ;
+
+    a {
+        text-decoration: underline;
+    }
 }
 
 small,

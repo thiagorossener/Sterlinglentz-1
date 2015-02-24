@@ -1,40 +1,3 @@
-// As seen on the index page - latest blog post
-.strip {
-    width: 100%;
-}
-
-    .strip__content {
-        @include clearfix;
-        width: 100%;
-        background-color: #d2d2d2;
-        padding: 1.5rem 0;
-    }
-
-        .strip__title,
-        .strip__text,
-        .strip__button {
-            float: left;
-            line-height: 1.5rem;
-        }
-
-        .strip__title {
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 0.65rem;
-            color: #686868;
-            margin-right: 2rem;
-        }
-
-        .strip__text {
-            color: #686868;
-            font-size: 0.85rem;
-            margin-right: 2rem;
-        }
-
-        .strip__button {
-
-        }
-
 // As seen on the index page - x3 projects
 .project-box {
     position: relative;
@@ -42,26 +5,45 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    cursor: pointer;
+
+    &:hover .project-box__overlay {
+        opacity: 1;
+    }
 }
 
     .project-box__image {
         a {
-
             display: block;
+
             img {
                 width: 100%;
+                display: block;
             }
         }
     }
 
         .project-box__overlay {
+            @include transition(opacity .25s ease-in-out);
+            opacity: 0;
             position: absolute;
             width: 100%;
             height: 100%;
             margin: auto;
             top: 0;
             left: 0;
+            background: transparent;
+            background: rgba($white, .25);
         }
+
+            .project-box__button {
+                position: absolute;
+                width: 50%;
+                top: 40%;
+                left: 20%;
+                padding-left: 5%;
+                padding-right: 5%;
+            }
 
     .project-box__details {
 
@@ -82,7 +64,8 @@
 
     .header-image__caption {
         position: absolute;
-        bottom: .5rem;
+        bottom: 1rem;
+        margin-bottom: 0;
         right: 2rem;
         color: white;
         font-size: 0.80rem;
@@ -90,31 +73,48 @@
 
 
 // As seen on the studio page - down the left sidebar
-.sidebar-spec {
-
-}
-
-    .sidebar-spec__item {
-        margin-bottom: 3rem;
-    }
-
-        .sidebar-spec__title {
+.sidebar-list {
+    p {
+        margin-bottom: .5rem;
+        small {
             text-transform: uppercase;
             font-weight: bold;
             font-size: ms(-2);
-            margin-bottom: .5rem;
+        }
+    }
+
+    ul, ol {
+        padding: 0;
+        margin: 0 0 2rem 0;
+
+        li {
+            margin: 0 0 .5rem 0;
+            list-style: none;
+            line-height: 2remrem;
+            font-size: ms(-1);
         }
 
-        .sidebar-spec__list {
-            @extend .list--naked;
+        li:last-child {
+            margin-bottom: 0;
+        }
+    }
 
+    @media screen and (max-width: $break-small) {
+        p {
+            margin-bottom: 2rem;
+        }
+        p small,
+        ul li,
+        ol li {
+            font-size: ms(1);
+        }
+        ul, ol {
             li {
-                margin: 0.75rem 0;
-                font-size: ms(-1.5);
-                line-height: 1.5rem;
+                margin-bottom: 1rem;
             }
         }
-
+    }
+}
 
 .heading {
 
@@ -133,18 +133,6 @@
     .heading__divider {
         margin-bottom: 3rem;
     }
-
-.text {
-    margin-bottom: 3rem ;
-
-    &--short {
-        width: 70%;
-    }
-
-    a {
-        text-decoration: underline;
-    }
-}
 
 .image {
     margin-bottom: 3rem;

@@ -4,11 +4,15 @@ django-ckeditor==4.4.7
 django-classy-tags==0.6.1
 django-debug-toolbar==1.2.2
 django-extensions==1.5.0
+django-filer==0.9.9
 django-jsonfield==0.9.13
+django-mptt==0.6.1
+django-polymorphic==0.6.1
 django-robots==1.0
 django-suit==0.2.12
 django-xmlrpc==0.1.5
 Django==1.7.4
+easy-thumbnails==2.2
 futures==2.2.0
 gunicorn==19.2.1
 html5lib==0.999

@@ -1,8 +1,10 @@
 """ Feral Projects """
 
 from django.db import models
+from django.core.urlresolvers import reverse
 
 from ckeditor.fields import RichTextField
+from filer.fields.image import FilerImageField
 
 
 class Client(models.Model):
@@ -61,17 +63,27 @@ class Project(models.Model):
     """ A single project belonging to a client. """
 
     published = PublishedManager()
+    objects = models.Manager()
 
     client = models.ForeignKey(Client)
     name = models.CharField(max_length=128)
     description = models.TextField(blank=True)
-    homepage = models.URLField(blank=True)
     categories = models.ManyToManyField(Category)
+
+    landscape_image = FilerImageField(null=True, blank=True,
+        related_name="project_landscape_image")
+    portrait_image = FilerImageField(null=True, blank=True,
+        related_name="project_listing_image")
 
     content = RichTextField()
 
     ordering = models.PositiveIntegerField(default=0)
     slug = models.SlugField(unique=True)
+
+    meta_title = models.CharField(blank=True, null=True, max_length=80,
+        help_text=""" Meta title should be between 50-60 chars (80 max)""")
+    meta_description = models.TextField(blank=True, null=True, max_length=115,
+        help_text=""" Meta title should be around 115 chars (130 max)""")
 
     is_published = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -82,3 +94,8 @@ class Project(models.Model):
 
     def __unicode__(self):
         return "{} by {}".format(self.name, self.client.name)
+
+    def get_absolute_url(self):
+        return reverse('projects:detail', kwargs={
+            'slug': self.slug
+        })

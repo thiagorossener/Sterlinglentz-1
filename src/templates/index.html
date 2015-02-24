@@ -2,6 +2,10 @@
 
 {% load static %}
 {% load thumbnail %}
+{% load snippets %}
+
+{% block meta_title %}{% snippet "index.meta.title" %}{% endblock %}
+{% block meta_description %}{% snippet "index.meta.description" %}{% endblock %}
 
 {% block body %}
     <div class="index"
@@ -9,14 +13,14 @@
 
         <div class="index__atf"> {# Above the fold #}
             <div class="index__hero">
-                <p>THE INTERNATIONAL HEADQUARTERS OF STERLING LENTZ</p>
-                <h1>An aspiring professional golfer travelling around the world working as a freelance designer and creative director for small brands.</h1>
+                <p>{% snippet "index.hero.title" %}</p>
+                <h1>{% snippet "index.hero.content" %}</h1>
             </div>
             {% if post %}
                 <div class="index__strip strip">
                     <div class="strip__content">
                         <div class="strip__title">
-                            From the Blog:
+                            {% snippet "index.blog.tagline" %}
                         </div>
                         <div class="strip__text">
                             {{ post.title }}

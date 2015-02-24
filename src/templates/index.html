@@ -18,12 +18,11 @@
                         From the Blog:
                     </div>
                     <div class="strip__text">
-                        Talent being assumed, execution far outweights design creativity
+                        {{ post.title }}
                     </div>
                     <div class="strip__button">
-                        <a href="" title="" class="button button--hollow button--gold">
-                            Read
-                        </a>
+                        <a href="{{ post.get_absolute_url }}" title="{{ post.title }}"
+                           class="button button--hollow button--gold">Read</a>
                     </div>
                 </div>
             </div>

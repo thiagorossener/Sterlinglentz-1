@@ -13,4 +13,8 @@ def snippet(context, slug):
         snippet = Snippet.objects.get(slug=slug)
     except Snippet.DoesNotExist:
         pass
-    return mark_safe(snippet.content)
+
+    try:
+        return mark_safe(snippet.content)
+    except AttributeError:
+        return ""

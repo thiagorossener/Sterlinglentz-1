@@ -128,6 +128,23 @@ TEMPLATE_DIRS = (
 # CKEditor
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar':
+            (
+                ['Styles', 'Format', 'TextColor'],
+                ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript',
+                    'Superscript', '-', 'RemoveFormat'],
+                ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
+                    'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter',
+                    'JustifyRight', 'JustifyBlock'],
+                ['Cut', 'Copy', 'Paste', 'PasteText', '-', 'Undo', 'Redo'],
+                ['Link', 'Unlink', 'Anchor'],
+                ['Source', 'Maximize', 'ShowBlocks'],
+            ),
+        'startupOutlineBlocks': True
+    },
+}
 
 # Suit
 SUIT_CONFIG = {

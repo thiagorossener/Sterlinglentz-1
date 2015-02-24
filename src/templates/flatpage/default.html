@@ -19,7 +19,7 @@
         {% endif %}
         <article class="page__body">
             <aside class="page__sidebar">
-                {{ flatpage.sidebar }}
+                {{ flatpage.sidebar|safe }}
 
 
                 <div class="sidebar sidebar--small">
@@ -45,7 +45,7 @@
                     </div>
                 {% endif %}
                 <div class="page__content page__content--shrink">
-                    {{ flatpage.content }}
+                    {{ flatpage.content|safe }}
 
                     <div class="image">
                         <img class="image__img" src="{% static 'images/temp/portrait-1.jpg' %}" alt="">

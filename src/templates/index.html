@@ -12,43 +12,47 @@
                 <p>THE INTERNATIONAL HEADQUARTERS OF STERLING LENTZ</p>
                 <h1>An aspiring professional golfer travelling around the world working as a freelance designer and creative director for small brands.</h1>
             </div>
-            <div class="index__strip strip">
-                <div class="strip__content">
-                    <div class="strip__title">
-                        From the Blog:
-                    </div>
-                    <div class="strip__text">
-                        {{ post.title }}
-                    </div>
-                    <div class="strip__button">
-                        <a href="{{ post.get_absolute_url }}" title="{{ post.title }}"
-                           class="button button--hollow button--gold">Read</a>
+            {% if post %}
+                <div class="index__strip strip">
+                    <div class="strip__content">
+                        <div class="strip__title">
+                            From the Blog:
+                        </div>
+                        <div class="strip__text">
+                            {{ post.title }}
+                        </div>
+                        <div class="strip__button">
+                            <a href="{{ post.get_absolute_url }}" title="{{ post.title }}"
+                               class="button button--hollow button--gold">Read</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endif %}
         </div>
-        <div class="index__btf"> {# Below the fold #}
-            <div class="index__footer">
-                <div class="index__projects">
-                    {% for project in projects %}
-                        <div class="index__project">
-                            <div class="project-box">
-                                <div class="project-box__image">
-                                    <a href="{{ project.get_absolute_url }}"
-                                       title="{{ project.description }}">
+        {% if projects %}
+            <div class="index__btf"> {# Below the fold #}
+                <div class="index__footer">
+                    <div class="index__projects">
+                        {% for project in projects %}
+                            <div class="index__project">
+                                <div class="project-box">
+                                    <div class="project-box__image">
+                                        <a href="{{ project.get_absolute_url }}"
+                                           title="{{ project.description }}">
 
-                                       <img src="{% thumbnail project.portrait_image 500x500 crop %}"
-                                            alt="{{ project.name }}">
-                                    </a>
-                                </div>
-                                <div class="project-box__overlay">
-                                    <a href="{{ project.get_absolute_url }}" class="button button--huge">{{ project.name }}</a>
+                                           <img src="{% thumbnail project.portrait_image 500x500 crop %}"
+                                                alt="{{ project.name }}">
+                                        </a>
+                                    </div>
+                                    <div class="project-box__overlay">
+                                        <a href="{{ project.get_absolute_url }}" class="button button--huge">{{ project.name }}</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endif %}
     </div>
 {% endblock body %}

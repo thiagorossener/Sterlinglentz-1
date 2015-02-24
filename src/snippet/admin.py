@@ -7,3 +7,4 @@ from .forms import SnippetForm
 @admin.register(Snippet)
 class SnippetAdmin(admin.ModelAdmin):
     form = SnippetForm
+    list_display = ["slug", "content"]

@@ -47,6 +47,9 @@ INSTALLED_APPS = (
 
     # Other
     'ckeditor',
+    'easy_thumbnails',
+    'mptt',
+    'filer',
 
     # Custom
     'core',

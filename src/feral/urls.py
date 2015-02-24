@@ -32,7 +32,7 @@ urlpatterns = patterns(
     url(r'^projects/', include("project.urls", namespace="projects")),
     url(r'^blog/', include("blog.urls", namespace="blog")),
     url(r'^', include("core.urls")),
-    #url(r'^', include('flatpage.urls', namespace="flatpages")),
+    url(r'^', include('flatpage.urls', namespace="flatpages")),
 )
 
 if settings.DEBUG:

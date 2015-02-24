@@ -3,7 +3,7 @@
 {% load static %}
 {% load thumbnail %}
 
-{% block meta_title %}{{ projet.meta_title }}{% endblock %}
+{% block meta_title %}{{ project.meta_title }}{% endblock %}
 {% block meta_description %}{{ project.meta_description }}{% endblock %}
 
 {% block body %}
@@ -26,7 +26,7 @@
                     <ul>
                         <li>{{ project.client.focus|title }}</li>
                     </ul>
-                    {% if project.categories. %}
+                    {% if project.categories %}
                         <p><small>PROJECTS</small></p>
                         <ul>
                             {% for category in project.categories.all %}

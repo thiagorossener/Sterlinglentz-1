@@ -16,9 +16,22 @@ class IndexView(BlockMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
+
+        projects = None
+        try:
+            projects = Project.published.all()[:3]
+        except Project.DoesNotExist:
+            pass
+
+        post = None
+        try:
+            post = Post.published.latest()
+        except Post.DoesNotExist:
+            pass
+
         context.update({
-            'projects': Project.published.all()[:3],
-            'post': Post.published.latest()
+            'projects': projects,
+            'post': post
         })
         return context
 

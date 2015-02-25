@@ -13,10 +13,18 @@ class ProjectListView(ListView):
     template_name = "project/list.html"
     model = Project
     context_object_name = "projects"
+    group_size = 3
 
     def get_queryset(self):
         """ Only return published projects. """
         return Project.published.all()
+
+    def get_context_data(self, **kwargs):
+        """ Group projects into rows of three. """
+        context = super(ProjectListView, self).get_context_data(**kwargs)
+        context['projects'] = \
+            zip(*(iter(context['projects']),) * self.group_size)
+        return context
 
 
 class ProjectDetailView(DetailView):

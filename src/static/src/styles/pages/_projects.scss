@@ -1,6 +1,13 @@
 .projects__list {
     @include clearfix;
     padding-bottom: 0;
+    min-height: 100vh;
+
+    background-color: $off-white;
+    background-repeat: no-repeat;
+    background-position: -30% -5%;
+    background-size: 90%;
+    background-attachment: fixed;
 }
 
     .projects__row {
@@ -15,6 +22,16 @@
         }
 
         &--odd {
-            margin-top: 20rem;
+            margin-top: 25%;
         }
     }
+
+@media screen and (max-width: $break-small) {
+    .projects__column {
+        @include span(100% no-gutters);
+
+        &--odd {
+            margin-top: 0;
+        }
+    }
+}

@@ -48,6 +48,7 @@
 
     .post__content {
         padding: 4rem;
+        border-left: 1px solid #ebebeb;
     }
 
 
@@ -108,13 +109,8 @@
     .post__header__date {
         margin-bottom: 2rem;
     }
-}
 
-@media screen and (max-width: $break-small + 1) {
-    .blog__sidebar {
-        float: right;
-    }
-    .blog__content {
-        float: left;
+    .post__content {
+        border: none;
     }
 }

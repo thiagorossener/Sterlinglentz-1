@@ -104,6 +104,10 @@
     .blog__content {
         @include span(100% no-gutters);
     }
+
+    .post__header__date {
+        margin-bottom: 2rem;
+    }
 }
 
 @media screen and (max-width: $break-small + 1) {

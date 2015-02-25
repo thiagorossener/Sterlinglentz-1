@@ -29,22 +29,6 @@
                     {% endfor %}
                 </div>
             {% endfor %}
-            {% for row in projects %}
-                <div class="projects__row">
-                    {% for project in row %}
-                        <div class="projects__column {% cycle '' 'projects__column--odd' %}">
-                            <div class="project-box">
-                                <div class="project-box__image">
-                                    <a href="{{ project.get_absolute_url }}" title="{{ project.name }}">
-                                        <img src="{% thumbnail project.portrait_image 500x500 crop %}"
-                                             alt="{{ project.name }}">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endfor %}
         {% endfor %}
     </div>
 {% endblock body %}

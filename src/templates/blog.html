@@ -7,8 +7,8 @@
 {% block meta_description %}{% endblock %}
 
 {% block body %}
-    <div class="blog">
-        <div class="blog__sidebar">
+    <div class="blog" data-equal-columns>
+        <div class="blog__sidebar" data-column>
             <ul class="post-list">
                 {% for post in all_posts %}
                     <li class="post-list__item">
@@ -26,8 +26,11 @@
             <div class="post-search">
                 <input class="post-search__input" type="search" name="" value="">
             </div>
+            <div class="post-return">
+                <a class="silent" href="{% url 'blog:latest' %}" title="">Return to blog index</a>
+            </div>
         </div>
-        <div class="blog__content">
+        <div class="blog__content" data-column>
             <div class="post">
                 <header class="post__header" {% if display_post.image %}style="background-image:url({% thumbnail display_post.image 1200x800 crop %})"{% endif %}>
                     <p class="post__header__date" title="{{ display_post.created_on }}">
@@ -38,23 +41,13 @@
                     {% endif %}
                 </header>
                 <article class="post__content">
-                    <h2>Gathering Information (h2)</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Duis eu accumsan arcu. Mauris sodales risus sit amet mi iaculis
-                    rutrum. Quisque <strong>facilisis consectetur tortor</strong>, vitae pretium nisi
-                    blandit at. Vestibulum porta lacinia elit, quis finibus quam
-                    lacinia quis. Vivamus eu sapien vel nulla efficitur sodales.
-                    Cras magna lectus, <a href="" title="">bibendum id feugiat ut</a>, feugiat et felis.
-                    Phasellus non interdum est, at interdum arcu. Nunc sit amet</p>
+                    {{ display_post.content|safe }}
+
                     <div class="image">
                         <img class="image__img" src="{% static 'images/temp/image-1.jpg' %}" />
                         <p class="image__caption">Lorem ipsum dolor sit amet, consectetur
                         adipiscing elit, 2008</p>
                     </div>
-                    <p>ut a consectetur urna. Nunc varius malesuada ligula
-                    et hendrerit. Donec lobortis justo sed tincidunt cursus. Etiam a
-                    magna tortor. Suspendisse commodo malesuada dignissim. Nullam sodales,
-                    augue eget ultrices blandit, elit mauris vehicula lectus, quis sagittis</p>
                     <blockquote class="pullquote" cite="http://example.com/facts">
                         <p class="pullquote__content">&ldquo;Nunc varius malesuada ligula et hendrerit. Donec lobortis justo sed
                         tincidunt cursus. Etiam a magna tortor.&rdquo;</p>
@@ -63,32 +56,6 @@
                             <cite><a class="silent" href="">Kevin James, Re:Define Conference, 2012</a></cite>
                         </footer>
                     </blockquote>
-                    <p>ut a consectetur urna. Nunc varius malesuada ligula
-                    et hendrerit. Donec lobortis justo sed tincidunt cursus. Etiam a
-                    magna tortor. Suspendisse commodo malesuada dignissim. Nullam sodales,
-                    augue eget ultrices blandit, elit mauris vehicula lectus, quis sagittis</p>
-                    <h2>This is a test. Be not alarmed.</h2>
-                    <p>ut a consectetur urna. Nunc varius malesuada ligula
-                    et hendrerit. Donec lobortis justo sed tincidunt cursus. Etiam a
-                    magna tortor. Suspendisse commodo malesuada dignissim. Nullam sodales,
-                    augue eget ultrices blandit, elit mauris vehicula lectus, quis sagittis</p>
-                    <ul class="list">
-                        <li>Test line one please thankyou</li>
-                        <li>Test line one please thankyou</li>
-                        <li>Test line one please thankyou</li>
-                        <li>Test line one please thankyou</li>
-                    </ul>
-                    <h3>(h3) This is a test. Be not alarmed.</h3>
-                    <p>Aut a consectetur urna. Nunc varius malesuada ligula
-                    et hendrerit. Donec lobortis justo sed tincidunt cursus. Etiam a
-                    magna tortor. Suspendisse commodo malesuada dignissim. Nullam sodales,
-                    augue eget ultrices blandit, elit mauris vehicula lectus, quis sagittis</p>
-                    <ol class="list">
-                        <li>Test line one please thankyou</li>
-                        <li>Test line one please thankyou</li>
-                        <li>Test line one please thankyou</li>
-                        <li>Test line one please thankyou</li>
-                    </ol>
                 </article>
             </div>
         </div>

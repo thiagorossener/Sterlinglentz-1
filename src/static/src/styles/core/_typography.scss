@@ -81,6 +81,7 @@ small,
 
 ul, ol {
     @include type-size(ms(1), 1.5);
+    margin-bottom: 3rem;
 
     li {
         margin-bottom: .75rem;

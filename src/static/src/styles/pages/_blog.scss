@@ -5,14 +5,13 @@
     .blog__sidebar {
         @include span(33.33% no-gutters);
         background-color: #fbfbfb;
-        height: 100vh;
+        height: 100%;
 
     }
 
     .blog__content {
         @include span(66.66% last);
     }
-
 
 .post {
 
@@ -92,3 +91,21 @@
         background-repeat: no-repeat;
         background-position: center left;
     }
+
+.post-return {
+     margin: 5rem 3rem 3rem 3rem;
+     color: #999999;
+     font-size: 0.85rem;
+}
+
+@media screen and (max-width: $break-small) {
+    .blog__sidebar,
+    .post__content {
+        @include span(10 of 12 no-gutters);
+        @include prefix(1 of 12);
+        @include suffix(1 of 12);
+    }
+    .blog__content {
+        width: 100%;
+    }
+}

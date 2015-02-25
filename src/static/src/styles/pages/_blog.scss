@@ -6,11 +6,12 @@
         @include span(33.33% no-gutters);
         background-color: #fbfbfb;
         height: 100%;
-
+        float: left;
     }
 
     .blog__content {
         @include span(66.66% last);
+        float: right;
     }
 
 .post {
@@ -100,12 +101,16 @@
 
 @media screen and (max-width: $break-small) {
     .blog__sidebar,
-    .post__content {
-        @include span(10 of 12 no-gutters);
-        @include prefix(1 of 12);
-        @include suffix(1 of 12);
+    .blog__content {
+        @include span(100% no-gutters);
+    }
+}
+
+@media screen and (max-width: $break-small + 1) {
+    .blog__sidebar {
+        float: right;
     }
     .blog__content {
-        width: 100%;
+        float: left;
     }
 }

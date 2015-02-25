@@ -4,7 +4,7 @@
 
 $(document).ready(function(){
 
-    // Deal with the navigation
+    // Add class to body when navigation is expanded
     var $body = $('body');
     var $menuTrigger = $('.menu__gutter__trigger');
 
@@ -12,28 +12,30 @@ $(document).ready(function(){
         $body.toggleClass('menu--expanded');
     });
 
-    // Make columns equal
+    // Equalize the heights of selected columns.
     var equalizeColumns = function() {
         $('[data-equal-columns]').each(function(i, row){
             var $row = $(row);
             var $columns = $row.find('[data-column]');
             $columns.css('height','auto').height('auto');
 
-            var max = 0;
-            $columns.each(function(j, column){
-                var $column = $(column);
-                var height = $column.outerHeight();
-                max = (height > max)? height : max;
-            });
+            if($(window).width() > 800) {
+                var max = 0;
+                $columns.each(function(j, column){
+                    var $column = $(column);
+                    var height = $column.outerHeight();
+                    max = (height > max)? height : max;
+                });
 
-            $columns.each(function(j, column){
-                var $column = $(column);
-                var padding = $column.innerHeight() - $column.height();
-                var height = max - padding;
-                $column.animate({
-                    height: height
-                }, 250).height(height);
-            });
+                $columns.each(function(j, column){
+                    var $column = $(column);
+                    var padding = $column.innerHeight() - $column.height();
+                    var height = max - padding;
+                    $column.animate({
+                        height: height
+                    }, 250).height(height);
+                });
+            }
         });
     };
     // Run equalize on first load as well as when a resize event stops

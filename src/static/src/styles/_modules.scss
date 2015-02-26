@@ -10,7 +10,7 @@
     list-style: none;
     cursor: pointer;
 
-    &:hover .project-teaser__overlay {
+    &:hover .project-teaser__button {
         opacity: 1;
     }
 }
@@ -26,26 +26,20 @@
         }
     }
 
-        .project-teaser__overlay {
+        .project-teaser__button {
             @include transition(opacity .25s ease-in-out);
             opacity: 0;
             position: absolute;
-            width: 100%;
-            height: 100%;
-            margin: auto;
-            top: 0;
-            left: 0;
-            background: transparent;
-        }
+            width: 65%;
+            top: 40%;
+            left: 17.5%;
+            padding-left: 5%;
+            padding-right: 5%;
 
-            .project-teaser__button {
-                position: absolute;
-                width: 50%;
-                top: 40%;
-                left: 20%;
-                padding-left: 5%;
-                padding-right: 5%;
+            a {
+                display: block;
             }
+        }
 
     .project-teaser__details {
 

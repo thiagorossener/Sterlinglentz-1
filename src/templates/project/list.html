@@ -16,9 +16,9 @@
             {% for row in projects %}
                 <div class="projects__row">
                     {% for project in row %}
-                        <div class="projects__column {% cycle '' 'projects__column--odd' %}">
-                            <div class="project-box">
-                                <div class="project-box__image">
+                        <div class="projects__column">
+                            <div class="project-teaser">
+                                <div class="project-teaser__image">
                                     <a href="{{ project.get_absolute_url }}" title="{{ project.name }}">
                                         <img src="{% thumbnail project.portrait_image 500x500 crop %}"
                                              alt="{{ project.name }}">

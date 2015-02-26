@@ -108,10 +108,10 @@ module.exports = function (grunt) {
             }
         },
 
-        // Grunt SASS
+        // Grunt SASS (via libsass)
         // https://github.com/sindresorhus/grunt-sass
         // Compile SASS to css
-        sass: {
+        /*sass: {
             options: {
                 sourceMap: true,
                 includePaths: [
@@ -122,6 +122,23 @@ module.exports = function (grunt) {
                 files: {
                     '<%= siteConfig.distDir %>/styles/screen.css':
                     '<%= siteConfig.srcDir %>/styles/screen.scss'
+                }
+            }
+        },*/
+
+        // Grunt Contrib SASS (via Ruby)
+        // https://github.com/gruntjs/grunt-contrib-sass
+        sass: {
+            dist: {
+                options: {
+                    loadPath: [
+                        '<%= siteConfig.baseDir %>/bower_components'
+                    ],
+                    style: 'expanded'
+                },
+                files: {
+                    '<%= siteConfig.distDir %>/styles/screen.css':
+                        '<%= siteConfig.srcDir %>/styles/screen.scss'
                 }
             }
         },

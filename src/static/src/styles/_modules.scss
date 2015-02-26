@@ -1,5 +1,8 @@
-// As seen on the index page - x3 projects
-.project-box {
+// Project Teaser
+// A square image of the project with an optional overlay button that
+// links to the project detail page
+// (As seen on the index page - x3 projects)
+.project-teaser {
     position: relative;
 
     padding: 0;
@@ -7,12 +10,12 @@
     list-style: none;
     cursor: pointer;
 
-    &:hover .project-box__overlay {
+    &:hover .project-teaser__overlay {
         opacity: 1;
     }
 }
 
-    .project-box__image {
+    .project-teaser__image {
         a {
             display: block;
 
@@ -23,7 +26,7 @@
         }
     }
 
-        .project-box__overlay {
+        .project-teaser__overlay {
             @include transition(opacity .25s ease-in-out);
             opacity: 0;
             position: absolute;
@@ -35,7 +38,7 @@
             background: transparent;
         }
 
-            .project-box__button {
+            .project-teaser__button {
                 position: absolute;
                 width: 50%;
                 top: 40%;
@@ -44,13 +47,13 @@
                 padding-right: 5%;
             }
 
-    .project-box__details {
+    .project-teaser__details {
 
     }
 
-
-
-// As seen on the studio page - top image and caption
+// Header Image
+// A large fullwidth image with an option small bottom right caption
+// (As seen on the studio page - fullwidth top image and caption)
 .header-image {
     position: relative;
     background-repeat: no-repeat;
@@ -69,9 +72,36 @@
         font-size: 0.80rem;
     }
 
+// Summary:
+// A large piece of summary text for the page as well as a divider
+// (As seen on the studio page and project detail page)
+.summary {
 
-// As seen on the studio page - down the left sidebar
-.sidebar-list {
+}
+    .summary__title {
+        margin-bottom: 3rem;
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+        font-weight: $font-weight-regular;
+
+        &--short {
+            width: 80%;
+        }
+    }
+
+    .summary {
+        margin-bottom: 3rem;
+    }
+
+
+// Spec List
+// A list of lists(!) Each list has a heading
+// (As seen on the studio page - down the left sidebar)
+//
+// (Note) We are using element selectors here as opposed to BEM style selectors
+// as the content of these lists is set by a WYSIWYG editor (therefore we make
+// the markup as simple as possible to make it easier on the editor)
+.spec-list {
     p {
         margin-bottom: .5rem;
         small {
@@ -114,24 +144,43 @@
     }
 }
 
-.heading {
+// Post List
+// A list to display post-like content
+// (As seen on the blog detail)
+.post-list {
+    margin: 0;
+    padding: 4rem 0;
+}
+
+    .post-list__item {
+        padding: 0 10%;
+        width: 80%;
+        margin: 0 0 5rem 0;
+        list-style: none;
+    }
+
+        .post-list__title {
+            color: #7e7e7e;
+            font-size: 1rem;
+            font-weight: $font-weight-bold;
+            line-height: 1.25rem;
+            margin-bottom: 0;
+        }
+
+        .post-list__date {
+            font-size: 0.75rem;
+            margin-bottom: 0;
+            color: #999999;
+        }
+
+// Tab List
+// A list to display page-like tabs
+.tab-list {
 
 }
-    .heading__title {
-        margin-bottom: 3rem;
-        font-size: 1.75rem;
-        line-height: 2.25rem;
-        font-weight: $font-weight-regular;
 
-        &--short {
-            width: 80%;
-        }
-    }
-
-    .heading__divider {
-        margin-bottom: 3rem;
-    }
-
+// Image
+// An image used within the content of a page with an option caption below
 .image {
     margin-bottom: 3rem;
 }
@@ -147,6 +196,9 @@
         font-style: italic;
     }
 
+// Pullquote
+// A large pullquote  used within the content of a page (usually
+// the blog) with an optional source
 .pullquote {
     text-align: center;
     margin-bottom: 3rem;
@@ -175,6 +227,7 @@
         }
     }
 
+// A content list
 .list {
     margin-bottom: 3rem;
 

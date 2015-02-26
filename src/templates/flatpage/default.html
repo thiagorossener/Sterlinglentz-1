@@ -21,22 +21,6 @@
         <article class="page__body">
             <aside class="page__sidebar">
                 {{ flatpage.sidebar|safe }}
-
-
-                <div class="sidebar sidebar--small">
-                    <div class="sidebar-spec">
-                        {% for key, d in sidebar.items %}
-                            <div class="sidebar-spec__item">
-                                <h6 class="sidebar-spec__title">{{ key }}</h6>
-                                <ul class="sidebar-spec__list">
-                                    {% for v in d.values %}
-                                        <li>{{ v|safe }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
             </aside>
             <section class="page__main">
                 {% if flatpage.description %}

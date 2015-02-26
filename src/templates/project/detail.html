@@ -17,7 +17,7 @@
         {% endif %}
         <article class="page__body">
             <aside class="page__sidebar">
-                <div class="sidebar-list">
+                <div class="spec-list">
                     <p><small>CLIENT</small></p>
                     <ul>
                         <li>{{ project.client.name|title }}</li>
@@ -38,9 +38,9 @@
             </aside>
             <section class="page__main">
                 {% if project.description %}
-                    <div class="page__heading heading">
-                        <h1 class="heading__title">{{ project.description }}</h1>
-                        <hr class="heading__divider divider--short" />
+                    <div class="page__heading summary">
+                        <h1 class="summary__title">{{ project.description }}</h1>
+                        <hr class="summary__divider divider--short" />
                     </div>
                 {% endif %}
                 <div class="page__content page__content--shrink">

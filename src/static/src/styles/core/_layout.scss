@@ -1,5 +1,3 @@
-// This file contains the basic layout for the site (mainly the nav and content)
-
 $menuGutterWidth: 2.5rem;
 $menuGutterBackground: $gray-dark;
 
@@ -8,6 +6,14 @@ $menuDrawerBackground: lighten($gray-dark, 5%);
 
 $animationDuration: 300ms;
 
+// Header (Menu + Nav)
+// Our page navigation sits on the LHS of the page on normal desktop resolutions
+// and has a thin gutter that can be clicked to reveal a slide out drawer with
+// the site navigation. This entire unit switches to a dropdown menu along
+// the top of the page at mobile resolutions
+//
+// We use CSS3 transitions to accomplish this (with a small bit of jquery to
+// register the actual clicking of the menu drawer trigger)
 .header {
 }
     .menu {
@@ -23,6 +29,7 @@ $animationDuration: 300ms;
         font-size: 0.9rem;
         background-color: $menuDrawerBackground;
     }
+        // Gutter
         // The slim menu menu that contains a trigger for the navigation as well
         // as the current breadcrumb for the current page.
         .menu__gutter {
@@ -38,6 +45,7 @@ $animationDuration: 300ms;
             padding: $menuGutterWidth * 0.25;
         }
 
+            // Gutter Trigger
             // The small x3 vertical lines that triggers the drawer to slide out
             // from the lefthand side of the page in normal desktop view.
             .menu__gutter__trigger {
@@ -87,6 +95,7 @@ $animationDuration: 300ms;
                 height: 1rem;
             }
 
+        // Drawer
         // The secondary drawer that slides out from the left when the gutter is
         // clicked in normal desktop view. In the mobile view the nav loads on the
         // top of the page.
@@ -155,12 +164,11 @@ $animationDuration: 300ms;
                 left: 0;
             }
 
-.content {
+.content-wrapper {
     @include transition(margin-left $animationDuration);
     margin-left: $menuGutterWidth;
     position: relative;
 }
-
 
 body.menu--expanded {
     .menu__gutter__trigger {
@@ -168,7 +176,7 @@ body.menu--expanded {
     }
 }
 
-// Desktop layout
+// Desktop-specific header/content layout
 @media screen and (min-width: $break-small) {
     // When the menu trigger is clicked, we expand the nav ACROSS
     body.menu--expanded {
@@ -180,13 +188,13 @@ body.menu--expanded {
             left: $menuGutterWidth;
         }
 
-        .content {
+        .content-wrapper {
             margin-left: ($menuGutterWidth + $menuDrawerWidth);
         }
     }
 }
 
-// Mobile layout
+// Mobile-specific header/content layout
 @media screen and (max-width: $break-small) {
     .menu,
     .menu__gutter,
@@ -241,7 +249,7 @@ body.menu--expanded {
                 display: none;
             }
 
-    .content {
+    .content-wrapper {
         margin: $menuGutterWidth 0 0 0;
     }
 
@@ -255,8 +263,35 @@ body.menu--expanded {
             top: $menuGutterWidth;
         }
 
-        .content {
+        .content-wrapper {
 
         }
+    }
+}
+
+// Basic Page Layout
+// This is a simple layout used on more than one page where a LHS sidebar takes
+// up a third of the page and a single column takes up the other two thirds
+// (As seen on the blog page and process page)
+.content {
+    @include container;
+}
+
+    .sidebar {
+        @include span(33.33% no-gutters);
+        background-color: #fbfbfb;
+        height: 100%;
+        float: left;
+    }
+
+    .column {
+        @include span(66.66% last);
+        float: right;
+    }
+
+@media screen and (max-width: $break-small) {
+    .sidebar,
+    .column {
+        @include span(100% no-gutters);
     }
 }

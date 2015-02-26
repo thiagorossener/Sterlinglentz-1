@@ -39,18 +39,17 @@
                     <div class="index__projects">
                         {% for project in projects %}
                             <div class="index__project">
-                                <div class="project-box">
-                                    <div class="project-box__image">
+                                <div class="project-teaser">
+                                    <div class="project-teaser__image">
                                         <a href="{{ project.get_absolute_url }}"
                                            title="{{ project.description }}">
-
                                            <img src="{% thumbnail project.portrait_image 500x500 crop %}"
                                                 alt="{{ project.name }}">
                                         </a>
                                     </div>
-                                    <div class="project-box__overlay">
+                                    <div class="project-teaser__overlay">
                                         <a href="{{ project.get_absolute_url }}"
-                                            class="project-box__button button button--huge">{{ project.name }}</a>
+                                            class="project-teaser__button button button--huge">{{ project.name }}</a>
                                     </div>
                                 </div>
                             </div>

@@ -21,9 +21,9 @@ $indexPadding: 5%;
             @include vertical-align(75%);
 
             p, small {
-                @include type-size(ms(-1));
+                font-size: 0.75rem;
                 text-transform: uppercase;
-                margin-bottom: 1.25rem;
+                margin-bottom: 1rem;
             }
 
             h1, h2, h3, h4, h5, h6 {
@@ -49,12 +49,11 @@ $indexPadding: 5%;
                 .strip__text,
                 .strip__button {
                     float: left;
-                    line-height: 1.5rem;
+                    line-height: 1.75rem;
                 }
 
                 .strip__title {
                     text-transform: uppercase;
-                    font-weight: bold;
                     font-size: 0.65rem;
                     color: #686868;
                     margin-right: 2rem;
@@ -67,7 +66,7 @@ $indexPadding: 5%;
                 }
 
                 .strip__button {
-
+                    margin-top: -2px;
                 }
 
     .index__btf {

@@ -58,7 +58,6 @@ INSTALLED_APPS = (
     'core',
     'project',
     'blog',
-    'content',
     'snippet',
     'flatpage'
 )

@@ -7,7 +7,6 @@ from .models import Post
 class ProjectAdmin(admin.ModelAdmin):
     prepopulated_fields = {
         "slug": ("title", ),
-        "meta_title": ("title", )
     }
     fieldsets = (
         (None, {

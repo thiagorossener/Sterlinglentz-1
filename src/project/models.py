@@ -92,6 +92,12 @@ class Project(models.Model):
     class Meta:
         ordering = ["ordering", "name"]
 
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            self.meta_title = self.name
+            self.meta_description = self.description
+        return super(Project, self).save(*args, **kwargs)
+
     def __unicode__(self):
         return "{} by {}".format(self.name, self.client.name)
 

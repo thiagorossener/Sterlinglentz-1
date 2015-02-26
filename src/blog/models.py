@@ -43,6 +43,12 @@ class Post(models.Model):
         ordering = ["edited_on"]
         get_latest_by = "created_on"
 
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            self.meta_title = self.title
+            self.meta_description = self.subtitle
+        return super(Post, self).save(*args, **kwargs)
+
     def __unicode__(self):
         return "{}".format(self.title)
 

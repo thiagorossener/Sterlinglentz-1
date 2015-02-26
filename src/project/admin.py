@@ -19,8 +19,6 @@ class CategoryAdmin(admin.ModelAdmin):
 class ProjectAdmin(SortableModelAdmin):
     prepopulated_fields = {
         "slug": ("name",),
-        "meta_title": ("name",),
-        "meta_description": ("description",),
     }
     filter_horizontal = ["categories", ]
     list_filter = ["client", "is_published"]

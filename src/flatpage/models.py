@@ -43,6 +43,7 @@ class FlatPage(models.Model):
         help_text=""" Meta title should be around 115 chars (130 max)""")
 
     is_published = models.BooleanField(default=True)
+    in_navigation = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
 
@@ -50,7 +51,13 @@ class FlatPage(models.Model):
         db_table = 'django_flatpage'
         verbose_name = _('flat page')
         verbose_name_plural = _('flat pages')
-        ordering = ('url',)
+        ordering = ('ordering',)
+
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            self.meta_title = self.title
+            self.meta_description = self.description
+        return super(FlatPage, self).save(*args, **kwargs)
 
     def __str__(self):
         return "%s -- %s" % (self.url, self.title)

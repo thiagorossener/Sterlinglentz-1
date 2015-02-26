@@ -5,5 +5,5 @@ from .models import FlatPage
 
 def flatpages(object):
     return {
-        "flatpages": FlatPage.published.all()
+        "flatpages": FlatPage.published.filter(in_navigation=True)
     }

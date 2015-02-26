@@ -8,10 +8,6 @@ from .models import FlatPage
 
 class FlatPageAdmin(SortableModelAdmin):
     form = FlatpageForm
-    prepopulated_fields = {
-        "meta_title": ("title",),
-        "meta_description": ("description",),
-    }
     fieldsets = (
         (None, {
             'fields': ('url', 'title', 'description', 'is_published')
@@ -27,7 +23,7 @@ class FlatPageAdmin(SortableModelAdmin):
         }),
         ("Meta", {
             'classes': ('collapse', 'wide'),
-            'fields': ('template_name', 'meta_title', 'meta_description')
+            'fields': ('in_navigation', 'template_name', 'meta_title', 'meta_description')
         })
     )
     list_display = ('url', 'title')

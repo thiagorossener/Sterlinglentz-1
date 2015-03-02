@@ -40,6 +40,12 @@
             </div>
         </div>
         <div class="sidebar" data-column>
+            <div class="sidebar__trigger">
+                <a href="#" title="Toggle Sidebar">
+                    <img src="{% static 'images/sidebar-trigger.svg' %}" width="40"
+                        alt="Sidebar Toggle">
+                </a>
+            </div>
             <ul class="post-list">
                 {% for post in all_posts %}
                     <li class="post-list__item">

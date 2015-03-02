@@ -282,7 +282,14 @@ body.menu--expanded {
         background-color: #fbfbfb;
         height: 100%;
         float: left;
+        position: relative;
     }
+
+        .sidebar__trigger {
+            position: absolute;
+            top: 0;
+            left: 10%;
+        }
 
     .column {
         @include span(66.66% last);

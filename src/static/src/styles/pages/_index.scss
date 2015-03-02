@@ -1,4 +1,4 @@
-$indexPadding: 5%;
+$indexPadding: 10%;
 
 .index {
     @include clearfix;
@@ -14,7 +14,7 @@ $indexPadding: 5%;
     }
 
         .index__hero {
-            $width: 50%;
+            $width: 40%;
             width: $width;
             padding: 0 (100% - $width - $indexPadding) 0 $indexPadding;
 

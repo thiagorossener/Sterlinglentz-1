@@ -25,6 +25,10 @@ class FlatPage(models.Model):
 
     url = models.CharField('URL', max_length=100, db_index=True)
     title = models.CharField(max_length=200)
+    subtitle = models.CharField(max_length=200, blank=True, help_text="""
+        * Dependant on template""")
+    subsubtitle = models.CharField(max_length=200, blank=True, help_text="""
+        * Dependant on template""")
     description = models.TextField(blank=True)
 
     image = FilerImageField(null=True, blank=True,
@@ -36,7 +40,7 @@ class FlatPage(models.Model):
 
     template_name = models.CharField(max_length=70, blank=True)
     ordering = models.PositiveIntegerField(default=0)
-
+    menu_title = models.CharField(max_length=70, blank=True)
     meta_title = models.CharField(blank=True, null=True, max_length=80,
         help_text=""" Meta title should be between 50-60 chars (80 max)""")
     meta_description = models.TextField(blank=True, null=True, max_length=115,
@@ -55,6 +59,7 @@ class FlatPage(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.pk:
+            self.menu_title = self.title
             self.meta_title = self.title
             self.meta_description = self.description
         return super(FlatPage, self).save(*args, **kwargs)

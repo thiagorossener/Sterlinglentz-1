@@ -66,6 +66,47 @@
         font-size: 0.80rem;
     }
 
+// Header
+// A large fullwidth image with text on top.
+// (As seen on the blog and process pages)
+.header {
+    background-color: #1e1e1e;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    position: relative;
+    padding: 6rem 4rem;
+}
+
+    .header__trigger {
+        @include transition(opacity 300ms ease);
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 4rem;
+    }
+
+    .header__date {
+        font-size: 0.75rem;
+        color: #fff200;
+        margin-bottom: 4rem;
+        text-transform: uppercase;
+    }
+
+    .header__title {
+        font-size: 3rem;
+        font-weight: $font-weight-bold;
+        color: white;
+        margin-bottom: 0.5rem;
+    }
+
+    .header__subtitle {
+        font-size: 1.5rem;
+        font-weight: $font-weight-regular;
+        color: #cfcfcf;
+    }
+
 // Summary:
 // A large piece of summary text for the page as well as a divider
 // (As seen on the studio page and project detail page)
@@ -199,8 +240,8 @@
         }
 
         &--active {
-            padding-left: 25%;
-            width: 60%;
+            padding-left: 20%;
+            width: 65%;
         }
     }
 

@@ -14,155 +14,153 @@ $animationDuration: 300ms;
 //
 // We use CSS3 transitions to accomplish this (with a small bit of jquery to
 // register the actual clicking of the menu drawer trigger)
-.header {
-}
-    .menu {
-        @include transition(width $animationDuration);
+.menu {
+    @include transition(width $animationDuration);
 
-        position: fixed;
+    position: fixed;
+    height: 100%;
+    width: $menuGutterWidth;
+    left: 0;
+    top: 0;
+    z-index: 10;
+
+    font-size: 0.9rem;
+    background-color: $menuDrawerBackground;
+}
+    // Gutter
+    // The slim menu menu that contains a trigger for the navigation as well
+    // as the current breadcrumb for the current page.
+    .menu__gutter {
+        background-color: $menuGutterBackground;
+
+        position: absolute;
         height: 100%;
-        width: $menuGutterWidth;
         left: 0;
         top: 0;
-        z-index: 10;
+        width: $menuGutterWidth * 0.5;
+        z-index: 100;
 
-        font-size: 0.9rem;
-        background-color: $menuDrawerBackground;
+        padding: $menuGutterWidth * 0.25;
     }
-        // Gutter
-        // The slim menu menu that contains a trigger for the navigation as well
-        // as the current breadcrumb for the current page.
-        .menu__gutter {
-            background-color: $menuGutterBackground;
+
+        // Gutter Trigger
+        // The small x3 vertical lines that triggers the drawer to slide out
+        // from the lefthand side of the page in normal desktop view.
+        .menu__gutter__trigger {
+            @include transition(background-image 2s ease);
+            background-image: url(../images/menu-expand.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 24px;
+
+            cursor: pointer;
+
+            &:hover {
+                background-image: url(../images/menu-expand--hover.svg);
+            }
+
+            &:active {
+            }
+        }
+
+        .menu__gutter__logo {
+            display: none;
+        }
+
+        .menu__gutter__breadcrumb {
+            color: #9b9b9b;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 0.2rem;
+            font-size: 0.80rem;
+            display: block;
+
+            -moz-transform-origin: 50% 50% 50%;
+            -ms-transform-origin: 50% 50% 50%;
+            -webkit-transform-origin: 50% 50% 50%;
+            transform-origin: 50% 50% 50%;
+
+            -moz-transform: translate(-8.25rem, 8.25rem) rotate(-90deg);
+            -ms-transform: translate(-8.25rem, 8.25rem) rotate(-90deg);
+            -webkit-transform: translate(-8.25rem, 8.25rem) rotate(-90deg);
+            transform: translate(-8.25rem, 8.25rem) rotate(-90deg);
 
             position: absolute;
-            height: 100%;
+            top: 50%;
             left: 0;
-            top: 0;
-            width: $menuGutterWidth * 0.5;
-            z-index: 100;
-
-            padding: $menuGutterWidth * 0.25;
+            margin-top: -10rem;
+            width: 19rem;
+            height: 1rem;
         }
 
-            // Gutter Trigger
-            // The small x3 vertical lines that triggers the drawer to slide out
-            // from the lefthand side of the page in normal desktop view.
-            .menu__gutter__trigger {
-                @include transition(background-image 2s ease);
-                background-image: url(../images/menu-expand.svg);
-                background-repeat: no-repeat;
-                background-position: center center;
-                width: 24px;
+    // Drawer
+    // The secondary drawer that slides out from the left when the gutter is
+    // clicked in normal desktop view. In the mobile view the nav loads on the
+    // top of the page.
+    .menu__drawer {
+        @include transition(left $animationDuration);
 
-                cursor: pointer;
+        position: absolute;
+        height: 100%;
+        width: $menuDrawerWidth;
+        left: -($menuGutterWidth + $menuDrawerWidth);
+        top: 0;
+        z-index: 50;
+        overflow-x: visible;
 
-                &:hover {
-                    background-image: url(../images/menu-expand--hover.svg);
-                }
+        background-color: $menuDrawerBackground;
+        color: white;
+    }
 
-                &:active {
-                }
-            }
+        .menu__nav {
+            ul {
+                padding: 0;
+                margin: 0;
 
-            .menu__gutter__logo {
-                display: none;
-            }
-
-            .menu__gutter__breadcrumb {
-                color: #9b9b9b;
-                text-transform: uppercase;
-                text-align: center;
-                letter-spacing: 0.2rem;
-                font-size: 0.80rem;
-                display: block;
-
-                -moz-transform-origin: 50% 50% 50%;
-                -ms-transform-origin: 50% 50% 50%;
-                -webkit-transform-origin: 50% 50% 50%;
-                transform-origin: 50% 50% 50%;
-
-                -moz-transform: translate(-8.25rem, 8.25rem) rotate(-90deg);
-                -ms-transform: translate(-8.25rem, 8.25rem) rotate(-90deg);
-                -webkit-transform: translate(-8.25rem, 8.25rem) rotate(-90deg);
-                transform: translate(-8.25rem, 8.25rem) rotate(-90deg);
-
-                position: absolute;
-                top: 50%;
-                left: 0;
-                margin-top: -10rem;
-                width: 19rem;
-                height: 1rem;
-            }
-
-        // Drawer
-        // The secondary drawer that slides out from the left when the gutter is
-        // clicked in normal desktop view. In the mobile view the nav loads on the
-        // top of the page.
-        .menu__drawer {
-            @include transition(left $animationDuration);
-
-            position: absolute;
-            height: 100%;
-            width: $menuDrawerWidth;
-            left: -($menuGutterWidth + $menuDrawerWidth);
-            top: 0;
-            z-index: 50;
-            overflow-x: visible;
-
-            background-color: $menuDrawerBackground;
-            color: white;
-        }
-
-            .menu__nav {
-                ul {
+                li {
+                    list-style: none;
                     padding: 0;
                     margin: 0;
 
-                    li {
-                        list-style: none;
-                        padding: 0;
-                        margin: 0;
+                    a {
+                        display: block;
+                        padding: .75rem 15%;
+                        width: 70%;
+
+                        font-size: .80rem;
+                        line-height: 1rem;
+                        color: $white;
+                        text-decoration: none;
+                    }
+
+                    &:hover, .active {
+                        background-color: lighten($gray-dark, 15%);
 
                         a {
-                            display: block;
-                            padding: .75rem 15%;
-                            width: 70%;
-
-                            font-size: .80rem;
-                            line-height: 1rem;
                             color: $white;
-                            text-decoration: none;
-                        }
-
-                        &:hover, .active {
-                            background-color: lighten($gray-dark, 15%);
-
-                            a {
-                                color: $white;
-                            }
                         }
                     }
                 }
             }
+        }
 
-            .menu__logo {
-                padding: 0 10%;
-                position: absolute;
-                top: 50%;
-                left: 0;
+        .menu__logo {
+            padding: 0 10%;
+            position: absolute;
+            top: 50%;
+            left: 0;
 
-                a {
-                    display: block;
-                }
+            a {
+                display: block;
             }
+        }
 
-            .menu__footer {
-                padding: .75rem 15%;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-            }
+        .menu__footer {
+            padding: .75rem 15%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
 
 .content-wrapper {
     @include transition(margin-left $animationDuration);
@@ -308,7 +306,7 @@ body.column--expanded {
         width: 100%;
     }
 
-    .post__header__trigger {
+    .header__trigger {
         opacity: 1;
     }
 }

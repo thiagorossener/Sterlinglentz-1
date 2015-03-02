@@ -14,7 +14,7 @@ $(document).ready(function(){
     });
 
     // Toggle sidebar/column
-    var $columnTrigger = $('.sidebar__trigger, .post__header__trigger');
+    var $columnTrigger = $('.sidebar__trigger, .header__trigger');
     $columnTrigger.click(function(){
         $body.toggleClass('column--expanded');
         return false;

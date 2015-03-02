@@ -10,7 +10,8 @@ class FlatPageAdmin(SortableModelAdmin):
     form = FlatpageForm
     fieldsets = (
         (None, {
-            'fields': ('url', 'title', 'description', 'is_published')
+            'fields': ('url', 'title', 'subtitle', 'subsubtitle',
+                       'description', 'is_published')
         }),
         (None, {
             'fields': ('image', 'image_caption'),
@@ -23,7 +24,8 @@ class FlatPageAdmin(SortableModelAdmin):
         }),
         ("Meta", {
             'classes': ('collapse', 'wide'),
-            'fields': ('in_navigation', 'template_name', 'meta_title', 'meta_description')
+            'fields': ('in_navigation', 'template_name', 'menu_title',
+                       'meta_title', 'meta_description')
         })
     )
     list_display = ('url', 'title')

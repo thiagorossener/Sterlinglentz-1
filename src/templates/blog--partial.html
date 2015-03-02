@@ -12,10 +12,8 @@
     <div class="column" data-column>
         <header class="header" {% if display_post.image %}style="background-image:url({% thumbnail display_post.image 1200x800 crop %})"{% endif %}>
             <div class="header__trigger">
-                <a href="#" title="Toggle Sidebar">
-                    <img src="{% static 'images/sidebar-trigger--yellow.svg' %}" width="40"
-                        alt="Sidebar Toggle">
-                </a>
+                <img src="{% static 'images/sidebar-trigger--yellow.svg' %}" width="40"
+                     alt="Sidebar Toggle">
             </div>
             <p class="header__subsubtitle" title="{{ display_post.created_on }}">
                     {{ display_post.created_on|date:"n.j.Y" }}</p>
@@ -44,10 +42,8 @@
     </div>
     <aside class="sidebar" data-column>
         <div class="sidebar__trigger">
-            <a href="#" title="Toggle Sidebar">
-                <img src="{% static 'images/sidebar-trigger.svg' %}" width="40"
-                    alt="Sidebar Toggle">
-            </a>
+            <img src="{% static 'images/sidebar-trigger.svg' %}" width="40"
+                 alt="Sidebar Toggle">
         </div>
         <ul class="post-list">
             {% for post in all_posts %}

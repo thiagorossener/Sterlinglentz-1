@@ -5,14 +5,6 @@
 $(document).ready(function(){
     var $body = $('body');
 
-    // Add class to body when navigation is expanded
-    var setupMenuToggle = function(){
-        var $menuTrigger = $('.menu__gutter__trigger');
-        $menuTrigger.click(function(){
-            $body.toggleClass('menu--expanded');
-            return false;
-        });
-    };
 
     // Toggle sidebar/column
     var setupSidebarToggle = function(){
@@ -52,35 +44,38 @@ $(document).ready(function(){
 
     // Setup seamless ajax navigation
     var $menuLinks = $('.menu__nav li a');
+    var $menuTrigger = $('.menu__gutter__trigger');
     var $container = $('.page-wrapper');
 
     // Fetch the content of the page via ajax and insert it in the current page
     var getPageContent = function(href) {
+        console.log('Getting ' + href);
         $.get(href, function (data) {
-            $container.html(data.content);
+            $container.fadeOut(150, function(){
+                $container.html(data.content);
 
-            var $content = $container.find('[data-seamless-nav]');
-            var metaTitle = $content.attr('data-meta-title');
-            var metaDescription = $content.attr('data-meta-description');
+                var $content = $container.find('[data-seamless-nav]');
+                var metaTitle = $content.attr('data-meta-title');
+                var metaDescription = $content.attr('data-meta-description');
 
-            document.title = metaTitle;
-            $('meta[name=description]').attr('content', metaDescription);
+                document.title = metaTitle;
+                $('meta[name=description]').attr('content', metaDescription);
 
-           $body.removeClass('page-loading');
-            history.pushState({}, null, href);
-            $(window).trigger('load');
+                history.pushState({}, null, href);
+                $container.fadeIn(150);
+                $(window).trigger('load');
+            });
         });
     };
 
     // When an anchor link is clicked
     var setupSeamlessNavigationLinks = function() {
-        $('a').click(function(e){
+        $('a').off('click').click(function(e){
             var $this = $(this);
             var href = $this.attr('href');
             var isAbsURL = new RegExp('^(?:[a-z]+:)?//', 'i');
             if(!isAbsURL.test(href)) {
                 e.preventDefault();
-                $body.addClass('page-loading');
                 getPageContent(href);
                 return false;
             }
@@ -102,9 +97,14 @@ $(document).ready(function(){
         return false;
     });
 
+    // Add class to body when navigation is expanded
+    $menuTrigger.click(function(){
+        $body.toggleClass('menu--expanded');
+        return false;
+    });
+
     $(window).on('load', function(){
         setupSidebarToggle();
-        setupMenuToggle();
         equalizeColumns();
         setupSeamlessNavigationLinks();
     });

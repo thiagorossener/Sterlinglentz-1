@@ -11,10 +11,8 @@
     <div class="column" data-column>
         <header class="header" {% if flatpage.image %}style="background-image:url({% thumbnail flatpage.image 1200x800 crop %})"{% endif %}>
             <div class="header__trigger">
-                <a href="#" title="Toggle Sidebar">
-                    <img src="{% static 'images/sidebar-trigger--yellow.svg' %}" width="40"
-                        alt="Sidebar Toggle">
-                </a>
+                <img src="{% static 'images/sidebar-trigger--yellow.svg' %}" width="40"
+                     alt="Sidebar Toggle">
             </div>
             {% if flatpage.subsubtitle %}
                 <p class="header__subsubtitle">
@@ -26,25 +24,13 @@
             {% endif %}
         </header>
         <article class="content">
-            <h3>Introduction</h3>
-            <p>Everyone has their own working styles and habits. I’m no different.
-            The creative process is a messy one, and the avenues through which you
-            arrive at a solution can be surprisingly simple or painstakingly complex.
-            There are too many factors to determine what avenue your project will take
-            and truthfully, it doesn’t matter. </p>
-            <p>What my process is designed to deliver is some measure of certainty.
-            I do that by following a consistent and reliable workflow that reduces
-            risk and increases the probability of a positive outcome. The work you
-            see in my portfolio is, to an extent, only a bi-product of an intentional
-            and thoughtful process. </p>
+            {{ flatpage.content|safe }}
         </article>
     </div>
     <aside class="sidebar" data-column>
         <div class="sidebar__trigger">
-            <a href="#" title="Toggle Sidebar">
-                <img src="{% static 'images/sidebar-trigger.svg' %}" width="40"
-                    alt="Sidebar Toggle">
-            </a>
+            <img src="{% static 'images/sidebar-trigger.svg' %}" width="40"
+                 alt="Sidebar Toggle">
         </div>
         <ul class="page-list">
 

@@ -1,0 +1,61 @@
+{% load static %}
+{% load thumbnail %}
+
+<div class="page--advanced" data-equal-columns>
+    <div class="column" data-column>
+        <header class="header" {% if flatpage.image %}style="background-image:url({% thumbnail flatpage.image 1200x800 crop %})"{% endif %}>
+            <div class="header__trigger">
+                <a href="#" title="Toggle Sidebar">
+                    <img src="{% static 'images/sidebar-trigger--yellow.svg' %}" width="40"
+                        alt="Sidebar Toggle">
+                </a>
+            </div>
+            {% if flatpage.subsubtitle %}
+                <p class="header__subsubtitle">
+                    {{ flatpage.subsubtitle }}</p>
+            {% endif %}
+            <h1 class="header__title">{{ flatpage.title }}</h1>
+            {% if flatpage.subtitle %}
+                <h2 class="header__subtitle">{{ flatpage.subtitle }}</h2>
+            {% endif %}
+        </header>
+        <article class="content">
+            <h3>Introduction</h3>
+            <p>Everyone has their own working styles and habits. I’m no different.
+            The creative process is a messy one, and the avenues through which you
+            arrive at a solution can be surprisingly simple or painstakingly complex.
+            There are too many factors to determine what avenue your project will take
+            and truthfully, it doesn’t matter. </p>
+            <p>What my process is designed to deliver is some measure of certainty.
+            I do that by following a consistent and reliable workflow that reduces
+            risk and increases the probability of a positive outcome. The work you
+            see in my portfolio is, to an extent, only a bi-product of an intentional
+            and thoughtful process. </p>
+        </article>
+    </div>
+    <aside class="sidebar" data-column>
+        <div class="sidebar__trigger">
+            <a href="#" title="Toggle Sidebar">
+                <img src="{% static 'images/sidebar-trigger.svg' %}" width="40"
+                    alt="Sidebar Toggle">
+            </a>
+        </div>
+        <ul class="page-list">
+            <li class="page-list__item page-list__item--active">
+                <a class="silent" href="" title="">Project Workflow</a>
+            </li>
+            <li class="page-list__item">
+                <a class="silent" href="" title="">Trasparency and accountability</a>
+            </li>
+            <li class="page-list__item">
+                <a class="silent" href="" title="">Managing Projects</a>
+            </li>
+            <li class="page-list__item">
+                <a class="silent" href="" title="">Pricing</a>
+            </li>
+            <li class="page-list__item">
+                <a class="silent" href="" title="">Travel</a>
+            </li>
+        </ul>
+    </aside>
+</div>

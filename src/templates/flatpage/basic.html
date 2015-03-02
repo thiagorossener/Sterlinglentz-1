@@ -1,42 +1,9 @@
 {% extends 'base.html' %}
 
-{% load static %}
-{% load thumbnail %}
-
 {% block meta_title %}{{ flatpage.meta_title }}{% endblock %}
 {% block meta_description %}{{ flatpage.meta_description }}{% endblock %}
 {% block breakcrumb %}{{ flatpage.menu_title }}{% endblock %}
 
 {% block body %}
-    <div class="page--basic">
-        {% if flatpage.image %}
-            <div class="header header--image" style="background-image:url({% thumbnail flatpage.image 1600x500 crop %});">
-                {% if flatpage.image_caption %}
-                    <p class="header--image__caption">{{ flatpage.image_caption }}</p>
-                {% endif %}
-            </div>
-        {% endif %}
-        <article class="body">
-            <aside class="sidebar">
-                {{ flatpage.sidebar|safe }}
-            </aside>
-            <section class="column">
-                {% if flatpage.description %}
-                    <div class="summary">
-                        <h1 class="summary__title">{{ flatpage.description }}</h1>
-                        <hr class="summary__divider divider--orange divider--short" />
-                    </div>
-                {% endif %}
-                <div class="content">
-                    {{ flatpage.content|safe }}
-
-                    <div class="image">
-                        <img class="image__img" src="{% static 'images/temp/portrait-1.jpg' %}" alt="">
-                        <p class="image__caption">Capable young creative or self-obsessed douchebag.
-                            You be the judge!</p>
-                    </div>
-                </div>
-            </section>
-        </article>
-    </div>
+    {% include 'flatpage/basic--partial.html' %}
 {% endblock body %}

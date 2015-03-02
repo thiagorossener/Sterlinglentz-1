@@ -41,6 +41,7 @@ class BlogMixin(object):
 class BlogDetailView(AjaxPartialRenderingMixin, BlogMixin, TemplateView):
 
     template_name = "blog.html"
+    partial_template_name = "blog--partial.html"
 
     def get_display_post(self):
         """ Get the blog posts that is to be displayed. """
@@ -55,3 +56,4 @@ class BlogLatestView(AjaxPartialRenderingMixin, BlogMixin, TemplateView):
     """ """
 
     template_name = "blog.html"
+    partial_template_name = "blog--partial.html"

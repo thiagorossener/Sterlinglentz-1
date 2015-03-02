@@ -12,6 +12,7 @@ class ProjectListView(AjaxPartialRenderingMixin, ListView):
     """ A custom list view for django cms project app hook. """
 
     template_name = "project/list.html"
+    partial_template_name = "project/list--partial.html"
     model = Project
     context_object_name = "projects"
     group_size = 3
@@ -33,6 +34,7 @@ class ProjectDetailView(AjaxPartialRenderingMixin, DetailView):
     """ A custom detail view for django cms project app hook. """
 
     template_name = "project/detail.html"
+    template_name = "project/detail--partial.html"
     model = Project
     context_object_name = "project"
 

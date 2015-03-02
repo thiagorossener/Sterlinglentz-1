@@ -34,7 +34,7 @@
                             <li><a href="{% url 'projects:list' %}">Work</a></li>
                             <li><a href="{% url 'blog:latest' %}">Blog</a></li>
                             {% for flatpage in flatpages %}
-                                <li><a href="{{ flatpage.get_absolute_url }}">{{ flatpage.title }}</a></li>
+                                <li><a href="{{ flatpage.get_absolute_url }}">{{ flatpage.menu_title }}</a></li>
                             {% endfor %}
                         </ul>
                     </nav>

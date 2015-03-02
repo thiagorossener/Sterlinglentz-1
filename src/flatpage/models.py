@@ -7,6 +7,12 @@ from filer.fields.image import FilerImageField
 from ckeditor.fields import RichTextField
 
 
+TEMPLATE_CHOICES = (
+    ('flatpage/basic.html', 'Basic Template'),
+    ('flatpage/advanced.html', 'Advanced Template'),
+)
+
+
 class FlatPageManager(models.Manager):
 
     """ A manager to return only published flatpage. """
@@ -38,7 +44,8 @@ class FlatPage(models.Model):
     content = RichTextField()
     sidebar = RichTextField()
 
-    template_name = models.CharField(max_length=70, blank=True)
+    template_name = models.CharField(max_length=70, blank=True,
+        choices=TEMPLATE_CHOICES, default="flatpage/basic.html")
     ordering = models.PositiveIntegerField(default=0)
     menu_title = models.CharField(max_length=70, blank=True)
     meta_title = models.CharField(blank=True, null=True, max_length=80,

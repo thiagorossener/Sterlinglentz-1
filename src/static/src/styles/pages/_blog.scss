@@ -1,47 +1,5 @@
-.post {
-
-}
-
-    .post__header {
-
-    }
-
-    .post__content {
-        padding: 4rem;
-        border-left: 1px solid #ebebeb;
-    }
-
-/*
-.post-search {
-    margin: 0 3rem 3rem 3rem;
-}
-
-    .post-search__input {
-        background-color: transparent;
-        border: none;
-        border-bottom: 1px solid #7d7d7d;
-        width: 95%;
-        padding: 2.5% 2.5% 2.5% 30px;
-        color: #7e7e7e;
-
-        background-image: url(../images/icons/search-spyglass.png);
-        background-repeat: no-repeat;
-        background-position: center left;
-    }
-*/
-
 .post-return {
      margin: 5rem 3rem 3rem 3rem;
      color: #999999;
      font-size: 0.85rem;
-}
-
-@media screen and (max-width: $break-small) {
-    .post__header__date {
-        margin-bottom: 2rem;
-    }
-
-    .post__content {
-        border: none;
-    }
 }

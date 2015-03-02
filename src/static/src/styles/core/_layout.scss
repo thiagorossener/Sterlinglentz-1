@@ -162,7 +162,7 @@ $animationDuration: 300ms;
             left: 0;
         }
 
-.content-wrapper {
+.page-wrapper {
     @include transition(margin-left $animationDuration);
     margin-left: $menuGutterWidth;
     position: relative;
@@ -186,7 +186,7 @@ body.menu--expanded {
             left: $menuGutterWidth;
         }
 
-        .content-wrapper {
+        .page-wrapper {
             margin-left: ($menuGutterWidth + $menuDrawerWidth);
         }
     }
@@ -247,7 +247,7 @@ body.menu--expanded {
                 display: none;
             }
 
-    .content-wrapper {
+    .page-wrapper {
         margin: $menuGutterWidth 0 0 0;
     }
 
@@ -261,7 +261,7 @@ body.menu--expanded {
             top: $menuGutterWidth;
         }
 
-        .content-wrapper {
+        .page-wrapper {
 
         }
     }
@@ -271,7 +271,7 @@ body.menu--expanded {
 // This is a simple layout used on more than one page where a LHS sidebar takes
 // up a third of the page and a single column takes up the other two thirds
 // (As seen on the blog page and process page)
-.content {
+.page {
     @include container;
 }
 
@@ -296,6 +296,12 @@ body.menu--expanded {
         float: right;
     }
 
+        .content {
+            padding: 4rem;
+            border-left: 1px solid #ebebeb;
+            background-color: white;
+        }
+
 
 body.column--expanded {
     .sidebar {
@@ -315,5 +321,8 @@ body.column--expanded {
     .sidebar,
     .column {
         @include span(100% no-gutters);
+    }
+    .content {
+        border: none;
     }
 }

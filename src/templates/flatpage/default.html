@@ -5,18 +5,16 @@
 
 {% block meta_title %}{{ flatpage.meta_title }}{% endblock %}
 {% block meta_description %}{{ flatpage.meta_description }}{% endblock %}
-{% block breakcrumb %}{{ flatpage.title }}{% endblock %}
+{% block breakcrumb %}{{ flatpage.menu_title }}{% endblock %}
 
 {% block body %}
     <div class="page">
         {% if flatpage.image %}
-            <header class="page__header">
-                <div class="header-image" style="background-image:url({% thumbnail flatpage.image 1600x500 crop %});">
-                    {% if flatpage.image_caption %}
-                        <p class="header-image__caption">{{ flatpage.image_caption }}</p>
-                    {% endif %}
-                </div>
-            </header>
+            <div class="header header--image" style="background-image:url({% thumbnail flatpage.image 1600x500 crop %});">
+                {% if flatpage.image_caption %}
+                    <p class="header--image__caption">{{ flatpage.image_caption }}</p>
+                {% endif %}
+            </div>
         {% endif %}
         <article class="page__body">
             <aside class="page__sidebar">
@@ -29,7 +27,7 @@
                         <hr class="summary__divider divider--orange divider--short" />
                     </div>
                 {% endif %}
-                <div class="page__content page__content--shrink">
+                <div class="content">
                     {{ flatpage.content|safe }}
 
                     <div class="image">

@@ -2,8 +2,8 @@ from django.contrib import admin
 
 from suit.admin import SortableModelAdmin
 
-from .forms import FlatpageForm
-from .models import FlatPage
+from flatpage.forms import FlatpageForm
+from flatpage.models import FlatPage
 
 
 class FlatPageAdmin(SortableModelAdmin):
@@ -24,7 +24,7 @@ class FlatPageAdmin(SortableModelAdmin):
         }),
         ("Meta", {
             'classes': ('collapse', 'wide'),
-            'fields': ('in_navigation', 'template_name', 'menu_title',
+            'fields': ('parent', 'in_navigation', 'template_name', 'menu_title',
                        'meta_title', 'meta_description')
         })
     )

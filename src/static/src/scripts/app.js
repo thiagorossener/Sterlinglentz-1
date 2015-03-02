@@ -50,51 +50,66 @@ $(document).ready(function(){
         });
     };
 
-    // Setup seemless ajax navigation
-    var setupSeemlessNavigation = function() {
-        var $menuLinks = $('.menu__nav li a');
-        var $container = $('.page-wrapper');
-        var $breadcrumb = $('.menu__gutter__breadcrumb');
+    // Setup seamless ajax navigation
+    var $menuLinks = $('.menu__nav li a');
+    var $container = $('.page-wrapper');
+    var $breadcrumb = $('.menu__gutter__breadcrumb');
 
-        var getPageContent = function(href, callback) {
-            $.get(href, function (data) {
-                $container.html(data.content);
+    // Fetch the content of the page via ajax and insert it in the current page
+    var getPageContent = function(href) {
+        $.get(href, function (data) {
+            $container.html(data.content);
 
-                var $content = $container.find('[data-seamless-nav]');
-                var metaTitle = $content.attr('data-meta-title');
-                var metaDescription = $content.attr('data-meta-description');
-                var menuLink = $content.attr('data-menu-link');
+            var $content = $container.find('[data-seamless-nav]');
+            var metaTitle = $content.attr('data-meta-title');
+            var metaDescription = $content.attr('data-meta-description');
+            var menuLink = $content.attr('data-menu-link');
 
-                $breadcrumb.text(menuLink);
-                document.title = metaTitle;
-                $('meta[name=description]').attr('content', metaDescription);
+            $breadcrumb.text(menuLink);
+            document.title = metaTitle;
+            $('meta[name=description]').attr('content', metaDescription);
 
-                setTimeout(callback, 1000);
-            });
-        };
-
-        $menuLinks.click(function(e){
-            e.preventDefault();
-            var $this = $(this);
-            var href = $this.attr('href');
-
-            $menuLinks.parent('li').removeClass('active');
-            $(this).parent('li').addClass('active');
-
-            $body.addClass('page-loading');
-            getPageContent(href, function(){
-                $body.removeClass('page-loading');
-                history.pushState({}, null, href);
-                $(window).trigger('load');
-            });
-            return false;
+           $body.removeClass('page-loading');
+            history.pushState({}, null, href);
+            $(window).trigger('load');
         });
     };
+
+    // When an anchor link is clicked
+    var setupSeamlessNavigationLinks = function() {
+        $('a').click(function(e){
+            var $this = $(this);
+            var href = $this.attr('href');
+            var isAbsURL = new RegExp('^(?:[a-z]+:)?//', 'i');
+            if(!isAbsURL.test(href)) {
+                e.preventDefault();
+                $body.addClass('page-loading');
+                getPageContent(href);
+                return false;
+            }
+        });
+    };
+
+    // When the back button is clicked
+    window.onpopstate = function (e) {
+        var href = window.location.href;
+        e.preventDefault();
+        getPageContent(href);
+        $(window).trigger('load');
+    };
+
+    // When the menu links are clicked
+    $menuLinks.click(function(){
+        $menuLinks.parent('li').removeClass('active');
+        $(this).parent('li').addClass('active');
+        return false;
+    });
 
     $(window).on('load', function(){
         setupSidebarToggle();
         setupMenuToggle();
         equalizeColumns();
+        setupSeamlessNavigationLinks();
     });
 
     var timer;
@@ -102,7 +117,4 @@ $(document).ready(function(){
         clearTimeout(timer);
         timer = setTimeout(equalizeColumns, 400);
     });
-
-    setupSeemlessNavigation();
-
 });

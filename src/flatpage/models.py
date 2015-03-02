@@ -5,6 +5,7 @@ from django.utils.encoding import iri_to_uri
 
 from filer.fields.image import FilerImageField
 from ckeditor.fields import RichTextField
+from mptt.models import MPTTModel, TreeForeignKey
 
 
 TEMPLATE_CHOICES = (
@@ -22,12 +23,15 @@ class FlatPageManager(models.Manager):
             .filter(is_published=True)
 
 
-class FlatPage(models.Model):
+class FlatPage(MPTTModel, models.Model):
 
     """ A custom flatpage model based on django.contrib.flatpages. """
 
     published = FlatPageManager()
     objects = models.Manager()
+
+    parent = TreeForeignKey('self', null=True, blank=True,
+        related_name='children')
 
     url = models.CharField('URL', max_length=100, db_index=True)
     title = models.CharField(max_length=200)

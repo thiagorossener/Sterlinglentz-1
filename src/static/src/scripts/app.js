@@ -10,6 +10,14 @@ $(document).ready(function(){
 
     $menuTrigger.click(function(){
         $body.toggleClass('menu--expanded');
+        return false;
+    });
+
+    // Toggle sidebar/column
+    var $columnTrigger = $('.sidebar__trigger, .post__header__trigger');
+    $columnTrigger.click(function(){
+        $body.toggleClass('column--expanded');
+        return false;
     });
 
     // Equalize the heights of selected columns.

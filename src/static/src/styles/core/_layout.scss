@@ -279,6 +279,7 @@ body.menu--expanded {
 
     .sidebar {
         @include span(33.33% no-gutters);
+        @include transition(margin-left $animationDuration);
         background-color: #fbfbfb;
         height: 100%;
         float: left;
@@ -293,8 +294,23 @@ body.menu--expanded {
 
     .column {
         @include span(66.66% last);
+        @include transition(width $animationDuration);
         float: right;
     }
+
+body.column--expanded {
+    .sidebar {
+        margin-left: -33.33%;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .post__header__trigger {
+        opacity: 1;
+    }
+}
 
 @media screen and (max-width: $break-small) {
     .sidebar,

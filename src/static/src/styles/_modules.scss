@@ -167,6 +167,43 @@
             color: #999999;
         }
 
+
+// Page List
+// A list to display page
+// (As seen on the process page sidebar)
+.page-list {
+    margin: 0;
+    padding: 6rem 0 0 0;
+}
+
+    .page-list__item {
+        padding: 1.25rem 15%;
+        width: 70%;
+        list-style: none;
+        margin-bottom: 0;
+
+        a {
+            color: #7e7e7e;
+            font-size: 0.9rem;
+            font-weight: $font-weight-bold;
+            line-height: 1.25rem;
+            margin-bottom: 0;
+        }
+
+        &--active, &:hover {
+            background-color: #f3f3f3;
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        &--active {
+            padding-left: 25%;
+            width: 60%;
+        }
+    }
+
 // Tab List
 // A list to display page-like tabs
 .tab-list {

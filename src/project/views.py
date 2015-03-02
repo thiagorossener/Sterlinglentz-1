@@ -3,10 +3,11 @@
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
-from .models import Project
+from project.models import Project
+from core.mixins import AjaxPartialRenderingMixin
 
 
-class ProjectListView(ListView):
+class ProjectListView(AjaxPartialRenderingMixin, ListView):
 
     """ A custom list view for django cms project app hook. """
 
@@ -27,7 +28,7 @@ class ProjectListView(ListView):
         return context
 
 
-class ProjectDetailView(DetailView):
+class ProjectDetailView(AjaxPartialRenderingMixin, DetailView):
 
     """ A custom detail view for django cms project app hook. """
 

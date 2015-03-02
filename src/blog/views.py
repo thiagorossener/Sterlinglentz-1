@@ -1,7 +1,8 @@
 from django.views.generic import TemplateView
 from django.http import Http404
 
-from .models import Post
+from blog.models import Post
+from core.mixins import AjaxPartialRenderingMixin
 
 
 class BlogMixin(object):
@@ -37,7 +38,7 @@ class BlogMixin(object):
         return context
 
 
-class BlogDetailView(BlogMixin, TemplateView):
+class BlogDetailView(AjaxPartialRenderingMixin, BlogMixin, TemplateView):
 
     template_name = "blog.html"
 
@@ -49,7 +50,7 @@ class BlogDetailView(BlogMixin, TemplateView):
             raise Http404
 
 
-class BlogLatestView(BlogMixin, TemplateView):
+class BlogLatestView(AjaxPartialRenderingMixin, BlogMixin, TemplateView):
 
     """ """
 

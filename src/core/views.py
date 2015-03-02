@@ -4,9 +4,10 @@ from django.views.generic import TemplateView
 
 from project.models import Project
 from blog.models import Post
+from core.mixins import AjaxPartialRenderingMixin
 
 
-class IndexView(TemplateView):
+class IndexView(AjaxPartialRenderingMixin, TemplateView):
 
     """ The homepage view. """
 

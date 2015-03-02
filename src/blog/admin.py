@@ -19,7 +19,6 @@ class ProjectAdmin(admin.ModelAdmin):
             'fields': ('content', )
         }),
         ("Meta", {
-            'classes': ('collapse',),
             'fields': ('slug', 'meta_title', 'meta_description')
         }),
     )

@@ -49,6 +49,20 @@ class Category(models.Model):
         return self.name
 
 
+class ProjectImage(models.Model):
+
+    """ An image for a particular project. """
+
+    project = models.ForeignKey("Project")
+    image = FilerImageField(null=True, blank=True)
+    ordering = models.PositiveIntegerField(default=0, blank=True, null=True)
+
+    class Meta:
+        ordering = ["ordering", ]
+        verbose_name = "Image"
+        verbose_name_plural = "Images"
+
+
 class PublishedManager(models.Manager):
 
     """ A manager to return only published projects. """

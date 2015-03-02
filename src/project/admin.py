@@ -1,8 +1,9 @@
 from django.contrib import admin
 
 from suit.admin import SortableModelAdmin
+from suit.admin import SortableTabularInline
 
-from .models import Client, Category, Project
+from .models import Client, Category, Project, ProjectImage
 
 
 @admin.register(Client)
@@ -15,11 +16,18 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 
+class ProjectImageInline(SortableTabularInline):
+    model = ProjectImage
+    extra = 0
+    sortable = 'ordering'
+
+
 @admin.register(Project)
 class ProjectAdmin(SortableModelAdmin):
     prepopulated_fields = {
         "slug": ("name",),
     }
+    inlines = [ProjectImageInline, ]
     filter_horizontal = ["categories", ]
     list_filter = ["client", "is_published"]
     list_display = ["name", "is_published"]
@@ -34,7 +42,6 @@ class ProjectAdmin(SortableModelAdmin):
             'fields': ('content', )
         }),
         ("Meta", {
-            'classes': ('collapse',),
             'fields': ('slug', 'meta_title', 'meta_description')
         })
     )

@@ -131,7 +131,7 @@ $menuDrawerBackground: lighten($gray-dark, 5%);
                         text-decoration: none;
                     }
 
-                    &:hover, .active {
+                    &:hover, &.active {
                         background-color: lighten($gray-dark, 15%);
 
                         a {

@@ -1,0 +1,32 @@
+{% load static %}
+{% load thumbnail %}
+{% load snippets %}
+
+<div class="page projects__list"
+     style="background-image: url({% static 'images/feral-logo--gold--transparent.svg' %})"
+
+     data-seamless-nav
+     data-meta-title="{% snippet 'projects.list.meta.title' %}"
+     data-meta-description="{% snippet 'projects.list.meta.title' %}"
+     data-menu-link="{% snippet 'projects.list.breadcrumb' %}">
+
+    {% for project in projects %}
+        {# Ghetto grouping #}
+        {% for row in projects %}
+            <div class="projects__row">
+                {% for project in row %}
+                    <div class="projects__column">
+                        <div class="project-teaser">
+                            <div class="project-teaser__image">
+                                <a href="{{ project.get_absolute_url }}" title="{{ project.name }}">
+                                    <img src="{% thumbnail project.portrait_image 500x500 crop %}"
+                                         alt="{{ project.name }}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>

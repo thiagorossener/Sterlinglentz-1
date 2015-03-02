@@ -3,7 +3,12 @@
 {% load snippets %}
 
 <div class="index"
-     style="background-image: url({% static 'images/feral-logo--gold.svg' %})">
+     style="background-image: url({% static 'images/feral-logo--gold.svg' %})"
+
+     data-seamless-nav
+     data-meta-title="{% snippet 'index.meta.title' %}"
+     data-meta-description="{% snippet 'index.meta.description' %}"
+     data-menu-link="">
 
     <div class="index__atf"> {# Above the fold #}
         <div class="index__hero">

@@ -1,52 +1,8 @@
 {% extends 'base.html' %}
 
-{% load static %}
-{% load thumbnail %}
-
 {% block meta_title %}{{ project.meta_title }}{% endblock %}
 {% block meta_description %}{{ project.meta_description }}{% endblock %}
 
 {% block body %}
-    <div class="page">
-        {% if project.landscape_image %}
-            <header class="page__header">
-                <div class="header-image" style="background-image:url({% thumbnail project.landscape_image 1600x500 crop %});">
-                    &nbsp;
-                </div>
-            </header>
-        {% endif %}
-        <article class="page__body">
-            <aside class="page__sidebar">
-                <div class="spec-list">
-                    <p><small>CLIENT</small></p>
-                    <ul>
-                        <li>{{ project.client.name|title }}</li>
-                    </ul>
-                    <p><small>FOCUS</small></p>
-                    <ul>
-                        <li>{{ project.client.focus|title }}</li>
-                    </ul>
-                    {% if project.categories %}
-                        <p><small>PROJECTS</small></p>
-                        <ul>
-                            {% for category in project.categories.all %}
-                                <li>{{ category.name }}</li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
-            </aside>
-            <section class="page__main">
-                {% if project.description %}
-                    <div class="page__heading summary">
-                        <h1 class="summary__title">{{ project.description }}</h1>
-                        <hr class="summary__divider divider--short" />
-                    </div>
-                {% endif %}
-                <div class="page__content page__content--shrink">
-                    {{ project.content|safe }}
-                </div>
-            </section>
-        </article>
-    </div>
+    {% include 'project/detail--partial.html' %}
 {% endblock body %}

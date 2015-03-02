@@ -1,4 +1,5 @@
 from django.core.exceptions import ImproperlyConfigured
+from django.http import JsonResponse
 
 
 class AjaxPartialRenderingMixin(object):
@@ -17,3 +18,14 @@ class AjaxPartialRenderingMixin(object):
                     " the definition of a 'partial_template_name' variable")
             template_names = [self.partial_template_name, ] + template_names
         return template_names
+
+    def render_to_response(self, context, **response_kwargs):
+        """ Return a JSON response for future features. """
+        response = super(AjaxPartialRenderingMixin, self).render_to_response(
+            context, **response_kwargs)
+        if self.request.is_ajax():
+            content = response.render().content
+            return JsonResponse({
+                'content': content
+            })
+        return response

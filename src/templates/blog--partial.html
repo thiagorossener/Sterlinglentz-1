@@ -2,7 +2,14 @@
 {% load thumbnail %}
 {% load snippets %}
 
-<div class="page--advanced" data-equal-columns>
+<div class="page--advanced"
+     data-equal-columns
+
+     data-seamless-nav
+     data-meta-title="{{ display_post.meta_title }}"
+     data-meta-description="{{ display_post.meta_description }}"
+     data-menu-link="BLOG">
+
     <div class="column" data-column>
         <header class="header" {% if display_post.image %}style="background-image:url({% thumbnail display_post.image 1200x800 crop %})"{% endif %}>
             <div class="header__trigger">

@@ -1,21 +1,20 @@
 {% load static %}
 {% load thumbnail %}
 
-<div class="page"
-
+<div class="page--basic"
      data-seamless-nav
      data-meta-title="{{ project.meta_title }}"
      data-meta-description="{{ project.meta_description }}">
 
     {% if project.landscape_image %}
         <header class="page__header">
-            <div class="header-image" style="background-image:url({% thumbnail project.landscape_image 1600x500 crop %});">
+            <div class="header header-image" style="background-image:url({% thumbnail project.landscape_image 1600x500 crop %});">
                 &nbsp;
             </div>
         </header>
     {% endif %}
-    <article class="page__body">
-        <aside class="page__sidebar">
+    <article class="body">
+        <aside class="sidebar">
             <div class="spec-list">
                 <p><small>CLIENT</small></p>
                 <ul>
@@ -35,14 +34,14 @@
                 {% endif %}
             </div>
         </aside>
-        <section class="page__main">
+        <section class="column">
             {% if project.description %}
-                <div class="page__heading summary">
+                <div class="summary">
                     <h1 class="summary__title">{{ project.description }}</h1>
                     <hr class="summary__divider divider--short" />
                 </div>
             {% endif %}
-            <div class="page__content page__content--shrink">
+            <div class="content">
                 {{ project.content|safe }}
             </div>
         </section>

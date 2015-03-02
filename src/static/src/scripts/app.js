@@ -53,7 +53,6 @@ $(document).ready(function(){
     // Setup seamless ajax navigation
     var $menuLinks = $('.menu__nav li a');
     var $container = $('.page-wrapper');
-    var $breadcrumb = $('.menu__gutter__breadcrumb');
 
     // Fetch the content of the page via ajax and insert it in the current page
     var getPageContent = function(href) {
@@ -63,9 +62,7 @@ $(document).ready(function(){
             var $content = $container.find('[data-seamless-nav]');
             var metaTitle = $content.attr('data-meta-title');
             var metaDescription = $content.attr('data-meta-description');
-            var menuLink = $content.attr('data-menu-link');
 
-            $breadcrumb.text(menuLink);
             document.title = metaTitle;
             $('meta[name=description]').attr('content', metaDescription);
 

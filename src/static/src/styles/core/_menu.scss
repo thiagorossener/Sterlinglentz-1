@@ -26,8 +26,7 @@ $menuDrawerBackground: lighten($gray-dark, 5%);
     background-color: $menuDrawerBackground;
 }
     // Gutter
-    // The slim menu menu that contains a trigger for the navigation as well
-    // as the current breadcrumb for the current page.
+    // The slim menu menu that contains a trigger for the navigation
     .menu__gutter {
         background-color: $menuGutterBackground;
 
@@ -63,32 +62,6 @@ $menuDrawerBackground: lighten($gray-dark, 5%);
 
         .menu__gutter__logo {
             display: none;
-        }
-
-        .menu__gutter__breadcrumb {
-            color: #9b9b9b;
-            text-transform: uppercase;
-            text-align: center;
-            letter-spacing: 0.2rem;
-            font-size: 0.80rem;
-            display: block;
-
-            -moz-transform-origin: 50% 50% 50%;
-            -ms-transform-origin: 50% 50% 50%;
-            -webkit-transform-origin: 50% 50% 50%;
-            transform-origin: 50% 50% 50%;
-
-            -moz-transform: translate(-8.25rem, 8.25rem) rotate(-90deg);
-            -ms-transform: translate(-8.25rem, 8.25rem) rotate(-90deg);
-            -webkit-transform: translate(-8.25rem, 8.25rem) rotate(-90deg);
-            transform: translate(-8.25rem, 8.25rem) rotate(-90deg);
-
-            position: absolute;
-            top: 50%;
-            left: 0;
-            margin-top: -10rem;
-            width: 19rem;
-            height: 1rem;
         }
 
     // Drawer
@@ -221,10 +194,6 @@ body.menu--expanded {
                 left: 50%;
                 margin-left: -35px;
                 margin-top: -2px;
-            }
-
-            .menu__gutter__breadcrumb {
-                display: none;
             }
 
         .menu__drawer {

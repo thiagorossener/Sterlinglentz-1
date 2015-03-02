@@ -4,8 +4,6 @@ $menuGutterBackground: $gray-dark;
 $menuDrawerWidth: 12rem;
 $menuDrawerBackground: lighten($gray-dark, 5%);
 
-$animationDuration: 300ms;
-
 // Header (Menu + Nav)
 // Our page navigation sits on the LHS of the page on normal desktop resolutions
 // and has a thin gutter that can be clicked to reveal a slide out drawer with
@@ -264,65 +262,5 @@ body.menu--expanded {
         .page-wrapper {
 
         }
-    }
-}
-
-// Basic Page Layout
-// This is a simple layout used on more than one page where a LHS sidebar takes
-// up a third of the page and a single column takes up the other two thirds
-// (As seen on the blog page and process page)
-.page {
-    @include container;
-}
-
-    .sidebar {
-        @include span(33.33% no-gutters);
-        @include transition(margin-left $animationDuration);
-        background-color: #fbfbfb;
-        height: 100%;
-        float: left;
-        position: relative;
-    }
-
-        .sidebar__trigger {
-            position: absolute;
-            top: 0;
-            left: 10%;
-        }
-
-    .column {
-        @include span(66.66% last);
-        @include transition(width $animationDuration);
-        float: right;
-    }
-
-        .content {
-            padding: 4rem;
-            border-left: 1px solid #ebebeb;
-            background-color: white;
-        }
-
-
-body.column--expanded {
-    .sidebar {
-        margin-left: -33.33%;
-    }
-
-    .column {
-        width: 100%;
-    }
-
-    .header__trigger {
-        opacity: 1;
-    }
-}
-
-@media screen and (max-width: $break-small) {
-    .sidebar,
-    .column {
-        @include span(100% no-gutters);
-    }
-    .content {
-        border: none;
     }
 }

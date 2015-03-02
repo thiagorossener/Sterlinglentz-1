@@ -8,7 +8,7 @@
 {% block breakcrumb %}{{ flatpage.menu_title }}{% endblock %}
 
 {% block body %}
-    <div class="page">
+    <div class="page--basic">
         {% if flatpage.image %}
             <div class="header header--image" style="background-image:url({% thumbnail flatpage.image 1600x500 crop %});">
                 {% if flatpage.image_caption %}
@@ -16,11 +16,11 @@
                 {% endif %}
             </div>
         {% endif %}
-        <article class="page__body">
-            <aside class="page__sidebar">
+        <article class="body">
+            <aside class="sidebar">
                 {{ flatpage.sidebar|safe }}
             </aside>
-            <section class="page__main">
+            <section class="column">
                 {% if flatpage.description %}
                     <div class="summary">
                         <h1 class="summary__title">{{ flatpage.description }}</h1>

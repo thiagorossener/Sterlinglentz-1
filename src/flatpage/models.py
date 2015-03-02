@@ -30,9 +30,6 @@ class FlatPage(MPTTModel, models.Model):
     published = FlatPageManager()
     objects = models.Manager()
 
-    parent = TreeForeignKey('self', null=True, blank=True,
-        related_name='children')
-
     url = models.CharField('URL', max_length=100, db_index=True)
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200, blank=True, help_text="""
@@ -58,7 +55,6 @@ class FlatPage(MPTTModel, models.Model):
         help_text=""" Meta title should be around 115 chars (130 max)""")
 
     is_published = models.BooleanField(default=True)
-    in_navigation = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
 

@@ -42,12 +42,8 @@ $(document).ready(function(){
         });
     };
 
-    // Setup seamless ajax navigation
-    var $menuLinks = $('.menu__nav li a');
-    var $menuTrigger = $('.menu__gutter__trigger');
-    var $container = $('.page-wrapper');
-
     // Fetch the content of the page via ajax and insert it in the current page
+    var $container = $('.page-wrapper');
     var getPageContent = function(href) {
         console.log('Getting ' + href);
         $.get(href, function (data) {
@@ -70,12 +66,11 @@ $(document).ready(function(){
 
     // When an anchor link is clicked
     var setupSeamlessNavigationLinks = function() {
-        $('a').off('click').click(function(e){
+        $('a').off('click').click(function(){
             var $this = $(this);
             var href = $this.attr('href');
             var isAbsURL = new RegExp('^(?:[a-z]+:)?//', 'i');
             if(!isAbsURL.test(href)) {
-                e.preventDefault();
                 getPageContent(href);
                 return false;
             }
@@ -91,13 +86,16 @@ $(document).ready(function(){
     };
 
     // When the menu links are clicked
+    var $menuLinks = $('.menu__nav li');
     $menuLinks.click(function(){
-        $menuLinks.parent('li').removeClass('active');
-        $(this).parent('li').addClass('active');
+        console.log('click');
+        $menuLinks.removeClass('active');
+        $(this).addClass('active');
         return false;
     });
 
     // Add class to body when navigation is expanded
+    var $menuTrigger = $('.menu__gutter__trigger');
     $menuTrigger.click(function(){
         $body.toggleClass('menu--expanded');
         return false;

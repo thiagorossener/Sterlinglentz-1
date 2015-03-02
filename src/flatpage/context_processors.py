@@ -1,6 +1,6 @@
 """ Custom global context processors. """
 
-from .models import FlatPage
+from flatpage.models import FlatPage
 
 
 def flatpages(object):

@@ -21,7 +21,7 @@ class FlatpageView(AjaxPartialRenderingMixin, DetailView):
 
     def get_menu(self):
         try:
-            return self.object.menu_node.get_children()
+            return self.object.menu_node.get_children().filter(is_published=True)
         except:
             return []
 

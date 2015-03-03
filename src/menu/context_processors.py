@@ -3,7 +3,7 @@ from menu.models import MenuNode
 
 def menu(request):
     try:
-        global_menu = MenuNode.objects.get(slug__exact='global_menu') \
+        global_menu = MenuNode.published.get(slug__exact='global_menu') \
             .get_children()
     except MenuNode.DoesNotExist:
         global_menu = []

@@ -13,12 +13,12 @@ TEMPLATE_CHOICES = (
 )
 
 
-class FlatPageManager(models.Manager):
+class PublishedFlatPageManager(models.Manager):
 
     """ A manager to return only published flatpage. """
 
     def get_queryset(self):
-        return super(FlatPageManager, self).get_queryset() \
+        return super(PublishedFlatPageManager, self).get_queryset() \
             .filter(is_published=True)
 
 
@@ -26,8 +26,8 @@ class FlatPage(models.Model):
 
     """ A custom flatpage model based on django.contrib.flatpages. """
 
-    published = FlatPageManager()
     objects = models.Manager()
+    published = PublishedFlatPageManager()
 
     url = models.CharField('URL', max_length=100, db_index=True)
     title = models.CharField(max_length=200)

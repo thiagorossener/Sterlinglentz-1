@@ -5,8 +5,21 @@ from mptt.models import MPTTModel
 from mptt.managers import TreeManager
 
 
+class PublishedMenuNode(TreeManager):
+
+    """ A manager to return only published menu nodes. """
+
+    def get_queryset(self):
+        return super(PublishedMenuNode, self).get_queryset() \
+            .filter(is_published=True)
+
+
 class MenuNode(MPTTModel):
+
+    """ """
+
     objects = TreeManager()
+    published = PublishedMenuNode()
 
     name = models.CharField(max_length=200)
     url = models.CharField('URL', max_length=100, db_index=True)

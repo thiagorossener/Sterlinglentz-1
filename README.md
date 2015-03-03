@@ -15,4 +15,18 @@ collectstatic`
     # Install all node modules:
     npm install
     bower install
-    
+
+
+## Frontend Features
+
+#### Menu
+
+
+#### Seamless Ajax Navigation
+
+
+## Backend Features
+
+#### Basic Menuing System
+
+#### Basic Flatpage System

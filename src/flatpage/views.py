@@ -19,7 +19,18 @@ class FlatpageView(AjaxPartialRenderingMixin, DetailView):
             raise Http404
         return flatpage
 
+    def get_menu(self):
+        try:
+            return self.object.menu_node.get_children()
+        except:
+            return []
+
     def get_template_names(self):
         if self.object.template_name:
             return [self.object.template_name, ]
         return [self.template_name, ]
+
+    def get_context_data(self, **kwargs):
+        context = super(FlatpageView, self).get_context_data(**kwargs)
+        context['local_menu'] = self.get_menu()
+        return context

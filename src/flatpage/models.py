@@ -46,6 +46,7 @@ class FlatPage(models.Model):
 
     template_name = models.CharField(max_length=70, blank=True,
         choices=TEMPLATE_CHOICES, default="flatpage/basic.html")
+    menu_node = models.ForeignKey("menu.MenuNode", blank=True, null=True)
     ordering = models.PositiveIntegerField(default=0)
     menu_title = models.CharField(max_length=70, blank=True)
     meta_title = models.CharField(blank=True, null=True, max_length=80,
@@ -70,7 +71,7 @@ class FlatPage(models.Model):
             self.meta_description = self.description
         return super(FlatPage, self).save(*args, **kwargs)
 
-    def __str__(self):
+    def __unicode__(self):
         return "%s -- %s" % (self.url, self.title)
 
     def get_absolute_url(self):

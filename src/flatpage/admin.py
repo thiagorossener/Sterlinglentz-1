@@ -23,8 +23,7 @@ class FlatPageAdmin(SortableModelAdmin):
             'fields': ('sidebar',)
         }),
         ("Meta", {
-            'classes': ('collapse', 'wide'),
-            'fields': ('template_name', 'menu_title',
+            'fields': ('menu_node', 'template_name', 'menu_title',
                        'meta_title', 'meta_description')
         })
     )

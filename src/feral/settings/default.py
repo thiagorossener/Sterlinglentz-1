@@ -59,7 +59,8 @@ INSTALLED_APPS = (
     'project',
     'blog',
     'snippet',
-    'flatpage'
+    'flatpage',
+    'menu'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -81,7 +82,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
 
-    'flatpage.context_processors.flatpages'
+    'menu.context_processors.menu'
 )
 
 MIGRATION_MODULES = {

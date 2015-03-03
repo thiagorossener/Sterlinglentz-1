@@ -27,7 +27,7 @@ class FlatPageAdmin(SortableModelAdmin):
                        'meta_title', 'meta_description')
         })
     )
-    list_display = ('url', 'title')
+    list_display = ('url', 'title', 'is_published')
     search_fields = ('url', 'title', 'subtitle')
 
     # Django suit

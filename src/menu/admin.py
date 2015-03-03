@@ -8,7 +8,7 @@ from menu.models import MenuNode
 
 class MenuNodeAdmin(MPTTModelAdmin, SortableModelAdmin):
     mptt_level_indent = 30
-    list_display = ('name', 'url', 'slug')
+    list_display = ('name', 'url', 'slug', 'is_published')
     sortable = 'ordering'
     prepopulated_fields = {"slug": ("name",)}
 

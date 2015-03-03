@@ -23,6 +23,12 @@
                 <h2 class="header__subtitle">{{ flatpage.subtitle }}</h2>
             {% endif %}
         </header>
+        {% if flatpage.description %}
+            <div class="summary">
+                <h1 class="summary__title">{{ flatpage.description }}</h1>
+                <hr class="summary__divider divider--orange divider--short" />
+            </div>
+        {% endif %}
         <article class="content">
             {{ flatpage.content|safe }}
         </article>

@@ -12,6 +12,8 @@ class MenuNode(MPTTModel):
     url = models.CharField('URL', max_length=100, db_index=True)
     parent = TreeForeignKey('self', null=True, blank=True,
                             related_name='children')
+
+    is_published = models.BooleanField(default=True)
     ordering = models.PositiveIntegerField(default=0)
     slug = models.SlugField(unique=True, blank=True, null=True)
 

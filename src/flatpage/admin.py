@@ -23,7 +23,7 @@ class FlatPageAdmin(SortableModelAdmin):
             'fields': ('sidebar',)
         }),
         ("Meta", {
-            'fields': ('menu_node', 'template_name', 'menu_title',
+            'fields': ('is_published', 'menu_node', 'template_name', 'menu_title',
                        'meta_title', 'meta_description')
         })
     )

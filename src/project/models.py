@@ -53,8 +53,10 @@ class ProjectImage(models.Model):
 
     """ An image for a particular project. """
 
-    project = models.ForeignKey("Project")
+    project = models.ForeignKey("Project", related_name="images")
     image = FilerImageField(null=True, blank=True)
+    title_text = models.CharField(max_length=256, blank=True)
+    alt_text = models.CharField(max_length=256, blank=True)
     ordering = models.PositiveIntegerField(default=0, blank=True, null=True)
 
     class Meta:

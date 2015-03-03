@@ -31,3 +31,18 @@
         }
     }
 }
+
+.project__images {
+    padding: 0;
+    margin: 0;
+}
+    .project__image {
+        padding: 0;
+        margin: 0 0 4rem 0;
+        list-style: none;
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }

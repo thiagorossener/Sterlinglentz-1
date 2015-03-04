@@ -72,7 +72,6 @@ $(document).ready(function(){
             var isAbsURL = new RegExp('^(?:[a-z]+:)?//', 'i');
             if(!isAbsURL.test(href)) {
                 getPageContent(href);
-                return false;
             }
         });
     };
@@ -84,15 +83,6 @@ $(document).ready(function(){
         getPageContent(href);
         $(window).trigger('load');
     };
-
-    // When the menu links are clicked
-    var $menuLinks = $('.menu__nav li');
-    $menuLinks.click(function(){
-        console.log('click');
-        $menuLinks.removeClass('active');
-        $(this).addClass('active');
-        return false;
-    });
 
     // Add class to body when navigation is expanded
     var $menuTrigger = $('.menu__gutter__trigger');
@@ -111,5 +101,20 @@ $(document).ready(function(){
     $(window).on('resize', function(){
         clearTimeout(timer);
         timer = setTimeout(equalizeColumns, 400);
+    });
+
+    // When the menu links are clicked
+    var $menuLinks = $('.menu__nav li');
+    var $menuLogo = $('.menu__logo');
+    $menuLinks.click(function(){
+        // Active/deactivate menu links
+        $menuLinks.removeClass('active');
+        $(this).addClass('active');
+
+        // Fade in the feral logo in menu
+        setInterval(function(){
+            $menuLogo.css('opacity', 1);
+        }, 2000);
+        return false;
     });
 });

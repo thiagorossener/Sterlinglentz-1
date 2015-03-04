@@ -116,6 +116,8 @@ $menuDrawerBackground: lighten($gray-dark, 5%);
         }
 
         .menu__logo {
+            opacity: 0;
+            @include transition(opacity $animationDuration * 2);
             padding: 0 10%;
             position: absolute;
             top: 50%;

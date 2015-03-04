@@ -10,9 +10,12 @@
 
     <div class="column" data-column>
         <header class="header" {% if flatpage.image %}style="background-image:url({% thumbnail flatpage.image 1200x800 crop %})"{% endif %}>
-            <div class="header__trigger">
-                <img src="{% static 'images/sidebar-trigger--yellow.svg' %}" width="40"
+            <div class="header__trigger bookmark__trigger bookmark__trigger--yellow">
+                <img class="bookmark__trigger__image"
+                     src="{% static 'images/sidebar-trigger--yellow.svg' %}"
+                     width="40"
                      alt="Sidebar Toggle">
+                <small class="bookmark__trigger__text">Open Menu</small>
             </div>
             {% if flatpage.subsubtitle %}
                 <p class="header__subsubtitle">
@@ -34,9 +37,12 @@
         </article>
     </div>
     <aside class="sidebar" data-column>
-        <div class="sidebar__trigger">
-            <img src="{% static 'images/sidebar-trigger.svg' %}" width="40"
+        <div class="sidebar__trigger bookmark__trigger">
+            <img class="bookmark__trigger__image"
+                 src="{% static 'images/sidebar-trigger.svg' %}"
+                 width="40"
                  alt="Sidebar Toggle">
+            <small class="bookmark__trigger__text">Close Menu</small>
         </div>
         <ul class="page-list">
             {% for node in local_menu %}

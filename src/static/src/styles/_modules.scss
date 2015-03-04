@@ -1,3 +1,4 @@
+
 // Project Teaser
 // A square image of the project with an optional overlay button that
 // links to the project detail page
@@ -59,12 +60,10 @@
 }
 
     .header__trigger {
-        @include transition(opacity 300ms ease);
         opacity: 0;
         position: absolute;
         top: 0;
         left: 4rem;
-        cursor: pointer;
     }
 
     .header__subsubtitle {
@@ -93,6 +92,37 @@
     }
 }
 
+// Bookmark
+// The bookmark shaped icon at the top of the page
+// (As seen on the blog sidebar)
+.bookmark__trigger {
+    @include transition(opacity 300ms ease);
+
+    .bookmark__trigger__text {
+        opacity: 0;
+        @include transition(opacity $animationDuration);
+        color: #9E9E9E;
+        font-size: 0.50rem;
+        text-transform: uppercase;
+        position: relative;
+        top: -0.85rem;
+        left: 0.5rem;
+    }
+
+    .bookmark__trigger__image {
+        cursor: pointer;
+    }
+
+    &:hover .bookmark__trigger__text {
+        opacity: 1.0;
+    }
+
+    &--yellow {
+        .bookmark__trigger__text {
+            color: #F9ED32;
+        }
+    }
+}
 
 // Header Image
 // A large fullwidth image with an option small bottom right caption

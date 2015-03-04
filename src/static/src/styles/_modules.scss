@@ -247,6 +247,9 @@
             font-weight: $font-weight-bold;
             line-height: 1.25rem;
             margin-bottom: 0;
+
+            a {
+            }
         }
 
         .post-list__date {
@@ -279,11 +282,13 @@
         }
 
         &--active, &:hover {
-            background-color: #f3f3f3;
-
             a {
                 text-decoration: none;
             }
+        }
+
+        &--active {
+            background-color: #f3f3f3;
         }
 
         &--active {

@@ -16,6 +16,7 @@
 
     .projects__column {
         @include span(33.33% no-gutters);
+        height: 50vh;
 
         &--last {
             @include last;

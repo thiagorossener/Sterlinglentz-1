@@ -14,6 +14,18 @@
     &:hover .project-teaser__button {
         opacity: 1;
     }
+
+    // Use a background image to fill the space so we can have two rows
+    // of projects per page using viewport height of surrounding element
+    &--fill {
+        width: 100%;
+        height: 100%;
+
+        background-color: #1e1e1e;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
 }
 
     .project-teaser__image {

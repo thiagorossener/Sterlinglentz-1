@@ -58,7 +58,7 @@
                             title="Read this post">{{ post.title }}</a>
                     </h5>
                     <p class="post-list__date" title="{{ post.created_on }}">
-                        {{ post.created_on|date:"n.j.Y" }}</p>
+                        {{ post.created_on|date:"F j, Y" }}</p>
                 </li>
             {% empty %}
                 <li>There are no posts.</li>

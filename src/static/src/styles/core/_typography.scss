@@ -1,12 +1,9 @@
 html {
     font-size: $ms-base;
 
+    // Bump the text up when we get above 1300
     @media screen and (min-width: $break-large) {
         font-size: 1.1rem;
-    }
-
-    @media screen and (max-width: $break-small) {
-        font-size: 1.15rem;
     }
 }
 

@@ -1,11 +1,11 @@
-$indexPadding: 10%;
+$indexPadding: 15%;
 
 .index {
     @include clearfix;
     background-color: $off-white;
     background-repeat: no-repeat;
-    background-position: -30% -5%;
-    background-size: 1250px;
+    background-position: -7rem -4rem;
+    background-size: 1100px;
 }
 
     .index__atf {
@@ -85,59 +85,48 @@ $indexPadding: 10%;
             }
 
 
-
+// Below 800
 @media screen and (max-width: $break-small) {
     .index {
         background-image: none !important;
-
-        // There is a default margin at the top of the page to accomodate
-        // the mobile nav. We need to undo that to get proper full-width
-        // viewport height
-        margin-top: -$menuGutterWidth;
     }
 
-    // Move the hero down the page
+    // Move the hero down the page and make it much wider
     .index__hero {
         @include vertical-align(45%);
+        width: 100% - $indexPadding;
+        padding: 0 $indexPadding/2;
     }
 
-    // Reformat the blog strip
-    .strip__title,
-    .strip__text,
-    .strip__button {
-        float: none;
-        margin: 0;
-        width: 100%;
-    }
-    .strip__title {
-        margin-bottom: 0rem;
-    }
-    .strip__text {
-        margin-bottom: .5rem;
+    // Hide the blog strip
+    .index__strip {
+        display: none;
     }
 
-    // Make projects fullwidth
+    // Make projects each full fullwidth
     .index__project {
         @include span(100%);
     }
 }
 
-@media screen and (max-width: $break-medium) {
-    // Shrink the background logo
+// Between 800 and 1100
+@media screen and (min-width: $break-small) and (max-width: $break-medium) {
+    // Shrink the background logo and center it
     .index {
         background-size: 750px;
         background-position: center 10%;
     }
 
-    // Stretch the hero text to fullwidth as we get lower in resolution
+    // Stretch the hero text as we get lower in resolution and move it down
+    // the page a little bit
     .index__hero {
         width: 100% - (2 * $indexPadding);
         padding: 0 $indexPadding;
+        @include vertical-align(80%);
     }
 }
 
-@media screen and (min-width: $break-small) and (max-width: $break-medium) {
-    .index__hero {
-        @include vertical-align(70%);
-    }
+// Between 1100 and 1300
+@media screen and (min-width: $break-medium) and (max-width: $break-large) {
+
 }

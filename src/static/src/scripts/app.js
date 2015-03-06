@@ -117,4 +117,11 @@ $(document).ready(function(){
         }, 2000);
         return false;
     });
+
+    // Close the nav if below < 1100px
+    $(window).on('resize', function(){
+        if($(window).width() > 1100) {
+            $body.removeClass('menu--expanded');
+        }
+    });
 });

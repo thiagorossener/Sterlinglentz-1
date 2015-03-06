@@ -1,7 +1,7 @@
 html {
     font-size: $ms-base;
 
-    @media screen and (min-width: $break-large) and (max-width: $break-large) {
+    @media screen and (min-width: $break-large) {
         font-size: 1.1rem;
     }
 

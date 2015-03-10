@@ -45,8 +45,11 @@
             </div>
             <ul class="project__images">
                 {% for image in project.images.all %}
-                    <li class="project__image" {% if image.title_text %}title="{{ image.title_text }}"{% endif %}>
-                        <img src="{{ image.image.url }}" {% if image.alt_text %}alt="{{ image.alt_text }}"{% endif %}>
+                    <li class="project__image image" {% if image.title_text %}title="{{ image.title_text }}"{% endif %}>
+                        <img class="image__img" src="{{ image.image.url }}" {% if image.alt_text %}alt="{{ image.alt_text }}"{% endif %}>
+                        {% if image.caption %}
+                            <p class="image__caption">{{ image.caption }}</p>
+                        {% endif %}
                     </li>
                 {% endfor %}
             </ul>

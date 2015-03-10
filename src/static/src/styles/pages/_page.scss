@@ -14,8 +14,8 @@
         }
 
         .column {
-            @include span(8.5 of 12 no-gutters last);
-            @include suffix(.5 of 12);
+            @include span(8 of 12 no-gutters last);
+            @include suffix(1 of 12);
             padding-top: 4rem;
         }
 

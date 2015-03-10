@@ -61,7 +61,8 @@ h6, .h6 {
 }
 
 p {
-    @include type-size(ms(1), 1.5);
+    font-size: 1rem;
+    line-height: 1.75rem;
     margin-top: 0;
     margin-bottom: 1.5rem ;
 

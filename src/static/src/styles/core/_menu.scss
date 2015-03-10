@@ -1,8 +1,11 @@
-$menuGutterWidth: 2.5rem;
-$menuGutterBackground: $gray-dark;
+$hPadding: 14px;
+$vPadding: 12px;
 
-$menuDrawerWidth: 12rem;
-$menuDrawerBackground: lighten($gray-dark, 5%);
+$gutterWidth: 50px;
+$gutterBackground: $gray-dark;
+
+$drawerWidth: 200px;
+$drawerBackground: lighten($gray-dark, 5%);
 
 // Header (Menu + Nav)
 // Our page navigation sits on the LHS of the page on normal desktop resolutions
@@ -17,27 +20,25 @@ $menuDrawerBackground: lighten($gray-dark, 5%);
 
     position: fixed;
     height: 100%;
-    width: $menuGutterWidth;
+    width: $gutterWidth;
     left: 0;
     top: 0;
     z-index: 10;
 
     font-size: 0.9rem;
-    background-color: $menuDrawerBackground;
+    background-color: $drawerBackground;
 }
     // Gutter
     // The slim menu menu that contains a trigger for the navigation
     .menu__gutter {
-        background-color: $menuGutterBackground;
+        background-color: $gutterBackground;
 
         position: absolute;
         height: 100%;
         left: 0;
         top: 0;
-        width: $menuGutterWidth * 0.5;
+        width: $gutterWidth;
         z-index: 100;
-
-        padding: $menuGutterWidth * 0.25;
     }
 
         // Gutter Trigger
@@ -47,9 +48,9 @@ $menuDrawerBackground: lighten($gray-dark, 5%);
             @include transition(background-image 2s ease);
             background-image: url(../images/menu-expand.svg);
             background-repeat: no-repeat;
-            background-position: center center;
-            width: 24px;
-
+            background-position: center top;
+            width: $gutterWidth - (2 * $hPadding);
+            margin: $vPadding $hPadding;
             cursor: pointer;
 
             &:hover {
@@ -73,13 +74,13 @@ $menuDrawerBackground: lighten($gray-dark, 5%);
 
         position: absolute;
         height: 100%;
-        width: $menuDrawerWidth;
-        left: -($menuGutterWidth + $menuDrawerWidth);
+        width: $drawerWidth;
+        left: -($gutterWidth + $drawerWidth);
         top: 0;
         z-index: 50;
         overflow-x: visible;
 
-        background-color: $menuDrawerBackground;
+        background-color: $drawerBackground;
         color: white;
     }
 
@@ -95,8 +96,8 @@ $menuDrawerBackground: lighten($gray-dark, 5%);
 
                     a {
                         display: block;
-                        padding: .75rem 15%;
-                        width: 70%;
+                        padding: $vPadding $hPadding;
+
 
                         font-size: .80rem;
                         line-height: 1rem;
@@ -137,7 +138,7 @@ $menuDrawerBackground: lighten($gray-dark, 5%);
 
 .page-wrapper {
     @include transition(margin-left $animationDuration);
-    margin-left: $menuGutterWidth;
+    margin-left: $gutterWidth;
     position: relative;
 }
 
@@ -150,14 +151,14 @@ body.menu--expanded {
 // When the menu trigger is clicked, we expand the nav ACROSS
 body.menu--expanded {
     .menu {
-        width: ($menuGutterWidth + $menuDrawerWidth);
+        width: ($gutterWidth + $drawerWidth);
     }
 
     .menu__drawer {
-        left: $menuGutterWidth;
+        left: $gutterWidth;
     }
 
     .page-wrapper {
-        margin-left: ($menuGutterWidth + $menuDrawerWidth);
+        margin-left: ($gutterWidth + $drawerWidth);
     }
 }

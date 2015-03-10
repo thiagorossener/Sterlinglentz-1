@@ -201,8 +201,8 @@
         li {
             margin: 0 0 .5rem 0;
             list-style: none;
-            line-height: 2remrem;
-            font-size: ms(-1);
+            line-height: 2rem;
+            font-size: 0.75rem;
         }
 
         li:last-child {
@@ -223,6 +223,12 @@
             li {
                 margin-bottom: 1rem;
             }
+        }
+    }
+
+    &--grayed {
+        ul li {
+            color: $gray-light;
         }
     }
 }

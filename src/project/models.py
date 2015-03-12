@@ -60,6 +60,12 @@ class ProjectImage(models.Model):
     alt_text = models.CharField(max_length=256, blank=True)
     ordering = models.PositiveIntegerField(default=0, blank=True, null=True)
 
+    width = models.IntegerField("Width", default=100, help_text="A percentage between 0 and 100")
+    x_offset = models.IntegerField("Horizontal Offset", default=0,
+        help_text="Number of pixels (positive or negative) to offset the image by horizontally")
+    y_offset = models.IntegerField("Vertical Offset", default=0,
+        help_text="Number of pixels (positive or negative) to offset the image by vertically")
+
     class Meta:
         ordering = ["ordering", ]
         verbose_name = "Image"

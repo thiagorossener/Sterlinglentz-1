@@ -35,12 +35,13 @@
 
 .project__images {
     padding: 0;
-    margin: 0;
+    margin: 3rem 0 0 0;
 }
     .project__image {
         padding: 0;
-        margin: 0;
+        margin: 0 0 6rem 0;
         list-style: none;
+        position: relative;
 
         img {
             max-width: 85%;

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from suit.admin import SortableModelAdmin
-from suit.admin import SortableTabularInline
+from suit.admin import SortableStackedInline
 
 from .models import Client, Category, Project, ProjectImage
 
@@ -16,7 +16,7 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 
-class ProjectImageInline(SortableTabularInline):
+class ProjectImageInline(SortableStackedInline):
     model = ProjectImage
     extra = 0
     sortable = 'ordering'

@@ -338,11 +338,6 @@
         }
     }
 
-// Tab List
-// A list to display page-like tabs
-.tab-list {
-
-}
 
 // Image
 // An image used within the content of a page with an option caption below
@@ -408,5 +403,16 @@
             padding: 0;
             margin: 0;
         }
+    }
+}
+
+
+// Content such as blog posts etc.
+.content {
+    h3 {
+        font-size: 1.5rem;
+        line-height: 2.0736rem;
+        margin-bottom: 1.5rem;
+        margin-top: 2.8rem;
     }
 }

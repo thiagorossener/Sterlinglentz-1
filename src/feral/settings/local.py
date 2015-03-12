@@ -1,5 +1,4 @@
 from .default import *
-from .private import *
 
 DEBUG = True
 TEMPLATE_DEBUG = True

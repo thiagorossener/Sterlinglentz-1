@@ -10,7 +10,7 @@ class ProjectAdmin(admin.ModelAdmin):
     }
     fieldsets = (
         (None, {
-            'fields': ('title', 'subtitle', 'is_published')
+            'fields': ('title', 'subtitle', 'extract', 'is_published')
         }),
         (None, {
             'fields': ('image', )

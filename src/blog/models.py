@@ -22,6 +22,7 @@ class Post(models.Model):
 
     title = models.CharField(max_length=512)
     subtitle = models.CharField(max_length=512, blank=True, null=True)
+    extract = models.TextField(blank=True, null=True)
 
     image = FilerImageField(null=True, blank=True, related_name="post_image",
         help_text="Should be around 1600x500 pixels  (or similar aspect)")

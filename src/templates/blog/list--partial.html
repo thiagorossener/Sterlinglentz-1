@@ -1,0 +1,28 @@
+{% load static %}
+{% load thumbnail %}
+{% load snippets %}
+
+<div class="blog-list-page"
+     data-equal-columns
+     data-seamless-nav
+     data-meta-title="{% snippet 'blog.list.meta.title' %}"
+     data-meta-description="{% snippet 'blog.list.meta.description' %}">
+
+    <div class="column" data-column>
+        <ul class="blog-list">
+            {% for post in posts %}
+                <li class="blog-list__item">
+                    <p class="blog-list__date">
+                        {{ post.created_on|date:"n.j.y" }}
+                    </p>
+                    <div class="blog-list__content">
+                        <a class="silent" href="{{ post.get_absolute_url }}" title="{% if post.subtitle %}{{ post.subtitle }}{% else %}{{ post.title }}{% endif %}">
+                            <h2 class="blog-list__title">{{ post.title|title|truncatechars:30 }}</h2>
+                        </a>
+                        <p class="blog-list__blurb">{{ post.extract|truncatewords:45 }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

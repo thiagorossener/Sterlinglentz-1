@@ -27,14 +27,16 @@
 
             .blog-list__date {
                 float: left;
-                width: 10%;
+                width: 15%;
+                margin-right: 2.5%;
                 color: $gray-light;
                 line-height: 2.75rem;
+                text-align: right;
             }
 
             .blog-list__content {
                 float: right;
-                width: 90%;
+                width: 82.5%;
             }
 
                 .blog-list__title {

@@ -48,3 +48,18 @@
             display: block;
         }
     }
+
+@media screen and (max-width: $break-small) {
+    // Overwrite image staggering
+    .project__image {
+        margin-bottom: 3rem;
+
+        width: 100% !important;
+        top: 0 !important;
+        left: 0 !important;
+
+        img {
+            max-width: 100%;
+        }
+    }
+}

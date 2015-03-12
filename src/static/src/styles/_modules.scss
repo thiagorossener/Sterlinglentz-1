@@ -409,6 +409,11 @@
 
 // Content such as blog posts etc.
 .content {
+    cite {
+        font-size: 0.9rem;
+        color: #666666;
+    }
+
     h3 {
         font-size: 1.5rem;
         line-height: 2.0736rem;

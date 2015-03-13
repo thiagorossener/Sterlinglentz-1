@@ -48,7 +48,11 @@
                         {{ post.created_on|date:"F j, Y" }}</p>
                 </li>
             {% empty %}
-                <li>There are no post.</li>
+                <li class="post-list__item">
+                    <h5 class="post-list__title">
+                        There are no other blog posts yet
+                    </h5>
+                </li>
             {% endfor %}
         </ul>
     </aside>

@@ -112,13 +112,13 @@ $(document).ready(function(){
 
     // When an link is clicked, dynamically load the content if it's a local page
     var setupSeamlessNavigationLinks = function() {
-        $('a').click(function(e){
-            e.preventDefault(); // Important to stop page redirection
+        $('a').off('click').click(function(e){
             var $this = $(this);
             var href = $this.attr('href');
             var isAbsURL = new RegExp('^(?:[a-z]+:)?//', 'i');
             if(!isAbsURL.test(href)) {
                 getPageContent(href);
+                e.preventDefault(); // Important to stop page redirection
             }
         });
     };

@@ -73,15 +73,18 @@
         @include transition(width $animationDuration);
         float: right;
     }
-
+        .header, .content {
+            @include transition(padding-left $animationDuration);
+        }
         .content, .summary {
-            padding: 4rem;
+            padding: 4rem 0 4rem 4rem;
             border-left: 1px solid #ebebeb;
             background-color: white;
             max-width: 750px;
         }
 }
 
+// Move the page over when we open the
 body.column--expanded {
     .page--advanced {
         .sidebar {
@@ -98,6 +101,7 @@ body.column--expanded {
     }
 }
 
+// Move the sidebar inline with the content on small screens
 @media screen and (max-width: $break-small) {
     .page--advanced {
         .sidebar,
@@ -106,6 +110,24 @@ body.column--expanded {
         }
         .content {
             border: none;
+        }
+    }
+}
+
+// When the menu is expanded on the large view, shrink the padding
+@media screen and (min-width: $break-large) {
+    .page--advanced {
+        .content,
+        .header {
+            padding-left: 8rem;
+        }
+    }
+    body.column--expanded {
+        .page--advanced {
+            .content,
+            .header {
+                padding-left: 24rem;
+            }
         }
     }
 }

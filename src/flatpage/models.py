@@ -8,8 +8,8 @@ from ckeditor.fields import RichTextField
 
 
 TEMPLATE_CHOICES = (
-    ('flatpage/basic.html', 'Basic Template'),
-    ('flatpage/advanced.html', 'Advanced Template'),
+    ('flatpage/alpha.html', 'Basic Template (Alpha Layout)'),
+    ('flatpage/beta.html', 'Advanced Template (Beta Layout)'),
 )
 
 

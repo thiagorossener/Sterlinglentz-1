@@ -5,7 +5,6 @@
 $(document).ready(function(){
     var $body = $('body');
 
-
     // Toggle sidebar/column
     var setupSidebarToggle = function(){
         var $columnTrigger = $('.sidebar__trigger, .header__trigger');
@@ -15,7 +14,7 @@ $(document).ready(function(){
         });
     };
 
-    // Equalize the heights of selected columns.
+    // Equalize the heights of columns marked with [data-equal-columns]
     var equalizeColumns = function() {
         $('[data-equal-columns]').each(function(i, row){
             var $row = $(row);
@@ -41,6 +40,45 @@ $(document).ready(function(){
             }
         });
     };
+    var timer;
+    $(window).on('resize', function(){
+        clearTimeout(timer);
+        timer = setTimeout(equalizeColumns, 400);
+    });
+
+    // Add class to body when navigation is expanded
+    var $menuTrigger = $('.menu__gutter__trigger');
+    $menuTrigger.click(function(){
+        $body.toggleClass('menu--expanded');
+        return false;
+    });
+
+    // When the menu links are clicked
+    var $menuLinks = $('.menu__nav li');
+    var $menuLogo = $('.menu__logo');
+    $menuLinks.click(function(){
+        // Active/deactivate menu links
+        $menuLinks.removeClass('active');
+        $(this).addClass('active');
+
+        // Fade in the feral logo in menu
+        setInterval(function(){
+            $menuLogo.css('opacity', 1);
+        }, 2000);
+    });
+
+    // Close the nav if below < 1100px
+    $(window).on('resize', function(){
+        if($(window).width() > 1100) {
+            $body.removeClass('menu--expanded');
+        }
+    });
+
+    /*
+     * Dynamic loading of pages ("seamless navigation")
+     * All of our internal pages are loaded asyncrously to give a "seamless
+     * navigation" experience.
+     */
 
     // Fetch the content of the page via ajax and insert it in the current page
     var $container = $('.page-wrapper');
@@ -64,9 +102,18 @@ $(document).ready(function(){
         });
     };
 
-    // When an anchor link is clicked
+    // When the back button is clicked, unload the previous page
+    window.onpopstate = function (e) {
+        var href = window.location.href;
+        e.preventDefault();
+        getPageContent(href);
+        $(window).trigger('load');
+    };
+
+    // When an link is clicked, dynamically load the content if it's a local page
     var setupSeamlessNavigationLinks = function() {
-        $('a').off('click').click(function(){
+        $('a').click(function(e){
+            e.preventDefault(); // Important to stop page redirection
             var $this = $(this);
             var href = $this.attr('href');
             var isAbsURL = new RegExp('^(?:[a-z]+:)?//', 'i');
@@ -76,52 +123,11 @@ $(document).ready(function(){
         });
     };
 
-    // When the back button is clicked
-    window.onpopstate = function (e) {
-        var href = window.location.href;
-        e.preventDefault();
-        getPageContent(href);
-        $(window).trigger('load');
-    };
-
-    // Add class to body when navigation is expanded
-    var $menuTrigger = $('.menu__gutter__trigger');
-    $menuTrigger.click(function(){
-        $body.toggleClass('menu--expanded');
-        return false;
-    });
-
+    // When a load occurs (either the initial load or a subsequent dynamic
+    // load), rerun javascript relevant to the content of the page
     $(window).on('load', function(){
         setupSidebarToggle();
         equalizeColumns();
         setupSeamlessNavigationLinks();
-    });
-
-    var timer;
-    $(window).on('resize', function(){
-        clearTimeout(timer);
-        timer = setTimeout(equalizeColumns, 400);
-    });
-
-    // When the menu links are clicked
-    var $menuLinks = $('.menu__nav li');
-    var $menuLogo = $('.menu__logo');
-    $menuLinks.click(function(){
-        // Active/deactivate menu links
-        $menuLinks.removeClass('active');
-        $(this).addClass('active');
-
-        // Fade in the feral logo in menu
-        setInterval(function(){
-            $menuLogo.css('opacity', 1);
-        }, 2000);
-        return false;
-    });
-
-    // Close the nav if below < 1100px
-    $(window).on('resize', function(){
-        if($(window).width() > 1100) {
-            $body.removeClass('menu--expanded');
-        }
     });
 });

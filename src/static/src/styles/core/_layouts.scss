@@ -33,10 +33,6 @@
 
 @media screen and (max-width: $break-small) {
     .layout--alpha {
-        .sidebar {
-            margin-bottom: 5rem;
-        }
-
         .sidebar,
         .column {
             @include span(10 of 12 no-gutters);

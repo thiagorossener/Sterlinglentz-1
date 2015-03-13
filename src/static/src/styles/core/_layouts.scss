@@ -57,7 +57,7 @@
     @include container;
 
     .sidebar {
-        @include span(33.33% no-gutters);
+        @include span(20% no-gutters);
         @include transition(margin-left $animationDuration);
         background-color: #fbfbfb;
         float: left;
@@ -72,7 +72,7 @@
         }
 
     .column {
-        @include span(66.66% last);
+        @include span(80% last);
         @include transition(width $animationDuration);
         float: right;
     }

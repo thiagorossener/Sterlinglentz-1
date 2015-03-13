@@ -1,0 +1,12 @@
+<li class="project__media__item image"
+    style="z-index: {{ forloop.revcounter }};
+         margin-top: {{ item.y_offset }}px;
+         margin-left: {{ item.x_offset }}px;
+         width: {{ item.width }}%"
+    {% if item.title_text %}title="{{ item.title_text }}"{% endif %}>
+
+    <img class="image__img" src="{{ item.image.url }}" {% if item.alt_text %}alt="{{ item.alt_text }}"{% endif %}>
+    {% if item.caption %}
+      <p class="image__caption">{{ item.caption }}</p>
+    {% endif %}
+</li>

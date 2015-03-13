@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'django.contrib.redirects',
 
     # Other
+    'polymorphic',
     'ckeditor',
     'easy_thumbnails',
     'mptt',

@@ -1,0 +1,7 @@
+<li class="project__media__item video"
+    style="z-index: {{ forloop.revcounter }};
+         margin-top: {{ item.y_offset }}px;
+         margin-left: {{ item.x_offset }}px;
+         width: {{ item.width }}%">
+    {{ item.html|safe }}
+</li>

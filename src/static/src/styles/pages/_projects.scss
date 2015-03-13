@@ -33,26 +33,25 @@
     }
 }
 
-.project__images {
+.project__media__items {
     overflow: hidden;
     padding: 0;
     margin: 3rem 0 0 0;
 }
-    .project__image {
+    .project__media__item {
         padding: 0;
         margin: 0 0 6rem 0;
         list-style: none;
         position: relative;
 
         img {
-            max-width: 85%;
             display: block;
         }
     }
 
 @media screen and (max-width: $break-small) {
     // Overwrite image staggering
-    .project__image {
+    .project__media__item {
         margin-bottom: 3rem;
 
         width: 100% !important;

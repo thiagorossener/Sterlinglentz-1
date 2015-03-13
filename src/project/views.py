@@ -39,4 +39,4 @@ class ProjectDetailView(AjaxPartialRenderingMixin, DetailView):
     def get_queryset(self):
         """ More efficiently fetch the project object. """
         return super(ProjectDetailView, self).get_queryset() \
-            .prefetch_related("categories", "images").select_related("client")
+            .prefetch_related("categories").select_related("client")

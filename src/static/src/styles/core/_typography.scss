@@ -76,6 +76,38 @@ small,
     @include type-size(ms(-1));
 }
 
+big {
+
+}
+
+tt {
+
+}
+
+code {
+
+}
+
+samp {
+
+}
+
+del {
+
+}
+
+ins {
+
+}
+
+cite {
+
+}
+
+q {
+
+}
+
 ul, ol {
     @include type-size(ms(1), 1.5);
     margin-bottom: 3rem;

@@ -49,7 +49,7 @@ $drawerBackground: lighten($gray-dark, 5%);
             background-image: url(../images/menu-expand.svg);
             background-repeat: no-repeat;
             background-position: center top;
-            width: $gutterWidth - (2 * $hPadding);
+            width: $gutterWidth - (2 * $hPadding) + 2;
             margin: $vPadding $hPadding;
             cursor: pointer;
 

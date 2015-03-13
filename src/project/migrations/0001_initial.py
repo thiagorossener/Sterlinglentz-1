@@ -77,9 +77,14 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('ordering', models.PositiveIntegerField(default=0, null=True, blank=True)),
+                ('width', models.IntegerField(default=100, help_text=b'A percentage between 0 and 100', verbose_name=b'Width')),
+                ('x_offset', models.IntegerField(default=0, help_text=b'Number of pixels (positive or negative) to offset the image by horizontally', verbose_name=b'Horizontal Offset')),
+                ('y_offset', models.IntegerField(default=0, help_text=b'Number of pixels (positive or negative) to offset the image by vertically', verbose_name=b'Vertical Offset')),
             ],
             options={
                 'ordering': ['ordering'],
+                'verbose_name': 'Project Content',
+                'verbose_name_plural': 'Project Content',
             },
             bases=(models.Model,),
         ),
@@ -90,9 +95,6 @@ class Migration(migrations.Migration):
                 ('caption', models.CharField(max_length=256, blank=True)),
                 ('title_text', models.CharField(max_length=256, blank=True)),
                 ('alt_text', models.CharField(max_length=256, blank=True)),
-                ('width', models.IntegerField(default=100, help_text=b'A percentage between 0 and 100', verbose_name=b'Width')),
-                ('x_offset', models.IntegerField(default=0, help_text=b'Number of pixels (positive or negative) to offset the image by horizontally', verbose_name=b'Horizontal Offset')),
-                ('y_offset', models.IntegerField(default=0, help_text=b'Number of pixels (positive or negative) to offset the image by vertically', verbose_name=b'Vertical Offset')),
                 ('image', filer.fields.image.FilerImageField(blank=True, to='filer.Image', null=True)),
             ],
             options={
@@ -102,22 +104,10 @@ class Migration(migrations.Migration):
             bases=('project.projectcontent',),
         ),
         migrations.CreateModel(
-            name='ProjectText',
-            fields=[
-                ('projectcontent_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='project.ProjectContent')),
-                ('content', ckeditor.fields.RichTextField()),
-            ],
-            options={
-                'verbose_name': 'Text',
-                'verbose_name_plural': 'Text',
-            },
-            bases=('project.projectcontent',),
-        ),
-        migrations.CreateModel(
             name='ProjectVideo',
             fields=[
                 ('projectcontent_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='project.ProjectContent')),
-                ('source', models.CharField(max_length=1024)),
+                ('html', models.TextField(help_text=b'The HTML outputted by SublimeVideo website')),
             ],
             options={
                 'verbose_name': 'Video',

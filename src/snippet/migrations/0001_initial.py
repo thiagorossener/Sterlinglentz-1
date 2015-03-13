@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('slug', models.CharField(help_text=b'\n        Should be a dot-seprated string', unique=True, max_length=256)),
-                ('description', models.TextField(help_text=b'\n        An optional description for internal use only', null=True, blank=True)),
+                ('description', models.CharField(help_text=b'An optional description for internal use only', max_length=128, null=True, blank=True)),
                 ('content', models.TextField()),
             ],
             options={

@@ -114,8 +114,8 @@ class Project(models.Model):
 
     """ A single project belonging to a client. """
 
-    published = PublishedManager()
     objects = models.Manager()
+    published = PublishedManager()
 
     client = models.ForeignKey(Client)
     name = models.CharField(max_length=128)

@@ -23,8 +23,12 @@ class ProjectListView(AjaxPartialRenderingMixin, ListView):
     def get_context_data(self, **kwargs):
         """ Group projects into rows of three. """
         context = super(ProjectListView, self).get_context_data(**kwargs)
-        context['projects'] = \
-            zip(*(iter(context['projects']),) * self.group_size)
+        projects = context['projects']
+        if len(projects) < self.group_size:
+            context['projects'] = [projects, ]
+        else:
+            context['projects'] = \
+                zip(*(iter(projects),) * self.group_size)
         return context
 
 

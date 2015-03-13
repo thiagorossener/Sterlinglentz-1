@@ -1,7 +1,7 @@
 {% load static %}
 {% load thumbnail %}
 
-<div class="page--advanced"
+<div class="layout--beta"
      data-equal-columns
 
      data-seamless-nav
@@ -26,14 +26,16 @@
                 <h2 class="header__subtitle">{{ flatpage.subtitle }}</h2>
             {% endif %}
         </header>
-        {% if flatpage.description %}
-            <div class="summary">
-                <h1 class="summary__title">{{ flatpage.description }}</h1>
-            </div>
-        {% endif %}
-        <article class="content">
-            {{ flatpage.content|safe }}
-        </article>
+        <div class="content-wrapper">
+            {% if flatpage.description %}
+                <div class="summary">
+                    <h1 class="summary__title">{{ flatpage.description }}</h1>
+                </div>
+            {% endif %}
+            <article class="content">
+                {{ flatpage.content|safe }}
+            </article>
+        </div>
     </div>
     <aside class="sidebar" data-column>
         <div class="sidebar__trigger bookmark__trigger">

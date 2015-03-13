@@ -1,7 +1,7 @@
 {% load static %}
 {% load thumbnail %}
 
-<div class="page--basic"
+<div class="layout--alpha"
      data-seamless-nav
      data-meta-title="{{ project.meta_title }}"
      data-meta-description="{{ project.meta_description }}">
@@ -35,21 +35,22 @@
             </div>
         </aside>
         <section class="column">
-            {% if project.description %}
-                <div class="summary">
-                    <h1 class="summary__title">{{ project.description }}</h1>
+            <div class="content-wrapper">
+                {% if project.description %}
+                    <div class="summary">
+                        <h1 class="summary__title">{{ project.description }}</h1>
+                    </div>
+                {% endif %}
+                <div class="content">
+                    {{ project.content|safe }}
                 </div>
-            {% endif %}
-            <div class="content">
-                {{ project.content|safe }}
+                {# Polymorphic Image and Videos #}
+                <ul class="project__media__items">
+                    {% for item in project.content_items.all %}
+                        {% include item.template %}
+                    {% endfor %}
+                </ul>
             </div>
-
-            {# Polymorphic Image and Videos #}
-            <ul class="project__media__items">
-                {% for item in project.content_items.all %}
-                    {% include item.template %}
-                {% endfor %}
-            </ul>
         </section>
     </article>
 </div>

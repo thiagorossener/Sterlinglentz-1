@@ -2,7 +2,7 @@
 {% load thumbnail %}
 {% load snippets %}
 
-<div class="page--advanced"
+<div class="layout--beta"
      data-equal-columns
      data-seamless-nav
      data-meta-title="{{ post.meta_title }}"
@@ -25,9 +25,11 @@
             {% endif %}
             <div class="header__overlay">&nbsp;</div>
         </header>
-        <article class="content">
-            {{ post.content|safe }}
-        </article>
+        <div class="content-wrapper">
+            <article class="content">
+                {{ post.content|safe }}
+            </article>
+        </div>
     </div>
     <aside class="sidebar" data-column>
         <div class="sidebar__trigger bookmark__trigger">

@@ -1,5 +1,8 @@
-// Basic Page Layout
-.page--basic {
+// "Alpha" Layout
+// A basic page layout with a full width header across the top and a column
+// below that has a sidebar to the left and content to the right
+// (As seen about page)
+.layout--alpha {
     background-color: $off-white;
 
     .header,
@@ -19,13 +22,17 @@
             padding-top: 4rem;
         }
 
-            .content {
-                max-width: 750px;
+            .content-wrapper {
+
             }
+
+                .content {
+                    max-width: 750px;
+                }
 }
 
 @media screen and (max-width: $break-small) {
-    .page--basic {
+    .layout--alpha {
         .sidebar {
             margin-bottom: 5rem;
         }
@@ -46,20 +53,20 @@
 }
 
 
-// Advanced Page Layout
+// "Beta" Page Layout
 // This is a simple layout used on more than one page where a LHS sidebar takes
 // up a third of the page and a single column takes up the other two thirds
 // (As seen process page)
-.page--advanced {
+.layout--beta {
     @include container;
 
     .sidebar {
         @include span(33.33% no-gutters);
         @include transition(margin-left $animationDuration);
         background-color: #fbfbfb;
-        height: 100%;
         float: left;
         position: relative;
+        height: 2000px; // To avoid jarring resizing via JS
     }
 
         .sidebar__trigger {
@@ -73,20 +80,24 @@
         @include transition(width $animationDuration);
         float: right;
     }
-        .header, .content {
+        .header, .content-wrapper {
             @include transition(padding-left $animationDuration);
         }
-        .content, .summary {
-            padding: 4rem 0 4rem 4rem;
+
+        .content-wrapper {
             border-left: 1px solid #ebebeb;
             background-color: white;
-            max-width: 750px;
+            padding: 4rem;
         }
+
+            .content, .summary {
+                max-width: 750px;
+            }
 }
 
-// Move the page over when we open the
+// Move the page over when we open the sidebar
 body.column--expanded {
-    .page--advanced {
+    .layout--beta {
         .sidebar {
             margin-left: -33.33%;
         }
@@ -103,12 +114,12 @@ body.column--expanded {
 
 // Move the sidebar inline with the content on small screens
 @media screen and (max-width: $break-small) {
-    .page--advanced {
+    .layout--beta {
         .sidebar,
         .column {
             @include span(100% no-gutters);
         }
-        .content {
+        .content-wrapper {
             border: none;
         }
     }
@@ -116,15 +127,15 @@ body.column--expanded {
 
 // When the menu is expanded on the large view, shrink the padding
 @media screen and (min-width: $break-large) {
-    .page--advanced {
-        .content,
+    .layout--beta {
+        .content-wrapper,
         .header {
             padding-left: 8rem;
         }
     }
     body.column--expanded {
-        .page--advanced {
-            .content,
+        .layout--beta {
+            .content-wrapper,
             .header {
                 padding-left: 24rem;
             }

@@ -26,6 +26,7 @@
 @media screen and (max-width: $break-small) {
     .projects__column {
         @include span(100% no-gutters);
+        height: 100vh;
 
         &--odd {
             margin-top: 0;

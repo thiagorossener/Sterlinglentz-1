@@ -96,7 +96,9 @@ $(document).ready(function(){
                 $('meta[name=description]').attr('content', metaDescription);
 
                 history.pushState({}, null, href);
-                $container.fadeIn(150);
+                $container.fadeIn(150, function(){
+                    $('html, body').animate({ scrollTop: 0 }, 250);
+                });
                 $(window).trigger('load');
             });
         });

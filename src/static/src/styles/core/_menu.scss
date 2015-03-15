@@ -49,7 +49,7 @@ $drawerBackground: lighten($gray-dark, 5%);
             background-image: url(../images/menu-expand.svg);
             background-repeat: no-repeat;
             background-position: center top;
-            width: $gutterWidth - (2 * $hPadding) + 2;
+            width: $gutterWidth - (2 * $hPadding);
             margin: $vPadding $hPadding;
             cursor: pointer;
 
@@ -119,7 +119,7 @@ $drawerBackground: lighten($gray-dark, 5%);
         .menu__logo {
             opacity: 0;
             @include transition(opacity $animationDuration * 2);
-            padding: 0 10%;
+            padding: 0 $hPadding;
             position: absolute;
             top: 50%;
             left: 0;
@@ -130,7 +130,7 @@ $drawerBackground: lighten($gray-dark, 5%);
         }
 
         .menu__footer {
-            padding: .75rem 15%;
+            padding: 0 $hPadding;
             position: absolute;
             bottom: 0;
             left: 0;

@@ -1,4 +1,5 @@
 """ Custom views for the project app hook. """
+from itertools import izip_longest
 
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -18,18 +19,18 @@ class ProjectListView(AjaxPartialRenderingMixin, ListView):
 
     def get_queryset(self):
         """ Only return published projects. """
-        return Project.published.all()
+        projects = Project.published.all()
+        return projects
+
+    def chunks(self, l, n):
+        for i in xrange(0, len(l), n):
+            yield l[i:i+n]
 
     def get_context_data(self, **kwargs):
         """ Group projects into rows of three. """
-        context = super(ProjectListView, self).get_context_data(**kwargs)
-        projects = context['projects']
-        if len(projects) < self.group_size:
-            context['projects'] = [projects, ]
-        else:
-            context['projects'] = \
-                zip(*(iter(projects),) * self.group_size)
-        return context
+        c = super(ProjectListView, self).get_context_data(**kwargs)
+        c['projects'] = list(self.chunks(c['projects'], self.group_size))
+        return c
 
 
 class ProjectDetailView(AjaxPartialRenderingMixin, DetailView):

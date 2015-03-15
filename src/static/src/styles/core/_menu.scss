@@ -148,17 +148,49 @@ body.menu--expanded {
     }
 }
 
-// When the menu trigger is clicked, we expand the nav ACROSS
-body.menu--expanded {
-    .menu {
-        width: ($gutterWidth + $drawerWidth);
-    }
+// Desktop-specific header/content layout
+@media screen and (min-width: $break-small) {
+    // When the menu trigger is clicked, we expand the nav ACROSS
+    body.menu--expanded {
+        .menu {
+            width: ($gutterWidth + $drawerWidth);
+        }
 
-    .menu__drawer {
-        left: $gutterWidth;
+        .menu__drawer {
+            left: $gutterWidth;
+        }
+
+        .page-wrapper {
+            margin-left: ($gutterWidth + $drawerWidth);
+        }
+    }
+}
+
+// Mobile-specific header/content layout
+@media screen and (max-width: $break-small) {
+    // On mobile, instead of 'squishing' the page from the left when we
+    // extend the menu, we shift it across instead.
+    body {
+        overflow-x: hidden;
     }
 
     .page-wrapper {
-        margin-left: ($gutterWidth + $drawerWidth);
+        @include transition(left $animationDuration);
+        margin-left: 0;
+        left: $gutterWidth;
+    }
+
+    body.menu--expanded {
+        .menu {
+            width: ($gutterWidth + $drawerWidth);
+        }
+
+        .menu__drawer {
+            left: $gutterWidth;
+        }
+
+        .page-wrapper {
+            left: ($gutterWidth + $drawerWidth);
+        }
     }
 }

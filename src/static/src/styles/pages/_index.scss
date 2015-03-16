@@ -65,10 +65,6 @@ $indexPadding: 15%;
                     margin-right: 2rem;
                 }
 
-                .strip__button {
-
-                }
-
     .index__btf {
 
     }
@@ -109,10 +105,6 @@ $indexPadding: 15%;
     // Make projects each full fullwidth
     .index__project {
         @include span(100%);
-    }
-
-    .strip__button {
-        display: none;
     }
 }
 

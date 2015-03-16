@@ -251,6 +251,7 @@
     @media screen and (max-width: $break-small) {
         p {
             margin-bottom: 2rem;
+            line-height: 0.3rem;
         }
 
         p small,
@@ -333,7 +334,7 @@
 
         a {
             color: #7e7e7e;
-            font-size: 1rem;
+            font-size: 0.80rem;
             font-weight: $font-weight-bold;
             line-height: 1.25rem;
             margin-bottom: 0;

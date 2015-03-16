@@ -94,13 +94,15 @@ $indexPadding: 15%;
     // Move the hero down the page and make it much wider
     .index__hero {
         @include vertical-align(45%);
-        width: 100% - $indexPadding;
-        padding: 0 $indexPadding/2;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
-    // Hide the blog strip
-    .index__strip {
-        display: none;
+    .index__hero,
+    .strip__content {
+        width: 100% - $indexPadding;
+        padding-left: $indexPadding/2;
+        padding-right: $indexPadding/2;
     }
 
     // Make projects each full fullwidth

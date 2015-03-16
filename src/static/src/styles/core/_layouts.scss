@@ -91,6 +91,15 @@
             }
 }
 
+@media screen and (max-width: $break-small) {
+    .layout--beta {
+        .content-wrapper {
+            padding: 2rem;
+        }
+    }
+}
+
+
 // Move the page over when we open the sidebar
 body.column--expanded {
     .layout--beta {

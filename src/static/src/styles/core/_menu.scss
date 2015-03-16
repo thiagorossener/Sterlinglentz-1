@@ -2,6 +2,7 @@ $hPadding: 14px;
 $vPadding: 12px;
 
 $gutterWidth: 50px;
+$gutterMobileHeight: 17px;
 $gutterBackground: $gray-dark;
 
 $drawerWidth: 200px;
@@ -142,8 +143,8 @@ $drawerBackground: lighten($gray-dark, 5%);
 
 // Page Content
 .page-wrapper {
-    @include transition(left $animationDuration);
-    left: $gutterWidth;
+    @include transition(margin-left $animationDuration);
+    margin-left: $gutterWidth;
     position: relative;
 }
 
@@ -162,7 +163,7 @@ body.menu--expanded {
     }
 
     .page-wrapper {
-        left: ($gutterWidth + $drawerWidth);
+        margin-left: ($gutterWidth + $drawerWidth);
     }
 
 }
@@ -171,30 +172,44 @@ body.menu--expanded {
 .menu__mobilegutter {
     @include transition(left $animationDuration);
     display: none;
-    position: relative;
+    position: fixed;
+    top: 0;
     left: 0;
+    height: $gutterMobileHeight;
+
+    width: 100%;
+    padding: $vPadding 0;
+
     font-size: 0.9rem;
     background-color: $gutterBackground;
-    padding: $vPadding $hPadding;
+    z-index: 100;
 
     .menu__trigger {
-        height: 1rem;
-        width: auto;
-        background-position: left center;
+        margin: 0 $hPadding;
+        background-position: left 35%;
     }
 }
 
 @media screen and (max-width: $break-small) {
     // On mobile, instead of 'squishing' the page from the left when we
-    // extend the menu, we shift it across instead.
-    body {
-        overflow-x: hidden;
+    // extend the menu, we shift it across instead. To do this we have
+    // to change the page-wrapper appraoch to using left positioning as
+    // opposed to margin-left
+    body { overflow-x: hidden; }
+    .page-wrapper {
+        @include transition(left $animationDuration);
+        position: relative;
+        left: 0;
+        margin-left: 0;
+        margin-top: $gutterMobileHeight + (2 * $vPadding);
     }
 
+    // Show the top mobile menu gutter bar
     .menu__mobilegutter {
         display: block;
     }
 
+    // hide the normal sidebar menu
     .menu {
         width: 0;
     }
@@ -202,11 +217,6 @@ body.menu--expanded {
     // Hide the normal gutter
     .menu__gutter {
         left: -$gutterWidth;
-    }
-
-    .page-wrapper {
-        @include transition(left $animationDuration);
-        left: 0;
     }
 
     body.menu--expanded {
@@ -218,8 +228,12 @@ body.menu--expanded {
             left: 0;
         }
 
-        .menu__mobilegutter,
+        .menu__mobilegutter {
+            left: $drawerWidth;
+        }
+
         .page-wrapper {
+            margin-left: 0;
             left: $drawerWidth;
         }
     }

@@ -98,6 +98,7 @@ $indexPadding: 15%;
         padding-bottom: 0;
     }
 
+    // Change the padding on the index
     .index__hero,
     .strip__content {
         width: 100% - $indexPadding;
@@ -108,6 +109,10 @@ $indexPadding: 15%;
     // Make projects each full fullwidth
     .index__project {
         @include span(100%);
+    }
+
+    .strip__button {
+        display: none;
     }
 }
 

@@ -20,11 +20,7 @@
                         {% snippet "index.blog.tagline" %}
                     </div>
                     <div class="strip__text">
-                        {{ post.title }}
-                    </div>
-                    <div class="strip__button">
-                        <a href="{{ post.get_absolute_url }}" title="{{ post.title }}"
-                           class="button button--gold">Read</a>
+                        <a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a>
                     </div>
                 </div>
             </div>

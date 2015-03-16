@@ -119,6 +119,11 @@
         z-index: -10;
     }
 @media screen and (max-width: $break-small) {
+    .header__subtitle {
+        font-size: 1.1rem;
+        font-weight: 300;
+        line-height: 1.7rem;
+    }
     .header__subsubtitle {
         margin-bottom: 2rem;
     }

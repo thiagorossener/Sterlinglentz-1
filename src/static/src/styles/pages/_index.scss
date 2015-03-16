@@ -27,8 +27,9 @@ $indexPadding: 15%;
             }
 
             h1, h2, h3, h4, h5, h6 {
-                @include type-size(ms(3), 1.25);
-                font-weight: $font-weight-regular;
+                font-size: 1.75rem;
+                line-height: 2.15rem;
+                font-weight: 300;
                 margin: 0;
             }
         }
@@ -93,6 +94,11 @@ $indexPadding: 15%;
         @include vertical-align(45%);
         padding-top: 0;
         padding-bottom: 0;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 1.4rem;
+            line-height: 2.2rem;
+        }
     }
 
     // Change the padding on the index

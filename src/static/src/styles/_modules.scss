@@ -98,6 +98,7 @@
         font-size: 1.5rem;
         font-weight: $font-weight-regular;
         color: #cfcfcf;
+        margin-bottom: 0;
     }
 
     .header__trigger,
@@ -449,5 +450,9 @@
         line-height: 2.0736rem;
         margin-bottom: 1.5rem;
         margin-top: 2.8rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
     }
 }

@@ -364,19 +364,19 @@
     margin-bottom: 3rem;
 }
 
-    .image__img {
+    .image__img, img {
         width: 100%;
         display: block;
         margin-bottom: 1rem;
     }
 
-    .image__caption {
+    .image__caption, p {
         font-size: 0.75rem;
         font-style: italic;
     }
 
     @media screen and (max-width: $break-small) {
-        .image__caption {
+        .image__caption, p {
             margin-top: -10px;
             line-height: 1.25rem;
         }

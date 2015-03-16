@@ -201,17 +201,13 @@
 // (As seen on the studio page and project detail page)
 .summary {
     margin-bottom: 1.5rem;
-    width: 85%;
+    max-width: 800px;
 }
     .summary__title {
         margin-bottom: 2rem;
         font-size: 1.30rem;
         line-height: 2.10rem;
         font-weight: $font-weight-bold;
-
-        &--short {
-            width: 80%;
-        }
     }
 
 

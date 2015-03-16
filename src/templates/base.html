@@ -14,9 +14,12 @@
     </head>
     <body class="{% block body_classes %}{% endblock %}">
         <header>
+            <div class="menu__mobilegutter">
+                <div class="menu__trigger">&nbsp;</div>
+            </div>
             <div class="menu">
                 <div class="menu__gutter">
-                    <div class="menu__gutter__trigger">&nbsp;</div>
+                    <div class="menu__trigger menu__gutter__trigger">&nbsp;</div>
                     <div class="menu__gutter__logo">
                         <a href="" title="">
                             <img src="{% static 'images/feral-logo--gold--straight.svg' %}" alt=""

@@ -10,8 +10,9 @@ $drawerBackground: lighten($gray-dark, 5%);
 // Header (Menu + Nav)
 // Our page navigation sits on the LHS of the page on normal desktop resolutions
 // and has a thin gutter that can be clicked to reveal a slide out drawer with
-// the site navigation. This entire unit switches to a dropdown menu along
-// the top of the page at mobile resolutions
+// the site navigation. This changes on mobile. We use a separate bar along
+// the top to control the existing sidebar menu. When the bar along the top is
+// clicked the existing menu slides out.
 //
 // We use CSS3 transitions to accomplish this (with a small bit of jquery to
 // register the actual clicking of the menu drawer trigger)
@@ -31,8 +32,8 @@ $drawerBackground: lighten($gray-dark, 5%);
     // Gutter
     // The slim menu menu that contains a trigger for the navigation
     .menu__gutter {
+        @include transition(left $animationDuration);
         background-color: $gutterBackground;
-
         position: absolute;
         height: 100%;
         left: 0;
@@ -41,16 +42,15 @@ $drawerBackground: lighten($gray-dark, 5%);
         z-index: 100;
     }
 
-        // Gutter Trigger
+        // Trigger
         // The small x3 vertical lines that triggers the drawer to slide out
         // from the lefthand side of the page in normal desktop view.
-        .menu__gutter__trigger {
+        .menu__trigger {
             @include transition(background-image 2s ease);
             background-image: url(../images/menu-expand.svg);
             background-repeat: no-repeat;
             background-position: center top;
             width: $gutterWidth - (2 * $hPadding);
-            margin: $vPadding $hPadding;
             cursor: pointer;
 
             &:hover {
@@ -59,6 +59,10 @@ $drawerBackground: lighten($gray-dark, 5%);
 
             &:active {
             }
+        }
+
+        .menu__gutter__trigger {
+            margin: $vPadding $hPadding;
         }
 
         .menu__gutter__logo {
@@ -136,37 +140,50 @@ $drawerBackground: lighten($gray-dark, 5%);
             left: 0;
         }
 
+// Page Content
 .page-wrapper {
-    @include transition(margin-left $animationDuration);
-    margin-left: $gutterWidth;
+    @include transition(left $animationDuration);
+    left: $gutterWidth;
     position: relative;
 }
 
+// When the menu trigger is clicked
 body.menu--expanded {
-    .menu__gutter__trigger {
+    .menu__trigger {
         background-image: url(../images/menu-expand--hover.svg);
     }
-}
 
-// Desktop-specific header/content layout
-@media screen and (min-width: $break-small) {
-    // When the menu trigger is clicked, we expand the nav ACROSS
-    body.menu--expanded {
-        .menu {
-            width: ($gutterWidth + $drawerWidth);
-        }
-
-        .menu__drawer {
-            left: $gutterWidth;
-        }
-
-        .page-wrapper {
-            margin-left: ($gutterWidth + $drawerWidth);
-        }
+    .menu {
+        width: ($gutterWidth + $drawerWidth);
     }
+
+    .menu__drawer {
+        left: $gutterWidth;
+    }
+
+    .page-wrapper {
+        left: ($gutterWidth + $drawerWidth);
+    }
+
 }
 
 // Mobile-specific header/content layout
+.menu__mobilegutter {
+    @include transition(left $animationDuration, margin-top $animationDuration);
+    margin-top: -200px;
+    position: relative;
+    left: 0;
+    font-size: 0.9rem;
+    background-color: $gutterBackground;
+    padding: $vPadding $hPadding;
+
+    .menu__trigger {
+        background-position: left center;
+        height: 1rem;
+        width: auto;
+    }
+}
+
 @media screen and (max-width: $break-small) {
     // On mobile, instead of 'squishing' the page from the left when we
     // extend the menu, we shift it across instead.
@@ -174,23 +191,36 @@ body.menu--expanded {
         overflow-x: hidden;
     }
 
+    .menu__mobilegutter {
+        margin-top: 0;
+    }
+
+    .menu {
+        width: 0;
+    }
+
+    // Hide the normal gutter
+    .menu__gutter {
+        left: -$gutterWidth;
+    }
+
     .page-wrapper {
         @include transition(left $animationDuration);
-        margin-left: 0;
-        left: $gutterWidth;
+        left: 0;
     }
 
     body.menu--expanded {
         .menu {
-            width: ($gutterWidth + $drawerWidth);
+            width: $drawerWidth;
         }
 
         .menu__drawer {
-            left: $gutterWidth;
+            left: 0;
         }
 
+        .menu__mobilegutter,
         .page-wrapper {
-            left: ($gutterWidth + $drawerWidth);
+            left: $drawerWidth;
         }
     }
 }

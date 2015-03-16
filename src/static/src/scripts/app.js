@@ -47,7 +47,7 @@ $(document).ready(function(){
     });
 
     // Add class to body when navigation is expanded
-    var $menuTrigger = $('.menu__gutter__trigger');
+    var $menuTrigger = $('.menu__trigger');
     $menuTrigger.click(function(){
         $body.toggleClass('menu--expanded');
         return false;

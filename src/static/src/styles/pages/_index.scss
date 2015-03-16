@@ -84,7 +84,8 @@ $indexPadding: 15%;
 // Below 800
 @media screen and (max-width: $break-small) {
     .index {
-        background-image: none !important;
+        background-size: 350px;
+        background-position: top left;
     }
 
     // Move the hero down the page and make it much wider

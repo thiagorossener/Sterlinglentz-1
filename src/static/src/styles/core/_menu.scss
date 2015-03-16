@@ -169,8 +169,8 @@ body.menu--expanded {
 
 // Mobile-specific header/content layout
 .menu__mobilegutter {
-    @include transition(left $animationDuration, margin-top $animationDuration);
-    margin-top: -200px;
+    @include transition(left $animationDuration);
+    display: none;
     position: relative;
     left: 0;
     font-size: 0.9rem;
@@ -178,9 +178,9 @@ body.menu--expanded {
     padding: $vPadding $hPadding;
 
     .menu__trigger {
-        background-position: left center;
         height: 1rem;
         width: auto;
+        background-position: left center;
     }
 }
 
@@ -192,7 +192,7 @@ body.menu--expanded {
     }
 
     .menu__mobilegutter {
-        margin-top: 0;
+        display: block;
     }
 
     .menu {

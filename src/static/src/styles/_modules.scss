@@ -371,6 +371,12 @@
         font-style: italic;
     }
 
+    @media screen and (max-width: $break-small) {
+        .image__caption {
+            margin-top: -10px;
+        }
+    }
+
 // Pullquote
 // A large pullquote  used within the content of a page (usually
 // the blog) with an optional source

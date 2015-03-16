@@ -10,6 +10,7 @@
 
     <div class="column" data-column>
         <header class="header" {% if post.image %}style="background-image:url({% thumbnail post.image 1200x800 crop %})"{% endif %}>
+            {% comment %}
             <div class="header__trigger bookmark__trigger bookmark__trigger--yellow">
                 <img class="bookmark__trigger__image"
                      src="{% static 'images/sidebar-trigger--yellow.svg' %}"
@@ -17,6 +18,7 @@
                      alt="Sidebar Toggle">
                 <small class="bookmark__trigger__text">OPEN MENU</small>
             </div>
+            {% endcomment %}
             <p class="header__subsubtitle" title="{{ post.created_on }}">
                     {{ post.created_on|date:"n.j.Y" }}</p>
             <h1 class="header__title">{{ post.title }}</h1>

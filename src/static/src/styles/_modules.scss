@@ -118,6 +118,7 @@
 
         z-index: -10;
     }
+
 @media screen and (max-width: $break-small) {
     .header__title {
         font-size: 1.8rem;
@@ -188,6 +189,12 @@
         color: white;
         font-size: 0.80rem;
     }
+
+@media screen and (max-width: $break-small) {
+    .header--image {
+        min-height: 200px;
+    }
+}
 
 // Summary:
 // A large piece of summary text for the page as well as a divider
@@ -374,6 +381,7 @@
     @media screen and (max-width: $break-small) {
         .image__caption {
             margin-top: -10px;
+            line-height: 1.25rem;
         }
     }
 

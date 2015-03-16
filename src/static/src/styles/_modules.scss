@@ -247,6 +247,10 @@
         li:last-child {
             margin-bottom: 0;
         }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     @media screen and (max-width: $break-small) {

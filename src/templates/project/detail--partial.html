@@ -15,23 +15,25 @@
     {% endif %}
     <article class="body">
         <aside class="sidebar">
-            <div class="spec-list spec-list--grayed">
-                <p><small>CLIENT</small></p>
-                <ul>
-                    <li>{{ project.client.name }}</li>
-                </ul>
-                <p><small>FOCUS</small></p>
-                <ul>
-                    <li>{{ project.client.focus }}</li>
-                </ul>
-                {% if project.categories %}
-                    <p><small>PROJECTS</small></p>
+            <div class="sidebar-content-wrapper">
+                <div class="spec-list spec-list--grayed">
+                    <p><small>CLIENT</small></p>
                     <ul>
-                        {% for category in project.categories.all %}
-                            <li>{{ category.name }}</li>
-                        {% endfor %}
+                        <li>{{ project.client.name }}</li>
                     </ul>
-                {% endif %}
+                    <p><small>FOCUS</small></p>
+                    <ul>
+                        <li>{{ project.client.focus }}</li>
+                    </ul>
+                    {% if project.categories %}
+                        <p><small>PROJECTS</small></p>
+                        <ul>
+                            {% for category in project.categories.all %}
+                                <li>{{ category.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
             </div>
         </aside>
         <section class="column">

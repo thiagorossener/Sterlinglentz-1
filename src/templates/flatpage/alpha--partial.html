@@ -15,7 +15,9 @@
     {% endif %}
     <article class="body">
         <aside class="sidebar">
-            {{ flatpage.sidebar|safe }}
+            <div class="sidebar-content-wrapper">
+                {{ flatpage.sidebar|safe }}
+            </div>
         </aside>
         <section class="column">
             <div class="content-wrapper">

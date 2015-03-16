@@ -16,6 +16,10 @@
             padding-top: 4rem;
         }
 
+            .sidebar-content-wrapper {
+
+            }
+
         .column {
             @include span(8 of 12 no-gutters last);
             @include suffix(1 of 12);
@@ -35,15 +39,14 @@
     .layout--alpha {
         .sidebar,
         .column {
-            @include span(10 of 12 no-gutters);
-            @include prefix(1 of 12);
-            @include suffix(1 of 12);
+            width: 100%;
+            padding: 0;
+            margin: 0;
         }
 
-        .content--shrink {
-            p {
-                width: 100%;
-            }
+        .content-wrapper,
+        .sidebar-content-wrapper {
+            padding: 2rem;
         }
     }
 }
@@ -64,6 +67,10 @@
         position: relative;
         height: 2000px; // To avoid jarring resizing via JS
     }
+
+        .sidebar-content-wrapper {
+            padding: 4rem;
+        }
 
         .sidebar__trigger {
             position: absolute;

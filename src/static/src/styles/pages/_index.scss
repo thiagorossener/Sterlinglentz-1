@@ -106,6 +106,10 @@ $indexPadding: 15%;
     .index__project {
         @include span(100%);
     }
+
+    .strip__button {
+        display: none;
+    }
 }
 
 // Between 800 and 1100

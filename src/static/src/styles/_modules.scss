@@ -130,6 +130,10 @@
         line-height: 2.5rem;
     }
 
+    .header__trigger {
+        display: none;
+    }
+
     .header__subtitle {
         font-size: 1.1rem;
         font-weight: 300;
@@ -365,6 +369,12 @@
             width: 65%;
         }
     }
+
+@media screen and (max-width: $break-small) {
+    .page-list {
+        padding: 0;
+    }
+}
 
 
 // Image

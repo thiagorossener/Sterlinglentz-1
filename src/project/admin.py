@@ -60,7 +60,7 @@ class ProjectImageInline(admin.StackedInline):
 
 
 @admin.register(Project)
-class ProjectAdmin(admin.ModelAdmin):
+class ProjectAdmin(SortableModelAdmin):
     prepopulated_fields = {
         "slug": ("name",),
     }

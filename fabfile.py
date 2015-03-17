@@ -26,7 +26,20 @@ def staging():
 
 def production():
     """ Send commands to production server. """
-    pass
+    env.hosts = ['http://104.236.186.246/', ]
+    env.user = "admin"
+
+    env.password = PRODUCTION_SUDO
+    env.dbname = PRODUCTION_DB_NAME
+    env.dbuser = PRODUCTION_DB_USER
+    env.dbpassword = PRODUCTION_DB_PASSWORD
+
+    env.virtualenv = "feral.com"
+    env.branch = "develop"
+
+    env.virtualenv_path = "/srv/feral.com/"
+    env.project_path = "/srv/feral.com/src/"
+    env.python_path = "/srv/feral.com/src/src/"
 
 
 def virtualenv(command):

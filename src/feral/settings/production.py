@@ -13,4 +13,4 @@ DATABASES = {
     }
 }
 
-ALLOWED_HOSTS = ("sterlinglentz.com", "104.236.186.246")
+ALLOWED_HOSTS = ("www.sterlinglentz.com", "sterlinglentz.com", "104.236.186.246")

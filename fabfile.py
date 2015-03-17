@@ -26,7 +26,7 @@ def staging():
 
 def production():
     """ Send commands to production server. """
-    env.hosts = ['http://104.236.186.246/', ]
+    env.hosts = ['104.236.186.246', ]
     env.user = "admin"
 
     env.password = PRODUCTION_SUDO

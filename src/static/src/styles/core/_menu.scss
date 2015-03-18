@@ -2,7 +2,7 @@ $hPadding: 14px;
 $vPadding: 12px;
 
 $gutterWidth: 50px;
-$gutterMobileHeight: 17px;
+$gutterMobileHeight: 40px;
 $gutterBackground: $gray-dark;
 
 $drawerWidth: 200px;
@@ -47,18 +47,26 @@ $drawerBackground: lighten($gray-dark, 5%);
         // The small x3 vertical lines that triggers the drawer to slide out
         // from the lefthand side of the page in normal desktop view.
         .menu__trigger {
-            @include transition(background-image 2s ease);
-            background-image: url(../images/menu-expand.svg);
-            background-repeat: no-repeat;
-            background-position: center top;
+
             width: $gutterWidth - (2 * $hPadding);
+            position: relative;
             cursor: pointer;
 
-            &:hover {
-                background-image: url(../images/menu-expand--hover.svg);
+            img {
+                @include transition(opacity 1s ease);
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                &.inactive { opacity: 1.0; }
+                &.active { opacity: 0.0; }
             }
 
-            &:active {
+            &:hover {
+                img {
+                    &.inactive { opacity: 0.0; }
+                    &.active {opacity: 1.0; }
+                }
             }
         }
 
@@ -150,10 +158,6 @@ $drawerBackground: lighten($gray-dark, 5%);
 
 // When the menu trigger is clicked
 body.menu--expanded {
-    .menu__trigger {
-        background-image: url(../images/menu-expand--hover.svg);
-    }
-
     .menu {
         width: ($gutterWidth + $drawerWidth);
     }
@@ -170,6 +174,7 @@ body.menu--expanded {
 
 // Mobile-specific header/content layout
 .menu__mobilegutter {
+    // 64px = 40px height + 2 x 12px
     @include transition(left $animationDuration);
     display: none;
     position: fixed;
@@ -183,12 +188,27 @@ body.menu--expanded {
     font-size: 0.9rem;
     background-color: $gutterBackground;
     z-index: 100;
-
-    .menu__trigger {
-        margin: 0 $hPadding;
-        background-position: left 35%;
-    }
 }
+
+    .menu__mobilegutter__trigger {
+        position: absolute;
+        top: 22px;
+        left: 2rem;
+
+        img {
+            height: 20px;
+        }
+    }
+
+    .menu__mobilegutter__logo {
+        position: absolute;
+        left: 40%;
+        top:  17px;
+
+        img {
+            height: 30px;
+        }
+    }
 
 @media screen and (max-width: $break-small) {
     // On mobile, instead of 'squishing' the page from the left when we

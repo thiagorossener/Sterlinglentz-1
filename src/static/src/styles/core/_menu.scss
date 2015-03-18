@@ -2,8 +2,9 @@ $hPadding: 14px;
 $vPadding: 12px;
 
 $gutterWidth: 50px;
-$gutterMobileHeight: 40px;
 $gutterBackground: $gray-dark;
+
+$gutterMobileHeight: 40px;
 
 $drawerWidth: 200px;
 $drawerBackground: lighten($gray-dark, 5%);
@@ -69,6 +70,12 @@ $drawerBackground: lighten($gray-dark, 5%);
                 }
             }
         }
+        body.menu--expanded {
+            img {
+                &.inactive { opacity: 0.0; }
+                &.active {opacity: 1.0; }
+            }
+        }
 
         .menu__gutter__trigger {
             margin: $vPadding $hPadding;
@@ -110,8 +117,6 @@ $drawerBackground: lighten($gray-dark, 5%);
                     a {
                         display: block;
                         padding: $vPadding $hPadding;
-
-
                         font-size: .80rem;
                         line-height: 1rem;
                         color: $white;
@@ -192,11 +197,11 @@ body.menu--expanded {
 
     .menu__mobilegutter__trigger {
         position: absolute;
-        top: 22px;
+        top: 24px;
         left: 2rem;
 
         img {
-            height: 20px;
+            height: 15px;
         }
     }
 
@@ -237,6 +242,12 @@ body.menu--expanded {
     // Hide the normal gutter
     .menu__gutter {
         left: -$gutterWidth;
+    }
+
+    .menu__nav ul li a {
+        font-size: 1rem;
+        line-height: 1.2rem;
+        padding: 14px 30px;
     }
 
     body.menu--expanded {

@@ -26,9 +26,10 @@ def staging():
 
 def production():
     """ Send commands to production server. """
-    env.hosts = ['104.236.186.246', ]
+    env.hosts = ['sterlinglentz.com:30000', ]
     env.user = "admin"
 
+    env.key_filename = [PRODUCTION_PRIVATE_KEY, ]
     env.password = PRODUCTION_SUDO
     env.dbname = PRODUCTION_DB_NAME
     env.dbuser = PRODUCTION_DB_USER

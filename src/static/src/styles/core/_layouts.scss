@@ -44,9 +44,12 @@
             margin: 0;
         }
 
-        .content-wrapper,
-        .sidebar-content-wrapper {
+        .content-wrapper {
             padding: 2rem;
+        }
+
+        .sidebar-content-wrapper {
+            padding: 3rem 2rem 2rem 2rem;
         }
     }
 }

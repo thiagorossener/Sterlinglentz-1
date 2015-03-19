@@ -47,9 +47,16 @@ $(document).ready(function(){
     });
 
     // Add class to body when navigation is expanded
-    var $menuTrigger = $('.menu__trigger');
+    var $menuTrigger = $('.menu__gutter__trigger, .menu__mobilegutter__trigger');
     $menuTrigger.click(function(){
         $body.toggleClass('menu--expanded');
+        return false;
+    });
+
+    // Add class to body when sidebar
+    var $sidebarTrigger = $('.menu__mobilesidebar__trigger');
+    $sidebarTrigger.click(function(){
+        $body.toggleClass('sidebar--expanded');
         return false;
     });
 

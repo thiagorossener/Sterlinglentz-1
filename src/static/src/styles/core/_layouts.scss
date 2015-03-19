@@ -66,7 +66,6 @@
         @include span(20% no-gutters);
         @include transition(margin-left $animationDuration);
         background-color: #fbfbfb;
-        float: left;
         position: relative;
         height: 2000px; // To avoid jarring resizing via JS
     }
@@ -84,7 +83,6 @@
     .column {
         @include span(80% last);
         @include transition(width $animationDuration);
-        float: right;
     }
         .header, .content-wrapper {
             @include transition(padding-left $animationDuration);
@@ -131,15 +129,31 @@ body.column--expanded {
     }
 }
 
-// Move the sidebar inline with the content on small screens
+
 @media screen and (max-width: $break-small) {
     .layout--beta {
+        // On mobile make both the sidebar and content fullwidth
         .sidebar,
         .column {
             @include span(100% no-gutters);
         }
         .content-wrapper {
             border: none;
+        }
+
+        // On mobile we move the sidebar offscreen above the content and
+        // use a button in the navigation menu to activate it and have it
+        // slide (down offsetting the content)
+        .sidebar {
+            @include transition(margin-top $animationDuration);
+            position: fixed;
+            z-index: 100;
+            margin-top: -100%;
+        }
+    }
+    body.sidebar--expanded {
+        .sidebar {
+            margin-top: 0;
         }
     }
 }

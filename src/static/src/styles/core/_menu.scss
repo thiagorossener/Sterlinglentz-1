@@ -70,10 +70,13 @@ $drawerBackground: lighten($gray-dark, 5%);
                 }
             }
         }
-        body.menu--expanded {
-            img {
-                &.inactive { opacity: 0.0; }
-                &.active {opacity: 1.0; }
+        body.menu--expanded,
+        body.sidebar--expanded {
+            .menu__trigger {
+                img {
+                    &.inactive { opacity: 0.0; }
+                    &.active {opacity: 1.0; }
+                }
             }
         }
 
@@ -192,7 +195,7 @@ body.menu--expanded {
 
     font-size: 0.9rem;
     background-color: $gutterBackground;
-    z-index: 100;
+    z-index: 200;
 }
 
     .menu__mobilegutter__trigger {
@@ -212,6 +215,16 @@ body.menu--expanded {
 
         img {
             height: 30px;
+        }
+    }
+
+    .menu__mobilesidebar__trigger {
+        position: absolute;
+        top: 24px;
+        right: 2rem;
+
+        img {
+            height: 15px;
         }
     }
 

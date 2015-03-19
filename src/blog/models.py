@@ -42,7 +42,7 @@ class Post(models.Model):
 
     class Meta:
         ordering = ["-created_on"]
-        get_latest_by = "-created_on"
+        get_latest_by = "created_on"
 
     def save(self, *args, **kwargs):
         if not self.pk:

@@ -85,9 +85,12 @@
         }
     }
 
-
-.blog-detail-page {
-    .column {
-
+//
+@media screen and (max-width: $break-small) {
+    .blog-detail-page {
+        .sidebar,
+        .header__trigger {
+            display: none;
+        }
     }
 }

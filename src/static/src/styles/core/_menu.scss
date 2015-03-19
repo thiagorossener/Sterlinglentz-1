@@ -180,8 +180,8 @@ body.menu--expanded {
 
 }
 
-// Mobile-specific header/content layout
-.menu__mobilegutter {
+// Mobile-specific menu layout
+.menu--mobile {
     // 64px = 40px height + 2 x 12px
     @include transition(left $animationDuration);
     display: none;
@@ -198,7 +198,7 @@ body.menu--expanded {
     z-index: 200;
 }
 
-    .menu__mobilegutter__trigger {
+    .menu--mobile__trigger {
         position: absolute;
         top: 24px;
         left: 2rem;
@@ -208,7 +208,7 @@ body.menu--expanded {
         }
     }
 
-    .menu__mobilegutter__logo {
+    .menu--mobile__logo {
         position: absolute;
         left: 40%;
         top:  17px;
@@ -218,13 +218,42 @@ body.menu--expanded {
         }
     }
 
-    .menu__mobilesidebar__trigger {
+    .sidebar__trigger {
         position: absolute;
         top: 24px;
         right: 2rem;
+        cursor: pointer;
+
+        .text {
+            @include transition(color $animationDuration);
+            font-size: 1rem;
+            color: #838383;
+        }
+
+        &:hover {
+            .text {
+                color: $gold;
+            }
+        }
 
         img {
-            height: 15px;
+            @include transition(opacity $animationDuration);
+
+            &.inactive { opacity: 0.0; }
+            &.active {opacity: 1.0; }
+        }
+
+        &:hover {
+            img.inactive {opacity: 1.0; }
+            img.active {opacity: 0.0; }
+        }
+    }
+    body.sidebar--expanded {
+        .sidebar__trigger {
+            .text {
+                color: $gold;
+            }
+
         }
     }
 
@@ -243,7 +272,7 @@ body.menu--expanded {
     }
 
     // Show the top mobile menu gutter bar
-    .menu__mobilegutter {
+    .menu--mobile {
         display: block;
     }
 
@@ -272,7 +301,7 @@ body.menu--expanded {
             left: 0;
         }
 
-        .menu__mobilegutter {
+        .menu--mobile {
             left: $drawerWidth;
         }
 

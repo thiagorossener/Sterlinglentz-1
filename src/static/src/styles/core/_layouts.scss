@@ -99,6 +99,7 @@
             }
 }
 
+// On mobile, changed the padding and hide the bookmark trigger
 @media screen and (max-width: $break-small) {
     .layout--beta {
         .content-wrapper {
@@ -111,25 +112,27 @@
     }
 }
 
+// On desktop resolutions, have the sidebar show from the side of the page
+@media screen and (min-width: $break-small) {
+    body.sidebar--expanded {
+        .layout--beta {
+            .sidebar {
+                margin-left: -33.33%;
+            }
 
-// Move the page over when we open the sidebar
-body.column--expanded {
-    .layout--beta {
-        .sidebar {
-            margin-left: -33.33%;
-        }
+            .column {
+                width: 100%;
+            }
 
-        .column {
-            width: 100%;
-        }
-
-        .header__trigger {
-            opacity: 1;
+            .header__trigger {
+                opacity: 1;
+            }
         }
     }
 }
 
 
+// On mobile resolutions, have the sidebar show from the top of page
 @media screen and (max-width: $break-small) {
     .layout--beta {
         // On mobile make both the sidebar and content fullwidth
@@ -166,7 +169,7 @@ body.column--expanded {
             padding-left: 8rem;
         }
     }
-    body.column--expanded {
+    body.sidebar--expanded {
         .layout--beta {
             .content-wrapper,
             .header {

@@ -5,13 +5,22 @@
 $(document).ready(function(){
     var $body = $('body');
 
-    // Toggle sidebar/column
+    // Setup the sidebar toggles
     var setupSidebarToggle = function(){
         var $columnTrigger = $('.sidebar__trigger, .header__trigger');
-        $columnTrigger.click(function(){
-            $body.toggleClass('column--expanded');
+        $columnTrigger.off('click').click(function(){
+            $body.toggleClass('sidebar--expanded');
             return false;
         });
+
+        // If there is a sidebar on the page, show the menu navigation sidebar
+        // toggle, otherwise hide it
+        var $mobileSidebarTrigger = $('.menu--mobile .sidebar__trigger');
+        if($('.page-wrapper .sidebar').length > 0) {
+            $mobileSidebarTrigger.show();
+        } else {
+            $mobileSidebarTrigger.hide();
+        }
     };
 
     // Equalize the heights of columns marked with [data-equal-columns]
@@ -47,16 +56,9 @@ $(document).ready(function(){
     });
 
     // Add class to body when navigation is expanded
-    var $menuTrigger = $('.menu__gutter__trigger, .menu__mobilegutter__trigger');
+    var $menuTrigger = $('.menu__trigger');
     $menuTrigger.click(function(){
         $body.toggleClass('menu--expanded');
-        return false;
-    });
-
-    // Add class to body when sidebar
-    var $sidebarTrigger = $('.menu__mobilesidebar__trigger');
-    $sidebarTrigger.click(function(){
-        $body.toggleClass('sidebar--expanded');
         return false;
     });
 
@@ -86,9 +88,9 @@ $(document).ready(function(){
      * All of our internal pages are loaded asyncrously to give a "seamless
      * navigation" experience.
      */
+    var $container = $('.page-wrapper');
 
     // Fetch the content of the page via ajax and insert it in the current page
-    var $container = $('.page-wrapper');
     var getPageContent = function(href) {
         console.log('Getting ' + href);
         $.get(href, function (data) {

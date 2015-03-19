@@ -14,21 +14,24 @@
     </head>
     <body class="{% block body_classes %}{% endblock %}">
         <header>
-            <div class="menu__mobilegutter">
-                <div class="menu__trigger menu__mobilegutter__trigger">
+            <div class="menu--mobile">
+                <div class="menu__trigger menu--mobile__trigger">
                     <img class="inactive" title="Open the menu" src="{% static 'images/menu-expand.svg' %}" />
                     <img class="active" title="Close the menu" src="{% static 'images/menu-expand--hover.svg' %}" />
                 </div>
-                <div class="menu__mobilegutter__logo">
+                <div class="menu--mobile__logo">
                     <a href="/" title="">
                         <img src="{% static 'images/feral-logo--gold--straight.svg' %}"
                              alt=""
                              width="100">
                     </a>
                 </div>
-                <div class="menu__trigger menu__mobilesidebar__trigger">
-                    <img class="inactive" title="Open the menu" src="{% static 'images/menu-expand.svg' %}" />
-                    <img class="active" title="Close the menu" src="{% static 'images/menu-expand--hover.svg' %}" />
+                <div class="sidebar__trigger">
+                    <span class="text">List</span>
+                    <!--<span class="icon">
+                        <img class="active" src="{% static 'images/sidebar--expand--arrow.svg' %}" width="8">
+                        <img class="inactive" src="{% static 'images/sidebar--expand--arrow--hover.svg' %}" width="10">
+                    </span>-->
                 </div>
             </div>
             <div class="menu">

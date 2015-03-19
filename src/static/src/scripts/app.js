@@ -16,7 +16,7 @@ $(document).ready(function(){
         // If there is a sidebar on the page, show the menu navigation sidebar
         // toggle, otherwise hide it
         var $mobileSidebarTrigger = $('.menu--mobile .sidebar__trigger');
-        if($('.page-wrapper .sidebar').length > 0) {
+        if($('[data-show-sidebar-trigger]').length > 0) {
             $mobileSidebarTrigger.show();
         } else {
             $mobileSidebarTrigger.hide();
@@ -74,6 +74,9 @@ $(document).ready(function(){
         setInterval(function(){
             $menuLogo.css('opacity', 1);
         }, 2000);
+
+        // Close the menu
+        $body.toggleClass('menu--expanded');
     });
 
     // Close the nav if below < 1100px

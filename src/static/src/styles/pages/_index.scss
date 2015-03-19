@@ -14,11 +14,11 @@ $indexPadding: 15%;
     }
 
         .index__hero {
-            $width: 40%;
-            width: $width;
-            padding: 0 (100% - $width - $indexPadding) 0 $indexPadding;
-
-            @include vertical-align(75%);
+            position: absolute;
+            bottom: 20%;
+            left: 0;
+            width: 40%;
+            padding: 0 0 0 $indexPadding;
 
             p, small {
                 font-size: 0.75rem;
@@ -87,16 +87,13 @@ $indexPadding: 15%;
 // Below 800
 @media screen and (max-width: $break-small) {
     .index {
-        background-size: 350px;
+        background-size: 300px;
         background-position: top left;
     }
 
     // Move the hero down the page and make it much wider
     .index__hero {
-        @include vertical-align(45%);
-        padding-top: 0;
-        padding-bottom: 0;
-
+        bottom: 15%;
         h1, h2, h3, h4, h5, h6 {
             font-size: 1.4rem;
             line-height: 2.2rem;
@@ -134,7 +131,6 @@ $indexPadding: 15%;
     .index__hero {
         width: 100% - (2 * $indexPadding);
         padding: 0 $indexPadding;
-        @include vertical-align(80%);
     }
 }
 

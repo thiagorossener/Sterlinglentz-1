@@ -141,6 +141,7 @@ CKEDITOR_CONFIGS = {
                 ['Styles', 'Format', 'TextColor'],
                 ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript',
                     'Superscript', '-', 'RemoveFormat'],
+                ['ImageButton'],
                 ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
                     'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter',
                     'JustifyRight', 'JustifyBlock'],
@@ -149,7 +150,8 @@ CKEDITOR_CONFIGS = {
                 ['Source', 'Maximize', 'ShowBlocks'],
             ),
         'startupOutlineBlocks': True,
-        'width': '600px'
+        'width': '600px',
+        'allowedContent': True
     },
 }
 

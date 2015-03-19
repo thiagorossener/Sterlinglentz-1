@@ -57,7 +57,7 @@ $drawerBackground: lighten($gray-dark, 5%);
                 @include transition(opacity 1s ease);
                 position: absolute;
                 top: 0;
-                left: 0;
+                left: 3px;
 
                 &.inactive { opacity: 1.0; }
                 &.active { opacity: 0.0; }

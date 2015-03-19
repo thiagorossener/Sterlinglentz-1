@@ -5,87 +5,63 @@
 }
 
 // Blog list page
-.blog-list-page {
-    .column {
-        @include span(6 of 12 no-gutters);
-        @include prefix(3 of 12);
-        @include suffix(3 of 12);
-    }
+.blog-list {
+    margin: 3rem 0 0 0;
+    padding: 0;
 }
 
-    .blog-list {
-        margin: 6rem 0 0 0;
+    .blog-list__item {
+        position: relative;
+        list-style: none;
+        margin: 0 0 6rem 0;
         padding: 0;
     }
 
-        .blog-list__item {
-            @include clearfix;
-            list-style: none;
-            margin: 0 0 6rem 0;
-            padding: 0;
+        // Offset the date to the left of the blog list post
+        .blog-list__date {
+            position: absolute;
+            color: $gray-light;
+            line-height: 2.75rem;
+            width: 5rem;
+            left: -6.5rem;
+            text-align: right;
         }
 
-            .blog-list__date {
-                float: left;
-                width: 15%;
-                margin-right: 2.5%;
-                color: $gray-light;
-                line-height: 2.75rem;
-                text-align: right;
-            }
-
-            .blog-list__content {
-                float: right;
-                width: 82.5%;
-            }
-
-                .blog-list__title {
-                    font-weight: bold;
-                    line-height: 2.5rem;
-                }
-
-                .blog-list__subtitle {
-                    color: $gray-light;
-                }
-
-                .blog-list__blurb {
-                    margin-bottom: 0;
-                }
-
-    @media screen and (max-width: $break-large) {
-        .blog-list-page {
-            .column {
-                @include span(8 of 12 no-gutters);
-                @include prefix(2 of 12);
-                @include suffix(2 of 12);
-            }
-        }
-    }
-
-    @media screen and (max-width: $break-medium) {
-        .blog-list-page {
-            .column {
-                @include span(10 of 12 no-gutters);
-                @include prefix(1 of 12);
-                @include suffix(1 of 12);
-            }
-        }
-    }
-
-    @media screen and (max-width: $break-small) {
-        .blog-list {
-            margin-top: 3rem;
-        }
-        .blog-list__item {
-            margin-bottom: 3rem;
-        }
-        .blog-list__date,
         .blog-list__content {
-            width: 100%;
-        }
-    }
 
-//
+        }
+
+            .blog-list__title {
+                font-weight: bold;
+                line-height: 2.5rem;
+            }
+
+            .blog-list__subtitle {
+                color: $gray-light;
+            }
+
+            .blog-list__blurb {
+                margin-bottom: 0;
+            }
+
+@media screen and (max-width: $break-large) {
+    .blog-list__date {
+        position: static;
+        text-align: left;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: $break-small) {
+    .blog-list {
+        margin-top: 3rem;
+    }
+    .blog-list__item {
+        margin-bottom: 3rem;
+    }
+}
+
+// Blog detail page
 @media screen and (max-width: $break-small) {
     .blog-detail-page {
         .sidebar,

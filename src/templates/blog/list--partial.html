@@ -2,32 +2,35 @@
 {% load thumbnail %}
 {% load snippets %}
 
-<div class="blog-list-page"
+<div class="layout--beta blog-list-page"
      data-equal-columns
      data-seamless-nav
      data-meta-title="{% snippet 'blog.list.meta.title' %}"
      data-meta-description="{% snippet 'blog.list.meta.description' %}">
-
     <div class="column" data-column>
-        <ul class="blog-list">
-            {% for post in posts %}
-                <li class="blog-list__item">
-                    <p class="blog-list__date">
-                        {{ post.created_on|date:"n.j.y" }}
-                    </p>
-                    <div class="blog-list__content">
-                        <a class="silent" href="{{ post.get_absolute_url }}" title="{% if post.subtitle %}{{ post.subtitle }}{% else %}{{ post.title }}{% endif %}">
-                            <h2 class="blog-list__title">{{ post.title|title|truncatechars:30 }}</h2>
-                        </a>
-                        {% if post.subtitle %}
-                            <p class="blog-list__subtitle">{{ post.subtitle|truncatewords:10 }}</p>
-                        {% endif %}
-                        {% if post.extract %}
-                            <p class="blog-list__blurb">{{ post.extract|truncatewords:45 }}</p>
-                        {% endif %}
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
+        <div class="content-wrapper">
+            <div class="content">
+                <ul class="blog-list">
+                    {% for post in posts %}
+                        <li class="blog-list__item">
+                            <p class="blog-list__date">
+                                {{ post.created_on|date:"n.j.y" }}
+                            </p>
+                            <div class="blog-list__content">
+                                <a class="silent" href="{{ post.get_absolute_url }}" title="{% if post.subtitle %}{{ post.subtitle }}{% else %}{{ post.title }}{% endif %}">
+                                    <h2 class="blog-list__title">{{ post.title|title|truncatechars:30 }}</h2>
+                                </a>
+                                {% if post.subtitle %}
+                                    <p class="blog-list__subtitle">{{ post.subtitle|truncatewords:10 }}</p>
+                                {% endif %}
+                                {% if post.extract %}
+                                    <p class="blog-list__blurb">{{ post.extract|truncatewords:45 }}</p>
+                                {% endif %}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
     </div>
 </div>

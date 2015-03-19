@@ -20,7 +20,7 @@ $indexPadding: 15%;
             width: 40%;
             padding: 0 0 0 $indexPadding;
 
-            p, small {
+            p {
                 font-size: 0.75rem;
                 text-transform: uppercase;
                 margin-bottom: 1rem;
@@ -94,6 +94,12 @@ $indexPadding: 15%;
     // Move the hero down the page and make it much wider
     .index__hero {
         bottom: 25%;
+
+        p {
+            font-size: 0.7rem;
+            line-height: 1.3rem;
+        }
+
         h1, h2, h3, h4, h5, h6 {
             font-size: 1.4rem;
             line-height: 2.2rem;

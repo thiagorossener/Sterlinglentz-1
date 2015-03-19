@@ -5,6 +5,12 @@
 }
 
 // Blog list page
+.blog-list-page {
+    .content-wrapper {
+        border-left: none;
+    }
+}
+
 .blog-list {
     margin: 3rem 0 0 0;
     padding: 0;

@@ -91,27 +91,16 @@ $indexPadding: 15%;
         background-position: top left;
     }
 
-    // Remove the viewport height on mobile
-    .index__atf {
-        height: auto;
-
-        .index__hero {
-            position: static;
-            padding-top: 18rem;
-            padding-bottom: 4rem;
-
-            h1, h2, h3, h4, h5, h6 {
-                font-size: 1.4rem;
-                line-height: 2.2rem;
-            }
-        }
-
-        .index__strip {
-            position: static;
+    // Move the hero down the page and make it much wider
+    .index__hero {
+        bottom: 25%;
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 1.4rem;
+            line-height: 2.2rem;
         }
     }
 
-    // Change the h padding on the index
+    // Change the padding on the index
     .index__hero,
     .strip__content {
         width: 100% - $indexPadding;

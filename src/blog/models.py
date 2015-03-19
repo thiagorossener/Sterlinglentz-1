@@ -41,7 +41,7 @@ class Post(models.Model):
     edited_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ["edited_on"]
+        ordering = ["-created_on"]
         get_latest_by = "-created_on"
 
     def save(self, *args, **kwargs):

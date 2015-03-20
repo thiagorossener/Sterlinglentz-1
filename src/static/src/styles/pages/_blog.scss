@@ -59,9 +59,20 @@
     .blog-list {
         margin-top: 3rem;
     }
+
     .blog-list__item {
         margin-bottom: 3rem;
     }
+
+        .blog-list__date {
+            font-size: 0.8rem;
+            line-height: 0.8rem;
+        }
+
+        .blog-list__title {
+            font-size: 1.6rem;
+            margin-bottom: 0.85rem;
+        }
 }
 
 // Blog detail page

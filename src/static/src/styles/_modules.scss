@@ -78,6 +78,16 @@
             margin-bottom: 0;
         }
 
+@media screen and (max-width: $break-small) {
+    .hero {
+        padding-left: 0;
+    }
+
+    .hero__content {
+        padding: 2rem;
+    }
+}
+
 // Header
 // A large fullwidth image with text on top.
 // (As seen on the blog and process pages)

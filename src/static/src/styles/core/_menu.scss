@@ -285,6 +285,10 @@ body.menu--expanded {
         left: -$gutterWidth;
     }
 
+    .menu__logo {
+        opacity: 0 !important;
+    }
+
     .menu__nav ul li a {
         font-size: 1rem;
         line-height: 1.2rem;

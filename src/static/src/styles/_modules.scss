@@ -58,6 +58,26 @@
 
     }
 
+// Hero
+.hero {
+    background-color: #f2f2f2;
+    padding-left: 20%;
+}
+
+    .hero__content {
+        padding: 4rem;
+    }
+
+        .hero__title {
+            font-weight: bold;
+            line-height: 2.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero__subtitle {
+            margin-bottom: 0;
+        }
+
 // Header
 // A large fullwidth image with text on top.
 // (As seen on the blog and process pages)

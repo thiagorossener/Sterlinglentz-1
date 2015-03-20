@@ -7,14 +7,20 @@
      data-seamless-nav
      data-meta-title="{% snippet 'blog.list.meta.title' %}"
      data-meta-description="{% snippet 'blog.list.meta.description' %}">
-    <div class="column" data-column>
+    <div class="hero">
+        <div class="hero__content">
+            <h2 class="hero__title">{% snippet 'blog.list.hero.title' %}</h2>
+            <p class="hero__subtitle">{% snippet 'blog.list.hero.subtitle' %}</p>
+        </div>
+    </div>
+    <div class="column">
         <div class="content-wrapper">
             <div class="content">
                 <ul class="blog-list">
                     {% for post in posts %}
                         <li class="blog-list__item">
                             <p class="blog-list__date">
-                                {{ post.created_on|date:"n.j.y" }}
+                                {{ post.created_on|date:"F j" }}
                             </p>
                             <div class="blog-list__content">
                                 <a class="silent" href="{{ post.get_absolute_url }}" title="{% if post.subtitle %}{{ post.subtitle }}{% else %}{{ post.title }}{% endif %}">

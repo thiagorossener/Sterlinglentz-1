@@ -209,7 +209,7 @@ body.menu--expanded {
 
     .menu--mobile__logo {
         position: absolute;
-        left: 40%;
+        left: 37.5%;
         top:  17px;
 
         img {
@@ -225,26 +225,45 @@ body.menu--expanded {
 
         .text {
             @include transition(color $animationDuration);
+            float: left;
             font-size: 1rem;
             color: #838383;
+            margin-right: 1.25rem;
         }
 
+        .icon {
+            img {
+                @include transition(opacity $animationDuration);
+                position: absolute;
+                right: 0;
+
+                &.active {
+                    top: 6px;
+                    opacity: 0.0;
+                }
+                &.hover {
+                    top: 4px;
+                    opacity: 0.0;
+                }
+                &.inactive {
+                    top: 4px;
+                    opacity: 1.0;
+                }
+            }
+        }
         &:hover {
+            .icon {
+                img.hover {
+                    opacity: 1.0;
+                }
+                img.active,
+                img.inactive {
+                    opacity: 0.0;
+                }
+            }
             .text {
                 color: $gold;
             }
-        }
-
-        img {
-            @include transition(opacity $animationDuration);
-
-            &.inactive { opacity: 0.0; }
-            &.active {opacity: 1.0; }
-        }
-
-        &:hover {
-            img.inactive {opacity: 1.0; }
-            img.active {opacity: 0.0; }
         }
     }
     body.sidebar--expanded {
@@ -252,7 +271,15 @@ body.menu--expanded {
             .text {
                 color: $gold;
             }
-
+            .icon {
+                img.hover,
+                img.inactive {
+                    opacity: 0.0;
+                }
+                img.active {
+                    opacity: 1.0;
+                }
+            }
         }
     }
 

@@ -364,11 +364,15 @@
             background-color: #f3f3f3;
         }
 
-        &--active {
-            padding-left: 20%;
-            width: 65%;
-        }
+
     }
+
+@media screen and (min-width: $break-small) {
+    .page-list__item--active {
+        padding-left: 20%;
+        width: 65%;
+    }
+}
 
 @media screen and (max-width: $break-small) {
     .page-list {

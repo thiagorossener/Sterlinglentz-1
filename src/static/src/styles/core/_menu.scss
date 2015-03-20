@@ -289,10 +289,13 @@ body.menu--expanded {
         opacity: 0 !important;
     }
 
-    .menu__nav ul li a {
-        font-size: 1rem;
-        line-height: 1.2rem;
-        padding: 14px 30px;
+    .menu__nav {
+        margin-top: 0.7rem;
+        ul li a {
+            font-size: 1rem;
+            line-height: 1.2rem;
+            padding: 14px 30px;
+        }
     }
 
     body.menu--expanded {

@@ -18,13 +18,10 @@
                             </p>
                             <div class="blog-list__content">
                                 <a class="silent" href="{{ post.get_absolute_url }}" title="{% if post.subtitle %}{{ post.subtitle }}{% else %}{{ post.title }}{% endif %}">
-                                    <h2 class="blog-list__title">{{ post.title|title|truncatechars:30 }}</h2>
+                                    <h2 class="blog-list__title">{{ post.title|title }}</h2>
                                 </a>
                                 {% if post.subtitle %}
                                     <p class="blog-list__subtitle">{{ post.subtitle|truncatewords:10 }}</p>
-                                {% endif %}
-                                {% if post.extract %}
-                                    <p class="blog-list__blurb">{{ post.extract|truncatewords:45 }}</p>
                                 {% endif %}
                             </div>
                         </li>

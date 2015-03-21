@@ -86,6 +86,13 @@ $(document).ready(function(){
         }
     });
 
+    // Open the nav on load if on desktop
+    $(window).on('load', function(){
+        if($(window).width() > 800) {
+            $body.addClass('menu--expanded');
+        }
+    });
+
     /*
      * Dynamic loading of pages ("seamless navigation")
      * All of our internal pages are loaded asyncrously to give a "seamless

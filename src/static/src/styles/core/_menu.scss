@@ -179,6 +179,25 @@ body.menu--expanded {
 
 }
 
+// We want the menu initially open on desktop only
+@media screen and (min-width: $break-small) {
+    body.menu--expanded--onload {
+        .menu {
+            width: ($gutterWidth + $drawerWidth);
+        }
+
+        .menu__drawer {
+            left: $gutterWidth;
+        }
+
+        .page-wrapper {
+            margin-left: ($gutterWidth + $drawerWidth);
+        }
+    }
+}
+
+
+
 // Mobile-specific menu layout
 .menu--mobile {
     // 64px = 40px height + 2 x 12px

@@ -58,6 +58,7 @@ $(document).ready(function(){
     // Add class to body when navigation is expanded
     var $menuTrigger = $('.menu__trigger');
     $menuTrigger.click(function(){
+        $body.removeClass('menu--expanded--onload');
         $body.toggleClass('menu--expanded');
         return false;
     });
@@ -76,20 +77,15 @@ $(document).ready(function(){
         }, 2000);
 
         // Close the menu
-        $body.toggleClass('menu--expanded');
+        $body.removeClass('menu--expanded');
+        $body.removeClass('menu--expanded--onload');
     });
 
     // Close the nav if below < 1100px
     $(window).on('resize', function(){
         if($(window).width() < 1100) {
             $body.removeClass('menu--expanded');
-        }
-    });
-
-    // Open the nav on load if on desktop
-    $(window).on('load', function(){
-        if($(window).width() > 800) {
-            $body.addClass('menu--expanded');
+            $body.removeClass('menu--expanded--onload');
         }
     });
 

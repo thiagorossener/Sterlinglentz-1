@@ -12,6 +12,12 @@ class BlogDetailView(AjaxPartialRenderingMixin, DetailView):
     def get_queryset(self):
         return Post.published.all()
 
+    def get_context_data(self, **kwargs):
+        context = super(BlogDetailView, self).get_context_data(**kwargs)
+        posts = Post.published.exclude(id=context['object'].id)
+        context.update({'posts': posts})
+        return context
+
 
 class BlogListView(AjaxPartialRenderingMixin, ListView):
 

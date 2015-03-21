@@ -26,6 +26,11 @@
             <div class="header__overlay">&nbsp;</div>
         </header>
         <div class="content-wrapper">
+            {% if post.extract %}
+                <div class="summary">
+                    <h1 class="summary__title">{{ post.extract }}</h1>
+                </div>
+            {% endif %}
             <article class="content">
                 {{ post.content|safe }}
             </article>

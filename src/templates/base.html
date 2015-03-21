@@ -52,7 +52,9 @@
                     <nav class="menu__nav">
                         <ul>
                             {% for node in global_menu %}
-                                <li><a href="{{ node.url }}">{{ node.name }}</a></li>
+                                <li {% if node.active %}class="active"{% endif %}>
+                                    <a href="{{ node.url }}">{{ node.name }}</a>
+                                </li>
                             {% endfor %}
                         </ul>
                     </nav>

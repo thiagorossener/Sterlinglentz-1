@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django.core.urlresolvers import reverse
 
@@ -37,7 +39,7 @@ class Post(models.Model):
         help_text=""" Meta title should be around 115 chars (130 max)""")
 
     is_published = models.BooleanField(default=True)
-    created_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateTimeField(blank=True)
     edited_on = models.DateTimeField(auto_now=True)
 
     class Meta:
@@ -45,6 +47,8 @@ class Post(models.Model):
         get_latest_by = "created_on"
 
     def save(self, *args, **kwargs):
+        if not self.created_on:
+            self.created_on = datetime.datetime.now()
         if not self.pk:
             self.meta_title = self.title
             self.meta_description = self.subtitle

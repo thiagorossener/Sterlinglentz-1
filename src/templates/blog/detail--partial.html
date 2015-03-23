@@ -46,7 +46,7 @@
         </div>
         <ul class="post-list">
             {% for p in posts %}
-                <li class="post-list__item">
+                <li class="post-list__item {% if p.id == post.id %}active{% endif %}">
                     <h5 class="post-list__title">
                         <a class="silent" href="{{ p.get_absolute_url }}"
                             title="Read this post">{{ p.title }}</a>

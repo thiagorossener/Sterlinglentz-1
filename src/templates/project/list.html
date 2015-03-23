@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load snippets %}
+
+{% block meta_title %}{% snippet "projects.list.meta.title" %}{% endblock %}
+{% block meta_description %}{% snippet "projects.list.meta.title" %}{% endblock %}
+
+{% block body %}
+    {% include 'project/list--partial.html' %}
+{% endblock body %}

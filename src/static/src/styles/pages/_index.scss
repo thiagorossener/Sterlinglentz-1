@@ -1,0 +1,146 @@
+$indexPadding: 15%;
+
+.index {
+    @include clearfix;
+    background-color: $off-white;
+    background-repeat: no-repeat;
+    background-position: -7rem -4rem;
+    background-size: 1100px;
+}
+
+    .index__atf {
+        position: relative;
+        height: 100vh;
+    }
+
+        .index__hero {
+            position: absolute;
+            bottom: 20%;
+            left: 0;
+            width: 40%;
+            padding: 0 0 0 $indexPadding;
+
+            p {
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-size: 1.75rem;
+                line-height: 2.15rem;
+                font-weight: 300;
+                margin: 0;
+            }
+        }
+
+        .index__strip {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+            .strip__content {
+                @include clearfix;
+                width: 100% - (2 * $indexPadding);
+                padding: 1.25rem $indexPadding 1rem $indexPadding;
+                background-color: #d2d2d2;
+            }
+
+                .strip__title,
+                .strip__text,
+                .strip__button {
+                    float: left;
+                    line-height: 1.75rem;
+                }
+
+                .strip__title {
+                    text-transform: uppercase;
+                    font-size: 0.65rem;
+                    color: #686868;
+                    margin-right: 2rem;
+                    position: relative;
+                    top: 1px;
+                }
+
+                .strip__text {
+                    color: #686868;
+                    font-size: 0.85rem;
+                    margin-right: 2rem;
+                }
+
+    .index__btf {
+
+    }
+
+        .index__footer {
+            @include container();
+        }
+
+            .index__project{
+                @include span(33.33%);
+
+                padding: 0;
+                margin: 0;
+            }
+
+
+// Below 800
+@media screen and (max-width: $break-small) {
+    .index {
+        background-size: 300px;
+        background-position: top left;
+    }
+
+    // Move the hero down the page and make it much wider
+    .index__hero {
+        bottom: 25%;
+
+        p {
+            font-size: 0.7rem;
+            line-height: 1.3rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 1.4rem;
+            line-height: 1.9rem;
+        }
+    }
+
+    // Change the padding on the index
+    .index__hero,
+    .strip__content {
+        width: 100% - $indexPadding;
+        padding-left: $indexPadding/2;
+        padding-right: $indexPadding/2;
+    }
+
+    // Make projects each full fullwidth
+    .index__project {
+        @include span(100%);
+    }
+
+    .strip__button {
+        display: none;
+    }
+}
+
+// Between 800 and 1100
+@media screen and (min-width: $break-small) and (max-width: $break-medium) {
+    // Shrink the background logo and center it
+    .index {
+        background-size: 750px;
+        background-position: center 10%;
+    }
+
+    // Stretch the hero text as we get lower in resolution and move it down
+    // the page a little bit
+    .index__hero {
+        width: 100% - (2 * $indexPadding);
+        padding: 0 $indexPadding;
+    }
+}
+
+// Between 1100 and 1300
+@media screen and (min-width: $break-medium) and (max-width: $break-large) {
+
+}

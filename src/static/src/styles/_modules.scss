@@ -1,0 +1,517 @@
+
+// Project Teaser
+// A square image of the project with an optional overlay button that
+// links to the project detail page
+// (As seen on the index page - x3 projects)
+.project-teaser {
+    position: relative;
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    cursor: pointer;
+
+    &:hover .project-teaser__button {
+        opacity: 1;
+    }
+
+    // Use a background image to fill the space so we can have two rows
+    // of projects per page using viewport height of surrounding element
+    &--fill {
+        width: 100%;
+        height: 100%;
+
+        background-color: #1e1e1e;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+    .project-teaser__image {
+        a {
+            display: block;
+
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+
+        .project-teaser__button {
+            @include transition(opacity .25s ease-in-out);
+            opacity: 0;
+            position: absolute;
+            width: 65%;
+            top: 42.5%;
+            left: 12.5%;
+            padding-left: 5%;
+            padding-right: 5%;
+
+            a {
+                display: block;
+            }
+        }
+
+    .project-teaser__details {
+
+    }
+
+// Hero
+.hero {
+    background-color: #f2f2f2;
+    padding-left: 20%;
+}
+
+    .hero__content {
+        padding: 4rem;
+    }
+
+        .hero__title {
+            font-weight: bold;
+            line-height: 2.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero__subtitle {
+            margin-bottom: 0;
+        }
+
+@media screen and (max-width: $break-small) {
+    .hero {
+        padding-left: 0;
+    }
+
+    .hero__content {
+        padding: 2rem;
+    }
+}
+
+// Header
+// A large fullwidth image with text on top.
+// (As seen on the blog and process pages)
+.header {
+    background-color: #1e1e1e;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    position: relative;
+    padding: 6rem 4rem;
+
+    z-index: 0;
+}
+
+    .header__trigger {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 4rem;
+    }
+
+    .header__subsubtitle {
+        font-size: 0.75rem;
+        color: #fff200;
+        margin-bottom: 4rem;
+        text-transform: uppercase;
+    }
+
+    .header__title {
+        font-size: 3rem;
+        font-weight: $font-weight-bold;
+        color: white;
+        margin-bottom: 0.5rem;
+    }
+
+    .header__subtitle {
+        font-size: 1.5rem;
+        font-weight: $font-weight-regular;
+        color: #cfcfcf;
+        margin-bottom: 0;
+    }
+
+    .header__trigger,
+    .header__subsubtitle,
+    .header__subtitle,
+    .header__title {
+        z-index: 10;
+    }
+
+    .header__overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: black;
+        opacity: 0.75;
+
+        z-index: -10;
+    }
+
+@media screen and (max-width: $break-small) {
+    .header {
+        padding: 2rem;
+    }
+
+    .header__title {
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+    }
+
+    .header__trigger {
+        display: none;
+    }
+
+    .header__subtitle {
+        font-size: 1.1rem;
+        font-weight: 300;
+        line-height: 1.7rem;
+    }
+
+    .header__subsubtitle {
+        margin-bottom: 2rem;
+    }
+}
+
+// Bookmark
+// The bookmark shaped icon at the top of the page
+// (As seen on the blog sidebar)
+.bookmark__trigger {
+    @include transition(opacity 300ms ease);
+
+    .bookmark__trigger__text {
+        opacity: 0;
+        @include transition(opacity $animationDuration);
+        color: #9E9E9E;
+        font-size: 0.50rem;
+        text-transform: uppercase;
+        position: relative;
+        top: -0.65rem;
+        left: 0.5rem;
+    }
+
+    .bookmark__trigger__image {
+        cursor: pointer;
+    }
+
+    &:hover .bookmark__trigger__text {
+        opacity: 1.0;
+    }
+
+    &--yellow {
+        .bookmark__trigger__text {
+            color: #F9ED32;
+        }
+    }
+}
+
+// Header Image
+// A large fullwidth image with an option small bottom right caption
+// (As seen on the studio page - fullwidth top image and caption)
+.header--image {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    width: 100%;
+    min-height: 400px;
+    padding: 0;
+}
+
+    .header--image__caption {
+        position: absolute;
+        bottom: 1rem;
+        margin-bottom: 0;
+        right: 2rem;
+        color: white;
+        font-size: 0.80rem;
+    }
+
+@media screen and (max-width: $break-small) {
+    .header--image {
+        min-height: 200px;
+    }
+}
+
+// Summary:
+// A large piece of summary text for the page as well as a divider
+// (As seen on the studio page and project detail page)
+.summary {
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+}
+    .summary__title {
+        margin-bottom: 2rem;
+        font-size: 1.30rem;
+        line-height: 2.10rem;
+        font-weight: $font-weight-bold;
+    }
+
+
+
+// Spec List
+// A list of lists(!) Each list has a heading
+// (As seen on the studio page - down the left sidebar)
+//
+// (Note) We are using element selectors here as opposed to BEM style selectors
+// as the content of these lists is set by a WYSIWYG editor (therefore we make
+// the markup as simple as possible to make it easier on the editor)
+.spec-list {
+    p {
+        margin-bottom: .5rem;
+        small {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+    }
+
+    ul, ol {
+        padding: 0;
+        margin: 0 0 2rem 0;
+
+        li {
+            margin: 0;
+            list-style: none;
+            line-height: 2rem;
+            font-size: 0.70rem;
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @media screen and (max-width: $break-small) {
+        p {
+            margin-bottom: 1.1rem;
+            line-height: 0.3rem;
+        }
+
+        p small,
+        ul li,
+        ol li {
+            font-size: 1rem;
+        }
+
+        ul, ol {
+            margin: 0 0 2.5rem 0;
+            li {
+                margin-bottom: 1rem;
+                line-height: 0.70rem;
+            }
+        }
+    }
+
+    &--grayed {
+        ul li {
+            color: $gray-light;
+        }
+    }
+}
+
+// Post List
+// A list to display post-like content
+// (As seen on the blog sidebar)
+.post-list {
+    margin: 0;
+    padding: 6rem 0 0 0;
+}
+
+    .post-list__item {
+        padding: 0 10%;
+        width: 80%;
+        margin: 0 0 5rem 0;
+        list-style: none;
+    }
+
+        .post-list__title {
+            color: #7e7e7e;
+            font-size: 1rem;
+            font-weight: $font-weight-bold;
+            line-height: 1.25rem;
+            margin-bottom: 0;
+
+            &--active, &:hover {
+                a {
+                    text-decoration: none;
+                }
+            }
+
+            &:hover {
+                a {
+                    color: $gray-medium;
+                }
+            }
+        }
+
+        .post-list__date {
+            font-size: 0.75rem;
+            margin-bottom: 0;
+            color: #999999;
+        }
+
+
+// Page List
+// A list to display page
+// (As seen on the process page sidebar)
+.page-list {
+    margin: 0;
+    padding: 6rem 0 0 0;
+}
+
+    .page-list__item {
+        padding: 1.25rem 15%;
+        width: 70%;
+        list-style: none;
+        margin-bottom: 0;
+
+        a {
+            color: #7e7e7e;
+            font-size: 0.80rem;
+            font-weight: $font-weight-bold;
+            line-height: 1.25rem;
+            margin-bottom: 0;
+        }
+
+        &--active, &:hover {
+            a {
+
+                text-decoration: none;
+            }
+        }
+
+        &:hover {
+            color: $gray-medium;
+        }
+
+        &--active {
+            background-color: #f3f3f3;
+        }
+
+
+    }
+
+@media screen and (min-width: $break-small) {
+    .page-list__item--active {
+        padding-left: 20%;
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: $break-small) {
+    .page-list {
+        padding: 0;
+    }
+}
+
+
+// Image
+// An image used within the content of a page with an option caption below
+.image {
+    margin-bottom: 3rem;
+}
+
+    .image__img, .image img {
+        width: 100%;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .image__caption, .image p {
+        font-size: 0.75rem;
+        font-style: italic;
+    }
+
+    @media screen and (max-width: $break-small) {
+        .image__caption, .image p {
+            margin-top: -10px;
+            line-height: 1.25rem;
+        }
+    }
+
+// Pullquote
+// A large pullquote  used within the content of a page (usually
+// the blog) with an optional source
+.pullquote {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+    .pullquote__content {
+        color: #272727;
+        font-size: 2rem;
+        line-height: 2.25rem;
+        font-weight: $font-weight-bold;
+        margin-bottom: 2rem;
+    }
+
+    .pullquote__divider {
+        width: 20%;
+        background-color: #ff0000;
+        margin-bottom: 2rem;
+    }
+
+    .pullquote__source {
+        font-size: 0.85rem;
+        font-style: italic;
+        color: #353535;
+
+        a {
+        }
+    }
+
+// A content list
+.list {
+    margin-bottom: 3rem;
+
+    &--naked {
+        padding: 0;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+
+
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+
+// Content such as blog posts etc.
+.content--user {
+    cite {
+        font-size: 0.9rem;
+        color: #666666;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        line-height: 2.0736rem;
+        margin-bottom: 1.5rem;
+        margin-top: 2.8rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    h4 {
+        font-size: 1.14rem;
+        line-height: 1.9rem;
+        margin-bottom: 1.08rem;
+    }
+
+    img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}

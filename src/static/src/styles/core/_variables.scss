@@ -1,0 +1,29 @@
+// Typography
+$font-weight-light: 100;
+$font-weight-regular: 300;
+$font-weight-bold: 700;
+
+$regular-font-family: 'neutral-regular', 'Helvetica Neue', 'Helvetica', 'Arial';
+
+// Scale
+$ms-base: 1rem;
+$ms-ratio: $minor-third;
+
+// Colors
+$white: #fff;
+$off-white: #e9e9e9;
+$gray-dark: #212121;
+$gray-medium: #353535;
+$gray-light: #a5a5a5;
+
+$highlight: #cac239;
+$gold: #c6a05d;
+$orange: #d89300;
+
+// Breaks
+$break-extra-large: 1920px;
+$break-large: 1300px;
+$break-medium: 1100px;
+$break-small: 800px;
+
+$animationDuration: 150ms;

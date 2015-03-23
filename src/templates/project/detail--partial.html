@@ -1,0 +1,58 @@
+{% load static %}
+{% load thumbnail %}
+
+<div class="layout--alpha project-detail-page"
+     data-seamless-nav
+     data-meta-title="{{ project.meta_title }}"
+     data-meta-description="{{ project.meta_description }}">
+
+    {% if project.landscape_image %}
+        <header class="page__header">
+            <div class="header header--image" style="background-image:url({% thumbnail project.landscape_image 1600x500 crop %});">
+                &nbsp;
+            </div>
+        </header>
+    {% endif %}
+    <article class="body">
+        <section class="column">
+            <div class="content-wrapper">
+                {% if project.description %}
+                    <div class="summary">
+                        <h1 class="summary__title">{{ project.description }}</h1>
+                    </div>
+                {% endif %}
+                <div class="content content--user">
+                    {{ project.content|safe }}
+                </div>
+                {# Polymorphic Image and Videos #}
+                <ul class="project__media__items">
+                    {% for item in project.content_items.all %}
+                        {% include item.template %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        <aside class="sidebar">
+            <div class="sidebar-content-wrapper">
+                <div class="spec-list spec-list--grayed">
+                    <p><small>CLIENT</small></p>
+                    <ul>
+                        <li>{{ project.client.name }}</li>
+                    </ul>
+                    <p><small>FOCUS</small></p>
+                    <ul>
+                        <li>{{ project.client.focus }}</li>
+                    </ul>
+                    {% if project.categories %}
+                        <p><small>PROJECTS</small></p>
+                        <ul>
+                            {% for category in project.categories.all %}
+                                <li>{{ category.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </aside>
+    </article>
+</div>

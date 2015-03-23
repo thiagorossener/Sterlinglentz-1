@@ -1,0 +1,66 @@
+{% load static %}
+{% load thumbnail %}
+{% load snippets %}
+
+<div class="layout--beta blog-detail-page"
+     data-equal-columns
+     data-seamless-nav
+     data-meta-title="{{ post.meta_title }}"
+     data-meta-description="{{ post.meta_description }}">
+
+    <div class="column" data-column>
+        <header class="header" {% if post.image %}style="background-image:url({% thumbnail post.image 1200x800 crop %})"{% endif %}>
+            <div class="header__trigger bookmark__trigger bookmark__trigger--yellow">
+                <img class="bookmark__trigger__image"
+                     src="{% static 'images/sidebar-trigger--yellow.svg' %}"
+                     width="32"
+                     alt="Sidebar Toggle">
+                <small class="bookmark__trigger__text">OPEN MENU</small>
+            </div>
+            <p class="header__subsubtitle" title="{{ post.created_on }}">
+                    {{ post.created_on|date:"n.j.Y" }}</p>
+            <h1 class="header__title">{{ post.title }}</h1>
+            {% if post.subtitle %}
+                <h2 class="header__subtitle">{{ post.subtitle }}</h2>
+            {% endif %}
+            <div class="header__overlay">&nbsp;</div>
+        </header>
+        <div class="content-wrapper">
+            {% if post.extract %}
+                <div class="summary">
+                    <h1 class="summary__title">{{ post.extract }}</h1>
+                </div>
+            {% endif %}
+            <article class="content content--user">
+                {{ post.content|safe }}
+            </article>
+        </div>
+    </div>
+    <aside class="sidebar" data-column>
+        <div class="sidebar__trigger bookmark__trigger">
+            <img class="bookmark__trigger__image"
+                 src="{% static 'images/sidebar-trigger.svg' %}"
+                 width="32"
+                 alt="Sidebar Toggle">
+            <small class="bookmark__trigger__text">CLOSE MENU</small>
+        </div>
+        <ul class="post-list">
+            {% for p in posts %}
+                <li class="post-list__item {% if p.id == post.id %}active{% endif %}">
+                    <h5 class="post-list__title">
+                        <a class="silent" href="{{ p.get_absolute_url }}"
+                            title="Read this post">{{ p.title }}</a>
+                    </h5>
+                    <p class="post-list__date" title="{{ p.created_on }}">
+                        {{ p.created_on|date:"F j, Y" }}</p>
+                </li>
+            {% empty %}
+                <li class="post-list__item">
+                    <h5 class="post-list__title">
+                        There are no other blog posts yet
+                    </h5>
+                </li>
+            {% endfor %}
+        </ul>
+    </aside>
+</div>

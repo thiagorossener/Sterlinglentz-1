@@ -1,0 +1,366 @@
+$hPadding: 14px;
+$vPadding: 12px;
+
+$gutterWidth: 50px;
+$gutterBackground: $gray-dark;
+
+$gutterMobileHeight: 40px;
+
+$drawerWidth: 200px;
+$drawerBackground: lighten($gray-dark, 5%);
+
+// Header (Menu + Nav)
+// Our page navigation sits on the LHS of the page on normal desktop resolutions
+// and has a thin gutter that can be clicked to reveal a slide out drawer with
+// the site navigation. This changes on mobile. We use a separate bar along
+// the top to control the existing sidebar menu. When the bar along the top is
+// clicked the existing menu slides out.
+//
+// We use CSS3 transitions to accomplish this (with a small bit of jquery to
+// register the actual clicking of the menu drawer trigger)
+.menu {
+    @include transition(width $animationDuration);
+
+    position: fixed;
+    height: 100%;
+    width: $gutterWidth;
+    left: 0;
+    top: 0;
+    z-index: 10;
+
+    font-size: 0.9rem;
+    background-color: $drawerBackground;
+}
+    // Gutter
+    // The slim menu menu that contains a trigger for the navigation
+    .menu__gutter {
+        @include transition(left $animationDuration);
+        background-color: $gutterBackground;
+        position: absolute;
+        height: 100%;
+        left: 0;
+        top: 0;
+        width: $gutterWidth;
+        z-index: 100;
+    }
+
+        // Trigger
+        // The small x3 vertical lines that triggers the drawer to slide out
+        // from the lefthand side of the page in normal desktop view.
+        .menu__trigger {
+
+            width: $gutterWidth - (2 * $hPadding);
+            position: relative;
+            cursor: pointer;
+
+            img {
+                @include transition(opacity 1s ease);
+                position: absolute;
+                top: 0;
+                left: 3px;
+
+                &.inactive { opacity: 1.0; }
+                &.active { opacity: 0.0; }
+            }
+
+            &:hover {
+                img {
+                    &.inactive { opacity: 0.0; }
+                    &.active {opacity: 1.0; }
+                }
+            }
+        }
+        body.menu--expanded,
+        body.menu--expanded--onload {
+            .menu__trigger {
+                img {
+                    &.inactive { opacity: 0.0; }
+                    &.active {opacity: 1.0; }
+                }
+            }
+        }
+
+        .menu__gutter__trigger {
+            margin: $vPadding $hPadding;
+        }
+
+        .menu__gutter__logo {
+            display: none;
+        }
+
+    // Drawer
+    // The secondary drawer that slides out from the left when the gutter is
+    // clicked in normal desktop view. In the mobile view the nav loads on the
+    // top of the page.
+    .menu__drawer {
+        @include transition(left $animationDuration);
+
+        position: absolute;
+        height: 100%;
+        width: $drawerWidth;
+        left: -($gutterWidth + $drawerWidth);
+        top: 0;
+        z-index: 50;
+        overflow-x: visible;
+
+        background-color: $drawerBackground;
+        color: white;
+    }
+
+        .menu__nav {
+            ul {
+                padding: 0;
+                margin: 0;
+
+                li {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+
+                    a {
+                        display: block;
+                        padding: $vPadding $hPadding;
+                        font-size: .80rem;
+                        line-height: 1rem;
+                        color: $white;
+                        text-decoration: none;
+                    }
+
+                    &:hover, &.active {
+                        background-color: lighten($gray-dark, 15%);
+
+                        a {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu__logo {
+            opacity: 0;
+            @include transition(opacity $animationDuration * 2);
+            padding: 0 $hPadding;
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+            a {
+                display: block;
+            }
+        }
+
+        .menu__footer {
+            padding: 0 $hPadding;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+// Page Content
+.page-wrapper {
+    @include transition(margin-left $animationDuration);
+    margin-left: $gutterWidth;
+    position: relative;
+}
+
+// When the menu trigger is clicked
+body.menu--expanded {
+    .menu {
+        width: ($gutterWidth + $drawerWidth);
+    }
+
+    .menu__drawer {
+        left: $gutterWidth;
+    }
+
+    .page-wrapper {
+        margin-left: ($gutterWidth + $drawerWidth);
+    }
+
+}
+
+// We want the menu initially open on desktop only
+@media screen and (min-width: $break-small) {
+    body.menu--expanded--onload {
+        .menu {
+            width: ($gutterWidth + $drawerWidth);
+        }
+
+        .menu__drawer {
+            left: $gutterWidth;
+        }
+
+        .page-wrapper {
+            margin-left: ($gutterWidth + $drawerWidth);
+        }
+    }
+}
+
+
+
+// Mobile-specific menu layout
+.menu--mobile {
+    // 64px = 40px height + 2 x 12px
+    @include transition(left $animationDuration);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: $gutterMobileHeight;
+
+    width: 100%;
+    padding: $vPadding 0;
+
+    font-size: 0.9rem;
+    background-color: $gutterBackground;
+    z-index: 200;
+}
+
+    .menu--mobile__trigger {
+        position: absolute;
+        top: 24px;
+        left: 2rem;
+
+        img {
+            height: 15px;
+        }
+    }
+
+    .menu--mobile__logo {
+        position: absolute;
+        left: 37.5%;
+        top:  17px;
+
+        img {
+            height: 30px;
+        }
+    }
+
+    .sidebar__trigger {
+        position: absolute;
+        top: 24px;
+        right: 2rem;
+        cursor: pointer;
+
+        .text {
+            @include transition(color $animationDuration);
+            float: left;
+            font-size: 1rem;
+            color: #838383;
+            margin-right: 1.25rem;
+        }
+
+        .icon {
+            img {
+                @include transition(opacity $animationDuration);
+                position: absolute;
+                right: 0;
+
+                &.active {
+                    top: 6px;
+                    opacity: 0.0;
+                }
+                &.hover {
+                    top: 4px;
+                    opacity: 0.0;
+                }
+                &.inactive {
+                    top: 4px;
+                    opacity: 1.0;
+                }
+            }
+        }
+        &:hover {
+            .icon {
+                img.hover {
+                    opacity: 1.0;
+                }
+                img.active,
+                img.inactive {
+                    opacity: 0.0;
+                }
+            }
+            .text {
+                color: $gold;
+            }
+        }
+    }
+    body.sidebar--expanded {
+        .sidebar__trigger {
+            .text {
+                color: $gold;
+            }
+            .icon {
+                img.hover,
+                img.inactive {
+                    opacity: 0.0;
+                }
+                img.active {
+                    opacity: 1.0;
+                }
+            }
+        }
+    }
+
+@media screen and (max-width: $break-small) {
+    // On mobile, instead of 'squishing' the page from the left when we
+    // extend the menu, we shift it across instead. To do this we have
+    // to change the page-wrapper appraoch to using left positioning as
+    // opposed to margin-left
+    body { overflow-x: hidden; }
+    .page-wrapper {
+        @include transition(left $animationDuration);
+        position: relative;
+        left: 0;
+        margin-left: 0;
+        margin-top: $gutterMobileHeight + (2 * $vPadding);
+    }
+
+    // Show the top mobile menu gutter bar
+    .menu--mobile {
+        display: block;
+    }
+
+    // hide the normal sidebar menu
+    .menu {
+        width: 0;
+    }
+
+    // Hide the normal gutter
+    .menu__gutter {
+        left: -$gutterWidth;
+    }
+
+    .menu__logo {
+        opacity: 0 !important;
+    }
+
+    .menu__nav {
+        margin-top: 0.7rem;
+        ul li a {
+            font-size: 1rem;
+            line-height: 1.2rem;
+            padding: 14px 30px;
+        }
+    }
+
+    body.menu--expanded {
+        .menu {
+            width: $drawerWidth;
+        }
+
+        .menu__drawer {
+            left: 0;
+        }
+
+        .menu--mobile {
+            left: $drawerWidth;
+        }
+
+        .page-wrapper {
+            margin-left: 0;
+            left: $drawerWidth;
+        }
+    }
+}

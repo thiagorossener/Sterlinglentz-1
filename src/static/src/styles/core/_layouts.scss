@@ -1,0 +1,182 @@
+// "Alpha" Layout
+// A basic page layout with a full width header across the top and a column
+// below that has a sidebar to the left and content to the right
+// (As seen about page)
+.layout--alpha {
+    background-color: $off-white;
+
+    .header,
+    .body {
+        @include container;
+    }
+
+        .sidebar {
+            @include span(2 of 12 no-gutters);
+            @include prefix(1 of 12);
+            padding-top: 4rem;
+        }
+
+            .sidebar-content-wrapper {
+
+            }
+
+        .column {
+            @include span(8 of 12 no-gutters last);
+            @include suffix(1 of 12);
+            padding-top: 4rem;
+        }
+
+            .content-wrapper {
+                padding-bottom: 6rem;
+            }
+
+                .content {
+                    max-width: 750px;
+                }
+}
+
+@media screen and (max-width: $break-small) {
+    .layout--alpha {
+        .sidebar,
+        .column {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .content-wrapper {
+            padding: 2rem;
+        }
+
+        .sidebar-content-wrapper {
+            padding: 3rem 2rem 2rem 2rem;
+        }
+    }
+}
+
+
+// "Beta" Page Layout
+// This is a simple layout used on more than one page where a LHS sidebar takes
+// up a third of the page and a single column takes up the other two thirds
+// (As seen process page)
+.layout--beta {
+    @include container;
+
+    .sidebar {
+        @include span(20% no-gutters);
+        @include transition(margin-left $animationDuration);
+        background-color: #fbfbfb;
+        position: relative;
+        height: 2000px; // To avoid jarring resizing via JS
+    }
+
+        .sidebar-content-wrapper {
+            padding: 4rem;
+        }
+
+        .sidebar__trigger {
+            position: absolute;
+            top: 0;
+            left: 10%;
+        }
+
+    .column {
+        @include span(80% last);
+        @include transition(width $animationDuration);
+    }
+        .header, .content-wrapper {
+            @include transition(padding-left $animationDuration);
+        }
+
+        .content-wrapper {
+            border-left: 1px solid #ebebeb;
+            background-color: white;
+            padding: 4rem;
+        }
+
+            .content, .summary {
+                max-width: 750px;
+            }
+}
+
+// On mobile, changed the padding and hide the bookmark trigger
+@media screen and (max-width: $break-small) {
+    .layout--beta {
+        .content-wrapper {
+            padding: 2rem;
+        }
+
+        .sidebar__trigger {
+            display: none;
+        }
+    }
+}
+
+// On desktop resolutions, have the sidebar show from the side of the page
+@media screen and (min-width: $break-small) {
+    body.sidebar--expanded {
+        .layout--beta {
+            .sidebar {
+                margin-left: -33.33%;
+            }
+
+            .column {
+                width: 100%;
+            }
+
+            .header__trigger {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+// On mobile resolutions, have the sidebar show from the top of page
+@media screen and (max-width: $break-small) {
+    .layout--beta {
+        // On mobile make both the sidebar and content fullwidth
+        .sidebar,
+        .column {
+            @include span(100% no-gutters);
+        }
+        .content-wrapper {
+            border: none;
+        }
+
+        // On mobile we move the sidebar offscreen above the content and
+        // use a button in the navigation menu to activate it and have it
+        // slide (down offsetting the content)
+        .sidebar {
+            @include transition(margin-top $animationDuration);
+            position: fixed;
+            z-index: 100;
+            margin-top: -100%;
+        }
+    }
+    body.sidebar--expanded {
+        .sidebar {
+            margin-top: 0;
+        }
+    }
+}
+
+// When the menu is expanded on the large view, shrink the padding
+@media screen and (min-width: $break-large) {
+    .layout--beta {
+        .content-wrapper,
+        .header {
+            padding-left: 8rem;
+        }
+    }
+    body.sidebar--expanded {
+        .layout--beta {
+            .content-wrapper,
+            .header {
+                padding-left: 24rem;
+            }
+        }
+    }
+}
+
+

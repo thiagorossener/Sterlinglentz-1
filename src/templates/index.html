@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load snippets %}
+
+{% block meta_title %}{% snippet "index.meta.title" %}{% endblock %}
+{% block meta_description %}{% snippet "index.meta.description" %}{% endblock %}
+
+{% block body %}
+    {% include 'index--partial.html' %}
+{% endblock body %}

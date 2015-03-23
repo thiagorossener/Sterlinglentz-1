@@ -141,7 +141,7 @@ CKEDITOR_CONFIGS = {
                 ['Styles', 'Format', 'TextColor'],
                 ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript',
                     'Superscript', '-', 'RemoveFormat'],
-                ['ImageButton'],
+                ['Image'],
                 ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
                     'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter',
                     'JustifyRight', 'JustifyBlock'],

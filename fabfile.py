@@ -36,7 +36,7 @@ def production():
     env.dbpassword = PRODUCTION_DB_PASSWORD
 
     env.virtualenv = "feral.com"
-    env.branch = "develop"
+    env.branch = "master"
 
     env.virtualenv_path = "/srv/feral.com/"
     env.project_path = "/srv/feral.com/src/"

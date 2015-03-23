@@ -55,11 +55,15 @@ $(document).ready(function(){
         timer = setTimeout(equalizeColumns, 400);
     });
 
-    // Add class to body when navigation is expanded
+    // Expand/contract the menu when a menu trigger button is clicked. On desktop
+    // the menu is open by default (using an extra css class on the body element)
     var $menuTrigger = $('.menu__trigger');
     $menuTrigger.click(function(){
-        $body.removeClass('menu--expanded--onload');
-        $body.toggleClass('menu--expanded');
+        if($body.hasClass('menu--expanded--onload')){
+            $body.removeClass('menu--expanded--onload');
+        } else {
+            $body.toggleClass('menu--expanded');
+        }
         return false;
     });
 
@@ -76,12 +80,14 @@ $(document).ready(function(){
             $menuLogo.css('opacity', 1);
         }, 2000);
 
-        // Close the menu
-        $body.removeClass('menu--expanded');
-        $body.removeClass('menu--expanded--onload');
+        // Close the menu on click of menu link when in mobile
+        if($(window).width() < 800){
+            $body.removeClass('menu--expanded');
+            $body.removeClass('menu--expanded--onload');
+        }
     });
 
-    // Close the nav if below < 1100px
+    // Close the nav if we resize below < 1100px
     $(window).on('resize', function(){
         if($(window).width() < 1100) {
             $body.removeClass('menu--expanded');

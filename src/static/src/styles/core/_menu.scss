@@ -70,7 +70,8 @@ $drawerBackground: lighten($gray-dark, 5%);
                 }
             }
         }
-        body.menu--expanded {
+        body.menu--expanded,
+        body.menu--expanded--onload {
             .menu__trigger {
                 img {
                     &.inactive { opacity: 0.0; }

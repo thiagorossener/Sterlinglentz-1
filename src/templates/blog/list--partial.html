@@ -24,7 +24,7 @@
                             </p>
                             <div class="blog-list__content">
                                 <a class="silent" href="{{ post.get_absolute_url }}" title="{% if post.subtitle %}{{ post.subtitle }}{% else %}{{ post.title }}{% endif %}">
-                                    <h2 class="blog-list__title">{{ post.title|title }}</h2>
+                                    <h2 class="blog-list__title">{{ post.title }}</h2>
                                 </a>
                                 {% if post.subtitle %}
                                     <p class="blog-list__subtitle">{{ post.subtitle }}</p>

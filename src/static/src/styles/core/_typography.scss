@@ -65,10 +65,6 @@ p {
     line-height: 1.75rem;
     margin-top: 0;
     margin-bottom: 1.5rem ;
-
-    a {
-        text-decoration: underline;
-    }
 }
 
 small,
@@ -136,7 +132,12 @@ ul, ol {
 
 a {
     @include a($gold);
+    text-decoration: none;
 }
+
+    a:hover {
+        text-decoration: underline;
+    }
 
     a.silent {
         color: inherit;

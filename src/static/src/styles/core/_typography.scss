@@ -105,11 +105,12 @@ q {
 }
 
 ul, ol {
-    @include type-size(ms(1), 1.5);
+    font-size: 1rem;
+    line-height: 1.75rem;
     margin-bottom: 3rem;
 
     li {
-        margin-bottom: .75rem;
+        margin-bottom: 0.75rem;
     }
 }
 
@@ -132,12 +133,7 @@ ul, ol {
 
 a {
     @include a($gold);
-    text-decoration: none;
 }
-
-    a:hover {
-        text-decoration: underline;
-    }
 
     a.silent {
         color: inherit;

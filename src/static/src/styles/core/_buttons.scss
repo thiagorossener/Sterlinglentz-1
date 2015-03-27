@@ -47,5 +47,12 @@
         font-size: 1.25rem;
         line-height: 1.25rem;
         border: 3px solid;
+
+        @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+            border: 2px solid;
+            padding: 1rem 1rem 0.65rem 1rem;
+            font-size: 0.85rem;
+            line-height: 1;
+        }
     }
 }

@@ -137,18 +137,36 @@ $drawerBackground: lighten($gray-dark, 5%);
             }
         }
 
-        .menu__logo {
-            opacity: 0;
-            @include transition(opacity $animationDuration * 2);
+        .menu__bio {
             padding: 0 $hPadding;
             position: absolute;
             top: 50%;
             left: 0;
-
-            a {
-                display: block;
-            }
         }
+
+            .menu__bio > * {
+
+                color: $gray-light;
+            }
+
+            .menu__bio__name {
+                font-size: 0.85rem;
+                line-height: 0.85rem;
+                margin-bottom: 0.85rem;
+                font-weight: $font-weight-medium;
+            }
+
+            .menu__bio__description {
+                font-size: 0.75rem;
+                line-height: 1.25rem;
+                margin-bottom: 0.85rem;
+            }
+
+            .menu__bio__email {
+                font-size: 0.75rem;
+                line-height: 0.75rem;
+                margin-bottom: 0;
+            }
 
         .menu__footer {
             padding: 0 $hPadding;
@@ -224,16 +242,6 @@ body.menu--expanded {
 
         img {
             height: 15px;
-        }
-    }
-
-    .menu--mobile__logo {
-        position: absolute;
-        left: 37.5%;
-        top:  17px;
-
-        img {
-            height: 30px;
         }
     }
 

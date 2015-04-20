@@ -11,21 +11,8 @@
     font-style: $font-weight-regular;
 }
 
-// Regular Bold
-font-face {
-    font-family: 'neutral-regular';
-    src: url('../fonts/neutral/bold/NeutralStd-Bold.eot');
-    src: url('../fonts/neutral/bold/NeutralStd-Bold.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/neutral/bold/NeutralStd-Bold.woff2') format('woff2'),
-         url('../fonts/neutral/bold/NeutralStd-Bold.woff') format('woff'),
-         url('../fonts/neutral/bold/NeutralStd-Bold.ttf') format('truetype'),
-         url('../fonts/neutral/dold/NeutralStd-Bold.svg#neutral-bold') format('svg');
-    font-weight: normal;
-    font-style: $font-weight-bold;
-}
-
-// Regular Italic
-font-face {
+// Italic
+@font-face {
     font-family: 'neutral-regular';
     src: url('../fonts/neutral/regular/NeutralStd-RegularItalic.eot');
     src: url('../fonts/neutral/regular/NeutralStd-RegularItalic.eot?#iefix') format('embedded-opentype'),
@@ -33,6 +20,58 @@ font-face {
          url('../fonts/neutral/regular/NeutralStd-RegularItalic.woff') format('woff'),
          url('../fonts/neutral/regular/NeutralStd-RegularItalic.ttf') format('truetype'),
          url('../fonts/neutral/regular/NeutralStd-RegularItalic.svg#neutral-regular') format('svg');
-    font-weight: italic;
-    font-style: $font-weight-regular;
+    font-weight: $font-weight-regular;
+    font-style: italic;
+}
+
+// Medium
+@font-face {
+    font-family: 'neutral-regular';
+    src: url('../fonts/neutral/medium/NeutralStd-Medium.eot');
+    src: url('../fonts/neutral/medium/NeutralStd-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/neutral/medium/NeutralStd-Medium.woff2') format('woff2'),
+         url('../fonts/neutral/medium/NeutralStd-Medium.woff') format('woff'),
+         url('../fonts/neutral/medium/NeutralStd-Medium.ttf') format('truetype'),
+         url('../fonts/neutral/medium/NeutralStd-Medium.svg#neutral-bold') format('svg');
+    font-weight: $font-weight-medium;
+    font-style: normal;
+}
+
+// Medium Italic
+@font-face {
+    font-family: 'neutral-regular';
+    src: url('../fonts/neutral/medium/NeutralStd-Medium.eot');
+    src: url('../fonts/neutral/medium/NeutralStd-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/neutral/medium/NeutralStd-Medium.woff2') format('woff2'),
+         url('../fonts/neutral/medium/NeutralStd-Medium.woff') format('woff'),
+         url('../fonts/neutral/medium/NeutralStd-Medium.ttf') format('truetype'),
+         url('../fonts/neutral/medium/NeutralStd-Medium.svg#neutral-bold') format('svg');
+    font-weight: $font-weight-medium;
+    font-style: italic;
+}
+
+// Bold
+@font-face {
+    font-family: 'neutral-regular';
+    src: url('../fonts/neutral/bold/NeutralStd-Bold.eot');
+    src: url('../fonts/neutral/bold/NeutralStd-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/neutral/bold/NeutralStd-Bold.woff2') format('woff2'),
+         url('../fonts/neutral/bold/NeutralStd-Bold.woff') format('woff'),
+         url('../fonts/neutral/bold/NeutralStd-Bold.ttf') format('truetype'),
+         url('../fonts/neutral/dold/NeutralStd-Bold.svg#neutral-bold') format('svg');
+    font-weight: $font-weight-bold;
+    font-style: normal;
+}
+
+// Bold Italic
+@font-face {
+    font-family: 'neutral-regular';
+    src: url('../fonts/neutral/regular/NeutralStd-BoldItalic.eot');
+    src: url('../fonts/neutral/regular/NeutralStd-BoldItalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/neutral/regular/NeutralStd-BoldItalic.woff2') format('woff2'),
+         url('../fonts/neutral/regular/NeutralStd-BoldItalic.woff') format('woff'),
+         url('../fonts/neutral/regular/NeutralStd-BoldItalic.ttf') format('truetype'),
+         url('../fonts/neutral/regular/NeutralStd-BoldItalic.svg#neutral-regular') format('svg');
+    font-weight: $font-weight-bold;
+    font-style: italic;
 }

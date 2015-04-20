@@ -11,7 +11,12 @@
 
         <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
         <link rel="stylesheet" href="{% static 'styles/screen.css' %}" type="text/css" charset="utf-8">
+
+        {# Video.js #}
+        <link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+        <script src="//vjs.zencdn.net/4.12/video.js"></script>
     </head>
+
     <body class="menu--expanded--onload {% block body_classes %}{% endblock %}">
         <header>
             <div class="menu--mobile">
@@ -102,7 +107,4 @@
         ga('create', 'UA-17513996-1', 'auto');
         ga('send', 'pageview');
     </script>
-
-    {# Sublime Video #}
-    <script type="text/javascript" src="//cdn.sublimevideo.net/js/56pd3sz6.js"></script>
 </html>

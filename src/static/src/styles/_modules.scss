@@ -58,6 +58,15 @@
 
     }
 
+@media screen and (min-width: $break-small) and (max-width: $break-medium) {
+    .project-teaser__button {
+        width: 85%;
+        left: 2.5%;
+        top: 40%;
+    }
+}
+
+
 // Hero
 .hero {
     background-color: #f2f2f2;

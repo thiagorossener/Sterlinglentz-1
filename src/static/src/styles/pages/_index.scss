@@ -35,9 +35,48 @@ $indexPadding: 15%;
                 font-size: 1.75rem;
                 line-height: 2.5rem;
                 font-weight: 300;
-                margin: 0;
+                margin: 0 0 2rem 0;
                 width: 65%;
             }
+
+            .index__hero__buttons {
+                @include clearfix;
+                margin: 0;
+                padding: 0;
+            }
+
+                .index__hero__button {
+                    float: left;
+                    margin: 0 2rem 0 0;
+                    padding: 0;
+                    list-style: none;
+
+                    .button {
+                        background-color: $gold;
+                        color: $off-white;
+                        text-transform: none;
+                        padding: 1rem;
+                        font-weight: $font-weight-regular;
+                        font-size: 1rem;
+                        line-height: 1rem;
+                        min-width: 150px;
+
+                        &:hover {
+                            background-color: darken($gold, 5%);
+                        }
+                    }
+
+                    .button--hollow {
+                        background-color: $off-white;
+                        border: 1px solid $gray-light;
+                        color: $gray-dark;
+
+                        &:hover {
+                            color: $off-white;
+                            border-color: darken($gold, 5%);
+                        }
+                    }
+                }
         }
 
         .index__strip {

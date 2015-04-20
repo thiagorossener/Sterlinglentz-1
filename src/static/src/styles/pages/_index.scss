@@ -12,22 +12,30 @@ $indexPadding: 15%;
 
         .index__hero {
             position: absolute;
-            bottom: 20%;
+            top: 15%;
             left: 0;
-            width: 40%;
+            width: 60%;
             padding: 0 0 0 $indexPadding;
 
-            p {
+            .index__hero__lead {
                 font-size: 0.75rem;
                 text-transform: uppercase;
-                margin-bottom: 1rem;
+                margin-bottom: 2rem;
             }
 
-            h1, h2, h3, h4, h5, h6 {
+            .index__hero__title {
+                font-size: 3.5rem;
+                line-height: 3.75rem;
+                margin: 0 0 2rem 0;
+                color: $black;
+            }
+
+            .index__hero__subtitle {
                 font-size: 1.75rem;
-                line-height: 2.15rem;
+                line-height: 2.5rem;
                 font-weight: 300;
                 margin: 0;
+                width: 60%;
             }
         }
 
@@ -87,14 +95,18 @@ $indexPadding: 15%;
     .index__hero {
         bottom: 25%;
 
-        p {
+        .index__hero__lead {
             font-size: 0.7rem;
             line-height: 1.3rem;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        .index__hero__title {
             font-size: 1.4rem;
             line-height: 1.9rem;
+        }
+
+        .index__hero__subtitle {
+
         }
     }
 

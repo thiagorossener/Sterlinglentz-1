@@ -9,8 +9,9 @@
 
     <div class="index__atf"> {# Above the fold #}
         <div class="index__hero">
-            <p>{% snippet "index.hero.title" %}</p>
-            <h1>{% snippet "index.hero.content" %}</h1>
+            <p class="index__hero__lead">{% snippet "index.hero.lead" %}</p>
+            <h1 class="index__hero__title">{% snippet "index.hero.title" %}</h1>
+            <h2 class="index__hero__subtitle">{% snippet "index.hero.subtitle" %}</h2>
         </div>
         {% if post %}
             <div class="index__strip strip">

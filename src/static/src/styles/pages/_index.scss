@@ -2,6 +2,7 @@ $indexPadding: 15%;
 
 .index {
     @include clearfix;
+    background-color: $off-white;
 }
 
     .index__atf {

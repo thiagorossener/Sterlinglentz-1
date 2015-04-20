@@ -2,10 +2,6 @@ $indexPadding: 15%;
 
 .index {
     @include clearfix;
-    background-color: $off-white;
-    background-repeat: no-repeat;
-    background-position: -7rem -4rem;
-    background-size: 1100px;
 }
 
     .index__atf {
@@ -86,11 +82,6 @@ $indexPadding: 15%;
 
 // Below 800
 @media screen and (max-width: $break-small) {
-    .index {
-        background-size: 300px;
-        background-position: top left;
-    }
-
     // Move the hero down the page and make it much wider
     .index__hero {
         bottom: 25%;
@@ -126,12 +117,6 @@ $indexPadding: 15%;
 
 // Between 800 and 1100
 @media screen and (min-width: $break-small) and (max-width: $break-medium) {
-    // Shrink the background logo and center it
-    .index {
-        background-size: 750px;
-        background-position: center 10%;
-    }
-
     // Stretch the hero text as we get lower in resolution and move it down
     // the page a little bit
     .index__hero {

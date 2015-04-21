@@ -1,5 +1,6 @@
 {% load cache %}
 {% load staticfiles %}
+{% load snippets %}
 
 <!doctype html>
 <html>
@@ -57,9 +58,9 @@
                         </ul>
                     </nav>
                     <div class="menu__bio">
-                        <h3 class="menu__bio__name">Sterling Lentz</h3>
-                        <p class="menu__bio__description">freelance web designed and art director</p>
-                        <p class="menu__bio__email"><a href="mailto:sterling@sterlinglentz.com">Send me an email</a></p>
+                        <h3 class="menu__bio__name">{% snippet "menu.bio.title" %}</h3>
+                        <p class="menu__bio__description">{% snippet "menu.bio.description" %}</p>
+                        <p class="menu__bio__email"><a href="mailto:sterling@sterlinglentz.com">{% snippet "menu.bio.email" %}</a></p>
                     </div>
                 </div>
             </div>

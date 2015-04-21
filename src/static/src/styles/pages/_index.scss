@@ -18,13 +18,15 @@ $indexPadding: 15%;
             padding: 0 0 0 $indexPadding;
 
             .index__hero__lead {
-                font-size: 0.75rem;
+                font-size: .6rem;
                 text-transform: uppercase;
-                margin-bottom: 4rem;
+                margin-bottom: 3rem;
+                color: #9E9E9E;
+                letter-spacing: .05rem;
             }
 
             .index__hero__title {
-                font-size: 3.5rem;
+                font-size: 3rem;
                 line-height: 4rem;
                 font-weight: $font-weight-medium;
                 margin: 0 0 2rem 0;
@@ -32,11 +34,12 @@ $indexPadding: 15%;
             }
 
             .index__hero__subtitle {
-                font-size: 1.75rem;
-                line-height: 2.5rem;
-                font-weight: 300;
-                margin: 0 0 2rem 0;
+                font-size: 1.4rem;
+                line-height: 2.2rem;
+                font-weight: 100;
+                margin: 0 0 3rem 0;
                 width: 65%;
+                color: #696969;
             }
 
             .index__hero__buttons {
@@ -56,20 +59,22 @@ $indexPadding: 15%;
                         color: $off-white;
                         text-transform: none;
                         padding: 1rem;
+                        border: 3.5px solid $gold;
                         font-weight: $font-weight-regular;
                         font-size: 1rem;
                         line-height: 1rem;
                         min-width: 150px;
 
                         &:hover {
+                            border: 3.5px solid darken($gold, 5%);
                             background-color: darken($gold, 5%);
                         }
                     }
 
                     .button--hollow {
                         background-color: $off-white;
-                        border: 1px solid $gray-light;
-                        color: $gray-dark;
+                        border: 3.5px solid $gold;
+                        color: $gold;
 
                         &:hover {
                             color: $off-white;

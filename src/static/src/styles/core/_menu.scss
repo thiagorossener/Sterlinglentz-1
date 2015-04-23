@@ -340,8 +340,9 @@ body.menu--expanded {
         left: -$gutterWidth;
     }
 
-    .menu__logo {
-        opacity: 0 !important;
+    .menu__bio {
+        padding: 0px 14px 0 30px;
+        bottom: 0.7rem;
     }
 
     .menu__nav {

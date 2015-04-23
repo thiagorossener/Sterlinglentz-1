@@ -139,6 +139,7 @@ $indexPadding: 15%;
     // Move the hero down the page and make it much wider
     .index__hero {
         bottom: 25%;
+        position: relative;
 
         .index__hero__lead {
             font-size: 0.7rem;

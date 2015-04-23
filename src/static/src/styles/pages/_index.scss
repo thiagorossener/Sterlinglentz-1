@@ -142,7 +142,7 @@ $indexPadding: 15%;
 
         .index__hero {
             // Remove the 100% vertical height
-            padding-top: 25px;
+            padding-top: 50px;
             padding-bottom: 75px;
             width: auto;
             height: auto;
@@ -170,6 +170,10 @@ $indexPadding: 15%;
                 .button {
                     padding: 1rem 0.25rem;
                 }
+            }
+
+            .index__hero__button:last-child {
+                margin-right: 0;
             }
         }
 

@@ -165,11 +165,12 @@ $indexPadding: 15%;
             }
 
             .index__hero__button {
-                margin-right: 1.5rem;
+                margin-right: 15px;
 
                 .button {
                     padding: 1rem;
-                    min-width: auto;
+                    font-size: 0.95rem;
+                    min-width: 100px;
                 }
             }
 

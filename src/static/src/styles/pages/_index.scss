@@ -142,7 +142,7 @@ $indexPadding: 15%;
 
         .index__hero {
             // Remove the 100% vertical height
-            padding-top: 100px;
+            padding-top: 50px;
             padding-bottom: 100px;
             width: auto;
             height: auto;
@@ -201,9 +201,13 @@ $indexPadding: 15%;
     // Stretch the hero text as we get lower in resolution and move it down
     // the page a little bit
     .index__hero {
-        width: 100% - (2 * $indexPadding);
-        padding: 0 $indexPadding;
+        width: 100% - (2 * ($indexPadding/2));
+        padding: 0 ($indexPadding/2);
     }
+
+        .index__hero__subtitle {
+            width: 95%;
+        }
 }
 
 // Between 1100 and 1300

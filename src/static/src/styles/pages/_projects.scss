@@ -35,14 +35,9 @@
     }
 }
 
-@media screen and (max-width: $break-medium) {
+@media screen and (min-width: $break-small) and (max-width: $break-medium) {
     .projects__column {
-        @include span(33.33% no-gutters);
-        height: 33.33vh;
-
-        &--odd {
-            margin-top: 0;
-        }
+        @include span(50% no-gutters);
     }
 }
 

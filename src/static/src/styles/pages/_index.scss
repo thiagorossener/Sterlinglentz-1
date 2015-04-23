@@ -191,14 +191,14 @@ $indexPadding: 15%;
             padding-right: $indexPadding/2;
         }
 
-        // Make projects each full fullwidth
-        .index__project {
-            @include span(100%);
-        }
-
         .strip__button {
             display: none;
         }
+    }
+
+    // Make projects each full fullwidth
+    .index__project {
+        @include span(100%);
     }
 }
 

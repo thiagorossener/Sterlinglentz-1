@@ -64,6 +64,7 @@ $indexPadding: 15%;
                         font-size: 1rem;
                         line-height: 1rem;
                         min-width: 150px;
+                        margin-bottom: 1rem;
 
                         &:hover {
                             border: 3.5px solid darken($gold, 5%);
@@ -136,41 +137,62 @@ $indexPadding: 15%;
 
 // Below 800
 @media screen and (max-width: $break-small) {
-    // Move the hero down the page and make it much wider
-    .index__hero {
-        bottom: 25%;
-        position: relative;
+    .index__atf {
+        height: auto;
 
-        .index__hero__lead {
-            font-size: 0.7rem;
-            line-height: 1.3rem;
+        .index__hero {
+            // Remove the 100% vertical height
+            padding-top: 100px;
+            padding-bottom: 100px;
+            width: auto;
+            height: auto;
+            position: relative;
+
+            .index__hero__lead {
+                font-size: 0.7rem;
+                line-height: 1.3rem;
+            }
+
+            .index__hero__title {
+                font-size: 1.4rem;
+                line-height: 1.9rem;
+            }
+
+            .index__hero__subtitle {
+                font-size: 1.1rem;
+                line-height: 1.7rem;
+                width: 100%;
+            }
+
+            .index__hero__button {
+                margin-right: 1.5rem;
+
+                .button {
+                    padding: 1rem 0.5rem;
+                }
+            }
         }
 
-        .index__hero__title {
-            font-size: 1.4rem;
-            line-height: 1.9rem;
+        .index__strip {
+            position: static;
         }
 
-        .index__hero__subtitle {
-
+        // Change the padding on the index
+        .index__hero,
+        .strip__content {
+            width: 100% - $indexPadding;
+            padding-left: $indexPadding/2;
+            padding-right: $indexPadding/2;
         }
-    }
 
-    // Change the padding on the index
-    .index__hero,
-    .strip__content {
-        width: 100% - $indexPadding;
-        padding-left: $indexPadding/2;
-        padding-right: $indexPadding/2;
-    }
+        // Make projects each full fullwidth
+        .index__project {
+            @include span(100%);
+        }
 
-    // Make projects each full fullwidth
-    .index__project {
-        @include span(100%);
-    }
-
-    .strip__button {
-        display: none;
+        .strip__button {
+            display: none;
+        }
     }
 }
 

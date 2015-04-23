@@ -169,7 +169,7 @@ $indexPadding: 15%;
 
                 .button {
                     padding: 1rem;
-                    font-size: 0.95rem;
+                    font-size: 0.9rem;
                     min-width: 100px;
                 }
             }
@@ -209,14 +209,27 @@ $indexPadding: 15%;
     .index__hero {
         width: 100% - (2 * ($indexPadding/2));
         padding: 0 ($indexPadding/2);
-    }
+
+        .index__hero__title {
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+
+        .index__hero__subtitle {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            width: 75%;
+        }
 
         .index__hero__subtitle {
             width: 95%;
         }
-}
 
-// Between 1100 and 1300
-@media screen and (min-width: $break-medium) and (max-width: $break-large) {
-
+        .index__hero__button {
+            .button {
+                padding: .8rem;
+                font-size: 0.9rem;
+            }
+        }
+    }
 }

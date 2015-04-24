@@ -215,7 +215,17 @@ body.menu--expanded {
     }
 }
 
-
+// But we want that ignored on mobile
+@media screen and (max-width: $break-small) {
+    body.menu--expanded--onload {
+        .menu__trigger {
+            img {
+                &.inactive { opacity: 1.0 !important; }
+                &.active {opacity: 0.0 !important; }
+            }
+        }
+    }
+}
 
 // Mobile-specific menu layout
 .menu--mobile {
@@ -238,7 +248,7 @@ body.menu--expanded {
     .menu--mobile__trigger {
         position: absolute;
         top: 24px;
-        left: 2rem;
+        left: 1.30rem;
 
         img {
             height: 15px;
@@ -246,6 +256,7 @@ body.menu--expanded {
     }
 
     .sidebar__trigger {
+        display: none;
         position: absolute;
         top: 24px;
         right: 2rem;

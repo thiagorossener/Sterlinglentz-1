@@ -254,3 +254,17 @@ $indexPadding: 15%;
         }
     }
 }
+
+// Above 1300
+@media screen and (min-width: $break-large) {
+    .index__atf {
+        min-height: 800px;
+    }
+}
+
+// Between 1300 and 1800
+@media screen and (min-width: $break-large) and (max-width: 1800px) {
+    .index__hero {
+        width: 80%;
+    }
+}

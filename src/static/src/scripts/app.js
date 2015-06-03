@@ -1,6 +1,3 @@
-'use strict';
-/*global $:false */
-
 
 $(document).ready(function(){
     var $body = $('body');
@@ -8,7 +5,10 @@ $(document).ready(function(){
     // Setup the frontpage fullpage widget
     $('.fullpage').fullpage({
         sectionSelector: '.fullpage__section',
-        verticalCentered: true
+        verticalCentered: true,
+        afterLoad: function(anchorLink, index){
+
+        },
     });
 
 

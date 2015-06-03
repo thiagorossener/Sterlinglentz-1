@@ -40,44 +40,59 @@ $indexPadding: 7.5%;
             padding: 0 $indexPadding;
             background-repeat: no-repeat;
             background-position: right center;
+
         }
 
-            .fullpage__project__footer {
+            .fullpage__project_content {
 
             }
 
-                .fullpage__project__action {
-                    margin-bottom: 1rem;
-                    color: white;
-                }
-
-                .fullpage__project__name {
-                    font-size: 3rem;
-                    line-height: 3rem;
-                    font-weight: bold;
-                    margin-bottom: 7.5rem;
-                    color: white;
-                }
-
             .fullpage__project__footer {
 
-            }
+                }
 
-                .fullpage__project__button {
-                    background-color: transparent;
-                    border: 1px solid white;
-                    border-radius: 6px;
-                    color: white;
-                    font-size: 1rem;
-                    line-height: 1rem;
-                    padding: 1.25rem;
-
-                    &:hover {
-                        background-color: white;
-                        text-decoration: none;
-                        color: black;
+                    .fullpage__project__action {
+                        margin-bottom: 1rem;
+                        color: white;
                     }
+
+                    .fullpage__project__name {
+                        font-size: 3rem;
+                        line-height: 3rem;
+                        font-weight: bold;
+                        margin-bottom: 7.5rem;
+                        color: white;
+                    }
+
+                .fullpage__project__footer {
+
                 }
+
+                    .fullpage__project__button {
+                        background-color: transparent;
+                        border: 1px solid white;
+                        border-radius: 6px;
+                        color: white;
+                        font-size: 1rem;
+                        line-height: 1rem;
+                        padding: 1.25rem;
+
+                        &:hover {
+                            background-color: white;
+                            text-decoration: none;
+                            color: black;
+                        }
+                    }
+
+        // We animate the fade-in of each sections text
+        .fullpage__project__content {
+
+        }
+        .fullpage__project__action,
+        .fullpage__project__name,
+        .fullpage__project__footer {
+
+        }
 
 
     .blog-strip {

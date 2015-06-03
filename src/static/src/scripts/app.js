@@ -20,6 +20,14 @@ $(document).ready(function(){
                     $fullpage.css("opacity", 1);
                 }
             });
+
+            $(".fullpage__arrow--down").click(function(){
+                $.fn.fullpage.moveSectionDown();
+            });
+
+            $(".fullpage__arrow--up").click(function(){
+                $.fn.fullpage.moveSectionUp();
+            });
         }
     };
 

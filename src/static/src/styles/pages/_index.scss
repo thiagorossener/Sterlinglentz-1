@@ -90,6 +90,14 @@ $indexPadding: 7.5%;
                             }
                         }
 
+            .fullpage__arrow {
+                position: absolute;
+                bottom: 100px;
+                left: 50%;
+                margin-left: -12px;
+                cursor: pointer;
+            }
+
         // We animate the fade-in of each sections text
         .fullpage__project__content {
 
@@ -121,7 +129,7 @@ $indexPadding: 7.5%;
             .fullpage__project__content {
                 height: auto;
                 position: absolute;
-                top: 100px;
+                top: 140px;
                 margin-top: 0;
             }
 

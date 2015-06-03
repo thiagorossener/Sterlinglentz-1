@@ -28,6 +28,16 @@
                         <a class="fullpage__project__button" href="{{ project.get_absolute_url }}" class="button">{% trans 'See the project' %}</a>
                     </div>
                 </div>
+
+                {% if not forloop.last %}
+                    <div class="fullpage__arrow fullpage__arrow--down">
+                        <img src="{% static 'images/fullpage-arrow--down.svg' %}" alt="">
+                    </div>
+                {% else %}
+                    <div class="fullpage__arrow fullpage__arrow--up">
+                        <img src="{% static 'images/fullpage-arrow--up.svg' %}" alt="">
+                    </div>
+                {% endif %}
             </div>
         {% endfor %}
     </div>

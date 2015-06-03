@@ -53,10 +53,15 @@
                         Sterling Lentz
                     </div>
                     <nav class="menu__nav">
-                        <ul>
+                        <ul class="menu__nav__list">
                             {% for node in global_menu %}
-                                <li {% if node.active %}class="active"{% endif %}>
-                                    <a href="{{ node.url }}">{{ node.name }}</a>
+                                <li class="menu__nav__item {% if node.active %}active{% endif %}">
+                                    {% if node.icon %}
+                                        <span class="menu__nav__icon">
+                                            <img src="{{ node.icon.url }}" alt="Icon" />
+                                        </span>
+                                    {% endif %}
+                                    <a class="menu__nav__link" href="{{ node.url }}">{{ node.name }}</a>
                                 </li>
                             {% endfor %}
                         </ul>

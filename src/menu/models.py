@@ -3,6 +3,7 @@ from django.db import models
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
 from mptt.managers import TreeManager
+from filer.fields.image import FilerImageField
 
 
 class PublishedMenuNode(TreeManager):
@@ -25,6 +26,9 @@ class MenuNode(MPTTModel):
     url = models.CharField('URL', max_length=100, db_index=True)
     parent = TreeForeignKey('self', null=True, blank=True,
                             related_name='children')
+
+    icon = FilerImageField(null=True, blank=True,
+        related_name="menunode_icon", help_text="Should be around 32x32 pixels")
 
     is_published = models.BooleanField(default=True)
     ordering = models.PositiveIntegerField(default=0)

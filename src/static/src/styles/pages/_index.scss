@@ -94,6 +94,24 @@ $indexPadding: 7.5%;
 
         }
 
+    @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+        .fullpage__section {
+            background-size: 50% auto;
+        }
+    }
+
+    @media screen and (max-width: $break-small) {
+        .tagline {
+            left: $indexPadding/2;
+        }
+
+        .fullpage__section {
+            background-size: 55% auto;
+            background-position: right 80%;
+            padding: 0 $indexPadding/2;
+        }
+    }
+
 
     .blog-strip {
         position: fixed;
@@ -130,136 +148,8 @@ $indexPadding: 7.5%;
                 margin-right: 2rem;
             }
 
-
-// Below 800
-@media screen and (max-width: $break-small) {
-    .index__atf {
-        height: auto;
-
-        .index__hero {
-            // Remove the 100% vertical height
-            padding-top: 75px;
-            padding-bottom: 75px;
-            width: auto;
-            height: auto;
-            position: relative;
-
-            .index__hero__lead {
-                font-size: 0.7rem;
-                line-height: 1.3rem;
-            }
-
-            .index__hero__title {
-                font-size: 1.4rem;
-                line-height: 1.9rem;
-            }
-
-            .index__hero__subtitle {
-                font-size: 1.1rem;
-                line-height: 1.7rem;
-                width: 100%;
-            }
-
-            .index__hero__button {
-                margin-right: 15px;
-
-                .button {
-                    padding: 1rem;
-                    font-size: 0.9rem;
-                    min-width: 100px;
-                }
-            }
-
-            .index__hero__button:last-child {
-                margin-right: 0;
-            }
-        }
-
-        .index__strip {
-            position: static;
-        }
-
-        // Change the padding on the index
-        .index__hero,
-        .strip__content {
-            width: 100% - $indexPadding;
-            padding-left: $indexPadding/2;
-            padding-right: $indexPadding/2;
-        }
-
-        .strip__button {
+    @media screen and (max-width: $break-small) {
+        .blog-strip {
             display: none;
         }
     }
-
-    // Make projects each full fullwidth
-    .index__project {
-        @include span(100%);
-    }
-}
-
-// Between 800 and 1100
-@media screen and (min-width: $break-small) and (max-width: $break-medium) {
-    // Stretch the hero text as we get lower in resolution and move it down
-    // the page a little bit
-    .index__hero {
-        width: 100% - (2 * ($indexPadding/2));
-        padding: 0 ($indexPadding/2);
-
-        .index__hero__title {
-            font-size: 2rem;
-            line-height: 2.5rem;
-        }
-
-        .index__hero__subtitle {
-            font-size: 1rem;
-            line-height: 1.5rem;
-            width: 75%;
-        }
-
-        .index__hero__subtitle {
-            width: 95%;
-        }
-
-        .index__hero__button {
-            .button {
-                padding: .8rem;
-                font-size: 0.9rem;
-            }
-        }
-    }
-}
-
-// Between 1100 and 1300
-@media screen and (min-width: $break-medium) and (max-width: $break-large) {
-    .index__hero {
-        .index__hero__title {
-            font-size: 2.5rem;
-            line-height: 3.25rem;
-        }
-
-        .index__hero__subtitle {
-            font-size: 1rem;
-            line-height: 1.5rem;
-            width: 75%;
-        }
-
-        .index__hero__subtitle {
-            width: 95%;
-        }
-    }
-}
-
-// Above 1300
-@media screen and (min-width: $break-large) {
-    .index__atf {
-        min-height: 800px;
-    }
-}
-
-// Between 1300 and 1800
-@media screen and (min-width: $break-large) and (max-width: 1800px) {
-    .index__hero {
-        width: 80%;
-    }
-}

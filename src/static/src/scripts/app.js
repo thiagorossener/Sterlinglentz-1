@@ -3,14 +3,16 @@ $(document).ready(function(){
     var $body = $('body');
 
     // Setup the frontpage fullpage widget
-    $('.fullpage').fullpage({
-        sectionSelector: '.fullpage__section',
-        verticalCentered: true,
-        afterLoad: function(anchorLink, index){
+    var $fullpage = $(".fullpage");
+    if ($fullpage.length > 0) {
+        $fullpage.fullpage({
+            sectionSelector: '.fullpage__section',
+            verticalCentered: true,
+            afterLoad: function(anchorLink, index){
 
-        },
-    });
-
+            },
+        });
+    }
 
     // Setup the sidebar toggles
     var setupSidebarToggle = function(){

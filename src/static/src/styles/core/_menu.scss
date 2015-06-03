@@ -330,20 +330,22 @@ body.menu--expanded {
         left: -$gutterWidth;
     }
 
-    .menu__bio {
-        top: auto;
-        padding: 0px 14px 0 30px;
-        bottom: 0.7rem;
+    .menu__title {
+        margin: 25px 0 50px;
     }
 
     .menu__nav {
         margin-top: 0.7rem;
-        ul li a {
-            font-size: 1rem;
-            line-height: 1.2rem;
+    }
+
+        .menu__nav__item {
             padding: 14px 30px;
         }
-    }
+
+            .menu__nav__link {
+                font-size: 1rem;
+                line-height: 1.2rem;
+            }
 
     body.menu--expanded {
         .menu {

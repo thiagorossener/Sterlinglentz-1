@@ -73,6 +73,12 @@ class ProjectAdmin(SortableModelAdmin):
             'fields': ('name', 'description', 'client', 'categories', 'is_published')
         }),
         (None, {
+            'fields': ('action_text', )
+        }),
+        (None, {
+            'fields': ('primary_color', 'secondary_color', )
+        }),
+        (None, {
             'fields': ('landscape_image', 'portrait_image', )
         }),
         (None, {

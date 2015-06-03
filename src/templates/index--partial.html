@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 {% load thumbnail %}
 {% load snippets %}
 
@@ -13,8 +14,17 @@
     </div>
     <div class="fullpage">
         {% for project in projects %}
-            <div class="fullpage__section">
-                {{ project.name }}
+            <div class="fullpage__section"
+                style="background-color: #{{ project.color }};">
+                <div class="fullpage__project__header">
+                    {% if project.action_text %}
+                        <p class="fullpage__project__action">{{ project.action_text }}</p>
+                    {% endif %}
+                    <h2 class="fullpage__project__name">{{ project.name }}</h2>
+                </div>
+                <div class="fullpage__project__footer">
+                    <a class="fullpage__project__button" href="{{ project.get_absolute_url }}" class="button">{% trans 'See the project' %}</a>
+                </div>
             </div>
         {% endfor %}
     </div>
@@ -27,10 +37,6 @@
                 <div class="strip__text">
                     <a href="{{ post.get_absolute_url }}" class="silent" title="{{ post.title }}">{{ post.title }}</a>
                 </div>
-                {% comment %}<div class="strip__button">
-                    <a href="{{ post.get_absolute_url }}" title="{{ post.title }}"
-                       class="button button--gold">Read</a>
-                </div>{% endcomment %}
             </div>
         </div>
     {% endif %}

@@ -6,7 +6,10 @@ $(document).ready(function(){
     var $body = $('body');
 
     // Setup the frontpage fullpage widget
-    $('.fullpage').fullpage();
+    $('.fullpage').fullpage({
+        sectionSelector: '.fullpage__section',
+        verticalCentered: true
+    });
 
 
     // Setup the sidebar toggles

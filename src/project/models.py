@@ -122,6 +122,14 @@ class Project(models.Model):
     description = models.TextField(blank=True)
     categories = models.ManyToManyField(Category)
 
+    # This is the action text used on the frontpage carousel
+    action_text = models.CharField(max_length=1024,
+        help_text="e.g. 'Designing a website for'")
+
+    # These colors are used on the frontpage carousel
+    color = models.CharField(default="000000", max_length=6,
+        help_text="The primary hex color associated with this project")
+
     landscape_image = FilerImageField(null=True, blank=True,
         related_name="project_landscape_image", help_text="Should be around 1600x500 pixels  (or similar aspect)")
     portrait_image = FilerImageField(null=True, blank=True,

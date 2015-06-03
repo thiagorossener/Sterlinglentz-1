@@ -76,10 +76,10 @@ class ProjectAdmin(SortableModelAdmin):
             'fields': ('action_text', )
         }),
         (None, {
-            'fields': ('primary_color', 'secondary_color', )
+            'fields': ('color',)
         }),
         (None, {
-            'fields': ('landscape_image', 'portrait_image', )
+            'fields': ('landscape_image', 'portrait_image', 'background_image')
         }),
         (None, {
             'fields': ('content', )

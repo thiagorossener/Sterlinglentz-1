@@ -134,6 +134,8 @@ class Project(models.Model):
         related_name="project_landscape_image", help_text="Should be around 1600x500 pixels  (or similar aspect)")
     portrait_image = FilerImageField(null=True, blank=True,
         related_name="project_listing_image", help_text="Should be around 600x800 pixels (or similar aspect)")
+    background_image = FilerImageField(null=True, blank=True,
+        related_name="project_background_image", help_text="Should be around 900x750 pixels (or similar aspect)")
 
     content = RichTextField()
 

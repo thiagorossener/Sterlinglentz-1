@@ -15,17 +15,16 @@
     <div class="fullpage">
         {% for project in projects %}
             <div class="fullpage__section"
-                style="background-color: #{{ project.color }};">
-                <div class="">
-                    <div class="fullpage__project__header">
-                        {% if project.action_text %}
-                            <p class="fullpage__project__action">{{ project.action_text }}</p>
-                        {% endif %}
-                        <h2 class="fullpage__project__name">{{ project.name }}</h2>
-                    </div>
-                    <div class="fullpage__project__footer">
-                        <a class="fullpage__project__button" href="{{ project.get_absolute_url }}" class="button">{% trans 'See the project' %}</a>
-                    </div>
+                 style="background-color: #{{ project.color }};{% if project.background_image %}background-image: url({{ project.background_image.url }});{% endif %}">
+
+                <div class="fullpage__project__header">
+                    {% if project.action_text %}
+                        <p class="fullpage__project__action">{{ project.action_text }}</p>
+                    {% endif %}
+                    <h2 class="fullpage__project__name">{{ project.name }}</h2>
+                </div>
+                <div class="fullpage__project__footer">
+                    <a class="fullpage__project__button" href="{{ project.get_absolute_url }}" class="button">{% trans 'See the project' %}</a>
                 </div>
             </div>
         {% endfor %}

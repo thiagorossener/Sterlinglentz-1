@@ -25,8 +25,10 @@ $(document).ready(function(){
         // If there is a sidebar on the page, show the menu navigation sidebar
         // toggle, otherwise hide it
         var $mobileSidebarTrigger = $('.menu--mobile .sidebar__trigger');
+        var $mobileTitle = $('.menu__title--mobile');
         if($('[data-show-sidebar-trigger]').length > 0) {
             $mobileSidebarTrigger.show();
+            $mobileTitle.css("right", "7rem");
         } else {
             $mobileSidebarTrigger.hide();
         }

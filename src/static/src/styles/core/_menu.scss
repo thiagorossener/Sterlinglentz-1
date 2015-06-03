@@ -234,6 +234,16 @@ body.menu--expanded {
         }
     }
 
+    .menu__title--mobile {
+        color: #dbdbdb;
+        margin: 0 !important;
+        padding: 0;
+        font-size: 1rem;
+        position: absolute;
+        right: 1.3rem;
+        top: 24px;
+    }
+
     .sidebar__trigger {
         display: none;
         position: absolute;

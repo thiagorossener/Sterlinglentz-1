@@ -7,25 +7,31 @@
      data-meta-title="{% snippet 'index.meta.title' %}"
      data-meta-description="{% snippet 'index.meta.description' %}">
 
-    <div class="fullpage">
-        <div class="carousel">
-            Carousel
-        </div>
-        {% if post %}
-            <div class="blog-strip strip">
-                <div class="strip__content">
-                    <div class="strip__title">
-                        {% snippet "index.blog.tagline" %}
-                    </div>
-                    <div class="strip__text">
-                        <a href="{{ post.get_absolute_url }}" class="silent" title="{{ post.title }}">{{ post.title }}</a>
-                    </div>
-                    {% comment %}<div class="strip__button">
-                        <a href="{{ post.get_absolute_url }}" title="{{ post.title }}"
-                           class="button button--gold">Read</a>
-                    </div>{% endcomment %}
-                </div>
-            </div>
-        {% endif %}
+    <div class="tagline">
+        <small class="tagline__text">{% snippet 'index.fullpage.tagline' %}</small>
+        <div class="tagline__divider">&nbsp;</div>
     </div>
+    <div class="fullpage">
+        {% for project in projects %}
+            <div class="fullpage__section">
+                {{ project.name }}
+            </div>
+        {% endfor %}
+    </div>
+    {% if post %}
+        <div class="blog-strip strip">
+            <div class="strip__content">
+                <div class="strip__title">
+                    {% snippet "index.blog.tagline" %}
+                </div>
+                <div class="strip__text">
+                    <a href="{{ post.get_absolute_url }}" class="silent" title="{{ post.title }}">{{ post.title }}</a>
+                </div>
+                {% comment %}<div class="strip__button">
+                    <a href="{{ post.get_absolute_url }}" title="{{ post.title }}"
+                       class="button button--gold">Read</a>
+                </div>{% endcomment %}
+            </div>
+        </div>
+    {% endif %}
 </div>

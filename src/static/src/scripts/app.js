@@ -5,6 +5,10 @@
 $(document).ready(function(){
     var $body = $('body');
 
+    // Setup the frontpage fullpage widget
+    $('.fullpage').fullpage();
+
+
     // Setup the sidebar toggles
     var setupSidebarToggle = function(){
         var $columnTrigger = $('.sidebar__trigger, .header__trigger');

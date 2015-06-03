@@ -5,15 +5,36 @@ $indexPadding: 15%;
     position: relative;
 }
 
+    .tagline {
+        position: absolute;
+        top: 75px;
+        left: 200px;
+        z-index: 1000;
+        text-align: left;
+    }
+
+        .tagline__text {
+            display: block;
+            color: #4b4b55;
+            margin-bottom: 25px;
+        }
+
+        .tagline__divider {
+            width: 25px;
+            height: 5px;
+            border: none;
+            background-color: #4b4b55;
+        }
+
     .fullpage {
         height: 100%;
         width: 100%;
     }
 
-    .carousel {
-        position: relative;
-        height: 93vh;
-    }
+        .fullpage__section {
+            padding: 200px;
+        }
+
 
     .blog-strip {
         position: absolute;

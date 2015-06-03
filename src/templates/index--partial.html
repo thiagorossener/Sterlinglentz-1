@@ -7,22 +7,12 @@
      data-meta-title="{% snippet 'index.meta.title' %}"
      data-meta-description="{% snippet 'index.meta.description' %}">
 
-    <div class="index__atf"> {# Above the fold #}
-        <div class="index__hero">
-            <p class="index__hero__lead">{% snippet "index.hero.lead" %}</p>
-            <h1 class="index__hero__title">{% snippet "index.hero.title" %}</h1>
-            <h2 class="index__hero__subtitle">{% snippet "index.hero.subtitle" %}</h2>
-            <ul class="index__hero__buttons">
-                <li class="index__hero__button">
-                    <a class="button" href="/projects/">View my work</a>
-                </li>
-                <li class="index__hero__button">
-                    <a class="button button--hollow" href="/about/">More about me</a>
-                </li>
-            </ul>
+    <div class="fullpage">
+        <div class="carousel">
+            Carousel
         </div>
         {% if post %}
-            <div class="index__strip strip">
+            <div class="blog-strip strip">
                 <div class="strip__content">
                     <div class="strip__title">
                         {% snippet "index.blog.tagline" %}
@@ -38,29 +28,4 @@
             </div>
         {% endif %}
     </div>
-    {% if projects %}
-        <div class="index__btf"> {# Below the fold #}
-            <div class="index__footer">
-                <div class="index__projects">
-                    {% for project in projects %}
-                        <div class="index__project">
-                            <div class="project-teaser">
-                                <div class="project-teaser__image">
-                                    <a href="{{ project.get_absolute_url }}"
-                                       title="{{ project.description }}">
-                                       <img src="{% thumbnail project.portrait_image 500x500 crop %}"
-                                            alt="{{ project.name }}">
-                                    </a>
-                                </div>
-                                <div class="project-teaser__button">
-                                    <a href="{{ project.get_absolute_url }}"
-                                        class="button button--huge">{{ project.name }}</a>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    {% endif %}
 </div>

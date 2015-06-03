@@ -1,138 +1,53 @@
 $indexPadding: 15%;
 
 .index {
-    @include clearfix;
-    background-color: $off-white;
+    background-color: $black;
+    position: relative;
 }
 
-    .index__atf {
+    .fullpage {
+        height: 100%;
+        width: 100%;
+    }
+
+    .carousel {
         position: relative;
         height: 93vh;
-        min-height: 650px;
     }
 
-        .index__hero {
-            position: absolute;
-            top: 10%;
-            left: 0;
-            width: 60%;
-            padding: 0 0 0 $indexPadding;
+    .blog-strip {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
 
-            .index__hero__lead {
-                font-size: .6rem;
+        .strip__content {
+            @include clearfix;
+            width: 100% - (2 * $indexPadding);
+            padding: 1.25rem $indexPadding 1rem $indexPadding;
+            background-color: #d2d2d2;
+        }
+
+            .strip__title,
+            .strip__text,
+            .strip__button {
+                float: left;
+                line-height: 1.75rem;
+            }
+
+            .strip__title {
                 text-transform: uppercase;
-                margin-bottom: 3rem;
-                color: #9E9E9E;
-                letter-spacing: .05rem;
+                font-size: 0.65rem;
+                color: #686868;
+                margin-right: 2rem;
+                position: relative;
+                top: 1px;
             }
 
-            .index__hero__title {
-                font-size: 3rem;
-                line-height: 4rem;
-                font-weight: $font-weight-medium;
-                margin: 0 0 2rem 0;
-                color: $black;
-            }
-
-            .index__hero__subtitle {
-                font-size: 1.4rem;
-                line-height: 2.2rem;
-                font-weight: 100;
-                margin: 0 0 3rem 0;
-                width: 65%;
-                color: #696969;
-            }
-
-            .index__hero__buttons {
-                @include clearfix;
-                margin: 0;
-                padding: 0;
-            }
-
-                .index__hero__button {
-                    float: left;
-                    margin: 0 2rem 0 0;
-                    padding: 0;
-                    list-style: none;
-
-                    .button {
-                        background-color: $gold;
-                        color: $off-white;
-                        text-transform: none;
-                        padding: 1rem;
-                        border: 3.5px solid $gold;
-                        font-weight: $font-weight-regular;
-                        font-size: 1rem;
-                        line-height: 1rem;
-                        min-width: 150px;
-                        margin-bottom: 1rem;
-
-                        &:hover {
-                            border: 3.5px solid darken($gold, 5%);
-                            background-color: darken($gold, 5%);
-                        }
-                    }
-
-                    .button--hollow {
-                        background-color: $off-white;
-                        border: 3.5px solid $gold;
-                        color: $gold;
-
-                        &:hover {
-                            color: $off-white;
-                            border-color: darken($gold, 5%);
-                        }
-                    }
-                }
-        }
-
-        .index__strip {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-            .strip__content {
-                @include clearfix;
-                width: 100% - (2 * $indexPadding);
-                padding: 1.25rem $indexPadding 1rem $indexPadding;
-                background-color: #d2d2d2;
-            }
-
-                .strip__title,
-                .strip__text,
-                .strip__button {
-                    float: left;
-                    line-height: 1.75rem;
-                }
-
-                .strip__title {
-                    text-transform: uppercase;
-                    font-size: 0.65rem;
-                    color: #686868;
-                    margin-right: 2rem;
-                    position: relative;
-                    top: 1px;
-                }
-
-                .strip__text {
-                    color: #686868;
-                    font-size: 0.85rem;
-                    margin-right: 2rem;
-                }
-
-    .index__btf {
-
-    }
-
-        .index__footer {
-            @include container();
-        }
-
-            .index__project{
-                @include span(33.33%);
-
-                padding: 0;
-                margin: 0;
+            .strip__text {
+                color: #686868;
+                font-size: 0.85rem;
+                margin-right: 2rem;
             }
 
 

@@ -34,55 +34,61 @@ $indexPadding: 7.5%;
     .fullpage {
         height: 100%;
         width: 100%;
+        @include transition(opacity 1s ease-in-out);
+        opacity: 0;
     }
 
         .fullpage__section {
+            position: relative;
             padding: 0 $indexPadding;
             background-repeat: no-repeat;
             background-position: right center;
 
         }
 
-            .fullpage__project_content {
-
+            .fullpage__project__content {
+                height: 275px;
+                position: absolute;
+                top: 50%;
+                margin-top: -137px;
             }
-
-            .fullpage__project__footer {
-
-                }
-
-                    .fullpage__project__action {
-                        margin-bottom: 1rem;
-                        color: white;
-                    }
-
-                    .fullpage__project__name {
-                        font-size: 3rem;
-                        line-height: 3rem;
-                        font-weight: bold;
-                        margin-bottom: 7.5rem;
-                        color: white;
-                    }
 
                 .fullpage__project__footer {
 
-                }
-
-                    .fullpage__project__button {
-                        background-color: transparent;
-                        border: 1px solid white;
-                        border-radius: 6px;
-                        color: white;
-                        font-size: 1rem;
-                        line-height: 1rem;
-                        padding: 1.25rem;
-
-                        &:hover {
-                            background-color: white;
-                            text-decoration: none;
-                            color: black;
-                        }
                     }
+
+                        .fullpage__project__action {
+                            margin-bottom: 1rem;
+                            color: white;
+                        }
+
+                        .fullpage__project__name {
+                            font-size: 3rem;
+                            line-height: 3rem;
+                            font-weight: bold;
+                            margin-bottom: 7.5rem;
+                            color: white;
+                        }
+
+                    .fullpage__project__footer {
+
+                    }
+
+                        .fullpage__project__button {
+                            background-color: transparent;
+                            border: 1px solid white;
+                            border-radius: 6px;
+                            color: white;
+                            font-size: 1rem;
+                            line-height: 1rem;
+                            padding: 1.25rem;
+
+                            &:hover {
+                                background-color: white;
+                                text-decoration: none;
+                                color: black;
+                            }
+                        }
 
         // We animate the fade-in of each sections text
         .fullpage__project__content {
@@ -102,6 +108,7 @@ $indexPadding: 7.5%;
 
     @media screen and (max-width: $break-small) {
         .tagline {
+            top: 25px;
             left: $indexPadding/2;
         }
 
@@ -110,6 +117,24 @@ $indexPadding: 7.5%;
             background-position: right 80%;
             padding: 0 $indexPadding/2;
         }
+
+            .fullpage__project__content {
+                height: auto;
+                position: absolute;
+                top: 100px;
+                margin-top: 0;
+            }
+
+                .fullpage__project__name {
+                    margin-bottom: 3.5rem;
+                    font-size: 2.25rem;
+                    line-height: 2.25rem;
+                }
+
+                .fullpage__project__button {
+                    font-size: 0.85rem;
+                    padding: 0.85rem 1rem;
+                }
     }
 
 

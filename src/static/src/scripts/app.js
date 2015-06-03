@@ -3,16 +3,25 @@ $(document).ready(function(){
     var $body = $('body');
 
     // Setup the frontpage fullpage widget
-    var $fullpage = $(".fullpage");
-    if ($fullpage.length > 0) {
-        $fullpage.fullpage({
-            sectionSelector: '.fullpage__section',
-            verticalCentered: true,
-            afterLoad: function(anchorLink, index){
+    var setupFrontpageFullpage = function() {
+        var $fullpage = $(".fullpage");
+        if ($fullpage.length > 0) {
+            try {
+                $.fn.fullpage.destroy('all');
+            } catch (err) {}
 
-            },
-        });
-    }
+            $fullpage.fullpage({
+                sectionSelector: '.fullpage__section',
+                verticalCentered: false,
+                afterLoad: function(anchorLink, index){
+
+                },
+                afterRender: function(){
+                    $fullpage.css("opacity", 1);
+                }
+            });
+        }
+    };
 
     // Setup the sidebar toggles
     var setupSidebarToggle = function(){
@@ -163,5 +172,6 @@ $(document).ready(function(){
         setupSidebarToggle();
         equalizeColumns();
         setupSeamlessNavigationLinks();
+        setupFrontpageFullpage();
     });
 });

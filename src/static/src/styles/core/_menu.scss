@@ -107,6 +107,15 @@ $drawerBackground: lighten($gray-dark, 5%);
         color: white;
     }
 
+        .menu__title {
+            font-weight: bold;
+            color: $off-white;
+            font-size: 0.75rem;
+            letter-spacing: 0.05rem;
+            padding: 0 ($hPadding * 2);
+            margin: 50px 0 75px 0;
+        }
+
         .menu__nav {
             ul {
                 padding: 0;
@@ -118,8 +127,9 @@ $drawerBackground: lighten($gray-dark, 5%);
                     margin: 0;
 
                     a {
+                        @include transition(color .05s linear);
                         display: block;
-                        padding: $vPadding $hPadding;
+                        padding: $vPadding ($hPadding * 2);
                         font-size: .80rem;
                         line-height: 1rem;
                         color: $white;
@@ -127,53 +137,15 @@ $drawerBackground: lighten($gray-dark, 5%);
                     }
 
                     &:hover, &.active {
-                        background-color: lighten($gray-dark, 15%);
 
                         a {
-                            color: $white;
+                            color: $gray-dark;
                         }
                     }
                 }
             }
         }
 
-        .menu__bio {
-            padding: 0 $hPadding;
-            position: absolute;
-            top: 50%;
-            left: 0;
-        }
-
-            .menu__bio > * {
-
-                color: $gray-light;
-            }
-
-            .menu__bio__name {
-                font-size: 0.85rem;
-                line-height: 0.85rem;
-                margin-bottom: 0.85rem;
-                font-weight: $font-weight-medium;
-            }
-
-            .menu__bio__description {
-                font-size: 0.75rem;
-                line-height: 1.25rem;
-                margin-bottom: 0.85rem;
-            }
-
-            .menu__bio__email {
-                font-size: 0.75rem;
-                line-height: 0.75rem;
-                margin-bottom: 0;
-            }
-
-        .menu__footer {
-            padding: 0 $hPadding;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
 
 // Page Content
 .page-wrapper {

@@ -13,11 +13,12 @@ $indexPadding: 7.5%;
         left: $indexPadding;
         z-index: 1000;
         text-align: left;
+        opacity: 0.40;
     }
 
         .tagline__text {
             display: block;
-            color: #4b4b55;
+            color: white;
             margin-bottom: 25px;
         }
 
@@ -25,7 +26,7 @@ $indexPadding: 7.5%;
             width: 25px;
             height: 5px;
             border: none;
-            background-color: #4b4b55;
+            background-color: #white;
         }
 
     .fullpage {

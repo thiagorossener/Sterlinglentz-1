@@ -98,15 +98,30 @@ $indexPadding: 7.5%;
                 cursor: pointer;
             }
 
-        // We animate the fade-in of each sections text
+        // Animate the content of sections
         .fullpage__project__content {
+            opacity: 0;
+            @include transition(opacity 1.5s ease-in-out);
 
+            .fullpage__project__action,
+            .fullpage__project__name,
+            .fullpage__project__footer {
+                transform: translateY(50px);
+            }
         }
-        .fullpage__project__action,
-        .fullpage__project__name,
-        .fullpage__project__footer {
 
+        .fullpage__section.active {
+            .fullpage__project__content {
+                opacity: 1;
+
+                .fullpage__project__action,
+                .fullpage__project__name,
+                .fullpage__project__footer {
+                    transform: translateY(0);
+                }
+            }
         }
+
 
     @media screen and (min-width: $break-small) and (max-width: $break-medium) {
         .fullpage__section {

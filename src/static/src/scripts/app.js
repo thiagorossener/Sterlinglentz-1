@@ -10,13 +10,14 @@ $(document).ready(function(){
                 $.fn.fullpage.destroy('all');
             } catch (err) {}
 
+            var $sections = $(".fullpage__section");
+            console.log($sections.length);
+
             $fullpage.fullpage({
                 sectionSelector: '.fullpage__section',
                 verticalCentered: false,
-                afterLoad: function(anchorLink, index){
-
-                },
                 afterRender: function(){
+                    // Fade the whole element in on initial load
                     $fullpage.css("opacity", 1);
                 }
             });

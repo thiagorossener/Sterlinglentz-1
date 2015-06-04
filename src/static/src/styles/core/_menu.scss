@@ -88,6 +88,29 @@ $drawerBackground: lighten($gray-dark, 5%);
             display: none;
         }
 
+        // Contact tooltip module
+        .menu__contact {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+            .menu__contact__item {
+                margin-bottom: 1rem;
+                cursor: pointer;
+            }
+
+                .menu__contact__icon {
+                    text-align: center;
+                }
+
+                    .menu__contact__img {
+                        margin: 0;
+                        width: 22px;
+                    }
+
+
+
     // Drawer
     // The secondary drawer that slides out from the left when the gutter is
     // clicked in normal desktop view. In the mobile view the nav loads on the

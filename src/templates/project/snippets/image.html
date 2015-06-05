@@ -1,7 +1,7 @@
 {% load static %}
 {% load i18n %}
 
-<div class="fs-image">
+<div class="fs-image" js-fsimage="{{ item.image.url }}">
     <img class="fs-image__img" src="{{ item.image.url }}" {% if item.alt_text %}alt="{{ item.alt_text }}"{% endif %}>
     <div class="fs-image__hover">
         <div class="fs-image__hover__content">

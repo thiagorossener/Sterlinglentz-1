@@ -1,4 +1,85 @@
+var controllers = {
+    utils: {
+        getArgs: function($element) {
+            try {
+                return eval("(" + $element.attr("js-controller-args") + ")") || {};
+            } catch(ex) {
+                return {};
+            }
+        }
+    },
+    get : function(selector) {
+        return $(selector).data("js-controller");
+    }
+};
 
+var bindJSControllers = function() {
+    $("[js-controller]").each(function() {
+        var $element = $(this);
+        if (!$element.data('js-controller-loaded')) {
+            var handler = $(this).attr('js-controller');
+            var options = controllers.utils.getArgs($element);
+            var api = new controllers[handler]($element, options);
+            $element.data('js-controller-loaded', true);
+            $element.data('js-controller', api);
+            console.log("Loaded controller '" + handler + "'");
+        } else {
+            console.log("! Controller '" + handler + "' is already loaded");
+        }
+    });
+};
+
+controllers.fsImage = function($element, options) {
+    var api = {};
+    var defaults = {
+        delay: 600,
+    };
+    var settings = $.extend( {}, defaults, options);
+
+    // Search the page for all images and create map
+    var images = {};
+    var $images = $("[js-fsimage]");
+    $images.each(function(i, el){
+        images[$(el).attr("js-fsimage")] = $(el);
+    });
+
+    var $close = $("[js-fsimage-close]");
+    var $img = $("[js-fsimage-img]");
+
+    api.show = function() {
+        $element.fadeIn("fast");
+    };
+
+    api.hide = function() {
+        $element.fadeOut("fast");
+    };
+
+    api.loadImage = function(src) {
+        $img.attr("src", src);
+    }
+
+    $close.click(function(){
+        api.hide();
+    });
+
+    $images.click(function(){
+        api.loadImage($(this).attr("js-fsimage"));
+        api.show();
+        console.log(src);
+    })
+
+    return api;
+}
+
+$(function() {
+    bindJSControllers();
+});
+
+
+
+
+
+// Older Javascript
 $(document).ready(function(){
     var $body = $('body');
 

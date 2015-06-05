@@ -86,12 +86,12 @@
         <div class="page-wrapper">
             {% block body %}{% endblock body %}
         </div>
-        <div class="fs-image__browser">
-            <div class="fs-image__close">
+        <div class="fs-image__browser" js-controller="fsImage">
+            <div class="fs-image__browser__close" js-fsimage-close>
                 <img src="{% static 'images/close--light-gray.svg' %}" alt="" width="50">
             </div>
-            <div class="fs-image__image">
-                <img class="fs-image__img" src="" alt="">
+            <div class="fs-image__browser__image">
+                <img class="fs-image__browser__img" src="" alt="" js-fsimage-img>
             </div>
         </div>
     </body>

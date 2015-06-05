@@ -33,6 +33,14 @@
                 .content {
                     max-width: 750px;
                 }
+
+        // A fullwidth column under the sidebar/column (used on the project detail)
+        .clear {
+            @include span(10 of 12 no-gutters last);
+            @include suffix(1 of 12);
+            @include prefix(1 of 12);
+            padding-top: 4rem;
+        }
 }
 
 @media screen and (max-width: $break-small) {

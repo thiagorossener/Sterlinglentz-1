@@ -100,6 +100,17 @@ class ProjectImage(ProjectContent):
     def template(self):
         return "project/snippets/image.html"
 
+    def is_portrait(self):
+        return (self.image.width < self.image.height)
+
+    def is_landscape(self):
+        return (not self.is_portrait())
+
+    def orientation(self):
+        if self.is_portrait():
+            return "portrait"
+        return "landscape"
+
 
 class PublishedManager(models.Manager):
 

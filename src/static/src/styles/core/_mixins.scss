@@ -5,3 +5,8 @@
     -ms-transform: translateY(-$p);
     transform: translateY(-$p);
 }
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}

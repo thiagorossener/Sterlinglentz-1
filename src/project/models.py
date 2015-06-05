@@ -178,3 +178,28 @@ class Project(models.Model):
         return reverse('projects:detail', kwargs={
             'slug': self.slug
         })
+
+    @property
+    def previous_next(self):
+        projects = list(self.__class__.published.all())
+        index = projects.index(self)
+
+        try:
+            next = projects[index - 1]
+        except IndexError:
+            next = None
+
+        try:
+            previous = projects[index + 1]
+        except IndexError:
+            previous = None
+
+        return (previous, next)
+
+    @property
+    def next(self):
+        return self.previous_next[0]
+
+    @property
+    def previous(self):
+        return self.previous_next[1]

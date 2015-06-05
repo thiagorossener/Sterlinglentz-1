@@ -61,6 +61,12 @@
                     </div>
                 {% endfor %}
             </div>
+
+            {% if project.next %}
+                <div class="project-next">
+                    <a class="project-next-button" href="{{ project.next.get_absolute_url }}">Show me another</a>
+                </div>
+            {% endif %}
         </div>
     </article>
 </div>

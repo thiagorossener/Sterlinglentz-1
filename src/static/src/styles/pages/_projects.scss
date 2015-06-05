@@ -42,7 +42,7 @@
 }
 
     .project-media {
-
+        margin-bottom: 4rem;
     }
 
         .project-media__row {
@@ -62,6 +62,30 @@
                 float: left;
             }
 
+
+    .project-next {
+        text-align: right;
+        margin-bottom: 4rem;
+    }
+
+        .project-next-button {
+            background-color: transparent;
+            background-image: url(../images/arrow-right--gray.svg);
+            background-repeat: no-repeat;
+            background-position: 90% center;
+            background-size: 10px auto;
+
+            border: 3px solid #263037;
+            padding: 1.15rem 2.5rem 0.95rem 1.5rem;
+            font-size: 0.85rem;
+            color: #263037;
+            font-weight: 400;
+
+            &:hover {
+                color: #263037;
+                text-decoration: underline;
+            }
+        }
 
     @media screen and (max-width: $break-small) {
 

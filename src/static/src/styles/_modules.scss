@@ -634,3 +634,32 @@
         height: auto !important;
     }
 }
+
+// Custom tooltipster theme
+.tooltipster-sterling {
+    border-radius: 0;
+    border: none;
+    background: $gray-dark;
+    color: white;
+
+    .tooltipster-content {
+        font-family: $regular-font-family;
+        font-size: 0.6rem;
+        line-height: 1rem;
+        padding: 0.5rem 1rem 0.5rem 1.25rem;
+        overflow: hidden;
+
+        background-image: url(../images/icons/tooltip-bg.png);
+        background-repeat: no-repeat;
+        background-position: 0.65rem 0.55rem;
+    }
+
+    .tooltipster-arrow .tooltipster-arrow-border {
+
+    }
+
+    .tooltipster-icon {
+        cursor: help;
+        margin-left: 4px;
+    }
+}

@@ -45,19 +45,19 @@
                         <img class="active" title="Close the menu" src="{% static 'images/menu-expand--hover.svg' %}" />
                     </div>
                     <div class="menu__contact">
-                        <div class="menu__contact__item">
-                            <div class="menu__contact__icon" title="{% snippet 'index.menu.contact.intro' %}">
-                                <img class="menu__contact__img" src="{% static 'images/menu__about.svg' %}" alt="">
+                        <div class="menu__contact__item" js-controller="tooltip" js-tooltip-content="{% snippet 'index.menu.contact.intro' %}">
+                            <div class="menu__contact__icon">
+                                <img class="menu__contact__img" src="{% static 'images/menu__about.svg' %}">
                             </div>
                         </div>
-                        <div class="menu__contact__item">
-                            <div class="menu__contact__icon" title="{% snippet 'index.menu.contact.chat' %}">
-                                <img class="menu__contact__img" src="{% static 'images/menu__chat.svg' %}" alt="">
+                        <div class="menu__contact__item" js-controller="tooltip" js-tooltip-content="{% snippet 'index.menu.contact.chat' %}">
+                            <div class="menu__contact__icon">
+                                <img class="menu__contact__img" src="{% static 'images/menu__chat.svg' %}">
                             </div>
                         </div>
-                        <div class="menu__contact__item">
-                            <div class="menu__contact__icon" title="{% snippet 'index.menu.contact.email' %}">
-                                <img class="menu__contact__img" src="{% static 'images/menu__email.svg' %}" alt="">
+                        <div class="menu__contact__item" js-controller="tooltip" js-tooltip-content="{% snippet 'index.menu.contact.email' %}">
+                            <div class="menu__contact__icon">
+                                <img class="menu__contact__img" src="{% static 'images/menu__email.svg' %}">
                             </div>
                         </div>
                     </div>
@@ -86,6 +86,7 @@
         <div class="page-wrapper">
             {% block body %}{% endblock body %}
         </div>
+        {# Hidden image overlay for fullscreen images #}
         <div class="fs-image__browser" js-controller="fsImage">
             <div class="fs-image__browser__close" js-fsimage-close>
                 <img src="{% static 'images/close--light-gray.svg' %}" alt="" width="50">

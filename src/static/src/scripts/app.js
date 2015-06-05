@@ -29,11 +29,22 @@ var bindJSControllers = function() {
     });
 };
 
+controllers.tooltip = function($element, options) {
+    var content = $element.attr("js-tooltip-content");
+    $element.tooltipster({
+        content: content,
+        position: "right",
+        theme: "tooltipster-sterling",
+        contentAsHTML: true,
+        delay: 100,
+        maxWidth: 170,
+        interactive: true
+    });
+}
+
 controllers.fsImage = function($element, options) {
     var api = {};
-    var defaults = {
-        delay: 600,
-    };
+    var defaults = {};
     var settings = $.extend( {}, defaults, options);
 
     // Search the page for all images and create map
@@ -65,7 +76,6 @@ controllers.fsImage = function($element, options) {
     $images.click(function(){
         api.loadImage($(this).attr("js-fsimage"));
         api.show();
-        console.log(src);
     })
 
     return api;
@@ -92,7 +102,6 @@ $(document).ready(function(){
             } catch (err) {}
 
             var $sections = $(".fullpage__section");
-            console.log($sections.length);
 
             $fullpage.fullpage({
                 sectionSelector: '.fullpage__section',

@@ -38,7 +38,8 @@ controllers.tooltip = function($element, options) {
         contentAsHTML: true,
         delay: 100,
         maxWidth: 170,
-        interactive: true
+        interactive: true,
+        speed: 100
     });
 }
 

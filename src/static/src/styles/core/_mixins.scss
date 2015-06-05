@@ -10,3 +10,33 @@
     background: $color; /* The Fallback */
     background: rgba($color, $opacity);
 }
+
+@mixin list-reset($cls: "list__item"){
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+
+    .#{$cls} {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@mixin list-horizontal($cls: "list__item") {
+    margin: 0;
+    padding: 0;
+
+    > .#{$cls} {
+        margin: 0;
+        padding: 0;
+
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+
+        &:last-child{
+            margin-right:0px;
+        }
+    }
+}

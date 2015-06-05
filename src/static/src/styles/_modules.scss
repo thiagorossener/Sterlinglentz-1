@@ -663,3 +663,34 @@
         margin-left: 4px;
     }
 }
+
+// Social buttons
+.social {
+    margin-bottom: 4rem;
+}
+
+    .social-buttons {
+        @include list-reset("social-button");
+        @include list-horizontal("social-button");
+        margin-bottom: 0.75rem;
+
+        .social-button {
+            margin-right: 1.25rem;
+        }
+    }
+
+        .social-button__link {
+
+        }
+
+        .social-button__img {
+            display: block;
+            margin-bottom: 0;
+            width: 32px;
+        }
+
+    .social-description {
+        color: #969696;
+        font-size: 0.75rem;
+        line-height: 0.75rem;
+    }

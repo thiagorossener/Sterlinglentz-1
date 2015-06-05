@@ -54,7 +54,14 @@
             }
 
             &--2 .project-media__col {
-                width: 50%;
+                width: 49%;
+
+                &:first-child {
+                    margin-right: 1%;
+                }
+                &:last-child {
+                    margin-left: 1%;
+                }
             }
         }
 

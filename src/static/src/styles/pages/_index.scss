@@ -111,18 +111,18 @@ $indexPadding: 7.5%;
             }
 
             .fullpage__project__action {
-                @include transition(0.8s ease-in-out .2s);
+                @include transition(.5s ease-in-out .2s);
                 transform: translateY(100px);
             }
 
             .fullpage__project__name {
-                @include transition(0.9s ease-in-out .2s);
-                transform: translateY(100px);
+                @include transition(.6s ease-in-out .2s);
+                transform: translateY(110px);
             }
 
             .fullpage__project__footer {
-                @include transition(1s ease-in-out .2s);
-                transform: translateY(110px);
+                @include transition(.7s ease-in-out .2s);
+                transform: translateY(120px);
             }
         }
 

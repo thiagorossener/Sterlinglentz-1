@@ -18,10 +18,7 @@
                                 &nbsp;
                             </a>
                         </div>
-                        <div class="project-teaser__button">
-                            <a href="{{ project.get_absolute_url }}"
-                                class="button button--huge">{{ project.name }}</a>
-                        </div>
+                        <a href="{{ project.get_absolute_url }}" class="project-teaser__button">{{ project.name }}</a>
                     </div>
                 </div>
             {% endfor %}

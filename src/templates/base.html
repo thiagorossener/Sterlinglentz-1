@@ -30,9 +30,9 @@
                     <img class="inactive" title="Open the menu" src="{% static 'images/menu-expand.svg' %}" />
                     <img class="active" title="Close the menu" src="{% static 'images/menu-expand--hover.svg' %}" />
                 </div>
-                <div class="menu__title menu__title--mobile">
+                <a class="menu__title menu__title--mobile" href="{% url 'index' %}">
                     Sterling Lentz
-                </div>
+                </a>
                 <div class="sidebar__trigger">
                     <span class="text">List</span>
                     <span class="icon">
@@ -67,9 +67,9 @@
                     </div>
                 </div>
                 <div class="menu__drawer">
-                    <div class="menu__title">
+                    <a class="menu__title" href="{% url 'index' %}">
                         Sterling Lentz
-                    </div>
+                    </a>
                     <nav class="menu__nav">
                         <ul class="menu__nav__list">
                             {% for node in global_menu %}
@@ -84,6 +84,9 @@
                             {% endfor %}
                         </ul>
                     </nav>
+                    <div class="menu__description">
+                        {% snippet 'index.menu.description' %}
+                    </div>
                 </div>
             </div>
         </header>

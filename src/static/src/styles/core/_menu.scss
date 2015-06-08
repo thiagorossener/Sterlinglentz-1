@@ -131,12 +131,17 @@ $drawerBackground: lighten($gray-dark, 5%);
     }
 
         .menu__title {
+            display: block;
             font-weight: bold;
             color: $off-white;
             font-size: 0.75rem;
             letter-spacing: 0.05rem;
             padding: 0 ($hPadding * 2);
             margin: 50px 0 75px 0;
+
+            &:hover {
+                text-decoration: none;
+            }
         }
 
         .menu__nav {
@@ -176,6 +181,13 @@ $drawerBackground: lighten($gray-dark, 5%);
                         color: $white;
                         text-decoration: none;
                     }
+
+        .menu__description {
+            display: none;
+            font-size: 0.85rem;
+            color: $gray-light;
+            padding: 100px ($hPadding * 2);
+        }
 
 // Page Content
 .page-wrapper {
@@ -265,6 +277,11 @@ body.menu--expanded {
         position: absolute;
         right: 1.3rem;
         top: 24px;
+
+        &:hover {
+            text-decoration: none;
+            color: #dbdbdb;
+        }
     }
 
     .sidebar__trigger {
@@ -356,6 +373,10 @@ body.menu--expanded {
     // hide the normal sidebar menu
     .menu {
         width: 0;
+
+        .menu__title {
+            display: none;
+        }
     }
 
     // Hide the normal gutter
@@ -379,6 +400,10 @@ body.menu--expanded {
                 font-size: 1rem;
                 line-height: 1.2rem;
             }
+
+    .menu__description {
+        display: block;
+    }
 
     body.menu--expanded {
         .menu {

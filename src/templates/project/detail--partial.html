@@ -49,24 +49,26 @@
             </div>
         </aside>
         <div class="clear">
-            {# Polymorphic Image and Videos #}
-            <div class="project-media">
-                {% for row in media_items %}
-                    <div class="project-media__row project-media__row--{{ row|length }}">
-                        {% for item in row %}
-                            <div class="project-media__col">
-                                {% include item.template %}
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% endfor %}
-            </div>
-
-            {% if project.next %}
-                <div class="project-next">
-                    <a class="project-next-button" href="{{ project.next.get_absolute_url }}">Show me another</a>
+            <div class="clear-content-wrapper">
+                {# Polymorphic Image and Videos #}
+                <div class="project-media">
+                    {% for row in media_items %}
+                        <div class="project-media__row project-media__row--{{ row|length }}">
+                            {% for item in row %}
+                                <div class="project-media__col">
+                                    {% include item.template %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
                 </div>
-            {% endif %}
+
+                {% if project.next %}
+                    <div class="project-next">
+                        <a class="project-next-button" href="{{ project.next.get_absolute_url }}">Show me another</a>
+                    </div>
+                {% endif %}
+            </div>
         </div>
     </article>
 </div>

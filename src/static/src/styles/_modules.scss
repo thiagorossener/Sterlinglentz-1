@@ -555,6 +555,12 @@
             display: block;
         }
 
+@media screen and (max-width: $break-small) {
+    .fs-image__browser__image {
+        padding: 90px 2.5% 2.5%;
+    }
+}
+
 // Pullquote
 // A large pullquote  used within the content of a page (usually
 // the blog) with an optional source

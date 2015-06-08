@@ -32,9 +32,10 @@ $indexPadding: 7.5%;
         }
 
     .fullpage {
+        background-color: $black;
         height: 100%;
         width: 100%;
-        @include transition(opacity 1s ease-in-out);
+        @include transition(opacity 2s ease-in-out);
         opacity: 0;
     }
 
@@ -98,18 +99,34 @@ $indexPadding: 7.5%;
                 cursor: pointer;
             }
 
-        // Animate the content of sections
+        // Animate the content of sections.
         .fullpage__project__content {
             opacity: 0;
-            @include transition(opacity 1.5s ease-in-out);
+            @include transition(opacity 1.25s ease-in-out);
 
-            .fullpage__project__action,
+            .fullpage__project__action {}
             .fullpage__project__name,
             .fullpage__project__footer {
-                transform: translateY(50px);
+
+            }
+
+            .fullpage__project__action {
+                @include transition(0.8s ease-in-out .2s);
+                transform: translateY(100px);
+            }
+
+            .fullpage__project__name {
+                @include transition(0.9s ease-in-out .2s);
+                transform: translateY(100px);
+            }
+
+            .fullpage__project__footer {
+                @include transition(1s ease-in-out .2s);
+                transform: translateY(110px);
             }
         }
 
+        // Active class is added by the fullpage plugin
         .fullpage__section.active {
             .fullpage__project__content {
                 opacity: 1;

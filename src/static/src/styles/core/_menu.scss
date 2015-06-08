@@ -159,12 +159,9 @@ $drawerBackground: lighten($gray-dark, 5%);
                     margin: 0;
                     line-height: 1rem;
 
-                    &:hover, &.active {
-
-                        a {
-                            color: $gray-dark;
-                            text-decoration: none;
-                        }
+                    &.active a{
+                        color: $gray-dark;
+                        text-decoration: none;
                     }
                 }
 
@@ -182,6 +179,11 @@ $drawerBackground: lighten($gray-dark, 5%);
                         line-height: 1rem;
                         color: $white;
                         text-decoration: none;
+
+                        &:hover {
+                            color: $gray-dark;
+                            text-decoration: none;
+                        }
                     }
 
         .menu__description {

@@ -141,6 +141,7 @@ $drawerBackground: lighten($gray-dark, 5%);
 
             &:hover {
                 text-decoration: none;
+                color: $off-white;
             }
         }
 
@@ -162,6 +163,7 @@ $drawerBackground: lighten($gray-dark, 5%);
 
                         a {
                             color: $gray-dark;
+                            text-decoration: none;
                         }
                     }
                 }

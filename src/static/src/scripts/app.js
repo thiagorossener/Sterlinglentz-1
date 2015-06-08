@@ -90,18 +90,21 @@ $(function() {
 
 
 
-// Older Javascript
+// Older Javascript (move to above controller approach)
 $(document).ready(function(){
     var $body = $('body');
 
     // Setup the frontpage fullpage widget
     var setupFrontpageFullpage = function() {
+
+        try {
+            $.fn.fullpage.destroy('all');
+        } catch (err) {
+
+        }
+
         var $fullpage = $(".fullpage");
         if ($fullpage.length > 0) {
-            try {
-                $.fn.fullpage.destroy('all');
-            } catch (err) {}
-
             var $sections = $(".fullpage__section");
 
             $fullpage.fullpage({

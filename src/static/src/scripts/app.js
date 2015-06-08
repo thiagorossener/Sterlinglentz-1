@@ -15,7 +15,7 @@ var controllers = {
 
 var bindJSControllers = function() {
     $("[js-controller]").each(function() {
-        var $element = $(this);
+       var $element = $(this);
         if (!$element.data('js-controller-loaded')) {
             var handler = $(this).attr('js-controller');
             var options = controllers.utils.getArgs($element);
@@ -24,7 +24,16 @@ var bindJSControllers = function() {
             $element.data('js-controller', api);
             console.log("Loaded controller '" + handler + "'");
         } else {
-            console.log("! Controller '" + handler + "' is already loaded");
+            // If this element is already loaded, try execute it's optionally
+            // implemented 'reload' function
+            var handler = $(this).attr('js-controller');
+            var api = $(this).data('js-controller');
+            console.log("! Controller '" + handler + "' is already loaded, attempting reload.");
+            try {
+                api.load();
+            } catch (err) {
+                console.log("! Controller '" + handler + "' has no 'load' function implemented");
+            }
         }
     });
 };
@@ -48,15 +57,42 @@ controllers.fsImage = function($element, options) {
     var defaults = {};
     var settings = $.extend( {}, defaults, options);
 
-    // Search the page for all images and create map
-    var images = {};
-    var $images = $("[js-fsimage]");
-    $images.each(function(i, el){
-        images[$(el).attr("js-fsimage")] = $(el);
-    });
+    var images,
+        $images,
+        $img,
+        $close;
 
-    var $close = $("[js-fsimage-close]");
-    var $img = $("[js-fsimage-img]");
+    api.load = function() {
+        images = {};
+
+        $img = $("[js-fsimage-img]");
+        $close = $("[js-fsimage-close]");
+        $images = $("[js-fsimage]");
+
+        $images.each(function(i, el){
+            images[$(el).attr("js-fsimage")] = $(el);
+        });
+
+        // Close on click of X
+        $close.off().on('click', function(){
+            api.hide();
+        });
+
+        // Close on escape
+        $(document).off().on('keyup', function(e) {
+            if (e.keyCode == 27) {
+                api.hide();
+            }
+        });
+
+        // Trigger overlay
+        $images.off().on('click', function(){
+            api.loadImage($(this).attr("js-fsimage"));
+            api.show();
+        })
+    };
+
+    api.load();
 
     api.show = function() {
         $element.fadeIn("fast");
@@ -68,29 +104,15 @@ controllers.fsImage = function($element, options) {
 
     api.loadImage = function(src) {
         $img.attr("src", src);
-    }
-
-    $close.click(function(){
-        api.hide();
-    });
-
-    $images.click(function(){
-        api.loadImage($(this).attr("js-fsimage"));
-        api.show();
-    })
+    };
 
     return api;
 }
 
-$(function() {
-    bindJSControllers();
-});
 
-
-
-
-
-// Older Javascript (move to above controller approach)
+// This javascript file is in flux. Above we have a more flexible approach
+// to managing javascript widgets. Beflow we have basic jquery. The basic jquery
+// below is intended to be refactored to the more flexible approach above
 $(document).ready(function(){
     var $body = $('body');
 
@@ -276,5 +298,8 @@ $(document).ready(function(){
         equalizeColumns();
         setupSeamlessNavigationLinks();
         setupFrontpageFullpage();
+
+        // Reload the controller based javascript from top of file
+        bindJSControllers();
     });
 });

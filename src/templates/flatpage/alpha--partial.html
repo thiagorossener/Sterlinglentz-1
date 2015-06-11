@@ -7,7 +7,7 @@
      data-meta-description="{{ flatpage.meta_description }} ">
 
     {% if flatpage.image %}
-        <div class="header header--image" style="background-image:url({% thumbnail flatpage.image 1600x500 crop %});">
+        <div class="header header--image" style="background-image:url({% thumbnail flatpage.image 1600x500 quality=100 crop %});">
             {% if flatpage.image_caption %}
                 <p class="header--image__caption">{{ flatpage.image_caption }}</p>
             {% endif %}

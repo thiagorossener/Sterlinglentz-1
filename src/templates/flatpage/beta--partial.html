@@ -25,7 +25,7 @@
         </ul>
     </aside>
     <div class="column" data-column>
-        <header class="header" {% if flatpage.image %}style="background-image:url({% thumbnail flatpage.image 1200x800 crop %})"{% endif %}>
+        <header class="header" {% if flatpage.image %}style="background-image:url({% thumbnail flatpage.image 1200x800 quality=100 crop %})"{% endif %}>
             <div class="header__trigger bookmark__trigger bookmark__trigger--yellow">
                 <img class="bookmark__trigger__image"
                      src="{% static 'images/sidebar-trigger--yellow.svg' %}"

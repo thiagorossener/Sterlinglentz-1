@@ -11,35 +11,29 @@
     list-style: none;
     cursor: pointer;
 
+    width: 100%;
+    height: 100%;
+
+    background-color: #1e1e1e;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
     &:hover .project-teaser__button {
         opacity: 1;
     }
-
-    // Use a background image to fill the space so we can have two rows
-    // of projects per page using viewport height of surrounding element
-    &--fill {
-        width: 100%;
-        height: 100%;
-
-        background-color: #1e1e1e;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-    }
 }
 
-    .project-teaser__image {
-        a {
-            display: block;
-
-            img {
-                width: 100%;
-                display: block;
-            }
-        }
+    .project-teaser__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
     }
 
         .project-teaser__button {
+            box-sizing: border-box;
             @include transition(opacity .25s ease-in-out);
             @include background-opacity(black, 0.75);
             opacity: 0;
@@ -57,15 +51,6 @@
                 color: white;
             }
         }
-
-        .project-teaser__button__link {
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-    .project-teaser__details {
-
-    }
 
 // Hero
 .hero {

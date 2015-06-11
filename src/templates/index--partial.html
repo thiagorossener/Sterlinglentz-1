@@ -28,18 +28,25 @@
                         <a class="fullpage__project__button" href="{{ project.get_absolute_url }}" class="button">{% trans 'See the project' %}</a>
                     </div>
                 </div>
-
-                {% if not forloop.last %}
-                    <div class="fullpage__arrow fullpage__arrow--down">
-                        <img src="{% static 'images/fullpage-arrow--down.svg' %}" alt="">
-                    </div>
-                {% else %}
-                    <div class="fullpage__arrow fullpage__arrow--up">
-                        <img src="{% static 'images/fullpage-arrow--up.svg' %}" alt="">
-                    </div>
-                {% endif %}
+                <div class="fullpage__arrow fullpage__arrow--down">
+                    <img src="{% static 'images/fullpage-arrow--down.svg' %}" alt="">
+                </div>
             </div>
         {% endfor %}
+        <div class="fullpage__section" style="background-color: #f0f0f0;">
+            <div class="fullpage__project__content">
+                <div class="fullpage__project__header">
+                    <p class="fullpage__project__action">Imagine what we could do for</p>
+                    <h2 class="fullpage__project__name">Your Project</h2>
+                </div>
+                <div class="fullpage__project__footer">
+                    <a class="fullpage__project__button" href="/about/" class="button">{% trans 'Get To Know Me' %}</a>
+                </div>
+            </div>
+            <div class="fullpage__arrow fullpage__arrow--up">
+                <img src="{% static 'images/fullpage-arrow--up.svg' %}" alt="">
+            </div>
+        </div>
     </div>
     {% if post %}
         <div class="blog-strip strip">

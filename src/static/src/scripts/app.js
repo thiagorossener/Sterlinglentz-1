@@ -135,6 +135,17 @@ $(document).ready(function(){
                 afterRender: function(){
                     // Fade the whole element in on initial load
                     $fullpage.css("opacity", 1);
+                },
+                afterLoad: function(anchorLink, index){
+                    // Hackish, but but if the section we are going to is inverted
+                    // then we need to also invert the tagline on the top
+                    var $loadedSection = $(this);
+                    var $tagline = $(".tagline");
+
+                    $tagline.removeClass(".tagline--inverted");
+                    if ($loadedSection.hasClass("fullpage__section--inverted")) {
+                        $tagline.addClass("tagline--inverted");
+                    }
                 }
             });
 

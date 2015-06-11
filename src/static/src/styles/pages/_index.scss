@@ -31,6 +31,18 @@ $indexPadding: 7.5%;
             background-color: white;
         }
 
+    .tagline--inverted {
+        opacity: 1;
+
+        .tagline__text {
+            color: $gray-medium;
+        }
+
+        .tagline__divider {
+            background-color: $gray-medium;
+        }
+    }
+
     .fullpage {
         background-color: $black;
         height: 100%;
@@ -98,6 +110,21 @@ $indexPadding: 7.5%;
                 margin-left: -12px;
                 cursor: pointer;
             }
+
+        // Inverted style for light backgrounds
+        .fullpage__section--inverted {
+            .fullpage__project__action,
+            .fullpage__project__name,
+            .fullpage__project__button {
+                color: $gray-medium;
+            }
+
+            .fullpage__project__button {
+                border-width: 2px;
+                border-color: $gray-medium;
+                color: $gray-medium;
+            }
+        }
 
         // Animate the content of sections.
         .fullpage__project__content {

@@ -18,7 +18,7 @@ class IndexView(AjaxPartialRenderingMixin, TemplateView):
 
         projects = None
         try:
-            projects = Project.published.all()[:3]
+            projects = Project.published.all()[:4]
         except Project.DoesNotExist:
             pass
 

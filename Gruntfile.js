@@ -29,13 +29,13 @@ module.exports = function (grunt) {
 
         // Watches files for changes and runs tasks based on the changed files
         watch: {
-            bower: {
-                files: ['bower.json'],
-                tasks: ['copy:deps']
-            },
+            //bower: {
+            //    files: ['bower.json'],
+            //    tasks: ['copy:deps']
+            //},
             js: {
                 files: ['<%= siteConfig.srcDir %>/scripts/{,*/}*.js'],
-                tasks: ['newer:jshint:all', 'concat:js'],
+                tasks: ['concat:js'],
                 options: {
                     livereload: '<%= connect.options.livereload %>'
                 }
@@ -58,22 +58,6 @@ module.exports = function (grunt) {
                     '<%= siteConfig.srcDir %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
             }
-        },
-
-        // JSHint
-        // https://github.com/gruntjs/grunt-contrib-jshint
-        // Validates JS Make sure code styles are up to par and there are no obvious mistakes
-        jshint: {
-            options: {
-                jshintrc: '.jshintrc',
-                reporter: require('jshint-stylish')
-            },
-            all: {
-                src: [
-                    'Gruntfile.js',
-                    '<%= siteConfig.srcDir %>/scripts/{,*/}*.js'
-                ]
-            },
         },
 
         // Grunt Clean
@@ -257,7 +241,6 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
-        'newer:jshint',
         'build'
     ]);
 };

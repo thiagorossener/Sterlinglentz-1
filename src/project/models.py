@@ -100,6 +100,17 @@ class ProjectImage(ProjectContent):
     def template(self):
         return "project/snippets/image.html"
 
+    def is_portrait(self):
+        return (self.image.width < self.image.height)
+
+    def is_landscape(self):
+        return (not self.is_portrait())
+
+    def orientation(self):
+        if self.is_portrait():
+            return "portrait"
+        return "landscape"
+
 
 class PublishedManager(models.Manager):
 
@@ -122,10 +133,20 @@ class Project(models.Model):
     description = models.TextField(blank=True)
     categories = models.ManyToManyField(Category)
 
+    # This is the action text used on the frontpage carousel
+    action_text = models.CharField(max_length=1024,
+        help_text="e.g. 'Designing a website for'")
+
+    # These colors are used on the frontpage carousel
+    color = models.CharField(default="000000", max_length=6,
+        help_text="The primary hex color associated with this project")
+
     landscape_image = FilerImageField(null=True, blank=True,
         related_name="project_landscape_image", help_text="Should be around 1600x500 pixels  (or similar aspect)")
     portrait_image = FilerImageField(null=True, blank=True,
         related_name="project_listing_image", help_text="Should be around 600x800 pixels (or similar aspect)")
+    background_image = FilerImageField(null=True, blank=True,
+        related_name="project_background_image", help_text="Should be around 900x750 pixels (or similar aspect)")
 
     content = RichTextField()
 
@@ -157,3 +178,28 @@ class Project(models.Model):
         return reverse('projects:detail', kwargs={
             'slug': self.slug
         })
+
+    @property
+    def previous_next(self):
+        projects = list(self.__class__.published.all())
+        index = projects.index(self)
+
+        try:
+            next = projects[index - 1]
+        except IndexError:
+            next = None
+
+        try:
+            previous = projects[index + 1]
+        except IndexError:
+            previous = None
+
+        return (previous, next)
+
+    @property
+    def next(self):
+        return self.previous_next[0]
+
+    @property
+    def previous(self):
+        return self.previous_next[1]

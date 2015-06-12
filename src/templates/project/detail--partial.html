@@ -8,7 +8,7 @@
 
     {% if project.landscape_image %}
         <header class="page__header">
-            <div class="header header--image" style="background-image:url({% thumbnail project.landscape_image 1600x500 crop %});">
+            <div class="header header--image" style="background-image:url({% thumbnail project.landscape_image 1600x500 quality=100 crop %});">
                 &nbsp;
             </div>
         </header>
@@ -24,12 +24,6 @@
                 <div class="content content--user">
                     {{ project.content|safe }}
                 </div>
-                {# Polymorphic Image and Videos #}
-                <ul class="project__media__items">
-                    {% for item in project.content_items.all %}
-                        {% include item.template %}
-                    {% endfor %}
-                </ul>
             </div>
         </section>
         <aside class="sidebar">
@@ -54,5 +48,27 @@
                 </div>
             </div>
         </aside>
+        <div class="clear">
+            <div class="clear-content-wrapper">
+                {# Polymorphic Image and Videos #}
+                <div class="project-media">
+                    {% for row in media_items %}
+                        <div class="project-media__row project-media__row--{{ row|length }}">
+                            {% for item in row %}
+                                <div class="project-media__col">
+                                    {% include item.template %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                {% if project.next %}
+                    <div class="project-next">
+                        <a class="project-next-button" href="{{ project.next.get_absolute_url }}">Show me another</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
     </article>
 </div>

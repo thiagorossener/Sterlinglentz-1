@@ -88,6 +88,29 @@ $drawerBackground: lighten($gray-dark, 5%);
             display: none;
         }
 
+        // Contact tooltip module
+        .menu__contact {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+            .menu__contact__item {
+                margin-bottom: 1rem;
+                cursor: pointer;
+            }
+
+                .menu__contact__icon {
+                    text-align: center;
+                }
+
+                    .menu__contact__img {
+                        margin: 0;
+                        width: 22px;
+                    }
+
+
+
     // Drawer
     // The secondary drawer that slides out from the left when the gutter is
     // clicked in normal desktop view. In the mobile view the nav loads on the
@@ -107,72 +130,67 @@ $drawerBackground: lighten($gray-dark, 5%);
         color: white;
     }
 
+        .menu__title {
+            display: block;
+            font-weight: bold;
+            color: $off-white;
+            font-size: 0.75rem;
+            letter-spacing: 0.05rem;
+            padding: 0 ($hPadding * 2);
+            margin: 50px 0 75px 0;
+
+            &:hover {
+                text-decoration: none;
+                color: $off-white;
+            }
+        }
+
         .menu__nav {
-            ul {
+        }
+
+            .menu__nav__list {
                 padding: 0;
                 margin: 0;
+            }
 
-                li {
+                .menu__nav__item {
                     list-style: none;
-                    padding: 0;
+                    padding: $vPadding ($hPadding * 2);
                     margin: 0;
+                    line-height: 1rem;
 
-                    a {
-                        display: block;
-                        padding: $vPadding $hPadding;
+                    &.active a{
+                        color: $gray-dark;
+                        text-decoration: none;
+                    }
+                }
+
+                    .menu__nav__icon {
+                        margin-right: 5px;
+
+                        img {
+                            vertical-align: middle;
+                        }
+                    }
+
+                    .menu__nav__link {
+                        @include transition(color .05s linear);
                         font-size: .80rem;
                         line-height: 1rem;
                         color: $white;
                         text-decoration: none;
-                    }
 
-                    &:hover, &.active {
-                        background-color: lighten($gray-dark, 15%);
-
-                        a {
-                            color: $white;
+                        &:hover {
+                            color: $gray-dark;
+                            text-decoration: none;
                         }
                     }
-                }
-            }
-        }
 
-        .menu__bio {
-            padding: 0 $hPadding;
-            position: absolute;
-            top: 50%;
-            left: 0;
-        }
-
-            .menu__bio > * {
-
-                color: $gray-light;
-            }
-
-            .menu__bio__name {
-                font-size: 0.85rem;
-                line-height: 0.85rem;
-                margin-bottom: 0.85rem;
-                font-weight: $font-weight-medium;
-            }
-
-            .menu__bio__description {
-                font-size: 0.75rem;
-                line-height: 1.25rem;
-                margin-bottom: 0.85rem;
-            }
-
-            .menu__bio__email {
-                font-size: 0.75rem;
-                line-height: 0.75rem;
-                margin-bottom: 0;
-            }
-
-        .menu__footer {
-            padding: 0 $hPadding;
-            position: absolute;
-            bottom: 0;
-            left: 0;
+        .menu__description {
+            display: none;
+            font-size: 0.85rem;
+            color: $gray-light;
+            padding: 100px ($hPadding * 2);
         }
 
 // Page Content
@@ -255,8 +273,22 @@ body.menu--expanded {
         }
     }
 
+    .menu__title--mobile {
+        color: #dbdbdb;
+        margin: 0 !important;
+        padding: 0;
+        font-size: 1rem;
+        position: absolute;
+        right: 1.3rem;
+        top: 24px;
+
+        &:hover {
+            text-decoration: none;
+            color: #dbdbdb;
+        }
+    }
+
     .sidebar__trigger {
-        display: none;
         position: absolute;
         top: 24px;
         right: 2rem;
@@ -344,6 +376,10 @@ body.menu--expanded {
     // hide the normal sidebar menu
     .menu {
         width: 0;
+
+        .menu__title {
+            display: none;
+        }
     }
 
     // Hide the normal gutter
@@ -351,19 +387,25 @@ body.menu--expanded {
         left: -$gutterWidth;
     }
 
-    .menu__bio {
-        top: auto;
-        padding: 0px 14px 0 30px;
-        bottom: 0.7rem;
+    .menu__title {
+        margin: 25px 0 50px;
     }
 
     .menu__nav {
         margin-top: 0.7rem;
-        ul li a {
-            font-size: 1rem;
-            line-height: 1.2rem;
+    }
+
+        .menu__nav__item {
             padding: 14px 30px;
         }
+
+            .menu__nav__link {
+                font-size: 1rem;
+                line-height: 1.2rem;
+            }
+
+    .menu__description {
+        display: block;
     }
 
     body.menu--expanded {

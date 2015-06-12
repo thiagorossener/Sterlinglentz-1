@@ -9,7 +9,7 @@
      data-meta-description="{{ post.meta_description }}">
 
     <div class="column" data-column>
-        <header class="header" {% if post.image %}style="background-image:url({% thumbnail post.image 1200x800 crop %})"{% endif %}>
+        <header class="header" {% if post.image %}style="background-image:url({% thumbnail post.image 1200x800 quality=100 crop %})"{% endif %}>
             <div class="header__trigger bookmark__trigger bookmark__trigger--yellow">
                 <img class="bookmark__trigger__image"
                      src="{% static 'images/sidebar-trigger--yellow.svg' %}"
@@ -26,6 +26,31 @@
             <div class="header__overlay">&nbsp;</div>
         </header>
         <div class="content-wrapper">
+            <div class="social">
+                <ul class="social-buttons">
+                    <li class="social-button">
+                        <a class="social-button__link" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri|urlencode }}&t={{ post.title|urlencode }}"
+                           onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                           target="_blank" title="Share on Facebook">
+                            <img class="social-button__img" src="{% static 'images/icons/facebook.png' %}" alt="Share on Facebook">
+                        </a>
+                    </li>
+                    <li class="social-button">
+                        <a class="social-button__link" href="https://twitter.com/share?url={{ request.build_absolute_uri|urlencode }}&via=discocrabs&text={{ post.subtitle|truncatechars:100|urlencode }}"
+                           onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                           target="_blank" title="Share on Twitter">
+                            <img class="social-button__img" src="{% static 'images/icons/twitter.png' %}" alt="Share on Twtitter">
+                        </a>
+                    </li>
+                    <li class="social-button">
+                        <a class="social-button__link" href="http://www.reddit.com/submit?url={{ request.build_absolute_uri|urlencode }}&title={{ post.title|urlencode }}"
+                           target="_blank" title="Share on Reddit">
+                            <img class="social-button__img" src="{% static 'images/icons/reddit.png' %}" alt="Share on Twtitter">
+                        </a>
+                    </li>
+                </ul>
+                <p class="social-description">{% snippet 'blog.social.description' %}</p>
+            </div>
             {% if post.extract %}
                 <div class="summary">
                     <h1 class="summary__title">{{ post.extract }}</h1>

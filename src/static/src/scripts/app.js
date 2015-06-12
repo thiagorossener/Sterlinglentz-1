@@ -1,9 +1,152 @@
-'use strict';
-/*global $:false */
+var controllers = {
+    utils: {
+        getArgs: function($element) {
+            try {
+                return eval("(" + $element.attr("js-controller-args") + ")") || {};
+            } catch(ex) {
+                return {};
+            }
+        }
+    },
+    get : function(selector) {
+        return $(selector).data("js-controller");
+    }
+};
+
+var bindJSControllers = function() {
+    $("[js-controller]").each(function() {
+       var $element = $(this);
+        if (!$element.data('js-controller-loaded')) {
+            var handler = $(this).attr('js-controller');
+            var options = controllers.utils.getArgs($element);
+            var api = new controllers[handler]($element, options);
+            $element.data('js-controller-loaded', true);
+            $element.data('js-controller', api);
+            console.log("Loaded controller '" + handler + "'");
+        } else {
+            // If this element is already loaded, try execute it's optionally
+            // implemented 'reload' function
+            var handler = $(this).attr('js-controller');
+            var api = $(this).data('js-controller');
+            console.log("! Controller '" + handler + "' is already loaded, attempting reload.");
+            try {
+                api.load();
+            } catch (err) {
+                console.log("! Controller '" + handler + "' has no 'load' function implemented");
+            }
+        }
+    });
+};
+
+controllers.tooltip = function($element, options) {
+    var content = $element.attr("js-tooltip-content");
+    $element.tooltipster({
+        content: content,
+        position: "right",
+        theme: "tooltipster-sterling",
+        contentAsHTML: true,
+        delay: 100,
+        maxWidth: 170,
+        interactive: true,
+        speed: 100
+    });
+}
+
+controllers.fsImage = function($element, options) {
+    var api = {};
+    var defaults = {};
+    var settings = $.extend( {}, defaults, options);
+
+    var images,
+        $images,
+        $img,
+        $close;
+
+    api.load = function() {
+        images = {};
+
+        $img = $("[js-fsimage-img]");
+        $close = $("[js-fsimage-close]");
+        $images = $("[js-fsimage]");
+
+        $images.each(function(i, el){
+            images[$(el).attr("js-fsimage")] = $(el);
+        });
+
+        // Close on click of X
+        $close.off().on('click', function(){
+            api.hide();
+        });
+
+        // Close on escape
+        $(document).off().on('keyup', function(e) {
+            if (e.keyCode == 27) {
+                api.hide();
+            }
+        });
+
+        // Trigger overlay
+        $images.off().on('click', function(){
+            api.loadImage($(this).attr("js-fsimage"));
+            api.show();
+        })
+    };
+
+    api.load();
+
+    api.show = function() {
+        $element.fadeIn("fast");
+    };
+
+    api.hide = function() {
+        $element.fadeOut("fast");
+    };
+
+    api.loadImage = function(src) {
+        $img.attr("src", src);
+    };
+
+    return api;
+}
 
 
+// This javascript file is in flux. Above we have a more flexible approach
+// to managing javascript widgets. Beflow we have basic jquery. The basic jquery
+// below is intended to be refactored to the more flexible approach above
 $(document).ready(function(){
     var $body = $('body');
+
+    // Setup the frontpage fullpage widget
+    var setupFrontpageFullpage = function() {
+
+        try {
+            $.fn.fullpage.destroy('all');
+        } catch (err) {
+
+        }
+
+        var $fullpage = $(".fullpage");
+        if ($fullpage.length > 0) {
+            var $sections = $(".fullpage__section");
+
+            $fullpage.fullpage({
+                sectionSelector: '.fullpage__section',
+                verticalCentered: false,
+                afterRender: function(){
+                    // Fade the whole element in on initial load
+                    $fullpage.css("opacity", 1);
+                }
+            });
+
+            $(".fullpage__arrow--down").click(function(){
+                $.fn.fullpage.moveSectionDown();
+            });
+
+            $(".fullpage__arrow--up").click(function(){
+                $.fn.fullpage.moveSectionUp();
+            });
+        }
+    };
 
     // Setup the sidebar toggles
     var setupSidebarToggle = function(){
@@ -16,8 +159,10 @@ $(document).ready(function(){
         // If there is a sidebar on the page, show the menu navigation sidebar
         // toggle, otherwise hide it
         var $mobileSidebarTrigger = $('.menu--mobile .sidebar__trigger');
+        var $mobileTitle = $('.menu__title--mobile');
         if($('[data-show-sidebar-trigger]').length > 0) {
             $mobileSidebarTrigger.show();
+            $mobileTitle.css("right", "7rem");
         } else {
             $mobileSidebarTrigger.hide();
         }
@@ -152,5 +297,9 @@ $(document).ready(function(){
         setupSidebarToggle();
         equalizeColumns();
         setupSeamlessNavigationLinks();
+        setupFrontpageFullpage();
+
+        // Reload the controller based javascript from top of file
+        bindJSControllers();
     });
 });

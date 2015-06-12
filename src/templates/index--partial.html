@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 {% load thumbnail %}
 {% load snippets %}
 
@@ -7,58 +8,55 @@
      data-meta-title="{% snippet 'index.meta.title' %}"
      data-meta-description="{% snippet 'index.meta.description' %}">
 
-    <div class="index__atf"> {# Above the fold #}
-        <div class="index__hero">
-            <p class="index__hero__lead">{% snippet "index.hero.lead" %}</p>
-            <h1 class="index__hero__title">{% snippet "index.hero.title" %}</h1>
-            <h2 class="index__hero__subtitle">{% snippet "index.hero.subtitle" %}</h2>
-            <ul class="index__hero__buttons">
-                <li class="index__hero__button">
-                    <a class="button" href="/projects/">View my work</a>
-                </li>
-                <li class="index__hero__button">
-                    <a class="button button--hollow" href="/about/">More about me</a>
-                </li>
-            </ul>
-        </div>
-        {% if post %}
-            <div class="index__strip strip">
-                <div class="strip__content">
-                    <div class="strip__title">
-                        {% snippet "index.blog.tagline" %}
+    <div class="tagline">
+        <small class="tagline__text">{% snippet 'index.fullpage.tagline' %}</small>
+        <div class="tagline__divider">&nbsp;</div>
+    </div>
+    <div class="fullpage">
+        {% for project in projects %}
+            <div class="fullpage__section"
+                 style="background-color: #{{ project.color }};{% if project.background_image %}background-image: url({{ project.background_image.url }});{% endif %}">
+
+                <div class="fullpage__project__content">
+                    <div class="fullpage__project__header">
+                        {% if project.action_text %}
+                            <p class="fullpage__project__action">{{ project.action_text }}</p>
+                        {% endif %}
+                        <h2 class="fullpage__project__name">{{ project.name }}</h2>
                     </div>
-                    <div class="strip__text">
-                        <a href="{{ post.get_absolute_url }}" class="silent" title="{{ post.title }}">{{ post.title }}</a>
+                    <div class="fullpage__project__footer">
+                        <a class="fullpage__project__button" href="{{ project.get_absolute_url }}" class="button">{% trans 'See the project' %}</a>
                     </div>
-                    {% comment %}<div class="strip__button">
-                        <a href="{{ post.get_absolute_url }}" title="{{ post.title }}"
-                           class="button button--gold">Read</a>
-                    </div>{% endcomment %}
+                </div>
+                <div class="fullpage__arrow fullpage__arrow--down">
+                    <img src="{% static 'images/fullpage-arrow--down.svg' %}" alt="">
                 </div>
             </div>
-        {% endif %}
+        {% endfor %}
+        <div class="fullpage__section"
+             style="background-color: #141414; background-image: url(http://feral.timmyomahony.com/media/filer_public/89/8d/898d2d52-1ba7-40b9-a2f8-9b01d4ea1b77/index_image.jpg);">
+            <div class="fullpage__project__content">
+                <div class="fullpage__project__header">
+                    <p class="fullpage__project__action">Imagine what we could do for</p>
+                    <h2 class="fullpage__project__name">Your Project</h2>
+                </div>
+                <div class="fullpage__project__footer">
+                    <a class="fullpage__project__button" href="/about/" class="button">{% trans 'Get To Know Me' %}</a>
+                </div>
+            </div>
+            <div class="fullpage__arrow fullpage__arrow--up">
+                <img src="{% static 'images/fullpage-arrow--up.svg' %}" alt="">
+            </div>
+        </div>
     </div>
-    {% if projects %}
-        <div class="index__btf"> {# Below the fold #}
-            <div class="index__footer">
-                <div class="index__projects">
-                    {% for project in projects %}
-                        <div class="index__project">
-                            <div class="project-teaser">
-                                <div class="project-teaser__image">
-                                    <a href="{{ project.get_absolute_url }}"
-                                       title="{{ project.description }}">
-                                       <img src="{% thumbnail project.portrait_image 500x500 crop %}"
-                                            alt="{{ project.name }}">
-                                    </a>
-                                </div>
-                                <div class="project-teaser__button">
-                                    <a href="{{ project.get_absolute_url }}"
-                                        class="button button--huge">{{ project.name }}</a>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
+    {% if post %}
+        <div class="blog-strip strip">
+            <div class="strip__content">
+                <div class="strip__title">
+                    {% snippet "index.blog.tagline" %}
+                </div>
+                <div class="strip__text">
+                    <a href="{{ post.get_absolute_url }}" class="silent" title="{{ post.title }}">{{ post.title }}</a>
                 </div>
             </div>
         </div>

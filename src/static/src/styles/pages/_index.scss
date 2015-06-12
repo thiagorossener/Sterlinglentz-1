@@ -1,270 +1,247 @@
-$indexPadding: 15%;
+$indexPadding: 7.5%;
 
 .index {
-    @include clearfix;
-    background-color: $off-white;
+    background-color: $black;
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
-    .index__atf {
-        position: relative;
-        height: 93vh;
-        min-height: 650px;
+    .tagline {
+        position: absolute;
+        top: 50px;
+        left: $indexPadding;
+        z-index: 1000;
+        text-align: left;
+        opacity: 0.40;
     }
 
-        .index__hero {
-            position: absolute;
-            top: 10%;
-            left: 0;
-            width: 60%;
-            padding: 0 0 0 $indexPadding;
-
-            .index__hero__lead {
-                font-size: .6rem;
-                text-transform: uppercase;
-                margin-bottom: 3rem;
-                color: #9E9E9E;
-                letter-spacing: .05rem;
-            }
-
-            .index__hero__title {
-                font-size: 3rem;
-                line-height: 4rem;
-                font-weight: $font-weight-medium;
-                margin: 0 0 2rem 0;
-                color: $black;
-            }
-
-            .index__hero__subtitle {
-                font-size: 1.4rem;
-                line-height: 2.2rem;
-                font-weight: 100;
-                margin: 0 0 3rem 0;
-                width: 65%;
-                color: #696969;
-            }
-
-            .index__hero__buttons {
-                @include clearfix;
-                margin: 0;
-                padding: 0;
-            }
-
-                .index__hero__button {
-                    float: left;
-                    margin: 0 2rem 0 0;
-                    padding: 0;
-                    list-style: none;
-
-                    .button {
-                        background-color: $gold;
-                        color: $off-white;
-                        text-transform: none;
-                        padding: 1rem;
-                        border: 3.5px solid $gold;
-                        font-weight: $font-weight-regular;
-                        font-size: 1rem;
-                        line-height: 1rem;
-                        min-width: 150px;
-                        margin-bottom: 1rem;
-
-                        &:hover {
-                            border: 3.5px solid darken($gold, 5%);
-                            background-color: darken($gold, 5%);
-                        }
-                    }
-
-                    .button--hollow {
-                        background-color: $off-white;
-                        border: 3.5px solid $gold;
-                        color: $gold;
-
-                        &:hover {
-                            color: $off-white;
-                            border-color: darken($gold, 5%);
-                        }
-                    }
-                }
+        .tagline__text {
+            display: block;
+            color: white;
+            margin-bottom: 15px;
+            font-size: 0.75rem;
+            line-height: 1.2rem;
         }
 
-        .index__strip {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+        .tagline__divider {
+            width: 30px;
+            height: 5px;
+            border: none;
+            background-color: white;
         }
-            .strip__content {
-                @include clearfix;
-                width: 100% - (2 * $indexPadding);
-                padding: 1.25rem $indexPadding 1rem $indexPadding;
-                background-color: #d2d2d2;
-            }
 
-                .strip__title,
-                .strip__text,
-                .strip__button {
-                    float: left;
-                    line-height: 1.75rem;
-                }
+    .tagline--inverted {
+        opacity: 1;
 
-                .strip__title {
-                    text-transform: uppercase;
-                    font-size: 0.65rem;
-                    color: #686868;
-                    margin-right: 2rem;
-                    position: relative;
-                    top: 1px;
-                }
+        .tagline__text {
+            color: $gray-medium;
+        }
 
-                .strip__text {
-                    color: #686868;
-                    font-size: 0.85rem;
-                    margin-right: 2rem;
-                }
-
-    .index__btf {
-
+        .tagline__divider {
+            background-color: $gray-medium;
+        }
     }
 
-        .index__footer {
-            @include container();
-        }
+    .fullpage {
+        background-color: $black;
+        height: 100%;
+        width: 100%;
+        @include transition(opacity 2s ease-in-out);
+        opacity: 0;
+    }
 
-            .index__project{
-                @include span(33.33%);
-
-                padding: 0;
-                margin: 0;
-            }
-
-
-// Below 800
-@media screen and (max-width: $break-small) {
-    .index__atf {
-        height: auto;
-
-        .index__hero {
-            // Remove the 100% vertical height
-            padding-top: 75px;
-            padding-bottom: 75px;
-            width: auto;
-            height: auto;
+        .fullpage__section {
             position: relative;
+            padding: 0 $indexPadding;
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: auto 100%;
+        }
 
-            .index__hero__lead {
-                font-size: 0.7rem;
-                line-height: 1.3rem;
+            .fullpage__project__content {
+                height: 275px;
+                position: absolute;
+                top: 50%;
+                margin-top: -137px;
             }
 
-            .index__hero__title {
-                font-size: 1.4rem;
-                line-height: 1.9rem;
+                .fullpage__project__footer {
+
+                    }
+
+                        .fullpage__project__action {
+                            margin-bottom: 1rem;
+                            color: white;
+                        }
+
+                        .fullpage__project__name {
+                            font-size: 3rem;
+                            line-height: 3rem;
+                            font-weight: bold;
+                            margin-bottom: 5rem;
+                            color: white;
+                        }
+
+                    .fullpage__project__footer {
+
+                    }
+
+                        .fullpage__project__button {
+                            background-color: transparent;
+                            border: 1px solid white;
+                            border-radius: 6px;
+                            color: white;
+                            font-size: 1rem;
+                            line-height: 1rem;
+                            padding: 1.25rem;
+
+                            &:hover {
+                                background-color: white;
+                                text-decoration: none;
+                                color: black;
+                            }
+                        }
+
+            .fullpage__arrow {
+                position: absolute;
+                bottom: 100px;
+                left: 50%;
+                margin-left: -12px;
+                cursor: pointer;
             }
 
-            .index__hero__subtitle {
-                font-size: 1.1rem;
-                line-height: 1.7rem;
-                width: 100%;
+        // Inverted style for light backgrounds
+        .fullpage__section--inverted {
+            .fullpage__project__action,
+            .fullpage__project__name,
+            .fullpage__project__button {
+                color: $gray-medium;
             }
 
-            .index__hero__button {
-                margin-right: 15px;
+            .fullpage__project__button {
+                border-width: 2px;
+                border-color: $gray-medium;
+                color: $gray-medium;
+            }
+        }
 
-                .button {
-                    padding: 1rem;
-                    font-size: 0.9rem;
-                    min-width: 100px;
+        // Animate the content of sections.
+        .fullpage__project__content {
+            opacity: 0;
+            @include transition(opacity 1.25s ease-in-out);
+
+            .fullpage__project__action {}
+            .fullpage__project__name,
+            .fullpage__project__footer {
+
+            }
+
+            .fullpage__project__action {
+                @include transition(.5s ease-in-out .2s);
+                transform: translateY(100px);
+            }
+
+            .fullpage__project__name {
+                @include transition(.6s ease-in-out .2s);
+                transform: translateY(110px);
+            }
+
+            .fullpage__project__footer {
+                @include transition(.7s ease-in-out .2s);
+                transform: translateY(120px);
+            }
+        }
+
+        // Active class is added by the fullpage plugin
+        .fullpage__section.active {
+            .fullpage__project__content {
+                opacity: 1;
+
+                .fullpage__project__action,
+                .fullpage__project__name,
+                .fullpage__project__footer {
+                    transform: translateY(0);
                 }
             }
+        }
 
-            .index__hero__button:last-child {
-                margin-right: 0;
+
+    @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+        .fullpage__section {
+            background-size: 50% auto;
+        }
+    }
+
+    @media screen and (max-width: $break-small) {
+        .tagline {
+            top: 25px;
+            left: $indexPadding/2;
+        }
+
+        .fullpage__section {
+            background-size: 55% auto;
+            background-position: right 80%;
+            padding: 0 $indexPadding/2;
+        }
+
+            .fullpage__project__content {
+                height: auto;
+                position: absolute;
+                top: 140px;
+                margin-top: 0;
             }
-        }
 
-        .index__strip {
-            position: static;
-        }
+                .fullpage__project__name {
+                    margin-bottom: 3.5rem;
+                    font-size: 2.25rem;
+                    line-height: 2.25rem;
+                }
 
-        // Change the padding on the index
-        .index__hero,
+                .fullpage__project__button {
+                    font-size: 0.85rem;
+                    padding: 0.85rem 1rem;
+                }
+    }
+
+
+    .blog-strip {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
         .strip__content {
-            width: 100% - $indexPadding;
-            padding-left: $indexPadding/2;
-            padding-right: $indexPadding/2;
+            @include clearfix;
+            width: 100% - (2 * $indexPadding);
+            padding: 1.25rem $indexPadding 1rem $indexPadding;
+            background-color: #d2d2d2;
         }
 
-        .strip__button {
+            .strip__title,
+            .strip__text,
+            .strip__button {
+                float: left;
+                line-height: 1.75rem;
+            }
+
+            .strip__title {
+                text-transform: uppercase;
+                font-size: 0.65rem;
+                color: #686868;
+                margin-right: 2rem;
+                position: relative;
+                top: 1px;
+            }
+
+            .strip__text {
+                color: #686868;
+                font-size: 0.85rem;
+                margin-right: 2rem;
+            }
+
+    @media screen and (max-width: $break-small) {
+        .blog-strip {
             display: none;
         }
     }
-
-    // Make projects each full fullwidth
-    .index__project {
-        @include span(100%);
-    }
-}
-
-// Between 800 and 1100
-@media screen and (min-width: $break-small) and (max-width: $break-medium) {
-    // Stretch the hero text as we get lower in resolution and move it down
-    // the page a little bit
-    .index__hero {
-        width: 100% - (2 * ($indexPadding/2));
-        padding: 0 ($indexPadding/2);
-
-        .index__hero__title {
-            font-size: 2rem;
-            line-height: 2.5rem;
-        }
-
-        .index__hero__subtitle {
-            font-size: 1rem;
-            line-height: 1.5rem;
-            width: 75%;
-        }
-
-        .index__hero__subtitle {
-            width: 95%;
-        }
-
-        .index__hero__button {
-            .button {
-                padding: .8rem;
-                font-size: 0.9rem;
-            }
-        }
-    }
-}
-
-// Between 1100 and 1300
-@media screen and (min-width: $break-medium) and (max-width: $break-large) {
-    .index__hero {
-        .index__hero__title {
-            font-size: 2.5rem;
-            line-height: 3.25rem;
-        }
-
-        .index__hero__subtitle {
-            font-size: 1rem;
-            line-height: 1.5rem;
-            width: 75%;
-        }
-
-        .index__hero__subtitle {
-            width: 95%;
-        }
-    }
-}
-
-// Above 1300
-@media screen and (min-width: $break-large) {
-    .index__atf {
-        min-height: 800px;
-    }
-}
-
-// Between 1300 and 1800
-@media screen and (min-width: $break-large) and (max-width: 1800px) {
-    .index__hero {
-        width: 80%;
-    }
-}

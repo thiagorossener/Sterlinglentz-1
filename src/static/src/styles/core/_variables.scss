@@ -7,7 +7,7 @@ $font-weight-bold: 700;
 $regular-font-family: 'neutral-regular', 'Helvetica Neue', 'Helvetica', 'Arial';
 
 // Scale
-$ms-base: 1rem;
+$ms-base: 0.90rem;
 $ms-ratio: $minor-third;
 
 // Colors
@@ -24,8 +24,8 @@ $orange: #d89300;
 
 // Breaks
 $break-extra-large: 1920px;
-$break-large: 1300px;
-$break-medium: 1100px;
+$break-large: 1440px;
+$break-medium: 1200px;
 $break-small: 800px;
 
 $animationDuration: 150ms;

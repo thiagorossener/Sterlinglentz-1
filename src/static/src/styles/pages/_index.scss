@@ -167,10 +167,15 @@ $indexPadding: 7.5%;
             }
         }
 
+    @media screen and (min-width: $break-medium) and (max-width: $break-large) {
+        .fullpage__section {
+            background-size: 80% auto;
+        }
+    }
 
     @media screen and (min-width: $break-small) and (max-width: $break-medium) {
         .fullpage__section {
-            background-size: 50% auto;
+            background-size: 70% auto;
         }
     }
 

@@ -4,6 +4,8 @@ src/static/bower_components/
 src/feral/settings/private.py
 src/db.sqlite3
 
+
+.DS_Store 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

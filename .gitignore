@@ -5,6 +5,7 @@ src/feral/settings/private.py
 src/db.sqlite3
 
 # Byte-compiled / optimized / DLL files
+.DS_Store
 __pycache__/
 *.py[cod]
 # C extensions

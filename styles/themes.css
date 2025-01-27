@@ -1,0 +1,39 @@
+:root {
+  --header-text-color: #bab3aa;
+  --divider-color: #454545;
+}
+
+/* Theory Lab */
+
+.theme-theory {
+  --header-text-color: #b0b6ab;
+  --divider-color: #cfdc06;
+}
+
+/* Fundamental Artifact */
+
+.theme-fa {
+  --header-text-color: #ffffff;
+  --divider-color: #908781;
+}
+
+/* Maintain The Standard */
+
+.theme-mts {
+  --header-text-color: #e4f2f4;
+  --divider-color: #02657a;
+}
+
+/* BHBC */
+
+.theme-bhbc {
+  --header-text-color: #ffffff;
+  --divider-color: #3a3935;
+}
+
+/* Virtuos */
+
+.theme-virtuos {
+  --header-text-color: #e4f2f4;
+  --divider-color: #5b5120;
+}

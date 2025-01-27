@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "components/button.css";
+@import "components/circle.css";
+
+@import "themes.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-black font-canto text-sand;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}

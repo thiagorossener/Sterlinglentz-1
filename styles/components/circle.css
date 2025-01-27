@@ -1,0 +1,45 @@
+/* Based on animation:
+  https://codepen.io/EzeKoren/pen/LYxwgOM
+*/
+
+:root {
+  --duration: 8s;
+}
+
+.circle {
+  --pos-x: 50%;
+  --pos-y: 50%;
+  --end-x: 50%;
+  --end-y: 50%;
+  position: absolute;
+  text-align: center;
+  width: min(60vw, 450px);
+  height: min(60vw, 450px);
+  border-radius: 50%;
+  display: inline-block;
+  animation: move var(--duration) linear normal forwards;
+}
+
+@keyframes move {
+  0% {
+    opacity: 0%;
+    left: calc(var(--pos-x) - min(20vw, 225px));
+    top: calc(var(--pos-y) - min(20vw, 225px));
+  }
+
+  10% {
+    opacity: 50%;
+  }
+
+  90% {
+    opacity: 50%;
+  }
+
+  100% {
+    opacity: 0%;
+    left: calc(var(--end-x) - 225px);
+    top: calc(var(--end-y) - 225px);
+    display: none;
+    visibility: hidden;
+  }
+}

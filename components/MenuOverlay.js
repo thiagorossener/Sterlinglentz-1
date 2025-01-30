@@ -5,7 +5,7 @@ import { motion } from "motion/react"
 const MenuOverlay = ({ onClickItem, isOpen, ...props }) => {
   const ulVariants = {
     open: {
-      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+      transition: { staggerChildren: 0.07, delayChildren: 0.1 },
     },
     closed: {
       transition: { staggerChildren: 0.05, staggerDirection: -1 },
@@ -52,7 +52,7 @@ const MenuOverlay = ({ onClickItem, isOpen, ...props }) => {
       >
         <motion.li variants={liVariants}>
           <Link
-            className="text-sand transition-colors hover:text-white"
+            className="text-green-spring transition-colors hover:text-white"
             href="/about"
             onClick={onClickItem}
           >
@@ -61,7 +61,7 @@ const MenuOverlay = ({ onClickItem, isOpen, ...props }) => {
         </motion.li>
         <motion.li variants={liVariants}>
           <Link
-            className="text-sand transition-colors hover:text-white"
+            className="text-green-spring transition-colors hover:text-white"
             href="/"
             onClick={onClickItem}
           >

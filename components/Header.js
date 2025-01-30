@@ -1,5 +1,4 @@
 import { useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import MenuOverlay from "@/components/MenuOverlay"
 import cx from "classnames"
@@ -10,7 +9,11 @@ const Header = ({ onClickHome }) => {
   return (
     <header className="header">
       <div className="px-10 lg:px-[10vw]">
-        <div className="relative z-20 flex items-center justify-between">
+        <motion.nav
+          className="relative z-20 flex items-center justify-between"
+          initial="closed"
+          animate={isMenuOpen ? "open" : "closed"}
+        >
           <div className="flex gap-x-28">
             <HomeLink
               className={cx("font-emily text-4xl", {
@@ -38,16 +41,13 @@ const Header = ({ onClickHome }) => {
               Contact
             </Link>
           </div>
-          <MenuToggle
-            isMenuOpen={isMenuOpen}
-            onClick={() => setMenuOpen(!isMenuOpen)}
-          />
-        </div>
+          <MenuToggle onClick={() => setMenuOpen(!isMenuOpen)} />
+        </motion.nav>
         <AnimatePresence initial={false}>
           {isMenuOpen && (
             <MenuOverlay
               onClickItem={() => setMenuOpen(false)}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.25 }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -60,28 +60,45 @@ const Header = ({ onClickHome }) => {
   )
 }
 
-const MenuToggle = ({ isMenuOpen, onClick }) => {
+const MenuToggle = ({ onClick }) => {
+  const Path = (props) => (
+    <motion.path
+      fill="transparent"
+      strokeWidth="1"
+      stroke="currentColor"
+      strokeLinecap="round"
+      {...props}
+    />
+  )
+
   return (
-    <motion.button
-      className="flex h-10 w-10 items-center justify-center lg:hidden"
+    <button
+      className="flex h-10 w-10 items-center justify-center text-green-spring lg:hidden"
       onClick={onClick}
     >
-      {isMenuOpen ? (
-        <Image
-          src="/icons/close-icon.svg"
-          width={32}
-          height={32}
-          alt="Close Icon"
+      <svg width="23" height="23" viewBox="0 0 23 23">
+        <Path
+          variants={{
+            closed: { d: "M 2 2.5 L 20 2.5" },
+            open: { d: "M 3 16.5 L 17 2.5" },
+          }}
         />
-      ) : (
-        <Image
-          src="/icons/menu-icon.svg"
-          width={32}
-          height={32}
-          alt="Menu Icon"
+        <Path
+          d="M 2 9.423 L 20 9.423"
+          variants={{
+            closed: { opacity: 1 },
+            open: { opacity: 0 },
+          }}
+          transition={{ duration: 0.1 }}
         />
-      )}
-    </motion.button>
+        <Path
+          variants={{
+            closed: { d: "M 2 16.346 L 20 16.346" },
+            open: { d: "M 3 2.5 L 17 16.346" },
+          }}
+        />
+      </svg>
+    </button>
   )
 }
 

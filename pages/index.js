@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <>
-      <Header onHomeClick={() => handleProjectChange(null)} />
+      <Header onClickHome={() => handleProjectChange(null)} />
       <Sidebar
         projects={projects}
         activeProject={currentProject}

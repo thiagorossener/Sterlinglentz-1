@@ -1,15 +1,16 @@
 import Link from "next/link"
 import { useEffect, useRef } from "react"
 
-const MenuOverlay = () => {
+const MenuOverlay = ({ onClickItem }) => {
   return (
-    <div className="fixed left-0 top-0 h-screen w-screen pt-52 text-3xl">
+    <div className="fixed left-0 top-0 z-10 h-screen w-screen pt-52 text-3xl lg:hidden">
       <Background />
       <ul className="relative z-10 flex flex-col items-center space-y-12">
         <li>
           <Link
             className="text-sand transition-colors hover:text-white"
-            href="/"
+            href="/about"
+            onClick={onClickItem}
           >
             My Story
           </Link>
@@ -18,6 +19,7 @@ const MenuOverlay = () => {
           <Link
             className="text-sand transition-colors hover:text-white"
             href="/"
+            onClick={onClickItem}
           >
             Contact
           </Link>

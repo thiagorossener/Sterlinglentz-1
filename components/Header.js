@@ -2,15 +2,21 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import MenuOverlay from "@/components/MenuOverlay"
+import cx from "classnames"
 
-const Header = ({ onHomeClick }) => {
+const Header = ({ onClickHome }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
   return (
     <header className="header">
       <div className="px-10 lg:px-[10vw]">
         <div className="relative z-20 flex items-center justify-between">
           <div className="flex gap-x-28">
-            <HomeLink className="font-emily text-4xl" onClick={onHomeClick}>
+            <HomeLink
+              className={cx("font-emily text-4xl", {
+                "text-white lg:text-inherit": isMenuOpen,
+              })}
+              onClick={onClickHome}
+            >
               Sterling Lentz
             </HomeLink>
             <span className="mt-1.5 hidden text-xl text-[var(--header-text-color)] lg:inline-block">
@@ -52,7 +58,7 @@ const Header = ({ onHomeClick }) => {
             )}
           </button>
         </div>
-        {isMenuOpen && <MenuOverlay />}
+        {isMenuOpen && <MenuOverlay onClickItem={() => setMenuOpen(false)} />}
       </div>
     </header>
   )

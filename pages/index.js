@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 
 import Header from "@/components/Header"
@@ -9,6 +9,14 @@ import { projects } from "@/data/projects"
 
 export default function Home() {
   const [currentProject, setCurrentProject] = useState()
+
+  useEffect(() => {
+    document.body.classList.add("is-home")
+    return () => {
+      document.body.classList.remove("is-home")
+      document.body.classList.remove(currentProject?.themeClass)
+    }
+  })
 
   const handleProjectChange = (newProject) => {
     if (currentProject) {
@@ -21,14 +29,14 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <>
       <Header onHomeClick={() => handleProjectChange(null)} />
       <Sidebar
         projects={projects}
         activeProject={currentProject}
         onChangeProject={handleProjectChange}
       />
-      <Page show={!currentProject}>
+      <Page hide={!!currentProject}>
         <h1 className="font-emily text-7xl text-white lg:text-8xl">
           No bridge too far, no mountain too high
         </h1>
@@ -38,7 +46,7 @@ export default function Home() {
             experience.
           </p>
         </div>
-        <p className="text-crimson mt-9 text-lg lg:text-xl">
+        <p className="mt-9 text-lg text-crimson lg:text-xl">
           Let’s do something bold...
         </p>
         <div className="relative -mx-10 -mt-20 lg:static lg:mx-0 lg:mt-0">
@@ -63,12 +71,12 @@ export default function Home() {
           <Page
             key={project.name}
             image={project.background}
-            show={currentProject === project}
+            hide={currentProject !== project}
           >
             {project.component}
           </Page>
         )
       })}
-    </div>
+    </>
   )
 }

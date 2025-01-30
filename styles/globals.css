@@ -4,6 +4,8 @@
 
 @import "components/button.css";
 @import "components/circle.css";
+@import "components/header.css";
+@import "components/page.css";
 
 @import "themes.css";
 
@@ -12,7 +14,11 @@ html {
 }
 
 body {
-  @apply bg-black font-canto text-sand;
+  @apply bg-white font-canto text-dove-gray;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+body.is-dark {
+  @apply bg-black text-sand;
 }

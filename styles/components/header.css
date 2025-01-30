@@ -1,0 +1,7 @@
+.header {
+  @apply relative mt-16 text-black lg:mt-[10vh];
+}
+
+.is-home .header {
+  @apply fixed left-0 top-0 z-30 w-full text-white;
+}

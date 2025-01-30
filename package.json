@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
+    "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.20",
     "eslint": "^8",
     "eslint-config-next": "^14.0.3",

@@ -1,5 +1,12 @@
 const { fontFamily } = require("tailwindcss/defaultTheme")
 
+const round = (num) =>
+  num
+    .toFixed(7)
+    .replace(/(\.[0-9]+?)0+$/, "$1")
+    .replace(/\.0$/, "")
+const em = (px, base) => `${round(px / base)}em`
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -18,6 +25,7 @@ module.exports = {
         midnight: "#110F0F",
         mirage: "#1d2d34",
         tundora: "#454545",
+        "dove-gray": "#676767",
         white: "#ffffff",
         sand: "#BAB3AA",
         bizarre: "#EDE3D5",
@@ -41,6 +49,113 @@ module.exports = {
         center: true,
         padding: "1.25rem",
       },
+      typography: (theme) => ({
+        xl: {
+          css: {
+            color: theme("colors.midnight"),
+            lineHeight: 1.25,
+            h1: {
+              fontWeight: 700,
+              color: theme("colors.midnight"),
+            },
+            h2: {
+              fontWeight: 700,
+              color: theme("colors.midnight"),
+            },
+            h3: {
+              fontWeight: 700,
+              color: theme("colors.midnight"),
+            },
+            h4: {
+              fontWeight: 700,
+              color: theme("colors.midnight"),
+            },
+            h5: {
+              fontWeight: 700,
+              color: theme("colors.midnight"),
+            },
+            h6: {
+              fontWeight: 700,
+              color: theme("colors.midnight"),
+            },
+            p: {
+              marginTop: em(40, 20),
+              marginBottom: em(40, 20),
+            },
+            blockquote: {
+              marginTop: em(96, 30),
+              marginBottom: em(40, 18),
+              paddingLeft: em(145, 20),
+            },
+            "blockquote p": {
+              margin: 0,
+            },
+            figcaption: {
+              fontSize: em(16, 18),
+              fontStyle: "italic",
+              color: theme("colors.dove-gray"),
+              textAlign: "center",
+            },
+            ul: {
+              listStyleType: "disc",
+            },
+            ol: {
+              listStyleType: "decimal",
+            },
+            a: {
+              color: theme("colors.crimson"),
+              transition: "color 150ms cubic-bezier(0.4, 0, 0.2, 1)",
+            },
+            "a:hover": {
+              opacity: 0.5,
+            },
+            img: {
+              marginLeft: "auto",
+              marginRight: "auto",
+            },
+            iframe: {
+              width: "100%",
+            },
+            table: {
+              tableLayout: "auto",
+              textAlign: "left",
+              marginTop: em(32, 18),
+              marginBottom: em(32, 18),
+              marginLeft: "auto",
+              marginRight: "auto",
+              fontSize: em(20, 20),
+              lineHeight: round(30 / 20),
+            },
+            thead: {
+              borderBottomWidth: "1px",
+              borderBottomColor: "var(--tw-prose-th-borders)",
+            },
+            "thead th": {
+              color: "var(--tw-prose-headings)",
+              fontWeight: "600",
+              verticalAlign: "bottom",
+            },
+            "tbody tr": {
+              borderBottomWidth: "1px",
+              borderBottomColor: "var(--tw-prose-td-borders)",
+            },
+            "tbody tr:last-child": {
+              borderBottomWidth: "0",
+            },
+            "tbody td": {
+              verticalAlign: "baseline",
+            },
+            tfoot: {
+              borderTopWidth: "1px",
+              borderTopColor: "var(--tw-prose-th-borders)",
+            },
+            "tfoot td": {
+              verticalAlign: "top",
+            },
+          },
+        },
+      }),
     },
   },
+  plugins: [require("@tailwindcss/typography")],
 }

@@ -1,5 +1,6 @@
 :root {
   --header-text-color: #bab3aa;
+  --header-link-hover: #cb4a4a;
   --divider-color: #454545;
 }
 
@@ -7,6 +8,7 @@
 
 .theme-theory {
   --header-text-color: #b0b6ab;
+  --header-link-hover: #ffffff;
   --divider-color: #cfdc06;
 }
 
@@ -14,6 +16,7 @@
 
 .theme-fa {
   --header-text-color: #ffffff;
+  --header-link-hover: #ffffff;
   --divider-color: #908781;
 }
 
@@ -21,6 +24,7 @@
 
 .theme-mts {
   --header-text-color: #e4f2f4;
+  --header-link-hover: #ffffff;
   --divider-color: #02657a;
 }
 
@@ -28,6 +32,7 @@
 
 .theme-bhbc {
   --header-text-color: #ffffff;
+  --header-link-hover: #ffffff;
   --divider-color: #3a3935;
 }
 
@@ -35,5 +40,6 @@
 
 .theme-virtuos {
   --header-text-color: #e4f2f4;
+  --header-link-hover: #ffffff;
   --divider-color: #5b5120;
 }

@@ -19,6 +19,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-body.is-dark {
+body.is-home {
   @apply bg-black text-sand;
 }

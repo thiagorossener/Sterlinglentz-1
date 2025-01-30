@@ -24,7 +24,7 @@
   }
 
   .page-container {
-    @apply w-full pt-48 lg:absolute lg:bottom-0 lg:left-0 lg:h-[65vh] lg:pt-0;
+    @apply w-full pt-48 lg:absolute lg:bottom-0 lg:left-0 lg:h-full lg:pt-[calc(10vh_+_15.5rem)];
   }
 
   .page-content {

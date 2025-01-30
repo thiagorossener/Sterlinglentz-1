@@ -6,7 +6,7 @@ const Sidebar = ({ projects, activeProject, onChangeProject }) => {
   const nextIndex = activeIndex === projects.length - 1 ? 0 : activeIndex + 1
   const nextProject = projects[nextIndex]
   return (
-    <div className="fixed bottom-9 right-9 z-20 h-16 w-16 lg:bottom-0 lg:left-[10vw] lg:right-0 lg:h-[65vh] lg:w-[210px]">
+    <div className="fixed bottom-9 right-9 z-20 h-16 w-16 lg:bottom-0 lg:left-[10vw] lg:right-0 lg:h-full lg:w-[210px] lg:pt-[calc(10vh_+_15.5rem)]">
       <aside className="h-full w-full lg:w-auto lg:overflow-auto lg:pl-11">
         <ul className="h-full w-full lg:space-y-8">
           {projects.map((project) => (

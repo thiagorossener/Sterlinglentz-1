@@ -1,12 +1,56 @@
 import Link from "next/link"
 import { useEffect, useRef } from "react"
+import { motion } from "motion/react"
 
-const MenuOverlay = ({ onClickItem }) => {
+const MenuOverlay = ({ onClickItem, isOpen, ...props }) => {
+  const ulVariants = {
+    open: {
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    },
+    closed: {
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    },
+  }
+
+  const liVariants = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+    closed: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 },
+      },
+    },
+  }
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    document.body.classList.add("is-menu-open")
+    return () => {
+      document.body.classList.remove("is-menu-open")
+    }
+  })
+
   return (
-    <div className="fixed left-0 top-0 z-10 h-screen w-screen pt-52 text-3xl lg:hidden">
+    <motion.div
+      className="fixed left-0 top-0 z-10 h-screen w-screen pt-52 text-3xl lg:hidden"
+      {...props}
+    >
       <Background />
-      <ul className="relative z-10 flex flex-col items-center space-y-12">
-        <li>
+      <motion.ul
+        className="relative z-10 flex flex-col items-center space-y-12"
+        variants={ulVariants}
+        initial="closed"
+        animate="open"
+        exit="closed"
+      >
+        <motion.li variants={liVariants}>
           <Link
             className="text-sand transition-colors hover:text-white"
             href="/about"
@@ -14,8 +58,8 @@ const MenuOverlay = ({ onClickItem }) => {
           >
             My Story
           </Link>
-        </li>
-        <li>
+        </motion.li>
+        <motion.li variants={liVariants}>
           <Link
             className="text-sand transition-colors hover:text-white"
             href="/"
@@ -23,9 +67,9 @@ const MenuOverlay = ({ onClickItem }) => {
           >
             Contact
           </Link>
-        </li>
-      </ul>
-    </div>
+        </motion.li>
+      </motion.ul>
+    </motion.div>
   )
 }
 

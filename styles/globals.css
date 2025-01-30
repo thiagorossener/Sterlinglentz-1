@@ -22,3 +22,7 @@ body {
 body.is-home {
   @apply bg-black text-sand;
 }
+
+body.is-menu-open {
+  @apply h-screen overflow-hidden lg:h-auto lg:overflow-auto;
+}

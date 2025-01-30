@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import MenuOverlay from "@/components/MenuOverlay"
 import cx from "classnames"
+import { AnimatePresence, motion } from "motion/react"
 
 const Header = ({ onClickHome }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
@@ -37,30 +38,50 @@ const Header = ({ onClickHome }) => {
               Contact
             </Link>
           </div>
-          <button
-            className="flex h-10 w-10 items-center justify-center active:translate-x-px active:translate-y-px lg:hidden"
+          <MenuToggle
+            isMenuOpen={isMenuOpen}
             onClick={() => setMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <Image
-                src="/icons/close-icon.svg"
-                width={32}
-                height={32}
-                alt="Close Icon"
-              />
-            ) : (
-              <Image
-                src="/icons/menu-icon.svg"
-                width={32}
-                height={32}
-                alt="Menu Icon"
-              />
-            )}
-          </button>
+          />
         </div>
-        {isMenuOpen && <MenuOverlay onClickItem={() => setMenuOpen(false)} />}
+        <AnimatePresence initial={false}>
+          {isMenuOpen && (
+            <MenuOverlay
+              onClickItem={() => setMenuOpen(false)}
+              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              isOpen={isMenuOpen}
+            />
+          )}
+        </AnimatePresence>
       </div>
     </header>
+  )
+}
+
+const MenuToggle = ({ isMenuOpen, onClick }) => {
+  return (
+    <motion.button
+      className="flex h-10 w-10 items-center justify-center lg:hidden"
+      onClick={onClick}
+    >
+      {isMenuOpen ? (
+        <Image
+          src="/icons/close-icon.svg"
+          width={32}
+          height={32}
+          alt="Close Icon"
+        />
+      ) : (
+        <Image
+          src="/icons/menu-icon.svg"
+          width={32}
+          height={32}
+          alt="Menu Icon"
+        />
+      )}
+    </motion.button>
   )
 }
 
